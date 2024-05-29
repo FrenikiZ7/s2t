@@ -7,6 +7,8 @@ export const theme = {
 
     white: '#ffffff',
     black: '#000000',
+    lightblack: '#00000080',
+    mediumblack: '#00000049',
 
     gray: '#676770',
     lightgray: '#CCCDD2',
@@ -33,7 +35,7 @@ export const theme = {
   },
 
   sizes: {
-    xxsmall: '7px',
+    xxsmall: '8px',
     xsmall: '10px',
     small: '13px',
     medium: '16px',
@@ -48,6 +50,7 @@ export const theme = {
   },
 
   spacings: {
+    xxsmall: '3px',
     xsmall: '5px',
     small: '10px',
     medium: '15px',
@@ -63,9 +66,10 @@ export const theme = {
   },
 
   medias: {
-    smallpc: '(max-width: 900px)',
-    mobile: '(max-width: 480px)',
+    smallpc: '(max-width: 930px)',
     tablet: '(max-width: 768px)',
+    mobile: '(max-width: 480px)',
+    smallmobile: '(max-width: 380px)',
   },
 
   fonts: {

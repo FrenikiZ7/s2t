@@ -2,13 +2,26 @@ import styled, { css } from 'styled-components';
 
 export const ProfilePictureElement = styled.div`
   ${({ theme }) => css`
-      width: 300px;
-      height: 300px;
+      width: 250px;
+      height: 250px;
       padding: ${theme.spacings.small};
+      position: relative;
+      border-radius: 50%; 
+
+      @media ${theme.medias.smallpc} {
+        width: 200px;
+        height: 200px;
+      } 
+
 
       @media ${theme.medias.mobile} {
         width: 130px;
         height: 130px;
+      }
+
+      @media ${theme.medias.smallmobile} {
+        width: 100px;
+        height: 100px;
       }
   `}
 `;
@@ -20,27 +33,55 @@ export const Picture = styled.img`
       width: 100%;
       height: 100%;
 
-      position: relative;
       object-fit: cover;
   `}
 `;
 
-export const Badge = styled.img`
+export const Badge = styled.div`
   ${({ theme }) => css`
-      border-radius: 50%;
+      border-radius: 50%; 
+      box-sizing: border-box;
 
-      height: 50px;
-      width: 50px;
+      display: flex;
+      align-items: end;
+      justify-content: flex-end;
+
+      width: 100%;
+      height: 100%;
 
       position: absolute;
-      top: 228px;
-      left: 210px;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
 
-      @media ${theme.medias.mobile} {
-        top: 95px;
-        left: 88px;
-        height: 20px;
-        width: 20px;
+      > img {
+        height: 35px;
+        width: 35px;
+        margin-right: 37px;
+        margin-bottom: 20px;
+
+        @media ${theme.medias.smallpc} {
+          height: 25px;
+          width: 25px;
+          margin-right: 32px;
+          margin-bottom: 18px;
+       }
+
+        @media ${theme.medias.mobile} {
+          height: 20px;
+          width: 20px;
+          margin-right: 21px;
+          margin-bottom: 13px;
+       }
+
+        @media ${theme.medias.smallmobile} {
+          height: 15px;
+          width: 15px;
+          margin-right: 22px;
+          margin-bottom: 12px;
+        }
       }
+
   `}
 `;

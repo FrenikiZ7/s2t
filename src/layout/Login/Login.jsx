@@ -7,7 +7,7 @@ import { AuthButton } from '../../components/elements/AuthElements/AuthButton/Au
 import { AuthInput } from '../../components/elements/AuthElements/AuthInput/AuthInput';
 import { AuthRedirect } from '../../components/elements/AuthElements/AuthRedirect/Redirect';
 import { AuthOptions } from '../../components/elements/AuthElements/AuthOptions/AuthOptions';
-import { AuthWrapper } from '../../components/elements/AuthElements/AuthContainer/AuthWrapper';
+import { AuthWrapper } from '../../components/elements/AuthElements/AuthWrapper/AuthWrapper';
 
 import { StyledLink } from '../../components/elements/StyledLink/StyledLink';
 import { Title } from '../../components/elements/Title/Title';

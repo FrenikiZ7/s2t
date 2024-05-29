@@ -3,41 +3,57 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
 import * as Styled from './Slide-Styles';
+import { Title } from '../Title/Title';
+import { ImageCard } from '../ImageCard/ImageCard';
 
-export function Slide({ items }) {
+export function Slide({
+  items, title,
+}) {
+  // Organiza os itens para que os que estejam bloqueados venham após os que não estejam
+  const orderedItems = [...items].sort((itemA, itemB) => (itemA.islocked ? 1 : -1));
+
   return (
     <Styled.SlideElement>
+      <Title text={title} uppercase />
       <Swiper
-        slidesPerView={4}
         spaceBetween={15}
         navigation
         breakpoints={{
+          1601: {
+            slidesPerView: 7,
+          },
 
-          // Breakpoint for PCs smalls screen
-          1500: {
+          1415: {
+            slidesPerView: 6,
+          },
+
+          1100: {
+            slidesPerView: 5,
+          },
+
+          680: {
+            slidesPerView: 4,
+          },
+
+          480: {
             slidesPerView: 3,
           },
-          // Breakpoint for tablet screens
-          900: {
-            slidesPerView: 2,
-          },
-          // Breakpoint for mobile screens
+
           0: {
-            slidesPerView: 1,
+            slidesPerView: 2,
           },
         }}
       >
 
-        {items.length > 0 && items.map((item) => (
+        {orderedItems.length > 0 && orderedItems.map((item) => (
           <SwiperSlide key={item.id}>
-
-            {item.type === 'photo' ? <img src={item.src} alt="" /> : (
-              <video autoPlay muted>
-                <source src={item.src} type="video/mp4" />
-                <track kind="captions" src="" srcLang="en" />
-              </video>
-            )}
-
+            <ImageCard
+              src={item.src}
+              alt="teste"
+              title={item.title}
+              islocked={item.islocked}
+              path={item.islocked ? '/plans' : item.path}
+            />
           </SwiperSlide>
         ))}
 
@@ -47,5 +63,7 @@ export function Slide({ items }) {
 }
 
 Slide.propTypes = {
-  items: Prop.arrayOf(Prop.object).isRequired, // n faço ideia oq é isso, só está assim pq foi o unico q n deu erro no console
+  // n faço ideia oq é isso, só está assim pq foi o unico q n deu erro no console
+  items: Prop.arrayOf(Prop.object).isRequired,
+  title: Prop.string,
 };

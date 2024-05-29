@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const InfoElement = styled.div`
+export const ProfileInfoElement = styled.div`
   ${({ theme }) => css`
     color: ${theme.colors.white};
     text-transform: uppercase;
@@ -10,14 +10,15 @@ export const InfoElement = styled.div`
     flex-direction: row;
     align-items: center;
     gap: 5px;
-    grid-area: 'info';
+    grid-area: 'element';
+  
   `}
 `;
 
 export const InfoTitle = styled.h1`
   ${({ theme }) => css`
     font-weight: 800;
-    font-size: ${theme.sizes.large};
+    font-size: ${theme.sizes.medium};
 
     &::after {
        content: ':'
@@ -26,14 +27,23 @@ export const InfoTitle = styled.h1`
     @media ${theme.medias.mobile} {
      font-size: ${theme.sizes.small};
     }
+
+    @media ${theme.medias.smallmobile} {
+     font-size: ${theme.sizes.xsmall};
+    }
   `}
 `;
 
 export const Info = styled.p`
   ${({ theme }) => css`
   font-size: ${theme.sizes.medium};
+  
   @media ${theme.medias.mobile} {
    font-size: ${theme.sizes.small};
+  }
+
+  @media ${theme.medias.smallmobile} {
+     font-size: ${theme.sizes.xsmall};
   }
   `}
 `;

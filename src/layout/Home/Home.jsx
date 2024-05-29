@@ -8,7 +8,8 @@ export function Home() {
     <Styled.HomePage>
       <StyledLink path="/register" text="Register" color={theme.colors.primary} hovercolor={theme.colors.secondary} />
       <StyledLink path="/login" text="Login" color={theme.colors.primary} hovercolor={theme.colors.secondary} />
-      <StyledLink path="/profile" text="Profile" color={theme.colors.primary} hovercolor={theme.colors.secondary} />
+      <StyledLink path="/player-dashboard" text="Player Dashboard" color={theme.colors.primary} hovercolor={theme.colors.secondary} />
+
     </Styled.HomePage>
   );
 }
