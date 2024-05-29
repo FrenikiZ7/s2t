@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { ColumnContainer } from '../../../components/ColumnContainer/Column-Styles';
+import { slideOut } from '../../../styles/animations';
 
 export const PlayerDashboardContainer = styled.section`
   ${({ theme }) => css`
@@ -35,6 +36,8 @@ export const BannerContainer = styled.section`
     color: white;
     align-items: center;
     gap: ${theme.spacings.small};
+    animation: ${slideOut} 300ms ease-out;
+
 
     @media${theme.medias.mobile} {
       flex-direction: column;
