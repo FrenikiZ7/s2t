@@ -19,6 +19,10 @@ import { PlayerProvider } from './contexts/userContext/PlayerProvider/PlayerProv
 import { PlayerDashboard } from './layout/Dashboards/PlayerDashboard/PlayerDashboard';
 import { Home } from './layout/Home/Home';
 import { Profile } from './layout/Dashboards/Components/Profile/Profile';
+import { Friends } from './layout/Dashboards/Components/Friends/Friends';
+import { S2tProvider } from './contexts/s2tContext/S2tProvider';
+import { Scouts } from './layout/Dashboards/Components/Scouts/Scouts';
+import { Clubs } from './layout/Dashboards/Components/Clubs/Clubs';
 
 register();
 
@@ -28,33 +32,37 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
       <BrowserRouter>
 
-        {/* Fornecendo o contexto com os dados jogador */}
-        <PlayerProvider>
+        <S2tProvider>
 
-          {/* Aplicando estilos globais em todos os componentes abaixo */}
-          <GlobalStyles />
+          {/* Fornecendo o contexto com os dados jogador */}
+          <PlayerProvider>
 
-          {/* Todas as rotas do site */}
-          <Routes>
-            <Route path="/" element={<Home />} />
+            {/* Aplicando estilos globais em todos os componentes abaixo */}
+            <GlobalStyles />
 
-            {/* Rota do dashboard + subrotas dele */}
-            <Route path="/player-dashboard/" element={<PlayerDashboard />}>
-              <Route path="profile" element={<Profile />} />
-              <Route path="profile-edit" element={<h1>Editar Perfil</h1>} />
-              <Route path="opportunities" element={<h1>oportunidades</h1>} />
-              <Route path="scout" element={<h1>Scout</h1>} />
-              <Route path="partners" element={<h1>Parceiros</h1>} />
-              <Route path="contacts" element={<h1>Contatos</h1>} />
-              <Route path="friends" element={<h1>Amigos</h1>} />
-            </Route>
+            {/* Todas as rotas do site */}
+            <Routes>
+              <Route path="/" element={<Home />} />
 
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/password-reset" element={<Home />} />
+              {/* Rota do dashboard + subrotas dele */}
+              <Route path="/player-dashboard/" element={<PlayerDashboard />}>
+                <Route path="profile" element={<Profile />} />
+                <Route path="profile-edit" element={<h1>Editar Perfil</h1>} />
+                <Route path="opportunities" element={<h1>oportunidades</h1>} />
+                <Route path="scouts" element={<Scouts />} />
+                <Route path="clubs" element={<Clubs />} />
+                <Route path="partners" element={<h1>Parceiros</h1>} />
+                <Route path="contacts" element={<h1>Contatos</h1>} />
+                <Route path="friends" element={<Friends />} />
+              </Route>
 
-          </Routes>
-        </PlayerProvider>
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/password-reset" element={<Home />} />
+
+            </Routes>
+          </PlayerProvider>
+        </S2tProvider>
 
       </BrowserRouter>
     </ThemeProvider>

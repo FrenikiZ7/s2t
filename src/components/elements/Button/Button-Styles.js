@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const ButtonLinkElement = styled.button`
+export const ButtonElement = styled.button`
   ${({
     theme, textcolor, texthover, bgcolor, bghover, border, borderhover,
   }) => css`
@@ -14,7 +14,7 @@ export const ButtonLinkElement = styled.button`
     border-radius: 10px;
     text-transform:uppercase;
 
-    transition: all 500ms ease-in-out;
+    transition: all 700ms ease-in-out;
 
     &:hover{
       color: ${texthover};

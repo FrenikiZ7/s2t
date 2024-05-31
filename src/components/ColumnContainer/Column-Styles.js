@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const ColumnContainer = styled.div`
+export const ColumnContainer = styled.section`
   ${({ theme, color }) => css`
       background: ${color};
       color: white;

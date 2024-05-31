@@ -3,27 +3,29 @@ import React from 'react';
 import * as Styled from './Button-Styles';
 import { StyledLink } from '../StyledLink/StyledLink';
 
-export function ButtonLink({
-  path, text, textcolor = 'white', texthover = 'white', bgcolor = 'black', bghover = '#008EFF', border = 'black', borderhover = 'white',
+export function Button({
+  onclick, path, text, textcolor = 'white', texthover = 'white', bgcolor = 'black', bghover = '#008EFF', border = 'black', borderhover = 'white',
 }) {
   return (
     <StyledLink path={path}>
-      <Styled.ButtonLinkElement
+      <Styled.ButtonElement
         textcolor={textcolor}
         texthover={texthover}
         bgcolor={bgcolor}
         bghover={bghover}
         border={border}
         borderhover={borderhover}
+        onClick={onclick}
       >
         {text}
-      </Styled.ButtonLinkElement>
+      </Styled.ButtonElement>
     </StyledLink>
   );
 }
 
-ButtonLink.propTypes = {
-  path: Prop.string.isRequired,
+Button.propTypes = {
+  onclick: Prop.func,
+  path: Prop.string,
   text: Prop.string,
   textcolor: Prop.string,
   texthover: Prop.string,
@@ -31,5 +33,4 @@ ButtonLink.propTypes = {
   bghover: Prop.string,
   border: Prop.string,
   borderhover: Prop.string,
-
 };

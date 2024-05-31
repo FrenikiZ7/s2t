@@ -15,7 +15,7 @@ export function StyledLink({
 
 StyledLink.propTypes = {
   text: Prop.string,
-  path: Prop.string.isRequired,
+  path: Prop.string,
   color: Prop.string,
   hovercolor: Prop.string,
   children: Prop.node,

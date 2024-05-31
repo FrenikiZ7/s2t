@@ -1,20 +1,22 @@
 import styled, { css } from 'styled-components';
+import { fadeIn } from '../../../styles/animations';
 
 export const ImageCardElement = styled.div`
   ${({ theme, islocked }) => css`
   border-radius: 15px;
-  border: ${theme.borders.xtransparent};
   background: ${islocked ? 'black' : 'none'};
-
   width: 100%;
   height: 100%;
+  display: flex;
 
   position: relative;
 
   transition: all 500ms ease-in-out;
+  animation: ${fadeIn} 500ms ease-out;
+
 
   &:hover {
-    border: ${theme.borders.xsecondary};
+
 
     > h2 {
       color: ${theme.colors.tertiary};
@@ -29,8 +31,9 @@ export const Image = styled.img`
     border-radius: 15px;
     width: 100%;
     height: 100%;
+    object-fit: cover;
     transition: all 500ms ease-in-out;
-    filter: ${islocked ? 'grayscale(1) opacity(0.6)' : 'grayscale(0) opacity(1)'}
+    filter: ${islocked ? 'grayscale(1) opacity(0.6)' : 'grayscale(0) opacity(1)'};
   `}
 `;
 
@@ -55,7 +58,7 @@ export const LockDiv = styled.div`
     >img {
       width: 35%;
       height: 35%;
-      
+      transition: all 500ms ease-in-out;
     }
   `}
 `;
@@ -85,7 +88,6 @@ export const Title = styled.h2`
     @media ${theme.medias.tablet} {
       font-size: ${theme.sizes.xsmall};
     }
-
 
   `}
 `;

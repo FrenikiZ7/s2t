@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import Prop from 'prop-types';
 import { PlayerContext } from './PlayerContext';
 import { playerReducer } from './playerReducer';
 import { playerData } from './playerData';
@@ -12,3 +13,7 @@ export function PlayerProvider({ children }) {
     </PlayerContext.Provider>
   );
 }
+
+PlayerProvider.propTypes = {
+  children: Prop.node.isRequired,
+};

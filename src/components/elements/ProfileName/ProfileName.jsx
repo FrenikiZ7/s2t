@@ -2,16 +2,16 @@ import Prop from 'prop-types';
 import React from 'react';
 import * as Styled from './ProfileName-Styles';
 
-export function ProfileName({ text }) {
+export function ProfileName({ name }) {
   return (
     <Styled.ProfileNameElement>
       <Styled.Name>
-        Nome completo
+        {name}
       </Styled.Name>
     </Styled.ProfileNameElement>
   );
 }
 
 ProfileName.propTypes = {
-  text: Prop.string.isRequired,
+  name: Prop.string.isRequired,
 };

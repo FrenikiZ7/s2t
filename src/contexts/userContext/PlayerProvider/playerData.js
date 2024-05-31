@@ -6,10 +6,10 @@ export const playerData = {
   {
     // dados usados no banner do atleta. Badge = icone referente ao atual plano dele
     banner: {
-      name: 'John Doe',
-      profileImageSrc: '/assets/images/background.png',
-      badge: 'https://cdn.discordapp.com/attachments/1242525965595181209/1242526040837062716/medal.png?ex=6656b9cd&is=6655684d&hm=e013183a657962979fa869df66201ff337f511ab0f204b52495568f947a0d2e1&',
-      backgroundImagesrc: 'https://cdn.discordapp.com/attachments/1242525965595181209/1244735534274842634/dirty-soccer-ball-wet-grass-field-generated-by-ai.jpg?ex=66582c0d&is=6656da8d&hm=21fffae7f500ec50a631c916c01e20ceaa5d2b88e03274c3e7e70cadc8724c39&',
+      name: 'Bernardo da Silva',
+      profileImageSrc: '/assets/images/profile/profile.png',
+      badge: '/assets/images/pngs/medal.png',
+      backgroundImageSrc: '/assets/images/profile/banner.png',
     },
 
     // Informações que são exibidas abaixo do banner
@@ -27,43 +27,43 @@ export const playerData = {
     photos: [
       {
         id: '1',
-        src: '/assets/images/background.png',
+        src: '/assets/images/profile/photo-1.png',
         type: 'photo',
       },
 
       {
         id: '2',
-        src: '/assets/images/background.png',
+        src: '/assets/images/profile/photo-2.png',
         type: 'photo',
       },
 
       {
         id: '3',
-        src: '/assets/images/background.png',
+        src: '/assets/images/profile/photo-3.png',
         type: 'photo',
       },
 
       {
         id: '4',
-        src: '/assets/images/background.png',
+        src: '/assets/images/profile/photo-4.png',
         type: 'photo',
       },
 
       {
         id: '5',
-        src: '/assets/images/background.png',
+        src: '/assets/images/profile/photo-1.png',
         type: 'photo',
       },
 
       {
         id: '6',
-        src: '/assets/images/background.png',
+        src: '/assets/images/profile/photo-2.png',
         type: 'photo',
       },
 
       {
         id: '7',
-        src: '/assets/images/background.png',
+        src: '/assets/images/profile/photo-3.png',
         type: 'photo',
       },
     ],
@@ -79,7 +79,7 @@ export const playerData = {
 
       {
         id: '2',
-        name: 'Club Atlético nacional de medelin',
+        name: 'Barcelona',
         image: '/assets/images/background.png',
         years: [2015, 2015],
       },
@@ -138,14 +138,14 @@ export const playerData = {
 
       {
         id: '4',
-        name: 'Faculdade de Uber',
+        name: 'Ciência da Computação',
         years: [2015, 2020],
         image: '/assets/images/background.png',
       },
 
       {
         id: '5',
-        name: 'Cursinho de cortar cabelo',
+        name: 'Curso de React.js',
         years: [2021, 2021],
         image: '/assets/images/background.png',
       },
@@ -156,42 +156,42 @@ export const playerData = {
       {
         id: '1',
         name: 'Sul Americana',
-        image: '/assets/images/trophy.png',
+        image: '/assets/images/pngs/trophy.png',
         year: 2012,
       },
 
       {
         id: '2',
         name: 'La Liga',
-        image: '/assets/images/trophy.png',
+        image: '/assets/images/pngs/trophy.png',
         year: 2017,
       },
 
       {
         id: '3',
         name: 'Uefa Champions League',
-        image: '/assets/images/trophy.png',
+        image: '/assets/images/pngs/trophy.png',
         year: 2018,
       },
 
       {
         id: '4',
         name: 'Copa do mundo',
-        image: '/assets/images/trophy.png',
+        image: '/assets/images/pngs/trophy.png',
         year: 2018,
       },
 
       {
         id: '5',
         name: 'Taça guanabara',
-        image: '/assets/images/trophy.png',
+        image: '/assets/images/pngs/trophy.png',
         year: 2019,
       },
 
       {
         id: '6',
         name: 'Campeonato Gáucho',
-        image: '/assets/images/trophy.png',
+        image: '/assets/images/pngs/trophy.png',
         year: 2022,
       },
 
@@ -199,27 +199,28 @@ export const playerData = {
 
   },
 
-  // lista de benefícios da conta do usuário.
-  // Ao clicar é direcionado a página do benefício clicado. Caso tenha isLocked como true, a estilização do componente
-  // vai ser alterada e ao clicar ele vai direcionar automaticamente para a página de planos
+  //  lista de benefícios da conta do usuário.
+  //  Ao clicar é direcionado a página do benefício clicado.
+  //  Caso tenha isLocked como true, a estilização do componente
+  //  vai ser alterada e ao clicar ele vai direcionar automaticamente para a página de planos
   benefits: [
     {
       id: '1',
-      src: '/assets/images/background.png',
+      src: '/assets/images/benefits/podcast.png',
       title: 'podcast',
       path: '/podcast',
     },
 
     {
       id: '2',
-      src: '/assets/images/background.png',
+      src: '/assets/images/benefits/tv.png',
       title: 'Sport TV',
       path: '/sporttv',
     },
 
     {
       id: '3',
-      src: '/assets/images/background.png',
+      src: '/assets/images/benefits/investments.png',
       title: 'Sports Invest',
       islocked: true,
       path: '/sportsinvest',
@@ -227,7 +228,7 @@ export const playerData = {
 
     {
       id: '4',
-      src: '/assets/images/background.png',
+      src: '/assets/images/benefits/benefits.png',
       title: 'Benefícios',
       islocked: true,
       path: '/benefits',
@@ -235,7 +236,7 @@ export const playerData = {
 
     {
       id: '5',
-      src: '/assets/images/background.png',
+      src: '/assets/images/benefits/exchange.png',
       title: 'Intercâmbio',
       islocked: true,
       path: '/interchange',
@@ -243,17 +244,93 @@ export const playerData = {
 
     {
       id: '6',
-      src: '/assets/images/background.png',
+      src: '/assets/images/benefits/visibility.png',
       title: 'Visibilidade',
       path: '/visibility',
     },
 
     {
       id: '7',
-      src: '/assets/images/background.png',
+      src: '/assets/images/benefits/events.png',
       title: 'Eventos',
       islocked: true,
       path: '/events',
     },
+  ],
+
+  friends: [
+    {
+      id: '1',
+      name: 'Eduardo Silva',
+      path: 'eduardo',
+      profileImageSrc: '/assets/images/background.png',
+    },
+    {
+      id: '2',
+      name: 'Victor Souza',
+      path: 'victor',
+      profileImageSrc: '/assets/images/background.png',
+    },
+    {
+      id: '3',
+      name: 'Matheus Oliveira',
+      path: 'matheus',
+      profileImageSrc: '/assets/images/background.png',
+    },
+    {
+      id: '4',
+      name: 'Leonardo Ferreira',
+      path: 'leonardo',
+      profileImageSrc: '/assets/images/background.png',
+    },
+    {
+      id: '5',
+      name: 'Pedro Santos',
+      path: 'pedro',
+      profileImageSrc: '/assets/images/background.png',
+    },
+    {
+      id: '6',
+      name: 'Gabriel Costa',
+      path: 'gabriel',
+      profileImageSrc: '/assets/images/background.png',
+    },
+    {
+      id: '7',
+      name: 'Arthur Mendes',
+      path: 'arthur',
+      profileImageSrc: '/assets/images/background.png',
+    },
+    {
+      id: '8',
+      name: 'Igor Pereira',
+      path: 'igor',
+      profileImageSrc: '/assets/images/background.png',
+    },
+    {
+      id: '9',
+      name: 'Lucas Almeida',
+      path: 'lucas',
+      profileImageSrc: '/assets/images/background.png',
+    },
+    {
+      id: '10',
+      name: 'Bernardo Dias',
+      path: 'bernardo',
+      profileImageSrc: '/assets/images/background.png',
+    },
+    {
+      id: '11',
+      name: 'Augusto Vargas',
+      path: 'augusto',
+      profileImageSrc: '/assets/images/background.png',
+    },
+    {
+      id: '12',
+      name: 'César Araújo',
+      path: 'cesar',
+      profileImageSrc: '/assets/images/background.png',
+    },
+
   ],
 };

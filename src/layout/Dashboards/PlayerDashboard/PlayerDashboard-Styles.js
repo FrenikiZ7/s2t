@@ -19,13 +19,13 @@ export const PlayerDashboardContainer = styled.section`
 `;
 
 export const BannerContainer = styled.section`
-  ${({ theme }) => css`
+  ${({ theme, backgroundimagesrc }) => css`
   background: linear-gradient(
    to bottom,
    rgba(0, 0, 0, 0.5),
    rgba(0, 0, 0, 1)
   ),
-  url('https://cdn.discordapp.com/attachments/1242525965595181209/1244735534274842634/dirty-soccer-ball-wet-grass-field-generated-by-ai.jpg?ex=66582c0d&is=6656da8d&hm=21fffae7f500ec50a631c916c01e20ceaa5d2b88e03274c3e7e70cadc8724c39&');
+  url(${backgroundimagesrc});
 
     background-position: center;
     background-size: cover;

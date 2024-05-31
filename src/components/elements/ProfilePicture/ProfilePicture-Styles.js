@@ -2,8 +2,8 @@ import styled, { css } from 'styled-components';
 
 export const ProfilePictureElement = styled.div`
   ${({ theme }) => css`
-      width: 250px;
-      height: 250px;
+      width: 230px;
+      height: 230px;
       padding: ${theme.spacings.small};
       position: relative;
       border-radius: 50%; 
@@ -56,8 +56,8 @@ export const Badge = styled.div`
       right: 0px;
 
       > img {
-        height: 35px;
-        width: 35px;
+        height: 30px;
+        width: 30px;
         margin-right: 37px;
         margin-bottom: 20px;
 

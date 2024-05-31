@@ -16,7 +16,7 @@ export const Name = styled.h1`
   ${({ theme }) => css`
     color: ${theme.colors.black};
     font-family: ${theme.fonts.primary};
-    font-size: ${theme.sizes.xxlarge};
+    font-size: ${theme.sizes.xlarge};
     font-weight: 800;
     text-transform: uppercase;
 

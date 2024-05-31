@@ -10,7 +10,6 @@ export const NavContainer = styled.nav`
      padding: ${theme.spacings.medium};
 
      @media ${theme.medias.tablet} {
-      flex-direction: column;
      }
   `}
 `;

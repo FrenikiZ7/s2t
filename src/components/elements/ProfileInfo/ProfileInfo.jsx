@@ -4,11 +4,10 @@ import * as Styled from './ProfileInfo-Styles';
 import { GridTwoColumn } from '../../GridTwoColumn/GridTwoColumn';
 
 export function ProfileInfo({ items }) {
-  console.log(items);
   return (
     <GridTwoColumn>
       {items.map((item) => (
-        <Styled.ProfileInfoElement>
+        <Styled.ProfileInfoElement key={item.title}>
           <Styled.InfoTitle>{item.title}</Styled.InfoTitle>
           <Styled.Info>{item.info}</Styled.Info>
         </Styled.ProfileInfoElement>

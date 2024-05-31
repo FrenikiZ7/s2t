@@ -12,5 +12,13 @@ export const ProfileHeaderContainer = styled.header`
      align-content: center;
      background-image: linear-gradient(to right, ${theme.colors.secondary}, ${theme.colors.primary});
      transition: background-image 500ms ease-in-out, background-color 500ms ease-in-out;
+  
+     @media (max-width: 1244px) {
+      border-radius: 0px;
+     }
+
+     @media ${theme.medias.tablet} {
+      display: none;
+     }
   `}
 `;

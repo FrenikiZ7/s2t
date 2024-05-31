@@ -58,12 +58,22 @@ export const slideOut = keyframes`
   }
 `;
 
-export const darkFade = keyframes`
+export const fadeIn = keyframes`
   from {
-    backdrop-filter: blur(0.5px) brightness(0.4) contrast(1.2);
+    opacity: 0;
 
   }
   to {
-    backdrop-filter: blur(0) brightness(1) contrast(1);
+    opacity: 1;
+  }
+`;
+
+export const fadeOut = keyframes`
+  from {
+    opacity: 1;
+
+  }
+  to {
+    opacity: 0;
   }
 `;
