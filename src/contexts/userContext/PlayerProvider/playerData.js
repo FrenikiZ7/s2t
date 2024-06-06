@@ -1,6 +1,10 @@
 // armazena todos os dados do atleta
 export const playerData = {
 
+  type: {
+    gender: 'male',
+    category: 'professional',
+  },
   // dados gerais do perfil
   profile:
   {
@@ -19,8 +23,12 @@ export const playerData = {
         { title: 'Idade', info: 32 },
         { title: 'Local de nascimento', info: 'Mogi das cruzes' },
         { title: 'Nacionalidade', info: 'Brasil' },
+        { title: 'Gênero', info: 'Masculino' },
         { title: 'Altura', info: '1,72M' },
-        { title: 'Perna boa', info: 'Direita' },
+        { title: 'Peso', info: '75 KG' },
+        { title: 'Melhor perna', info: 'Direita' },
+        { title: 'Posição Principal', info: 'Ponta Esquerda' },
+        { title: 'Posição Secundária', info: 'Centroavante' },
       ],
 
     // Fotos ou vídeos no perfil do usuário
@@ -255,6 +263,14 @@ export const playerData = {
       title: 'Eventos',
       islocked: true,
       path: '/events',
+    },
+
+    {
+      id: '8',
+      src: '/assets/images/benefits/exchange.png',
+      title: 'Inglês',
+      islocked: true,
+      path: '/english',
     },
   ],
 

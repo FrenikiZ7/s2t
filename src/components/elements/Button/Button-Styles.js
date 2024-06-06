@@ -14,7 +14,7 @@ export const ButtonElement = styled.button`
     border-radius: 10px;
     text-transform:uppercase;
 
-    transition: all 700ms ease-in-out;
+    transition: all 800ms ease-in-out;
 
     &:hover{
       color: ${texthover};

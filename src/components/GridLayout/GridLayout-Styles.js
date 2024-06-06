@@ -7,7 +7,7 @@ export const GridLayoutContainer = styled.div`
     display: grid;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: ${theme.spacings.xsmall};
+    gap: ${theme.spacings.xxsmall};
 
     @media ${theme.medias.smallpc} {
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));

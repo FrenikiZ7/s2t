@@ -38,7 +38,7 @@ export function Login() {
             name="email_input"
             id="email_input"
             placeholder="Seu email"
-            onChange={(e) => setEmail(e.target.value)}
+            onchange={(e) => setEmail(e.target.value)}
             value={email}
           />
 
@@ -47,7 +47,7 @@ export function Login() {
             name="password_input"
             id="password_input"
             placeholder="Sua senha"
-            onChange={(e) => setPassword(e.target.value)}
+            onchange={(e) => setPassword(e.target.value)}
             value={password}
           />
 
@@ -56,7 +56,7 @@ export function Login() {
             name="confirm_password_input"
             id="confirm_password_input"
             placeholder="Confirme sua senha"
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            onchange={(e) => setConfirmPassword(e.target.value)}
             value={confirmPassword}
           />
 

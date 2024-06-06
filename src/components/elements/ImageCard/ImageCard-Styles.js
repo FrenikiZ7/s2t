@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { fadeIn } from '../../../styles/animations';
+import { LinkContainer } from '../StyledLink/StyledLink-Styles';
 
 export const ImageCardElement = styled.div`
   ${({ theme, islocked }) => css`
@@ -14,11 +15,15 @@ export const ImageCardElement = styled.div`
   transition: all 500ms ease-in-out;
   animation: ${fadeIn} 500ms ease-out;
 
+  ${LinkContainer} {
+    width: 100%;
+    height: 100%;
+  }
+
 
   &:hover {
 
-
-    > h2 {
+    & h2 {
       color: ${theme.colors.tertiary};
       background-color: ${theme.colors.mediumblack};
     }

@@ -13,6 +13,8 @@ export const ProfileHeaderContainer = styled.header`
      background-image: linear-gradient(to right, ${theme.colors.secondary}, ${theme.colors.primary});
      transition: background-image 500ms ease-in-out, background-color 500ms ease-in-out;
   
+     border: ${theme.borders.white};
+     box-shadow: 0px 0px 5px 1px ${theme.colors.white};
      @media (max-width: 1244px) {
       border-radius: 0px;
      }

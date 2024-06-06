@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
 import * as Styled from './PlayerDashboard-Styles';
 import { PlayerContext } from '../../../contexts/userContext/PlayerProvider/PlayerContext';
 import { theme } from '../../../styles/theme';
@@ -15,10 +16,13 @@ import { Button } from '../../../components/elements/Button/Button';
 import { S2tProvider } from '../../../contexts/s2tContext/S2tProvider';
 import { S2tContext } from '../../../contexts/s2tContext/S2tContext';
 import { PlayerProvider } from '../../../contexts/userContext/PlayerProvider/PlayerProvider';
+import { MobileMenu } from '../../../components/MobileMenu/MobileMenu';
+import { FloatingIcon } from '../../../components/elements/FloatingIcon/FloatingIcon';
 
 export function PlayerDashboard() {
   const playerContext = useContext(PlayerContext);
   const { playerState, playerDispatch } = playerContext;
+  const [menuVisibility, setMenuVisibility] = useState(false);
 
   return (
     <Styled.PlayerDashboardContainer>
@@ -31,7 +35,7 @@ export function PlayerDashboard() {
         <ProfileName name={playerState.profile.banner.name} />
         <Button
           path="/player-dashboard/profile-edit"
-          text="Editar"
+          text="Editar Perfil"
           bgcolor={theme.colors.primary}
           bghover={theme.colors.black}
           textcolor={theme.colors.black}
@@ -41,18 +45,23 @@ export function PlayerDashboard() {
         />
       </Styled.BannerContainer>
 
-      <ProfileHeader>
-        <Nav>
-          <StyledLink path="/" text="Home" color={theme.colors.white} hovercolor={theme.colors.black} />
-          <StyledLink path="/player-dashboard/profile" text="Perfil" color={theme.colors.white} hovercolor={theme.colors.black} />
-          <StyledLink path="/player-dashboard/opportunities" text="Oportunidades" color={theme.colors.white} hovercolor={theme.colors.black} />
-          <StyledLink path="/player-dashboard/scouts" text="Scouts" color={theme.colors.white} hovercolor={theme.colors.black} />
-          <StyledLink path="/player-dashboard/clubs" text="Clubes" color={theme.colors.white} hovercolor={theme.colors.black} />
-          <StyledLink path="/player-dashboard/partners" text="Parceiros" color={theme.colors.white} hovercolor={theme.colors.black} />
-          <StyledLink path="/player-dashboard/contacts" text="Contatos" color={theme.colors.white} hovercolor={theme.colors.black} />
-          <StyledLink path="/player-dashboard/friends" text="Amigos" color={theme.colors.white} hovercolor={theme.colors.black} />
-        </Nav>
-      </ProfileHeader>
+      {/* Aparece apenas em telas maiores que 768px */}
+      <ProfileHeader />
+
+      {/* Aparece apenas em telas menores que 768px */}
+      {menuVisibility ? (
+        <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)} />
+      ) : (
+        <FloatingIcon
+          icon={(
+            <MenuIcon
+              aria-label="Menu"
+              title="Menu"
+            />
+          )}
+          onclick={() => setMenuVisibility(!menuVisibility)}
+        />
+      )}
 
       <S2tProvider>
         <PlayerProvider>

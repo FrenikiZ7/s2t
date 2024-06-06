@@ -6,6 +6,21 @@ const GlobalStyles = createGlobalStyle`
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+
+      &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.colors.lightgray}; 
+      border-radius: 0px 15px 15px 0px; 
+
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: ${({ theme }) => theme.colors.transparent}
+      border-radius: 0px 15px 15px 0px; 
+    }
     }
     
 
@@ -66,6 +81,8 @@ const GlobalStyles = createGlobalStyle`
 .swiper-scrollbar {
   background: ${({ theme }) => theme.colors.white};
 }
+
+
 
 `;
 

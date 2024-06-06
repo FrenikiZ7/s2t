@@ -2,17 +2,19 @@ import Prop from 'prop-types';
 import React from 'react';
 import * as Styled from './ProfileInfo-Styles';
 import { GridTwoColumn } from '../../GridTwoColumn/GridTwoColumn';
+import { InfoInRow } from '../InfoInRow/InfoInRow';
+import { Button } from '../Button/Button';
+import { theme } from '../../../styles/theme';
 
 export function ProfileInfo({ items }) {
   return (
-    <GridTwoColumn>
-      {items.map((item) => (
-        <Styled.ProfileInfoElement key={item.title}>
-          <Styled.InfoTitle>{item.title}</Styled.InfoTitle>
-          <Styled.Info>{item.info}</Styled.Info>
-        </Styled.ProfileInfoElement>
-      ))}
-    </GridTwoColumn>
+    <Styled.ProfileInfoElement>
+      <GridTwoColumn>
+        {items.map((item) => (
+          <InfoInRow key={item.title} infotitle={item.title} info={item.info} uppercase />
+        ))}
+      </GridTwoColumn>
+    </Styled.ProfileInfoElement>
   );
 }
 

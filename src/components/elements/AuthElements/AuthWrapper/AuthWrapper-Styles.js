@@ -47,7 +47,8 @@ export const AuthContainer = styled.div`
   align-items: center;
   gap: 25px;
 
-  width: 400px;
+  width: 700px;
+  height: 100%;
   padding: 25px;
 
   transition: all 500ms ease-in-out;

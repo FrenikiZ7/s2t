@@ -23,6 +23,7 @@ import { Friends } from './layout/Dashboards/Components/Friends/Friends';
 import { S2tProvider } from './contexts/s2tContext/S2tProvider';
 import { Scouts } from './layout/Dashboards/Components/Scouts/Scouts';
 import { Clubs } from './layout/Dashboards/Components/Clubs/Clubs';
+import { Opportunities } from './layout/Dashboards/Components/Opportunities/Opportunities';
 
 register();
 
@@ -47,12 +48,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               {/* Rota do dashboard + subrotas dele */}
               <Route path="/player-dashboard/" element={<PlayerDashboard />}>
                 <Route path="profile" element={<Profile />} />
-                <Route path="profile-edit" element={<h1>Editar Perfil</h1>} />
-                <Route path="opportunities" element={<h1>oportunidades</h1>} />
+                <Route path="profile-edit" element={<h1>Em construção... :)</h1>} />
+                <Route path="opportunities" element={<Opportunities />} />
                 <Route path="scouts" element={<Scouts />} />
                 <Route path="clubs" element={<Clubs />} />
-                <Route path="partners" element={<h1>Parceiros</h1>} />
-                <Route path="contacts" element={<h1>Contatos</h1>} />
+                <Route path="partners" element={<h1>Em construção... :)</h1>} />
+                <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                 <Route path="friends" element={<Friends />} />
               </Route>
 

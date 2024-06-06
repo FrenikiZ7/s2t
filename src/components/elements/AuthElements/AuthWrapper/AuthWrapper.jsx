@@ -5,9 +5,7 @@ import * as Styled from './AuthWrapper-Styles';
 export function AuthWrapper({ children }) {
   return (
     <Styled.AuthWrapper>
-      <Styled.AuthContainer>
-        {children}
-      </Styled.AuthContainer>
+      {children}
     </Styled.AuthWrapper>
   );
 }

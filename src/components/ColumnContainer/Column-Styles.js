@@ -6,9 +6,6 @@ export const ColumnContainer = styled.section`
       color: white;
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      padding: ${theme.spacings.small};
-
-
+      gap: ${theme.spacings.medium};
   `}
 `;

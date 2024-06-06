@@ -49,7 +49,7 @@ export function Slide({
           <SwiperSlide key={item.id}>
             <ImageCard
               src={item.src}
-              alt="teste"
+              alt="Benefício"
               title={item.title}
               islocked={item.islocked}
               path={item.islocked ? '/plans' : item.path}

@@ -1,5 +1,13 @@
 import styled, { css } from 'styled-components';
 
+export const AuthInputContainer = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    color: ${theme.colors.lightgray};
+  `}
+`;
+
 export const AuthInputElement = styled.input`
   ${({ theme }) => css`
     background: ${theme.colors.transparent};
@@ -7,7 +15,7 @@ export const AuthInputElement = styled.input`
     border-radius: 7px;
     color: ${theme.colors.white};
 
-    font-size: ${theme.sizes.large};
+    font-size: ${theme.sizes.small};
     font-family: ${theme.fonts.primary};
   
 
@@ -15,7 +23,6 @@ export const AuthInputElement = styled.input`
     padding: 8px 12px;
     transition: all 300ms ease-in-out;
     
-
     &:hover {
       border: ${theme.borders.tertiary};
     }

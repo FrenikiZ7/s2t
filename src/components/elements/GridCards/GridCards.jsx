@@ -13,36 +13,39 @@ export function GridCards({ items, title }) {
   const handleShowMore = () => setShowMoreItems(!showMoreItems);
 
   return (
-    <Styled.GridCardsContainer>
-
+    <Styled.GridCardsWrapper>
       <Title text={title} uppercase />
 
-      <GridLayoutContainer>
-        {itemsToShow.map((item) => (
-          <ItemContainer key={item.id}>
-            <ImageCard
-              src={item.profileImageSrc}
-              title={item.name}
-              path={item.path}
-            />
-          </ItemContainer>
-        ))}
-      </GridLayoutContainer>
+      <Styled.GridCardsContainer>
 
-      {items?.length > 10 && (
+        <GridLayoutContainer>
+          {itemsToShow.map((item) => (
+            <ItemContainer key={item.id}>
+              <ImageCard
+                src={item.profileImageSrc}
+                title={item.name}
+                path={item.path}
+              />
+            </ItemContainer>
+          ))}
+        </GridLayoutContainer>
 
-      <Button
-        onclick={handleShowMore}
-        text={showMoreItems ? 'Mostrar menos' : 'Mostrar mais'}
-        bgcolor={theme.colors.black}
-        bghover={theme.colors.white}
-        textcolor={theme.colors.white}
-        texthover={theme.colors.black}
-        border={theme.colors.white}
-        borderhover={theme.colors.white}
-      />
-      )}
-    </Styled.GridCardsContainer>
+        {items?.length > 10 && (
+
+        <Button
+          onclick={handleShowMore}
+          text={showMoreItems ? 'Mostrar menos' : 'Mostrar mais'}
+          bgcolor={theme.colors.black}
+          bghover={theme.colors.white}
+          textcolor={theme.colors.white}
+          texthover={theme.colors.black}
+          border={theme.colors.white}
+          borderhover={theme.colors.white}
+        />
+        )}
+      </Styled.GridCardsContainer>
+    </Styled.GridCardsWrapper>
+
   );
 }
 

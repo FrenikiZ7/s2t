@@ -10,5 +10,6 @@ export const AuthFormContainer = styled.form`
 
     margin: 0 auto;
     width: 100%;
+    
   `}
 `;
