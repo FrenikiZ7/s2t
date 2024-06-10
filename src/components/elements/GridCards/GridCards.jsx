@@ -9,7 +9,7 @@ import { Button } from '../Button/Button';
 
 export function GridCards({ items, title }) {
   const [showMoreItems, setShowMoreItems] = useState(false);
-  const itemsToShow = showMoreItems ? items : items.slice(0, 10);
+  const itemsToShow = showMoreItems ? items : items.slice(0, 12);
   const handleShowMore = () => setShowMoreItems(!showMoreItems);
 
   return (
@@ -30,7 +30,7 @@ export function GridCards({ items, title }) {
           ))}
         </GridLayoutContainer>
 
-        {items?.length > 10 && (
+        {items?.length > 12 && (
 
         <Button
           onclick={handleShowMore}

@@ -1,10 +1,17 @@
 import styled, { css } from 'styled-components';
+import { fadeIn } from '../../../../styles/animations';
 
-export const AuthInputContainer = styled.div`
+export const AuthInputContainer = styled.label`
   ${({ theme }) => css`
+    animation: ${fadeIn} 500ms;
     display: flex;
     flex-direction: column;
     color: ${theme.colors.lightgray};
+    font-size: ${theme.sizes.medium};
+
+    @media ${theme.medias.mobile} {
+      font-size: ${theme.sizes.small};
+    }
   `}
 `;
 
@@ -19,8 +26,7 @@ export const AuthInputElement = styled.input`
     font-family: ${theme.fonts.primary};
   
 
-    height: 45px;
-    padding: 8px 12px;
+    padding: ${theme.spacings.small};
     transition: all 300ms ease-in-out;
     
     &:hover {
@@ -36,8 +42,8 @@ export const AuthInputElement = styled.input`
       outline: none;
     }
 
-    @media ${theme.medias.medium} {
-      font-size: ${theme.sizes.small};
+    @media ${theme.medias.mobile} {
+      font-size: ${theme.sizes.xsmall};
     }
   `}
 `;

@@ -3,14 +3,18 @@ import React from 'react';
 import * as Styled from './AuthRadio-Styles';
 
 export function AuthRadio({
-  title, options, groupname,
+  title, options, groupname, required,
 }) {
   return (
     <Styled.AuthRadioContainer>
-      <Styled.AuthRadioTitle>{title}</Styled.AuthRadioTitle>
+      <Styled.AuthRadioTitle>
+        {title}
+        {' '}
+        (Obrigatório)
+      </Styled.AuthRadioTitle>
       {options.map((option) => (
-        <Styled.AuthRadioElement>
-          <Styled.AuthRadioInput type="radio" name={groupname} id={option.value} value={option.value} required />
+        <Styled.AuthRadioElement key={option.value}>
+          <Styled.AuthRadioInput type="radio" name={groupname} id={option.value} value={option.value} required={required} />
           <Styled.AuthRadioLabel htmlFor={option.value}>{option.label}</Styled.AuthRadioLabel>
         </Styled.AuthRadioElement>
       ))}
@@ -28,4 +32,5 @@ AuthRadio.propTypes = {
   ).isRequired,
   title: Prop.string.isRequired,
   groupname: Prop.string.isRequired,
+  required: Prop.bool,
 };

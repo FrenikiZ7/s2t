@@ -18,6 +18,8 @@ export const theme = {
 
     shadow: '#0000001a',
     transparent: 'transparent',
+
+    lightred: '#FF5B5B',
   },
 
   borders: {

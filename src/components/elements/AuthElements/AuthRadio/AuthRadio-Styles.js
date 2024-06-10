@@ -7,6 +7,7 @@ export const AuthRadioContainer = styled.div`
      gap: ${theme.spacings.small};
      font-family: ${theme.fonts.primary};
      margin-bottom: ${theme.spacings.xsmall};
+
   `}
 `;
 
@@ -17,6 +18,8 @@ export const AuthRadioElement = styled.div`
      align-items: center;
      gap: ${theme.spacings.xxsmall};
      font-family: ${theme.fonts.primary};
+     cursor: pointer;
+     user-select: none;
   `}
 `;
 
@@ -25,6 +28,10 @@ export const AuthRadioTitle = styled.h3`
     font-weight: 400; 
     color: ${theme.colors.lightgray};
     font-size: ${theme.sizes.medium};
+
+    @media ${theme.medias.mobile} {
+    font-size: ${theme.sizes.small};
+    }
   `}
 `;
 
@@ -38,6 +45,7 @@ export const AuthRadioInput = styled.input`
     border-radius: 50%;
     outline: none;
     cursor: pointer;
+    user-select: none;
 
     &:checked::before {
       opacity: 1;
@@ -64,5 +72,11 @@ export const AuthRadioLabel = styled.label`
     color: ${theme.colors.lightgray};
     font-size: ${theme.sizes.small};
     text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+
+    @media ${theme.medias.mobile} {
+    font-size: ${theme.sizes.xsmall};
+    }
   `}
 `;

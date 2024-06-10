@@ -2,18 +2,16 @@ import styled, { css } from 'styled-components';
 
 export const AuthHistoricContainer = styled.div`
   ${({ theme }) => css`
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: ${theme.spacings.small};
+  `}
+`;
 
-    @media ${theme.medias.tablet} {
-      width: 100%;
-    }
-
-    > h4 {
-      color: white;
-      font-weight: 400;
-    }
+export const AuthHistoricTitle = styled.h4`
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+    font-weight: 400;
   `}
 `;

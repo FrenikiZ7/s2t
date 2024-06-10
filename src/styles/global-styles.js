@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
       padding: 0;
       box-sizing: border-box;
 
-      &::-webkit-scrollbar {
+     &::-webkit-scrollbar {
       width: 7px;
     }
 

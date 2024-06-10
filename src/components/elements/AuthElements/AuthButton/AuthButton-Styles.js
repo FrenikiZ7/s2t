@@ -11,8 +11,7 @@ export const AuthButtonElement = styled.input`
     font-family: ${theme.fonts.primary};
     font-weight: 600;
 
-    height: 45px;
-    padding: 8px 12px;
+    padding: ${theme.spacings.medium};
 
     transition: all 400ms ease-in-out;
 
@@ -22,6 +21,7 @@ export const AuthButtonElement = styled.input`
 
     @media ${theme.medias.mobile} {
       font-size: ${theme.sizes.small};
+      padding: ${theme.spacings.small};
     }
   `}
 `;

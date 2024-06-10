@@ -4,40 +4,48 @@ import * as Styled from './AuthHistoric-Styles';
 import { AuthInput } from '../AuthInput/AuthInput';
 import { theme } from '../../../../styles/theme';
 import { Button } from '../../Button/Button';
+import { AuthCheckbox } from '../AuthCheckbox/AuthCheckbox';
+import { AuthInfo } from '../AuthInfo/AuthInfo';
 
-export function AuthHistoric({ children }) {
+export function AuthHistoric({
+  title = '', id, inputtitle, placeholder,
+}) {
   return (
     <Styled.AuthHistoricContainer>
 
-      <h4>Histórico de clubes</h4>
+      <Styled.AuthHistoricTitle>
+        {title}
+        {' '}
+        (Opcional)
+      </Styled.AuthHistoricTitle>
+
+      <AuthInfo text="Exemplo" />
+
       <AuthInput
         type="text"
-        name="club_input"
-        id="club_input"
-        placeholder="Nome do clube"
-        title="Clube"
+        name={`${id}_input`}
+        id={`${id}_input`}
+        placeholder={placeholder}
+        title={inputtitle}
       />
 
       <AuthInput
-        type="number"
-        name="earliestYear_input"
-        id="earliestYear_input"
+        type="date"
+        name={`${id}EarliestYear_input`}
+        id={`${id}EarliestYear_input`}
         placeholder="Ano de entrada"
         title="Entrada"
       />
 
       <AuthInput
-        type="number"
-        name="latestYear_input"
-        id="latestYear_input"
+        type="date"
+        name={`${id}LatestYear_input`}
+        id={`${id}LatestYear_input`}
         placeholder="Ano de saída"
         title="Saída"
       />
 
-      <label>
-        <input type="checkbox" name="club" value="atual" />
-        Atual Clube
-      </label>
+      <AuthCheckbox id={`isActual${id}`} value="ActualClub" text={`Atual ${inputtitle}`} />
 
       <Button
         text="Adicionar"
@@ -54,5 +62,8 @@ export function AuthHistoric({ children }) {
 }
 
 AuthHistoric.propTypes = {
-  children: Prop.node.isRequired,
+  title: Prop.string,
+  inputtitle: Prop.string,
+  placeholder: Prop.string,
+  id: Prop.string.isRequired,
 };

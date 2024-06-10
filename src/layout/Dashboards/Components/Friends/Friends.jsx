@@ -3,13 +3,10 @@ import * as Styled from './Friends-Styles';
 import { PlayerContext } from '../../../../contexts/userContext/PlayerProvider/PlayerContext';
 import { GridCards } from '../../../../components/elements/GridCards/GridCards';
 
-export function Friends() {
-  const playerContext = useContext(PlayerContext);
-  const { playerState, playerDispatch } = playerContext;
-
+export function Friends({ friends }) {
   return (
     <Styled.FriendsContainer>
-      <GridCards title="Amigos" items={playerState.friends} />
+      <GridCards title="Amigos" items={friends} />
     </Styled.FriendsContainer>
   );
 }

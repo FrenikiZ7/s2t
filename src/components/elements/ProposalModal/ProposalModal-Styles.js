@@ -58,6 +58,7 @@ export const ProposalModalElement = styled.div`
      }
 
      ${RowContainer} {
+      justify-content: space-between;
       @media ${theme.medias.smallpc} {
         flex-direction: row;
       }
@@ -89,7 +90,9 @@ export const CloseDiv = styled.div`
       & svg {
       width: 40px;
       height: 100%;
-      position: relative;
+    
+      top: 0;
+      right: 0;
       margin-bottom: 3px;
 
       @media ${theme.medias.mobile} {

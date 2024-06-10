@@ -43,8 +43,19 @@ export function Home() {
           />
 
           <Button
-            text="Dashboard"
+            text="Dashboard - Jogador"
             path="/player-dashboard"
+            bgcolor={theme.colors.black}
+            bghover={theme.colors.primary}
+            textcolor={theme.colors.primary}
+            texthover={theme.colors.black}
+            border={theme.colors.primary}
+            borderhover={theme.colors.primary}
+          />
+
+          <Button
+            text="Dashboard - Clube"
+            path="/club-dashboard"
             bgcolor={theme.colors.black}
             bghover={theme.colors.primary}
             textcolor={theme.colors.primary}

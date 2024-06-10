@@ -29,6 +29,10 @@ export const playerData = {
         { title: 'Melhor perna', info: 'Direita' },
         { title: 'Posição Principal', info: 'Ponta Esquerda' },
         { title: 'Posição Secundária', info: 'Centroavante' },
+        { title: 'Categoria', info: 'Adulto' },
+        { title: 'TOEFL', info: 'N/A' },
+        { title: 'ACT', info: 'N/A' },
+        { title: 'SAT', info: 'N/A' },
       ],
 
     // Fotos ou vídeos no perfil do usuário

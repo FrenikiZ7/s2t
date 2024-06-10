@@ -12,15 +12,6 @@ export const GridProposalsContainer = styled.div`
    height: 100%;
    animation: ${slideIn} 500ms ease-out;
 
-   ${RowContainer}{
-    justify-content: space-between;
-   }
-
-   ${ButtonElement} {
-    margin-top: ${theme.spacings.large};
-    padding: ${theme.spacings.small};
-   }
-
    ${Title} {
 
     font-size: ${theme.sizes.small};

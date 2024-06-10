@@ -17,8 +17,8 @@ export const SubtitleElement = styled.h2`
 
      @media ${theme.medias.mobile} {
       font-size: ${theme.sizes.medium};
-      margin-bottom: 15px;
-     }
+      margin-bottom: ${theme.spacings.xsmall};
+    }
 
      @media ${theme.medias.smallmobile} {
       font-size: ${theme.sizes.small};

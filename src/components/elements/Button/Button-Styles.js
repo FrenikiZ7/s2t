@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const ButtonElement = styled.button`
   ${({
-    theme, textcolor, texthover, bgcolor, bghover, border, borderhover,
+    theme, textcolor, texthover, bgcolor, bghover, border, borderhover, active,
   }) => css`
     color: ${textcolor};
     background: ${bgcolor};
@@ -13,6 +13,7 @@ export const ButtonElement = styled.button`
     border: 1px solid ${border};
     border-radius: 10px;
     text-transform:uppercase;
+    box-shadow: ${active};
 
     transition: all 800ms ease-in-out;
 

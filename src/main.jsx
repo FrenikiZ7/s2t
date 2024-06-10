@@ -18,12 +18,24 @@ import { Register } from './layout/Register/Register';
 import { PlayerProvider } from './contexts/userContext/PlayerProvider/PlayerProvider';
 import { PlayerDashboard } from './layout/Dashboards/PlayerDashboard/PlayerDashboard';
 import { Home } from './layout/Home/Home';
-import { Profile } from './layout/Dashboards/Components/Profile/Profile';
 import { Friends } from './layout/Dashboards/Components/Friends/Friends';
 import { S2tProvider } from './contexts/s2tContext/S2tProvider';
 import { Scouts } from './layout/Dashboards/Components/Scouts/Scouts';
 import { Clubs } from './layout/Dashboards/Components/Clubs/Clubs';
 import { Opportunities } from './layout/Dashboards/Components/Opportunities/Opportunities';
+import { ProPlayer } from './layout/Register/Forms/ProPlayer/ProPlayer';
+import { PlayerRegister } from './layout/Register/components/PlayerRegister/PlayerRegister';
+import { SemiProPlayer } from './layout/Register/Forms/SemiProPlayer/SemiProPlayer';
+import { AmateurPlayer } from './layout/Register/Forms/AmateurPlayer/AmateurPlayer';
+import { EditProfile } from './layout/Dashboards/Components/EditProfile/EditProfile';
+import { Favorites } from './layout/Dashboards/Components/Favorites/Favorites';
+import { ClubDashboard } from './layout/Dashboards/ClubDashboard/ClubDashboard';
+import { playerData } from './contexts/userContext/PlayerProvider/playerData';
+import { ClubFavorites } from './layout/Dashboards/Components/ClubComponents/ClubFavorites/ClubFavorites';
+import { ClubProvider } from './contexts/userContext/ClubProvider/ClubProvider';
+import { clubData } from './contexts/userContext/ClubProvider/clubData';
+import { ClubProfile } from './layout/Dashboards/Components/ClubComponents/ClubProfile/ClubProfile';
+import { PlayerProfile } from './layout/Dashboards/Components/PlayerComponents/PlayerProfile/PlayerProfile';
 
 register();
 
@@ -35,33 +47,55 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
         <S2tProvider>
 
-          {/* Fornecendo o contexto com os dados jogador */}
           <PlayerProvider>
+            <ClubProvider>
 
-            {/* Aplicando estilos globais em todos os componentes abaixo */}
-            <GlobalStyles />
+              <GlobalStyles />
 
-            {/* Todas as rotas do site */}
-            <Routes>
-              <Route path="/" element={<Home />} />
+              <Routes>
+                <Route path="/" element={<Home />} />
 
-              {/* Rota do dashboard + subrotas dele */}
-              <Route path="/player-dashboard/" element={<PlayerDashboard />}>
-                <Route path="profile" element={<Profile />} />
-                <Route path="profile-edit" element={<h1>Em construção... :)</h1>} />
-                <Route path="opportunities" element={<Opportunities />} />
-                <Route path="scouts" element={<Scouts />} />
-                <Route path="clubs" element={<Clubs />} />
-                <Route path="partners" element={<h1>Em construção... :)</h1>} />
-                <Route path="contacts" element={<h1>Em construção... :)</h1>} />
-                <Route path="friends" element={<Friends />} />
-              </Route>
+                {/* Rota do dashboard para jogadores + subrotas dele */}
+                <Route path="/player-dashboard/" element={<PlayerDashboard />}>
+                  <Route path="profile" element={<PlayerProfile />} />
+                  <Route path="profile-edit" element={<EditProfile />} />
+                  <Route path="opportunities" element={<Opportunities />} />
+                  <Route path="scouts" element={<Scouts />} />
+                  <Route path="clubs" element={<Clubs />} />
+                  <Route path="favorites" element={<Favorites />} />
+                  <Route path="contacts" element={<h1>Em construção... :)</h1>} />
+                  <Route path="friends" element={<Friends friends={playerData.friends} />} />
+                </Route>
 
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/password-reset" element={<Home />} />
+                {/* Rota do dashboard para clubes + subrotas dele */}
+                <Route path="/club-dashboard/" element={<ClubDashboard />}>
+                  <Route path="profile" element={<ClubProfile />} />
+                  <Route path="profile-edit" element={<EditProfile />} />
+                  <Route path="my-opportunities" element={<Opportunities />} />
+                  <Route path="scouts" element={<Scouts />} />
+                  <Route path="clubs" element={<Clubs />} />
+                  <Route path="players" element={<Clubs />} />
+                  <Route path="favorites" element={<ClubFavorites />} />
+                  <Route path="contacts" element={<h1>Em construção... :)</h1>} />
+                  <Route path="friends" element={<Friends friends={clubData.friends} />} />
+                </Route>
 
-            </Routes>
+                <Route path="/register" element={<Register />} />
+
+                <Route path="/register/player" element={<PlayerRegister />}>
+                  <Route path="professional" element={<ProPlayer />} />
+                  <Route path="semi-professional" element={<SemiProPlayer />} />
+                  <Route path="amateur" element={<AmateurPlayer />} />
+                </Route>
+
+                <Route path="/register/scout" element={<p>scout</p>} />
+
+                <Route path="/login" element={<Login />} />
+                <Route path="/password-reset" element={<Home />} />
+
+              </Routes>
+
+            </ClubProvider>
           </PlayerProvider>
         </S2tProvider>
 

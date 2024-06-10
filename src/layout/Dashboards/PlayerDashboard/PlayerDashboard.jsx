@@ -10,11 +10,8 @@ import { ColumnContainer } from '../../../components/ColumnContainer/Column-Styl
 import { Slide } from '../../../components/elements/Slide/Slide';
 import { ProfileName } from '../../../components/elements/ProfileName/ProfileName';
 import { ProfileHeader } from '../../../components/ProfileHeader/ProfileHeader';
-import { Nav } from '../../../components/Nav/Nav';
-import { StyledLink } from '../../../components/elements/StyledLink/StyledLink';
 import { Button } from '../../../components/elements/Button/Button';
 import { S2tProvider } from '../../../contexts/s2tContext/S2tProvider';
-import { S2tContext } from '../../../contexts/s2tContext/S2tContext';
 import { PlayerProvider } from '../../../contexts/userContext/PlayerProvider/PlayerProvider';
 import { MobileMenu } from '../../../components/MobileMenu/MobileMenu';
 import { FloatingIcon } from '../../../components/elements/FloatingIcon/FloatingIcon';
@@ -46,11 +43,11 @@ export function PlayerDashboard() {
       </Styled.BannerContainer>
 
       {/* Aparece apenas em telas maiores que 768px */}
-      <ProfileHeader />
+      <ProfileHeader type="player" />
 
       {/* Aparece apenas em telas menores que 768px */}
       {menuVisibility ? (
-        <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)} />
+        <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)} type="player" />
       ) : (
         <FloatingIcon
           icon={(
@@ -63,13 +60,13 @@ export function PlayerDashboard() {
         />
       )}
 
-      <S2tProvider>
-        <PlayerProvider>
-          <ColumnContainer color={theme.colors.black}>
-            <Outlet />
-          </ColumnContainer>
-        </PlayerProvider>
-      </S2tProvider>
+      {/* <S2tProvider>
+        <PlayerProvider> */}
+      <ColumnContainer color={theme.colors.black}>
+        <Outlet />
+      </ColumnContainer>
+      {/* </PlayerProvider>
+      </S2tProvider> */}
 
       <Slide items={playerState.benefits} title="Meus benefícios" />
 

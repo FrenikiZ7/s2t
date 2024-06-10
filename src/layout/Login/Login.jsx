@@ -12,6 +12,7 @@ import { AuthWrapper } from '../../components/elements/AuthElements/AuthWrapper/
 import { StyledLink } from '../../components/elements/StyledLink/StyledLink';
 import { Title } from '../../components/elements/Title/Title';
 import { theme } from '../../styles/theme';
+import { AuthContainer } from '../../components/elements/AuthElements/AuthWrapper/AuthWrapper-Styles';
 
 export function Login() {
   const [email, setEmail] = useState('');
@@ -29,65 +30,69 @@ export function Login() {
     <Styled.LoginPage>
       <AuthWrapper>
 
-        <Title text="Login" size={theme.sizes.xxlarge} />
+        <AuthContainer>
 
-        <AuthForm>
+          <Title text="Login" size={theme.sizes.xxlarge} />
 
-          <AuthInput
-            type="email"
-            name="email_input"
-            id="email_input"
-            placeholder="Seu email"
-            onchange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
+          <AuthForm>
 
-          <AuthInput
-            type="password"
-            name="password_input"
-            id="password_input"
-            placeholder="Sua senha"
-            onchange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
+            <AuthInput
+              type="email"
+              name="email_input"
+              id="email_input"
+              placeholder="Seu email"
+              onchange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
 
-          <AuthInput
-            type="password"
-            name="confirm_password_input"
-            id="confirm_password_input"
-            placeholder="Confirme sua senha"
-            onchange={(e) => setConfirmPassword(e.target.value)}
-            value={confirmPassword}
-          />
+            <AuthInput
+              type="password"
+              name="password_input"
+              id="password_input"
+              placeholder="Sua senha"
+              onchange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
 
-          <AuthButton
-            name="login_submit"
-            id="login_submit"
-            value="Login"
-            onClick={handleSubmit}
-          />
+            <AuthInput
+              type="password"
+              name="confirm_password_input"
+              id="confirm_password_input"
+              placeholder="Confirme sua senha"
+              onchange={(e) => setConfirmPassword(e.target.value)}
+              value={confirmPassword}
+            />
 
-          <AuthOptions
-            checkboxtext="Lembrar login"
-            path="/"
-            pathtext="Esqueceu a senha?"
-          />
-          {/* no momento a checkbox do 'Lembrar login' é apenas estético */}
+            <AuthButton
+              name="login_submit"
+              id="login_submit"
+              value="Login"
+              onClick={handleSubmit}
+            />
 
-          <AuthRedirect
-            text="Não possui uma conta?"
-            path="/register"
-            pathtext="Registre-se"
-          />
+            <AuthOptions
+              checkboxtext="Lembrar login"
+              path="/"
+              pathtext="Esqueceu a senha?"
+            />
+            {/* no momento a checkbox do 'Lembrar login' é apenas estético */}
 
-          <StyledLink
-            text="Voltar ao menu"
-            path="/"
-            color={theme.colors.secondary}
-            hovercolor={theme.colors.tertiary}
-          />
+            <AuthRedirect
+              text="Não possui uma conta?"
+              path="/register"
+              pathtext="Registre-se"
+            />
 
-        </AuthForm>
+            <StyledLink
+              text="Voltar ao menu"
+              path="/"
+              color={theme.colors.secondary}
+              hovercolor={theme.colors.tertiary}
+            />
+
+          </AuthForm>
+        </AuthContainer>
+
       </AuthWrapper>
 
     </Styled.LoginPage>

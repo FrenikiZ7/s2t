@@ -4,7 +4,7 @@ import * as Styled from './Button-Styles';
 import { StyledLink } from '../StyledLink/StyledLink';
 
 export function Button({
-  onclick, path, text, textcolor = 'white', texthover = 'white', bgcolor = 'black', bghover = '#008EFF', border = 'black', borderhover = 'white',
+  onclick, active = false, path, text, textcolor = 'white', texthover = 'white', bgcolor = 'black', bghover = '#008EFF', border = 'black', borderhover = 'white',
 }) {
   return (
     <StyledLink path={path}>
@@ -16,6 +16,7 @@ export function Button({
         border={border}
         borderhover={borderhover}
         onClick={onclick}
+        active={active ? `0px 0px 5px 1px ${bghover}` : 'none'}
       >
         {text}
       </Styled.ButtonElement>
@@ -33,4 +34,5 @@ Button.propTypes = {
   bghover: Prop.string,
   border: Prop.string,
   borderhover: Prop.string,
+  active: Prop.bool,
 };

@@ -1,6 +1,19 @@
 // armazena todos os dados da Showcase2Transfer
 export const s2tData = {
 
+  videos: {
+    trending: [
+      { id: '1', src: '/assets/videos/video.mp4', type: 'video' },
+      { id: '2', src: '/assets/videos/video.mp4', type: 'video' },
+      { id: '3', src: '/assets/videos/video.mp4', type: 'video' },
+      { id: '4', src: '/assets/videos/video.mp4', type: 'video' },
+      { id: '5', src: '/assets/videos/video.mp4', type: 'video' },
+      { id: '6', src: '/assets/videos/video.mp4', type: 'video' },
+      { id: '7', src: '/assets/videos/video.mp4', type: 'video' },
+      { id: '8', src: '/assets/videos/video.mp4', type: 'video' },
+    ],
+  },
+
   leagues: [
     { id: '1', name: 'Brasileirão', profileImageSrc: '/assets/images/pngs/brasileirao.png' },
   ],
