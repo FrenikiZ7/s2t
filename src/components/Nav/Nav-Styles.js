@@ -8,8 +8,5 @@ export const NavContainer = styled.nav`
      gap: 20px;
      height: 100%;
      padding: ${theme.spacings.medium};
-
-     @media ${theme.medias.tablet} {
-     }
   `}
 `;

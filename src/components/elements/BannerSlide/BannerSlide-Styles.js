@@ -4,7 +4,8 @@ import { fadeIn, slideIn } from '../../../styles/animations';
 export const BannerSlideElement = styled.div`
   ${({ theme }) => css`
     animation: ${fadeIn} 500ms;
-      width: 100%;
+    position: relative;
+    width: 100%;
 
       .swiper-wrapper {
         height: 500px;

@@ -4,6 +4,10 @@ import { ButtonElement } from '../../components/elements/Button/Button-Styles.js
 import { fadeIn } from '../../styles/animations.js';
 import { SocialLinkElement } from '../../components/elements/SocialLink/SocialLink-Styles.js';
 import { TextElement } from '../../components/elements/Text/Text-Styles.js';
+import { LinkContainer } from '../../components/elements/StyledLink/StyledLink-Styles.js';
+import { NavContainer } from '../../components/Nav/Nav-Styles.js';
+import { IconContainer } from '../../components/elements/IconDiv/IconDiv-Styles.js';
+import { HeaderContainer } from '../../components/Header/Header-Styles.js';
 
 export const HomePage = styled.main`
   ${({ theme }) => css`
@@ -11,11 +15,40 @@ export const HomePage = styled.main`
   display: flex;
   flex-direction: column;
 
-  ${SocialLinkElement} {
-  
+  ${HeaderContainer} {
+
+    ${NavContainer} {
+      @media ${theme.medias.tablet} {
+      display: none;
+     }
+    }
   }
 
-  ${TextElement} {
+  ${IconContainer} {
+    display: none;
+
+    @media ${theme.medias.tablet} {
+      display: flex;
+    }
+  }
+
+  ${NavContainer} {
+    @media ${theme.medias.mobile} {
+      flex-direction: column;
+      gap: ${theme.spacings.small};
+    }
+  }
+
+  ${LinkContainer} {
+    @media ${theme.medias.tablet} {
+      font-size: ${theme.sizes.small};
+    }
+
+    @media ${theme.medias.mobile} {
+      font-size: ${theme.sizes.xsmall};
+    }
+
+
   }
 
   ${RowContainer} {

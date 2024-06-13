@@ -7,6 +7,8 @@ export const HeaderContainer = styled.header`
     display: flex;
     justify-content: space-between;
     padding: ${theme.spacings.large};
-    animation: ${slideOut} 300ms ease-out;
+    min-height: 80px;
+    z-index: 500;
+    animation: ${slideOut} 500ms ease-out;
   `}
 `;

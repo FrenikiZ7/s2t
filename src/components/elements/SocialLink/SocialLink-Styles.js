@@ -13,6 +13,14 @@ export const SocialLinkElement = styled.div`
     }
      & svg {
       width: 50px;
+
+      @media ${theme.medias.tablet} {
+        width: 40px;
+      }
+
+      @media ${theme.medias.mobile} {
+        width: 30px;
+      }
      }
   `}
 `;

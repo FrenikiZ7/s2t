@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { zoomIn } from '../../../styles/animations';
 
 export const IconContainer = styled.div`
   ${({ theme }) => css`
@@ -13,15 +14,18 @@ export const IconContainer = styled.div`
 
     
       & svg {
-      width: 100%;
-      transition: all 500ms ease-in-out ;
+        animation: ${zoomIn} 500ms;
 
-      height: 100%;
+        width: 100%;
+        transition: all 500ms ease-in-out ;
+        color: ${theme.colors.white};
 
-      &:hover {
-        color: ${theme.colors.secondary};
-        transform: scale(1.2);
-      }
+        height: 100%;
+
+        &:hover {
+          color: ${theme.colors.secondary};
+          transform: scale(1.2);
+        }
   
       }
   `}

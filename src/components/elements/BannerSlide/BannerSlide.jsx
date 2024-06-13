@@ -4,6 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
 import 'swiper/css/autoplay';
 import * as Styled from './BannerSlide-Styles';
+import { Row } from '../../RowContainer/Row';
+import { SocialLink } from '../SocialLink/SocialLink';
 
 export function BannerSlide({ items }) {
   return (

@@ -1,4 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { Close as CloseIcon, Menu } from '@styled-icons/material-outlined';
+import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
 import * as Styled from './Home-Styles';
 import { StyledLink } from '../../components/elements/StyledLink/StyledLink';
 import { theme } from '../../styles/theme';
@@ -14,10 +16,13 @@ import { Text } from '../../components/elements/Text/Text';
 import { IconDiv } from '../../components/elements/IconDiv/IconDiv';
 import { SocialLink } from '../../components/elements/SocialLink/SocialLink';
 import { Footer } from '../../components/Footer/Footer';
+import { MobileNav } from '../../components/MobileNav/MobileNav';
 
 export function Home() {
   const s2tContext = useContext(S2tContext);
   const { s2tState, s2tDispatch } = s2tContext;
+
+  const [menuVisibility, setMenuVisibility] = useState(false);
 
   return (
     <Styled.HomePage>
@@ -25,16 +30,37 @@ export function Home() {
       <Header>
         <Logo size="250px" logo="/assets/images/pngs/logo.png" />
 
+        {menuVisibility ? (
+          <IconDiv name="Menu" onclick={() => setMenuVisibility(!menuVisibility)}>
+            <CloseIcon />
+          </IconDiv>
+        ) : (
+          <IconDiv name="Fechar menu" onclick={() => setMenuVisibility(!menuVisibility)}>
+            <MenuIcon />
+          </IconDiv>
+        ) }
+
         <Nav>
           <Button
             path="/register"
-            text="Criar uma conta"
+            text="Escolha o idioma"
             bgcolor={theme.colors.darkgray}
             bghover={theme.colors.gray}
             textcolor={theme.colors.lightgray}
             texthover={theme.colors.white}
             border={theme.colors.darkgray}
             borderhover={theme.colors.gray}
+          />
+
+          <Button
+            path="/register"
+            text="Criar uma conta"
+            bgcolor={theme.colors.lightprimary}
+            bghover={theme.colors.primary}
+            textcolor={theme.colors.black}
+            texthover={theme.colors.black}
+            border={theme.colors.lightprimary}
+            borderhover={theme.colors.primary}
           />
 
           <Button
@@ -72,6 +98,44 @@ export function Home() {
         </Nav>
       </Header>
 
+      {menuVisibility && (
+      <MobileNav>
+        <Button
+          path="/register"
+          text="Escolha o idioma"
+          bgcolor={theme.colors.lightprimary}
+          bghover={theme.colors.primary}
+          textcolor={theme.colors.black}
+          texthover={theme.colors.black}
+          border={theme.colors.lightprimary}
+          borderhover={theme.colors.primary}
+        />
+
+        <Button
+          path="/register"
+          text="Criar uma conta"
+          bgcolor={theme.colors.lightprimary}
+          bghover={theme.colors.primary}
+          textcolor={theme.colors.black}
+          texthover={theme.colors.black}
+          border={theme.colors.lightprimary}
+          borderhover={theme.colors.primary}
+        />
+
+        <Button
+          path="/login"
+          text="Entrar"
+          bgcolor={theme.colors.lightprimary}
+          bghover={theme.colors.primary}
+          textcolor={theme.colors.black}
+          texthover={theme.colors.black}
+          border={theme.colors.lightprimary}
+          borderhover={theme.colors.primary}
+        />
+
+      </MobileNav>
+      )}
+
       <BannerSlide />
 
       <Row>
@@ -80,7 +144,7 @@ export function Home() {
           bgcolor={theme.colors.black}
           textcolor={theme.colors.black}
           border={theme.colors.black}
-          borderhover={theme.colors.primary}
+          borderhover={theme.colors.black}
           gradient
         />
 
@@ -89,7 +153,7 @@ export function Home() {
           bgcolor={theme.colors.black}
           textcolor={theme.colors.black}
           border={theme.colors.black}
-          borderhover={theme.colors.primary}
+          borderhover={theme.colors.black}
           gradient
         />
 
@@ -98,7 +162,7 @@ export function Home() {
           bgcolor={theme.colors.black}
           textcolor={theme.colors.black}
           border={theme.colors.black}
-          borderhover={theme.colors.primary}
+          borderhover={theme.colors.black}
           gradient
         />
       </Row>

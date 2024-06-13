@@ -20,6 +20,7 @@ import { Row } from '../../../../components/RowContainer/Row';
 import { AuthFile } from '../../../../components/elements/AuthElements/AuthFile/AuthFile';
 import { AuthAchievement } from '../../../../components/elements/AuthElements/AuthAchievement/AuthAchievement';
 import { AuthQualCheck } from '../../../../components/elements/AuthElements/AuthQualificationCheck/AuthQualCheck';
+import { AuthDropdown } from '../../../../components/elements/AuthElements/AuthDropdown/AuthDropdown';
 
 export function ProPlayer() {
   const [name, setName] = useState('');
@@ -65,6 +66,8 @@ export function ProPlayer() {
           <AuthForm>
 
             <Subtitle text="Dados" size={theme.sizes.xlarge} />
+
+            <AuthDropdown />
 
             <AuthInput
               type="name"

@@ -13,6 +13,8 @@ export function ProfileSlide({ items, title }) {
         slidesPerView={3}
         spaceBetween={15}
         navigation
+        grabCursor
+
         breakpoints={{
 
           // Breakpoint for PCs smalls screen
