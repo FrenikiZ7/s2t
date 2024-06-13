@@ -2,6 +2,7 @@ import Prop from 'prop-types';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
+import 'swiper/css/autoplay';
 import * as Styled from './BannerSlide-Styles';
 
 export function BannerSlide({ items }) {
@@ -9,23 +10,39 @@ export function BannerSlide({ items }) {
     <Styled.BannerSlideElement>
       <Swiper
         slidesPerView={1}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: true,
+        }}
+        grabCursor
         navigation
         pagination
+        loop
       >
         <SwiperSlide>
-          <img src="assets/images/field-background.jpg" alt="" />
+          <Styled.BannerContainer>
+            <img src="assets/images/backgrounds/slider-bg-1.png" alt="" />
+          </Styled.BannerContainer>
+
         </SwiperSlide>
 
         <SwiperSlide>
-          <img src="assets/images/field-background.jpg" alt="" />
+          <Styled.BannerContainer>
+            <img src="assets/images/backgrounds/slider-bg-2.png" alt="" />
+          </Styled.BannerContainer>
         </SwiperSlide>
 
         <SwiperSlide>
-          <img src="assets/images/field-background.jpg" alt="" />
+          <Styled.BannerContainer>
+            <img src="assets/images/backgrounds/slider-bg-1.png" alt="" />
+          </Styled.BannerContainer>
+
         </SwiperSlide>
 
         <SwiperSlide>
-          <img src="assets/images/field-background.jpg" alt="" />
+          <Styled.BannerContainer>
+            <img src="assets/images/backgrounds/slider-bg-2.png" alt="" />
+          </Styled.BannerContainer>
         </SwiperSlide>
       </Swiper>
     </Styled.BannerSlideElement>

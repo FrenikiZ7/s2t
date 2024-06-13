@@ -3,44 +3,45 @@ import React from 'react';
 import * as Styled from './ProposalCard-Styles';
 import { StyledLink } from '../StyledLink/StyledLink';
 import { InfoInRow } from '../InfoInRow/InfoInRow';
+import { CenterColumn } from '../../CenterColumn/CenterColumn';
+import { Subtitle } from '../Subtitle/Subtitle';
+import { Text } from '../Text/Text';
 
 export function ProposalCard({
-  from, date, opportunity, country, org, orglogo, orgpath, category, onclick,
+  from = '', date = '', opportunity = '', country = '', org = '', orglogo = '', orgpath = '', category = '', onclick,
 }) {
   return (
     <Styled.ProposalCardElement onClick={onclick}>
 
-      <StyledLink>
-        <Styled.ProposalImage src={orglogo} alt="Logo da organização" />
-      </StyledLink>
+      <Styled.ProposalImage src={orglogo} alt="Logo da organização" />
 
-      <Styled.ProposalDiv>
+      <CenterColumn>
 
-        <InfoInRow infotitle="Pedido de" info={from} />
-        <InfoInRow infotitle="Publicada em" info={date} />
-        <InfoInRow infotitle="Categoria" info={category} />
+        {from && <InfoInRow infotitle="Pedido de" info={from} />}
+        {date && <InfoInRow infotitle="Publicada em" info={date} />}
+        {category && <InfoInRow infotitle="Categoria" info={category} />}
 
-      </Styled.ProposalDiv>
+      </CenterColumn>
 
-      <Styled.ProposalTitle>{opportunity}</Styled.ProposalTitle>
+      {opportunity && <Subtitle text={opportunity} uppercase />}
 
-      <Styled.ProposalDiv>
-        <Styled.ProposalText>{country}</Styled.ProposalText>
-        <StyledLink path={orgpath} text={org} />
-      </Styled.ProposalDiv>
+      <CenterColumn>
+        {country && <Text text={country} />}
+        {org && <StyledLink path={orgpath} text={org} />}
+      </CenterColumn>
 
     </Styled.ProposalCardElement>
   );
 }
 
 ProposalCard.propTypes = {
-  from: Prop.string.isRequired,
-  date: Prop.string.isRequired,
-  opportunity: Prop.string.isRequired,
-  country: Prop.string.isRequired,
-  org: Prop.string.isRequired,
-  orglogo: Prop.string.isRequired,
-  orgpath: Prop.string.isRequired,
-  category: Prop.string.isRequired,
+  from: Prop.string,
+  date: Prop.string,
+  opportunity: Prop.string,
+  country: Prop.string,
+  org: Prop.string,
+  orglogo: Prop.string,
+  orgpath: Prop.string,
+  category: Prop.string,
   onclick: Prop.func,
 };

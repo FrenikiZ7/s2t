@@ -25,22 +25,5 @@ export const GridCardsContainer = styled.div`
    }
 
 
-   ${Title} {
-
-    font-size: ${theme.sizes.small};
-
-    @media ${theme.medias.smallpc} {
-      font-size: ${theme.sizes.small};
-    }
-
-    @media ${theme.medias.tablet} {
-      font-size: ${theme.sizes.xsmall};
-    }
-
-    @media ${theme.medias.mobile} {
-      font-size: ${theme.sizes.xxsmall};
-    }
-   }
-
   `}
 `;

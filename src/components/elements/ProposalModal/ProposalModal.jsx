@@ -12,6 +12,7 @@ import { Text } from '../Text/Text';
 import { ColumnContainer } from '../../ColumnContainer/Column-Styles';
 import { TextArea } from '../TextArea/TextArea';
 import { Row } from '../../RowContainer/Row';
+import { IconDiv } from '../IconDiv/IconDiv';
 
 export function ProposalModal({
   from, date, opportunity, country, org, category, description, requirements, minpayment, maxpayment, onclick,
@@ -30,13 +31,12 @@ export function ProposalModal({
       <Row>
         <Title text="Oportunidade" uppercase />
 
-        <Styled.CloseDiv>
-          <CloseIcon
-            onClick={onclick}
-            aria-label="Fechar proposta"
-            title="Fechar proposta"
-          />
-        </Styled.CloseDiv>
+        <IconDiv
+          onclick={onclick}
+          name="Fechar proposta"
+        >
+          <CloseIcon />
+        </IconDiv>
       </Row>
 
       <Subtitle text="Detalhes" uppercase />

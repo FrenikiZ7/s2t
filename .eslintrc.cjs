@@ -24,5 +24,6 @@ module.exports = {
     'linebreak-style': 'off',
     'no-unused-vars': ['off'],
     'react/require-default-props': 'off',
+    'react/jsx-no-useless-fragment': 'off',
   },
 };

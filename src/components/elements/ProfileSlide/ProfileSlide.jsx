@@ -31,7 +31,10 @@ export function ProfileSlide({ items, title }) {
       >
 
         {items.length > 0 && items.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide
+            key={item.id}
+            zoom
+          >
 
             {item.type === 'photo' ? <img src={item.src} alt={item.alt} /> : (
               <video autoPlay muted>

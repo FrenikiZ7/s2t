@@ -1,6 +1,115 @@
 // armazena todos os dados da Showcase2Transfer
 export const s2tData = {
 
+  usersType: [
+    {
+      id: 1,
+      src: '/assets/images/users/athletes.png',
+      title: 'atletas',
+      path: '/register/player/professional',
+    },
+
+    {
+      id: 2,
+      src: '/assets/images/users/scouts.png',
+      title: 'Scout',
+      path: '/register/scout',
+    },
+
+    {
+      id: 3,
+      src: '/assets/images/users/business.png',
+      title: 'Empresários',
+      path: '/register/player/professional',
+    },
+
+    {
+      id: 4,
+      src: '/assets/images/users/clubs.png',
+      title: 'Clubes',
+      path: '/register/player/professional',
+    },
+
+    {
+      id: 5,
+      src: '/assets/images/users/facultys.png',
+      title: 'Faculdades',
+      path: '/register/player/professional',
+    },
+
+    {
+      id: 6,
+      src: '/assets/images/users/leagues.png',
+      title: 'Ligas',
+      path: '/register/player/professional',
+    },
+
+    {
+      id: 7,
+      src: '/assets/images/background.png',
+      title: 'N/A',
+      path: '/register/player/professional',
+    },
+  ],
+
+  benefits: [
+    {
+      id: '1',
+      src: '/assets/images/benefits/podcast.png',
+      title: 'podcast',
+      path: '/podcast',
+    },
+
+    {
+      id: '2',
+      src: '/assets/images/benefits/tv.png',
+      title: 'Sport TV',
+      path: '/sporttv',
+    },
+
+    {
+      id: '3',
+      src: '/assets/images/benefits/investments.png',
+      title: 'Sports Invest',
+      path: '/sportsinvest',
+    },
+
+    {
+      id: '4',
+      src: '/assets/images/benefits/benefits.png',
+      title: 'Benefícios',
+      path: '/benefits',
+    },
+
+    {
+      id: '5',
+      src: '/assets/images/benefits/exchange.png',
+      title: 'Intercâmbio',
+      path: '/interchange',
+    },
+
+    {
+      id: '6',
+      src: '/assets/images/benefits/visibility.png',
+      title: 'Visibilidade',
+      path: '/visibility',
+    },
+
+    {
+      id: '7',
+      src: '/assets/images/benefits/events.png',
+      title: 'Eventos',
+      path: '/events',
+    },
+
+    {
+      id: '8',
+      src: '/assets/images/benefits/exchange.png',
+      title: 'Inglês',
+      path: '/english',
+    },
+  ],
+
   videos: {
     trending: [
       { id: '1', src: '/assets/videos/video.mp4', type: 'video' },
@@ -47,6 +156,216 @@ export const s2tData = {
       { id: '10', name: 'River Plate', profileImageSrc: '/assets/images/background.png' },
       { id: '11', name: 'XV de Piracicaba', profileImageSrc: '/assets/images/background.png' },
       { id: '12', name: 'Coritiba', profileImageSrc: '/assets/images/background.png' },
+    ],
+
+    players: [
+      {
+        playerId: 1,
+        category: 'professional',
+        name: 'Everton Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 2,
+        category: 'professional',
+        name: 'Carlos Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 3,
+        category: 'professional',
+        name: 'Cesar Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 4,
+        category: 'professional',
+        name: 'Augusto Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 5,
+        category: 'professional',
+        name: 'Everton Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 6,
+        category: 'professional',
+        name: 'Carlos Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 7,
+        category: 'professional',
+        name: 'Cesar Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 8,
+        category: 'professional',
+        name: 'Augusto Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 9,
+        category: 'professional',
+        name: 'Everton Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 10,
+        category: 'professional',
+        name: 'Carlos Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 11,
+        category: 'professional',
+        name: 'Cesar Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 12,
+        category: 'professional',
+        name: 'Augusto Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 13,
+        category: 'professional',
+        name: 'Everton Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 14,
+        category: 'professional',
+        name: 'Carlos Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 15,
+        category: 'professional',
+        name: 'Cesar Felipe',
+        age: 23,
+        position: 'Centroavante',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.70,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
+
+      {
+        playerId: 16,
+        category: 'professional',
+        name: 'Bernardo da Silva',
+        age: 32,
+        position: 'Ponta esquerda',
+        bestLeg: 'Direita',
+        weight: 80,
+        height: 1.72,
+        path: '/player-dashboard/profile',
+        profileImageSrc: '/assets/images/profile/profile.png',
+      },
     ],
   },
 

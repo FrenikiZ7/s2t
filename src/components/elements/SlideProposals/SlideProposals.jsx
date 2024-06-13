@@ -25,6 +25,7 @@ export function SlideProposals({ items, title }) {
         <Swiper
           spaceBetween={0}
           navigation
+          loop
           slidesPerView={4}
         >
           {items.map((item) => (

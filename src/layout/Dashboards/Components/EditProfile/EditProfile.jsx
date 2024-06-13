@@ -1,4 +1,4 @@
-import Prop from 'prop-types';
+// import Prop from 'prop-types';
 import React, { useContext } from 'react';
 import * as Styled from './EditProfile-Styles';
 import { AuthWrapper } from '../../../../components/elements/AuthElements/AuthWrapper/AuthWrapper';
@@ -16,7 +16,7 @@ import { AuthButton } from '../../../../components/elements/AuthElements/AuthBut
 import { theme } from '../../../../styles/theme';
 import { PlayerContext } from '../../../../contexts/userContext/PlayerProvider/PlayerContext';
 
-export function EditProfile({ children }) {
+export function EditProfile() {
   const legOptions = [
     { value: 'right', label: 'Direita' },
     { value: 'left', label: 'Esquerda' },
@@ -53,7 +53,6 @@ export function EditProfile({ children }) {
               id="name_input"
               placeholder="Seu nome completo"
               title="Nome"
-              value={playerState.profile.banner.name}
             />
 
             <AuthRadio title="Qual a sua melhor perna?" options={legOptions} groupname="legOptions" />
@@ -189,6 +188,6 @@ export function EditProfile({ children }) {
   );
 }
 
-EditProfile.propTypes = {
-  children: Prop.node.isRequired,
-};
+// EditProfile.propTypes = {
+//   children: Prop.node.isRequired,
+// };

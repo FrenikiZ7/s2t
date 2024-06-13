@@ -1,10 +1,7 @@
 import styled, { css } from 'styled-components';
 import ReactPaginate from 'react-paginate';
-import { ButtonElement } from '../Button/Button-Styles';
-import { Title } from '../ImageCard/ImageCard-Styles';
 import { fadeIn, slideIn } from '../../../styles/animations';
 import { GridLayoutContainer } from '../../GridLayout/GridLayout-Styles';
-import { RowContainer } from '../../RowContainer/Row-Styles.js';
 
 export const GridProposalsContainer = styled.div`
   ${({ theme }) => css`
@@ -12,23 +9,7 @@ export const GridProposalsContainer = styled.div`
    height: 100%;
    animation: ${slideIn} 500ms ease-out;
 
-   ${Title} {
-
-    font-size: ${theme.sizes.small};
-
-    @media ${theme.medias.smallpc} {
-      font-size: ${theme.sizes.small};
-    }
-
-    @media ${theme.medias.tablet} {
-      font-size: ${theme.sizes.xsmall};
-    }
-
-    @media ${theme.medias.mobile} {
-      font-size: ${theme.sizes.xxsmall};
-    }
-   }
-
+  
    ${GridLayoutContainer} {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     animation: ${fadeIn} 500ms;
@@ -42,7 +23,7 @@ export const GridProposalsContainer = styled.div`
     }
 
     @media ${theme.medias.mobile} {
-      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     }
     }
 

@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { slideInRight } from '../../styles/animations';
+import { LinkContainer } from '../elements/StyledLink/StyledLink-Styles';
 
 export const ProfileHeaderContainer = styled.header`
   ${({ theme }) => css`
@@ -21,6 +22,12 @@ export const ProfileHeaderContainer = styled.header`
 
      @media ${theme.medias.tablet} {
       display: none;
+     }
+
+     ${LinkContainer} {
+      @media ${theme.medias.smallpc} {
+        font-size: ${theme.sizes.small};
+      }
      }
   `}
 `;

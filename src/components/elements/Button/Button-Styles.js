@@ -2,10 +2,10 @@ import styled, { css } from 'styled-components';
 
 export const ButtonElement = styled.button`
   ${({
-    theme, textcolor, texthover, bgcolor, bghover, border, borderhover, active,
+    theme, textcolor, texthover, bgcolor, bghover, border, borderhover, active, gradient,
   }) => css`
     color: ${textcolor};
-    background: ${bgcolor};
+    background: ${gradient};
     padding: ${theme.spacings.xsmall};
     font-family: ${theme.fonts.primary};
     font-weight: 800;

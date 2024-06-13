@@ -22,8 +22,12 @@ export const LoginPage = styled.section`
      height: 100vh;
 
      ${AuthContainer} {
-      width: 450px;
-      height: 450px;
+      width: 350px;
+      height: auto;
+
+      @media ${theme.medias.tablet} {
+       width: 90%;
+      }
      }
   `}
 `;

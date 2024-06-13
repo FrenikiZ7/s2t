@@ -32,7 +32,7 @@ export function ClubDashboard() {
         />
         <ProfileName name={clubState.profile.banner.name} />
         <Button
-          path="/player-dashboard/profile-edit"
+          path="/club-dashboard/profile-edit"
           text="Editar Perfil"
           bgcolor={theme.colors.primary}
           bghover={theme.colors.black}

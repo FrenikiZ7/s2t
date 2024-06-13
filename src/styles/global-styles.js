@@ -33,8 +33,8 @@ const GlobalStyles = createGlobalStyle`
 //CSS Global para os Slides usados via Swiper
 
 .swiper-container {
-  background: blue;
 }
+
 .swiper-button-next, 
 .swiper-button-prev {
   color: ${({ theme }) => theme.colors.white};

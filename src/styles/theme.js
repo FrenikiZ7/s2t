@@ -14,11 +14,13 @@ export const theme = {
 
     gray: '#676770',
     lightgray: '#CCCDD2',
-    darkgray: '#192024',
+    darkgray: '#2F2F2F',
+    blackgray: '#0D0D0D',
 
     shadow: '#0000001a',
     transparent: 'transparent',
 
+    mediumred: '#FF4040',
     lightred: '#FF5B5B',
   },
 
@@ -39,6 +41,7 @@ export const theme = {
   },
 
   sizes: {
+    xxxsmall: '7px',
     xxsmall: '8px',
     xsmall: '10px',
     small: '13px',

@@ -66,38 +66,6 @@ export const ProposalModalElement = styled.div`
       > h1 {
         margin: auto 0;
       }
-
      }
-  `}
-`;
-
-export const CloseDiv = styled.div`
-  ${({ theme }) => css`
-      /* position: absolute;
-      top: 0px;
-      right: 10px; */
-      transition: all 500ms ease-in-out ;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      &:hover {
-        color: ${theme.colors.secondary};
-        transform: scale(1.2);
-      }
-    
-      & svg {
-      width: 40px;
-      height: 100%;
-    
-      top: 0;
-      right: 0;
-      margin-bottom: 3px;
-
-      @media ${theme.medias.mobile} {
-        width: 30px;
-      }
-      }
   `}
 `;

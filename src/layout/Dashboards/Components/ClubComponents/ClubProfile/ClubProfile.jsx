@@ -20,8 +20,8 @@ export function ClubProfile() {
       <ProfileSlide items={clubState.profile.photos} title="Fotos / Vídeos" />
 
       <Row>
-        <Historic items={clubState.profile.clubs} title="Histórico de clubes" />
-        <Historic items={clubState.profile.studies} title="Histórico acadêmico" />
+        <Historic items={clubState.profile.leagues} title="Competições em disputa" />
+        {/* <Historic items={clubState.profile.studies} title="Histórico acadêmico" /> */}
       </Row>
 
       <TextSlide items={clubState.profile.championships} title="Títulos:" />

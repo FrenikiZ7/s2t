@@ -60,7 +60,7 @@ export const LockDiv = styled.div`
     transition: all 500ms ease-in-out;
 
 
-    >img {
+    > img {
       width: 35%;
       height: 35%;
       transition: all 500ms ease-in-out;
@@ -73,7 +73,7 @@ export const Title = styled.h2`
     color: ${theme.colors.white};
     background-color: ${theme.colors.lightblack};
     border-radius: 0px 0px 15px 15px;
-    font-size: ${theme.sizes.large};
+    font-size: ${theme.sizes.medium};
     font-family: ${theme.fonts.primary};
     text-transform: uppercase;
     text-align: center;
@@ -86,12 +86,17 @@ export const Title = styled.h2`
 
     transition: all 500ms ease-in-out;
 
+
     @media ${theme.medias.smallpc} {
-      font-size: ${theme.sizes.medium};
+      font-size: ${theme.sizes.small};
     }
 
     @media ${theme.medias.tablet} {
       font-size: ${theme.sizes.xsmall};
+    }
+
+    @media ${theme.medias.mobile} {
+      font-size: ${theme.sizes.xxxsmall};
     }
 
   `}

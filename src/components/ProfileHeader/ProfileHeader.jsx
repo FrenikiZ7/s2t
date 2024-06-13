@@ -26,6 +26,7 @@ export function ProfileHeader({ type }) {
       <Nav>
         <StyledLink path="/" text="Home" color={theme.colors.white} hovercolor={theme.colors.black} />
         <StyledLink path={`/${type}-dashboard/profile`} text="Perfil" color={theme.colors.white} hovercolor={theme.colors.black} />
+        <StyledLink path={`/${type}-dashboard/my-squad`} text="Plantel" color={theme.colors.white} hovercolor={theme.colors.black} />
         <StyledLink path={`/${type}-dashboard/my-opportunities`} text="Minhas oportunidades" color={theme.colors.white} hovercolor={theme.colors.black} />
         <StyledLink path={`/${type}-dashboard/scouts`} text="Scouts" color={theme.colors.white} hovercolor={theme.colors.black} />
         <StyledLink path={`/${type}-dashboard/clubs`} text="Clubes" color={theme.colors.white} hovercolor={theme.colors.black} />

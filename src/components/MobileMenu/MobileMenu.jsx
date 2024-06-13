@@ -13,6 +13,7 @@ import {
 import { PersonSearch as PersonSearchIcon } from '@styled-icons/material-outlined/PersonSearch';
 import { HomeWork as HomeWorkIcon } from '@styled-icons/material-outlined/HomeWork';
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close';
+import { SafetyDivider as SquadIcon } from '@styled-icons/material-outlined/SafetyDivider';
 import * as Styled from './MobileMenu-Styles';
 import { StyledLink } from '../elements/StyledLink/StyledLink';
 import { theme } from '../../styles/theme';
@@ -22,7 +23,7 @@ export function MobileMenu({ onclick, type }) {
   return (
     <Styled.MobileMenuElement onClick={onclick}>
 
-      {type === 'player'(
+      {type === 'player' && (
         <GridLayout>
           <StyledLink
             path="/"
@@ -113,10 +114,10 @@ export function MobileMenu({ onclick, type }) {
 
           </StyledLink>
 
-        </GridLayout>,
+        </GridLayout>
       )}
 
-      {type === 'club'(
+      {type === 'club' && (
         <GridLayout>
           <StyledLink
             path="/"
@@ -134,6 +135,16 @@ export function MobileMenu({ onclick, type }) {
           >
             <PersonIcon />
             Perfil
+
+          </StyledLink>
+
+          <StyledLink
+            path={`/${type}-dashboard/my-squad`}
+            color={theme.colors.white}
+            hovercolor={theme.colors.primary}
+          >
+            <SquadIcon />
+            Meu Plantel
 
           </StyledLink>
 
@@ -217,13 +228,12 @@ export function MobileMenu({ onclick, type }) {
 
           </StyledLink>
 
-        </GridLayout>,
+        </GridLayout>
       )}
 
     </Styled.MobileMenuElement>
   );
 }
-
 MobileMenu.propTypes = {
   onclick: Prop.func,
   type: Prop.string.isRequired,

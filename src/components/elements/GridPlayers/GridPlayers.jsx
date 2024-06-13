@@ -1,0 +1,80 @@
+import Prop from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import * as Styled from './GridPlayers-Styles';
+import { Title } from '../Title/Title';
+import { GridLayoutContainer } from '../../GridLayout/GridLayout-Styles';
+import { UserCard } from '../UserCard/UserCard';
+
+export function GridPlayers({ title, items }) {
+  // Pagination stuff
+  const [pageNumber, setPageNumber] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(8);
+
+  const pagesVisited = pageNumber * itemsPerPage;
+  const displayItems = items.slice(pagesVisited, pagesVisited + itemsPerPage);
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
+  // Altera o itemsPerPage baseado no Width
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth < 768 ? 4 : 8);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handlePaginationClick = () => {
+    window.scrollTo({
+      top: 200,
+      behavior: 'smooth',
+    });
+  };
+
+  return (
+    <Styled.GridPlayersContainer>
+      <Title text={title} uppercase />
+
+      <GridLayoutContainer>
+        {displayItems.map((item) => (
+          <UserCard
+            path={item.path}
+            profileimage={item.profileImageSrc}
+            position={item.position}
+            age={item.age}
+            bestleg={item.bestLeg}
+            name={item.name}
+            weight={item.weight}
+            height={item.height}
+            category={item.category}
+            id={item.playerId}
+            key={item.playerId}
+          />
+        ))}
+      </GridLayoutContainer>
+
+      <Styled.Paginate
+        previousLabel="Anterior"
+        nextLabel="Próximo"
+        breakLabel="..."
+        pageCount={Math.ceil(items.length / itemsPerPage)}
+        pageRangeDisplayed={3}
+        marginPagesDisplayed={1}
+        onPageChange={changePage}
+        containerClassName="pagination"
+        pageClassName="page-item"
+        pageLinkClassName="page-link"
+        activeClassName="active"
+        onClick={handlePaginationClick}
+      />
+    </Styled.GridPlayersContainer>
+  );
+}
+
+GridPlayers.propTypes = {
+  title: Prop.string,
+  items: Prop.arrayOf(Prop.object).isRequired,
+};

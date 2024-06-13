@@ -10,7 +10,14 @@ export function Slide({
   items, title,
 }) {
   // Organiza os itens para que os que estejam bloqueados venham após os que não estejam
-  const orderedItems = [...items].sort((itemA, itemB) => (itemA.islocked ? 1 : -1));
+  const orderedItems = [...items].sort((itemA, itemB) => {
+    if (itemA.islocked && !itemB.islocked) {
+      return 1; // itemA é bloqueado, itemB não é bloqueado
+    } if (!itemA.islocked && itemB.islocked) {
+      return -1; // itemA não é bloqueado, itemB é bloqueado
+    }
+    return 0; // Ambos são bloqueados ou ambos não são bloqueados
+  });
 
   return (
     <Styled.SlideElement>
@@ -18,6 +25,8 @@ export function Slide({
       <Swiper
         spaceBetween={15}
         navigation
+        loop
+        grabCursor
         breakpoints={{
           1601: {
             slidesPerView: 7,
@@ -35,12 +44,8 @@ export function Slide({
             slidesPerView: 4,
           },
 
-          480: {
-            slidesPerView: 3,
-          },
-
           0: {
-            slidesPerView: 2,
+            slidesPerView: 3,
           },
         }}
       >

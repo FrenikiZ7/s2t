@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { TitleElement } from '../elements/Title/Title-Styles';
 
 export const RowContainer = styled.div`
   ${({ theme, color }) => css`
@@ -10,6 +11,11 @@ export const RowContainer = styled.div`
       @media ${theme.medias.smallpc} {
         flex-direction: column;
         gap: ${theme.spacings.small};
+      }
+
+      > ${TitleElement} {
+        margin-bottom: 0px;
+
       }
   `}
 `;

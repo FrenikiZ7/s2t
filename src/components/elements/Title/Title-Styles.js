@@ -13,7 +13,7 @@ export const TitleElement = styled.h1`
 
 
      @media ${theme.medias.smallpc} {
-      font-size: ${theme.sizes.xlarge};
+      font-size: ${theme.sizes.xxlarge};
      }
 
      @media ${theme.medias.mobile} {

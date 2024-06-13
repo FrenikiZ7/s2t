@@ -2,9 +2,10 @@ import Prop from 'prop-types';
 import React from 'react';
 import * as Styled from './Button-Styles';
 import { StyledLink } from '../StyledLink/StyledLink';
+import { theme } from '../../../styles/theme';
 
 export function Button({
-  onclick, active = false, path, text, textcolor = 'white', texthover = 'white', bgcolor = 'black', bghover = '#008EFF', border = 'black', borderhover = 'white',
+  onclick, gradient, active = false, path, text, textcolor = 'white', texthover = '', bgcolor = 'black', bghover = '', border = 'black', borderhover = '',
 }) {
   return (
     <StyledLink path={path}>
@@ -17,6 +18,7 @@ export function Button({
         borderhover={borderhover}
         onClick={onclick}
         active={active ? `0px 0px 5px 1px ${bghover}` : 'none'}
+        gradient={gradient ? `linear-gradient(to right, ${theme.colors.lightsecondary}, ${theme.colors.lightprimary})` : `${bgcolor}`}
       >
         {text}
       </Styled.ButtonElement>

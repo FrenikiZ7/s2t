@@ -20,7 +20,7 @@ export const MobileMenuElement = styled.nav`
 
     display: none;
     width: 180px;
-    height: 230px;
+    height: 240px;
 
     transition: all 500ms ease-in-out;
 

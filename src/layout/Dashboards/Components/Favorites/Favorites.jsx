@@ -1,4 +1,4 @@
-import Prop from 'prop-types';
+// import Prop from 'prop-types';
 import React, { useContext } from 'react';
 import * as Styled from './Favorites-Style';
 import { S2tContext } from '../../../../contexts/s2tContext/S2tContext';
@@ -7,14 +7,12 @@ import { PlayerContext } from '../../../../contexts/userContext/PlayerProvider/P
 import { GridProposals } from '../../../../components/elements/GridProposals/GridProposals';
 import { SlideProposals } from '../../../../components/elements/SlideProposals/SlideProposals';
 
-export function Favorites({ children }) {
+export function Favorites() {
   const s2tContext = useContext(S2tContext);
   const { s2tState, s2tDispatch } = s2tContext;
 
   const playerContext = useContext(PlayerContext);
   const { playerState, playerDispatch } = playerContext;
-
-  console.log(s2tState.videos.trending);
 
   return (
     <Styled.FavoritesContainer>
@@ -28,5 +26,5 @@ export function Favorites({ children }) {
 }
 
 Favorites.propTypes = {
-  children: Prop.node.isRequired,
+  // children: Prop.node.isRequired,
 };

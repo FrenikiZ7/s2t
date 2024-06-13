@@ -36,6 +36,9 @@ import { ClubProvider } from './contexts/userContext/ClubProvider/ClubProvider';
 import { clubData } from './contexts/userContext/ClubProvider/clubData';
 import { ClubProfile } from './layout/Dashboards/Components/ClubComponents/ClubProfile/ClubProfile';
 import { PlayerProfile } from './layout/Dashboards/Components/PlayerComponents/PlayerProfile/PlayerProfile';
+import { MyOpportunities } from './layout/Dashboards/Components/ClubComponents/MyOpportunities/MyOpportunities';
+import { Players } from './layout/Dashboards/Components/Players/Players';
+import { MySquad } from './layout/Dashboards/Components/ClubComponents/MySquad/MySquad';
 
 register();
 
@@ -70,11 +73,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 {/* Rota do dashboard para clubes + subrotas dele */}
                 <Route path="/club-dashboard/" element={<ClubDashboard />}>
                   <Route path="profile" element={<ClubProfile />} />
+                  <Route path="my-squad" element={<MySquad />} />
                   <Route path="profile-edit" element={<EditProfile />} />
-                  <Route path="my-opportunities" element={<Opportunities />} />
+                  <Route path="my-opportunities" element={<MyOpportunities />} />
                   <Route path="scouts" element={<Scouts />} />
                   <Route path="clubs" element={<Clubs />} />
-                  <Route path="players" element={<Clubs />} />
+                  <Route path="players" element={<Players />} />
                   <Route path="favorites" element={<ClubFavorites />} />
                   <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                   <Route path="friends" element={<Friends friends={clubData.friends} />} />

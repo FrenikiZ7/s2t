@@ -13,9 +13,13 @@ export const TextAreaElement = styled.textarea`
       padding: 8px 12px;
       background: transparent;
       font-family: ${theme.fonts.primary};
+      font-size: ${theme.sizes.medium};
       transition: box-shadow 500ms ease-in-out;
       box-shadow: 0px 0px 5px 2px ${theme.colors.quaternary};
 
+      @media ${theme.medias.mobile} {
+        font-size: ${theme.sizes.xsmall};
+      }
 
       &:hover{
         outline: none;
@@ -24,6 +28,12 @@ export const TextAreaElement = styled.textarea`
 
       &::-webkit-input-placeholder {
         color: ${theme.colors.white};
+        font-size: ${theme.sizes.medium};
+
+
+        @media ${theme.medias.mobile} {
+        font-size: ${theme.sizes.xsmall};
+      }
       }
 
       &:focus {

@@ -23,12 +23,8 @@ export const InfoTitle = styled.h3`
     }
 
     @media ${theme.medias.mobile} {
-     font-size: ${theme.sizes.small};
-    }
-
-    @media ${theme.medias.smallmobile} {
      font-size: ${theme.sizes.xsmall};
-  }
+    }
 
   `}
 `;
@@ -38,10 +34,6 @@ export const Info = styled.p`
   font-size: ${theme.sizes.medium};
   
   @media ${theme.medias.mobile} {
-   font-size: ${theme.sizes.small};
-  }
-
-  @media ${theme.medias.smallmobile} {
      font-size: ${theme.sizes.xsmall};
   }
   `}
