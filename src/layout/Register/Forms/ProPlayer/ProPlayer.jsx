@@ -55,7 +55,7 @@ export function ProPlayer() {
     { value: 'adult', name: 'Adulto (Já atua no time principal)' },
   ];
 
-  const [category, setCategory] = useState(null);
+  const [category, setCategory] = useState('sub17');
 
   const positionsOptions = [
     { value: 'goleiro', name: 'Goleiro' },
@@ -141,6 +141,7 @@ export function ProPlayer() {
               options={categoryOptions}
               onDropdownChange={(option) => setCategory(option.value)}
               otheroption
+              selectedvalue={category}
             />
 
             {category === 'other' && (

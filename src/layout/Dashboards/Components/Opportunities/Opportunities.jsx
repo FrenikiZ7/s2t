@@ -19,10 +19,10 @@ export function Opportunities() {
     { value: 'clubs', name: 'Clubes' },
   ];
 
-  const [selectedValue, setSelectedValue] = useState('scouts');
+  const [opportunityType, setOpportunityType] = useState('scouts');
 
   const handleDropdownChange = (option) => {
-    setSelectedValue(option.value);
+    setOpportunityType(option.value);
   };
 
   return (
@@ -31,16 +31,16 @@ export function Opportunities() {
       <AuthDropdown
         id="opportunityType"
         options={opportunityTypeOptions}
-        selectedvalue={selectedValue}
+        selectedvalue={opportunityType}
         onDropdownChange={handleDropdownChange} // Função de callback para atualizar o estado
       />
 
-      {selectedValue === 'scouts' && (
+      {opportunityType === 'scouts' && (
       <GridProposals title="" items={s2tState.proposals[playerState.type.gender].agents[playerState.type.category]} />
 
       )}
 
-      {selectedValue === 'clubs' && (
+      {opportunityType === 'clubs' && (
       <GridProposals title="" items={s2tState.proposals[playerState.type.gender].clubs[playerState.type.category]} />
       )}
 

@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { KeyboardArrowDown as ArrowDownIcon, KeyboardArrowUp as ArrowUpIcon } from '@styled-icons/material-outlined';
 
 import * as Styled from './AuthDropdown-Styles';
-import { AuthInput } from '../AuthInput/AuthInput';
 
 export function AuthDropdown({
   options, placeholder, title, id, required = false, onDropdownChange, selectedvalue, otheroption,
@@ -11,7 +10,6 @@ export function AuthDropdown({
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownText, setDropdownText] = useState();
   const other = { value: 'other', name: 'Outro' };
-  const [otherInput, setOtherInput] = useState('');
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -20,7 +18,6 @@ export function AuthDropdown({
   const handleItemClick = (option) => {
     onDropdownChange(option);
     setDropdownText(option.name);
-    console.log(option);
   };
 
   return (
