@@ -44,16 +44,41 @@ export function ProPlayer() {
   ];
 
   const categoryOptions = [
-    { value: 'sub7', label: 'Sub-7 (6 e 7 anos)' },
-    { value: 'sub8', label: 'Sub-8 (8 anos)' },
-    { value: 'sub9', label: 'Sub-9 (8 e 9 anos)' },
-    { value: 'sub11', label: 'Sub-11 (10 e 11 anos)' },
-    { value: 'sub13', label: 'Sub-13 (12 e 13 anos)' },
-    { value: 'sub15', label: 'Sub-15 (14 e 15 anos)' },
-    { value: 'sub17', label: 'Sub-17 (16 e 17 anos)' },
-    { value: 'sub20', label: 'Sub-20 (18, 19 e 20 anos)' },
-    { value: 'adulto', label: 'Adulto (Já atua no time principal)' },
+    { value: 'sub7', name: 'Sub-7 (6 e 7 anos)' },
+    { value: 'sub8', name: 'Sub-8 (8 anos)' },
+    { value: 'sub9', name: 'Sub-9 (8 e 9 anos)' },
+    { value: 'sub11', name: 'Sub-11 (10 e 11 anos)' },
+    { value: 'sub13', name: 'Sub-13 (12 e 13 anos)' },
+    { value: 'sub15', name: 'Sub-15 (14 e 15 anos)' },
+    { value: 'sub17', name: 'Sub-17 (16 e 17 anos)' },
+    { value: 'sub20', name: 'Sub-20 (18, 19 e 20 anos)' },
+    { value: 'adult', name: 'Adulto (Já atua no time principal)' },
   ];
+
+  const [category, setCategory] = useState(null);
+
+  const positionsOptions = [
+    { value: 'goleiro', name: 'Goleiro' },
+    { value: 'lateral esquerdo', name: 'Lateral Esquerdo' },
+    { value: 'lateral direito', name: 'Lateral Direito' },
+    { value: 'zagueiro', name: 'Zagueiro' },
+    { value: 'ala', name: 'Ala' },
+    { value: 'primeiro volante', name: 'Primeiro Volante' },
+    { value: 'segundo volante', name: 'Segundo Volante' },
+    { value: 'meio-campista', name: 'Meio-Campista' },
+    { value: 'meia-ofensivo', name: 'Meia Ofensivo' },
+    { value: 'meia-lateral', name: 'Meia Lateral' },
+    { value: 'segundo atacante', name: 'Segundo atacante' },
+    { value: 'ponta esquerda', name: 'Ponta Esquerda' },
+    { value: 'ponta direita', name: 'Ponta Direito' },
+    { value: 'centroavante', name: 'Centroavante' },
+  ];
+
+  const leagueOptions = [
+    { value: 'lifa', name: 'LIFA' },
+  ];
+
+  const [league, setLeague] = useState(null);
 
   return (
     <Styled.ProPlayerContainer>
@@ -66,8 +91,6 @@ export function ProPlayer() {
           <AuthForm>
 
             <Subtitle text="Dados" size={theme.sizes.xlarge} />
-
-            <AuthDropdown />
 
             <AuthInput
               type="name"
@@ -111,7 +134,25 @@ export function ProPlayer() {
 
             <AuthRadio title="Qual a sua melhor perna?" options={legOptions} groupname="legOptions" />
 
-            <AuthRadio title="Você atua em qual categoria?" options={categoryOptions} groupname="categoryOptions" />
+            <AuthDropdown
+              title="Você atua em qual categoria?"
+              id="category"
+              placeholder="Escolha sua categoria"
+              options={categoryOptions}
+              onDropdownChange={(option) => setCategory(option.value)}
+              otheroption
+            />
+
+            {category === 'other' && (
+              <AuthInput
+                type="name"
+                name="other_input"
+                id="other_input"
+                placeholder="insira aqui a categoria"
+                title="Qual categoria?"
+                required
+              />
+            )}
 
             <AuthInput
               type="date"
@@ -172,30 +213,48 @@ export function ProPlayer() {
               placeholder="Seu valor de transferência"
             />
 
-            <AuthInput
-              type="text"
-              name="mainPosition_input"
-              id="mainPosition_input"
-              title="Posição principal"
+            <AuthDropdown
+              title="Posição Principal"
               placeholder="Sua posição principal"
+              id="mainPosition"
+              options={positionsOptions}
               required
             />
 
-            <AuthInput
-              type="text"
-              name="secondaryPosition_input"
-              id="secondaryPosition_input"
-              title="Posição secundária"
+            <AuthDropdown
+              title="Posição Secundária"
               placeholder="Sua posição secundária"
+              id="secondaryPosition"
+              options={positionsOptions}
             />
 
-            <AuthInput
-              type="text"
-              name="tertiaryPosition_input"
-              id="tertiaryPosition_input"
+            <AuthDropdown
               title="Posição terciária"
               placeholder="Sua posição terciária"
+              id="tertiaryPosition"
+              options={positionsOptions}
             />
+
+            <AuthDropdown
+              title="Você atua em alguma liga?"
+              id="league"
+              placeholder="Escolha sua Liga"
+              options={leagueOptions}
+              onDropdownChange={(option) => setLeague(option.value)}
+              otheroption
+              required
+            />
+
+            {league === 'other' && (
+              <AuthInput
+                type="name"
+                name="other_input"
+                id="other_input"
+                placeholder="insira aqui a liga"
+                title="Qual liga?"
+                required
+              />
+            )}
 
             <AuthFile text="Escolha sua foto de perfil (Recomendado: Imagens 1:1)" id="profileImage" />
 

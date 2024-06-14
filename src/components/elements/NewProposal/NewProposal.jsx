@@ -123,7 +123,5 @@ export function NewProposal({ onclick }) {
 }
 
 NewProposal.propTypes = {
-  children: Prop.node.isRequired,
   onclick: Prop.func,
-
 };

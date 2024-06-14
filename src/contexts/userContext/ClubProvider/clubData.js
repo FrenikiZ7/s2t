@@ -3,6 +3,7 @@ export const clubData = {
 
   type: {
     category: 'professional',
+    team: 'male',
   },
   // dados gerais do perfil
   profile:

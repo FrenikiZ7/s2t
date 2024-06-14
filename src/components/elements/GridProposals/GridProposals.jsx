@@ -45,8 +45,7 @@ export function GridProposals({ items, title }) {
   return (
     <Styled.GridProposalsContainer>
 
-      <Title text={title} uppercase />
-
+      {title && <Title text={title} uppercase />}
       <Styled.ModalContainer>
 
         <GridLayoutContainer>

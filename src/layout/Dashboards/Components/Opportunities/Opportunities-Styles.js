@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { GridLayoutContainer } from '../../../../components/GridLayout/GridLayout-Styles';
+import { AuthDropdownContainer } from '../../../../components/elements/AuthElements/AuthDropdown/AuthDropdown-Styles';
 
 export const OpportunitiesContainer = styled.div`
   ${({ theme }) => css`
@@ -11,5 +12,13 @@ export const OpportunitiesContainer = styled.div`
    width: 100%;
    height: 100%;
    min-height: 400px;
+   
+   ${AuthDropdownContainer} {
+    width: 200px;
+
+    @media ${theme.medias.smallmobile} {
+      width: 100%;
+    }
+   }
   `}
 `;

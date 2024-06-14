@@ -74,7 +74,7 @@ export function Home() {
             borderhover={theme.colors.primary}
           />
 
-          <Button
+          {/* <Button
             text="Dashboard - Jogador"
             path="/player-dashboard"
             bgcolor={theme.colors.lightprimary}
@@ -94,7 +94,7 @@ export function Home() {
             texthover={theme.colors.black}
             border={theme.colors.lightprimary}
             borderhover={theme.colors.primary}
-          />
+          /> */}
         </Nav>
       </Header>
 
@@ -158,7 +158,25 @@ export function Home() {
         />
 
         <Button
+          text="Universitário"
+          bgcolor={theme.colors.black}
+          textcolor={theme.colors.black}
+          border={theme.colors.black}
+          borderhover={theme.colors.black}
+          gradient
+        />
+
+        <Button
           text="Amador"
+          bgcolor={theme.colors.black}
+          textcolor={theme.colors.black}
+          border={theme.colors.black}
+          borderhover={theme.colors.black}
+          gradient
+        />
+
+        <Button
+          text="Recreacional"
           bgcolor={theme.colors.black}
           textcolor={theme.colors.black}
           border={theme.colors.black}
@@ -167,11 +185,11 @@ export function Home() {
         />
       </Row>
 
-      <Slide items={s2tState.usersType} />
+      <Slide items={s2tState.photos.usersType} />
 
       <BannerSlide />
 
-      <Slide items={s2tState.benefits} title="Benefícios" />
+      <Slide items={s2tState.photos.benefits} title="Benefícios" />
 
       <Footer>
         <Row>

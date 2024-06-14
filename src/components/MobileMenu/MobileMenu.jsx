@@ -9,6 +9,7 @@ import {
   Work as WorkIcon,
   SportsSoccer as SportsSoccerIcon,
   Star as StarIcon,
+  EscalatorWarning as EventsIcon,
 } from '@styled-icons/material-outlined';
 import { PersonSearch as PersonSearchIcon } from '@styled-icons/material-outlined/PersonSearch';
 import { HomeWork as HomeWorkIcon } from '@styled-icons/material-outlined/HomeWork';
@@ -85,6 +86,16 @@ export function MobileMenu({ onclick, type }) {
           </StyledLink>
 
           <StyledLink
+            path={`/${type}-dashboard/events`}
+            color={theme.colors.white}
+            hovercolor={theme.colors.primary}
+          >
+            <EventsIcon />
+            Eventos
+
+          </StyledLink>
+
+          <StyledLink
             path={`/${type}-dashboard/contacts`}
             color={theme.colors.white}
             hovercolor={theme.colors.primary}
@@ -117,118 +128,128 @@ export function MobileMenu({ onclick, type }) {
         </GridLayout>
       )}
 
-      {type === 'club' && (
-        <GridLayout>
-          <StyledLink
-            path="/"
-            color={theme.colors.white}
-            hovercolor={theme.colors.primary}
-          >
-            <HomeIcon />
-            Home
-          </StyledLink>
+      {(type === 'club' || type === 'university') && (
+      <GridLayout>
+        <StyledLink
+          path="/"
+          color={theme.colors.white}
+          hovercolor={theme.colors.primary}
+        >
+          <HomeIcon />
+          Home
+        </StyledLink>
 
-          <StyledLink
-            path={`/${type}-dashboard/profile`}
-            color={theme.colors.white}
-            hovercolor={theme.colors.primary}
-          >
-            <PersonIcon />
-            Perfil
+        <StyledLink
+          path={`/${type}-dashboard/profile`}
+          color={theme.colors.white}
+          hovercolor={theme.colors.primary}
+        >
+          <PersonIcon />
+          Perfil
 
-          </StyledLink>
+        </StyledLink>
 
-          <StyledLink
-            path={`/${type}-dashboard/my-squad`}
-            color={theme.colors.white}
-            hovercolor={theme.colors.primary}
-          >
-            <SquadIcon />
-            Meu Plantel
+        <StyledLink
+          path={`/${type}-dashboard/my-squad`}
+          color={theme.colors.white}
+          hovercolor={theme.colors.primary}
+        >
+          <SquadIcon />
+          Meu Plantel
 
-          </StyledLink>
+        </StyledLink>
 
-          <StyledLink
-            path={`/${type}-dashboard/my-opportunities`}
-            color={theme.colors.white}
-            hovercolor={theme.colors.primary}
-          >
-            <ViewCarouselIcon />
-            Minhas oportunidades
+        <StyledLink
+          path={`/${type}-dashboard/my-opportunities`}
+          color={theme.colors.white}
+          hovercolor={theme.colors.primary}
+        >
+          <ViewCarouselIcon />
+          Minhas oportunidades
 
-          </StyledLink>
+        </StyledLink>
 
-          <StyledLink
-            path={`/${type}-dashboard/scouts`}
-            color={theme.colors.white}
-            hovercolor={theme.colors.primary}
-          >
-            <WorkIcon />
-            Scouts
+        <StyledLink
+          path={`/${type}-dashboard/scouts`}
+          color={theme.colors.white}
+          hovercolor={theme.colors.primary}
+        >
+          <WorkIcon />
+          Scouts
 
-          </StyledLink>
+        </StyledLink>
 
-          <StyledLink
-            path={`/${type}-dashboard/clubs`}
-            color={theme.colors.white}
-            hovercolor={theme.colors.primary}
-          >
-            <SportsSoccerIcon />
-            Clubes
+        <StyledLink
+          path={`/${type}-dashboard/clubs`}
+          color={theme.colors.white}
+          hovercolor={theme.colors.primary}
+        >
+          <SportsSoccerIcon />
+          Clubes
 
-          </StyledLink>
+        </StyledLink>
 
-          <StyledLink
-            path={`/${type}-dashboard/players`}
-            color={theme.colors.white}
-            hovercolor={theme.colors.primary}
-          >
-            <SportsSoccerIcon />
-            Jogadores
+        <StyledLink
+          path={`/${type}-dashboard/players`}
+          color={theme.colors.white}
+          hovercolor={theme.colors.primary}
+        >
+          <SportsSoccerIcon />
+          Jogadores
 
-          </StyledLink>
+        </StyledLink>
 
-          <StyledLink
-            path={`/${type}-dashboard/favorites`}
-            color={theme.colors.white}
-            hovercolor={theme.colors.primary}
-          >
-            <StarIcon />
-            Favoritos
+        <StyledLink
+          path={`/${type}-dashboard/favorites`}
+          color={theme.colors.white}
+          hovercolor={theme.colors.primary}
+        >
+          <StarIcon />
+          Favoritos
 
-          </StyledLink>
+        </StyledLink>
 
-          <StyledLink
-            path={`/${type}-dashboard/contacts`}
-            color={theme.colors.white}
-            hovercolor={theme.colors.primary}
-          >
-            <SendIcon />
-            Contatos
+        <StyledLink
+          path={`/${type}-dashboard/events`}
+          color={theme.colors.white}
+          hovercolor={theme.colors.primary}
+        >
+          <EventsIcon />
+          Eventos
 
-          </StyledLink>
+        </StyledLink>
 
-          <StyledLink
-            path={`/${type}-dashboard/friends`}
-            color={theme.colors.white}
-            hovercolor={theme.colors.primary}
-          >
-            <GroupIcon />
-            Amigos
+        <StyledLink
+          path={`/${type}-dashboard/contacts`}
+          color={theme.colors.white}
+          hovercolor={theme.colors.primary}
+        >
+          <SendIcon />
+          Contatos
 
-          </StyledLink>
+        </StyledLink>
 
-          <StyledLink
-            color={theme.colors.white}
-            hovercolor={theme.colors.primary}
-          >
-            <CloseIcon />
+        <StyledLink
+          path={`/${type}-dashboard/friends`}
+          color={theme.colors.white}
+          hovercolor={theme.colors.primary}
+        >
+          <GroupIcon />
+          Amigos
 
-            Fechar
+        </StyledLink>
 
-          </StyledLink>
+        <StyledLink
+          color={theme.colors.white}
+          hovercolor={theme.colors.primary}
+        >
+          <CloseIcon />
 
-        </GridLayout>
+          Fechar
+
+        </StyledLink>
+
+      </GridLayout>
       )}
 
     </Styled.MobileMenuElement>

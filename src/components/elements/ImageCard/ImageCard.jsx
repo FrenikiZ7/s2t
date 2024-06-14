@@ -5,7 +5,7 @@ import * as Styled from './ImageCard-Styles';
 import { StyledLink } from '../StyledLink/StyledLink';
 
 export function ImageCard({
-  src, alt, title = '', islocked, path,
+  src, alt, title = '', islocked, path = '',
 }) {
   return (
 
@@ -35,7 +35,7 @@ export function ImageCard({
 
 ImageCard.propTypes = {
   src: Prop.string.isRequired,
-  path: Prop.string.isRequired,
+  path: Prop.string,
   alt: Prop.string,
   title: Prop.string,
   islocked: Prop.bool,

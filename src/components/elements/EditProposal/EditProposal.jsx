@@ -17,7 +17,7 @@ export function EditProposal({ onclick }) {
   return (
     <Styled.EditProposalContainer>
       <Row>
-        <Title text="Minha Oportunidade" uppercase />
+        <Title text="Editar minha oportunidade" uppercase />
 
         <IconDiv name="Voltar" onclick={onclick}>
           <CloseIcon />

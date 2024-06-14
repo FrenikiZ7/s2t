@@ -1,114 +1,129 @@
 // armazena todos os dados da Showcase2Transfer
 export const s2tData = {
 
-  usersType: [
-    {
-      id: 1,
-      src: '/assets/images/users/athletes.png',
-      title: 'atletas',
-      path: '/register/player/professional',
-    },
+  photos: {
 
-    {
-      id: 2,
-      src: '/assets/images/users/scouts.png',
-      title: 'Scout',
-      path: '/register/scout',
-    },
+    events: [
+      {
+        id: 0, src: '/assets/images/background.png', title: 'Tour', path: '/tour',
+      },
+      {
+        id: 1, src: '/assets/images/background.png', title: 'Tour 2', path: '/tour2',
+      },
+      {
+        id: 2, src: '/assets/images/background.png', title: 'Tour 3', path: '/tour3',
+      },
+    ],
 
-    {
-      id: 3,
-      src: '/assets/images/users/business.png',
-      title: 'Empresários',
-      path: '/register/player/professional',
-    },
+    usersType: [
+      {
+        id: 1,
+        src: '/assets/images/users/athletes.png',
+        title: 'atletas',
+        path: '/register/player/professional',
+      },
 
-    {
-      id: 4,
-      src: '/assets/images/users/clubs.png',
-      title: 'Clubes',
-      path: '/register/player/professional',
-    },
+      {
+        id: 2,
+        src: '/assets/images/users/scouts.png',
+        title: 'Scout',
+        path: '/register/scout',
+      },
 
-    {
-      id: 5,
-      src: '/assets/images/users/facultys.png',
-      title: 'Faculdades',
-      path: '/register/player/professional',
-    },
+      {
+        id: 3,
+        src: '/assets/images/users/business.png',
+        title: 'Empresários',
+        path: '/register/player/professional',
+      },
 
-    {
-      id: 6,
-      src: '/assets/images/users/leagues.png',
-      title: 'Ligas',
-      path: '/register/player/professional',
-    },
+      {
+        id: 4,
+        src: '/assets/images/users/clubs.png',
+        title: 'Clubes',
+        path: '/register/player/professional',
+      },
 
-    {
-      id: 7,
-      src: '/assets/images/background.png',
-      title: 'N/A',
-      path: '/register/player/professional',
-    },
-  ],
+      {
+        id: 5,
+        src: '/assets/images/users/facultys.png',
+        title: 'Faculdades',
+        path: '/register/player/professional',
+      },
 
-  benefits: [
-    {
-      id: '1',
-      src: '/assets/images/benefits/podcast.png',
-      title: 'podcast',
-      path: '/podcast',
-    },
+      {
+        id: 6,
+        src: '/assets/images/users/leagues.png',
+        title: 'Ligas',
+        path: '/register/player/professional',
+      },
 
-    {
-      id: '2',
-      src: '/assets/images/benefits/tv.png',
-      title: 'Sport TV',
-      path: '/sporttv',
-    },
+      {
+        id: 7,
+        src: '/assets/images/users/schools.jpg',
+        title: 'Escolas',
+        path: '/register/player/professional',
+      },
+    ],
 
-    {
-      id: '3',
-      src: '/assets/images/benefits/investments.png',
-      title: 'Sports Invest',
-      path: '/sportsinvest',
-    },
+    benefits: [
+      {
+        id: '1',
+        src: '/assets/images/benefits/podcast.png',
+        title: 'podcast',
+        path: '/podcast',
+      },
 
-    {
-      id: '4',
-      src: '/assets/images/benefits/benefits.png',
-      title: 'Benefícios',
-      path: '/benefits',
-    },
+      {
+        id: '2',
+        src: '/assets/images/benefits/tv.png',
+        title: 'Sport TV',
+        path: '/sporttv',
+      },
 
-    {
-      id: '5',
-      src: '/assets/images/benefits/exchange.png',
-      title: 'Intercâmbio',
-      path: '/interchange',
-    },
+      {
+        id: '3',
+        src: '/assets/images/benefits/investments.png',
+        title: 'Sports Invest',
+        path: '/sportsinvest',
+      },
 
-    {
-      id: '6',
-      src: '/assets/images/benefits/visibility.png',
-      title: 'Visibilidade',
-      path: '/visibility',
-    },
+      {
+        id: '4',
+        src: '/assets/images/benefits/benefits.png',
+        title: 'Benefícios',
+        path: '/benefits',
+      },
 
-    {
-      id: '7',
-      src: '/assets/images/benefits/events.png',
-      title: 'Eventos',
-      path: '/events',
-    },
+      {
+        id: '5',
+        src: '/assets/images/benefits/exchange.png',
+        title: 'Intercâmbio',
+        path: '/interchange',
+      },
 
-    {
-      id: '8',
-      src: '/assets/images/benefits/exchange.png',
-      title: 'Inglês',
-      path: '/english',
-    },
-  ],
+      {
+        id: '6',
+        src: '/assets/images/benefits/visibility.png',
+        title: 'Visibilidade',
+        path: '/visibility',
+      },
+
+      {
+        id: '7',
+        src: '/assets/images/benefits/events.png',
+        title: 'Eventos',
+        path: '/events',
+      },
+
+      {
+        id: '8',
+        src: '/assets/images/benefits/english.jpg',
+        title: 'Inglês',
+        path: '/english',
+      },
+    ],
+  },
 
   videos: {
     trending: [
@@ -732,34 +747,61 @@ export const s2tData = {
 
         professional: [
           {
-            from: 'Agente',
-            date: '29/05/2024',
-            category: 'Profissional',
-            opportunity: 'Centroavante',
-            country: 'Brasil',
-            org: 'Brasileirão',
-            orglogo: '/assets/images/pngs/brasileirao.png',
-            orgpath: '/brasileirao',
+            opportunityId: 0,
+            details: {
+              from: 'Clube 0',
+              date: '01-06-2024',
+              category: 'Profissional',
+              opportunity: 'Zagueiro',
+              country: 'Alemanha',
+              org: 'Bundesliga',
+              orglogo: '/assets/images/pngs/brasileirao.png',
+              orgpath: '/bundesliga',
+              payment: {
+                minPayment: 10000,
+                maxPayment: 18000,
+              },
+            },
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
+            requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
           },
           {
-            from: 'Clube',
-            date: '18/10/2023',
-            category: 'Profissional',
-            opportunity: 'Atacante',
-            country: 'Portugal',
-            org: 'Liga NOS',
-            orglogo: '/assets/images/pngs/brasileirao.png',
-            orgpath: '/bundesliga',
+            opportunityId: 1,
+            details: {
+              from: 'Clube 1',
+              date: '01-06-2024',
+              category: 'Profissional',
+              opportunity: 'Zagueiro',
+              country: 'Alemanha',
+              org: 'Bundesliga',
+              orglogo: '/assets/images/pngs/brasileirao.png',
+              orgpath: '/bundesliga',
+              payment: {
+                minPayment: 10000,
+                maxPayment: 18000,
+              },
+            },
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
+            requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
           },
           {
-            from: 'Clube',
-            date: '07/09/2023',
-            category: 'Profissional',
-            opportunity: 'Goleiro',
-            country: 'Holanda',
-            org: 'Eredivisie',
-            orglogo: '/assets/images/pngs/brasileirao.png',
-            orgpath: '/bundesliga',
+            opportunityId: 2,
+            details: {
+              from: 'Clube 2',
+              date: '01-06-2024',
+              category: 'Profissional',
+              opportunity: 'Zagueiro',
+              country: 'Alemanha',
+              org: 'Bundesliga',
+              orglogo: '/assets/images/pngs/brasileirao.png',
+              orgpath: '/bundesliga',
+              payment: {
+                minPayment: 10000,
+                maxPayment: 18000,
+              },
+            },
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
+            requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
           },
         ],
       },

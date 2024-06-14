@@ -39,6 +39,10 @@ import { PlayerProfile } from './layout/Dashboards/Components/PlayerComponents/P
 import { MyOpportunities } from './layout/Dashboards/Components/ClubComponents/MyOpportunities/MyOpportunities';
 import { Players } from './layout/Dashboards/Components/Players/Players';
 import { MySquad } from './layout/Dashboards/Components/ClubComponents/MySquad/MySquad';
+import { UniversityDashboard } from './layout/Dashboards/UniversityDashboard/UniversityDashboard';
+import { UniversityProvider } from './contexts/userContext/UniversityProvider/UniversityProvider';
+import { SoloSlide } from './components/elements/SoloSlide/SoloSlide';
+import { Events } from './layout/Dashboards/Components/Events/Events';
 
 register();
 
@@ -52,53 +56,71 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
           <PlayerProvider>
             <ClubProvider>
+              <UniversityProvider>
 
-              <GlobalStyles />
+                <GlobalStyles />
 
-              <Routes>
-                <Route path="/" element={<Home />} />
+                <Routes>
+                  <Route path="/" element={<Home />} />
 
-                {/* Rota do dashboard para jogadores + subrotas dele */}
-                <Route path="/player-dashboard/" element={<PlayerDashboard />}>
-                  <Route path="profile" element={<PlayerProfile />} />
-                  <Route path="profile-edit" element={<EditProfile />} />
-                  <Route path="opportunities" element={<Opportunities />} />
-                  <Route path="scouts" element={<Scouts />} />
-                  <Route path="clubs" element={<Clubs />} />
-                  <Route path="favorites" element={<Favorites />} />
-                  <Route path="contacts" element={<h1>Em construção... :)</h1>} />
-                  <Route path="friends" element={<Friends friends={playerData.friends} />} />
-                </Route>
+                  {/* Rota do dashboard para jogadores + subrotas dele */}
+                  <Route path="/player-dashboard/" element={<PlayerDashboard />}>
+                    <Route path="profile" element={<PlayerProfile />} />
+                    <Route path="profile-edit" element={<EditProfile />} />
+                    <Route path="opportunities" element={<Opportunities />} />
+                    <Route path="scouts" element={<Scouts />} />
+                    <Route path="clubs" element={<Clubs />} />
+                    <Route path="favorites" element={<Favorites />} />
+                    <Route path="contacts" element={<h1>Em construção... :)</h1>} />
+                    <Route path="friends" element={<Friends friends={playerData.friends} />} />
+                  </Route>
 
-                {/* Rota do dashboard para clubes + subrotas dele */}
-                <Route path="/club-dashboard/" element={<ClubDashboard />}>
-                  <Route path="profile" element={<ClubProfile />} />
-                  <Route path="my-squad" element={<MySquad />} />
-                  <Route path="profile-edit" element={<EditProfile />} />
-                  <Route path="my-opportunities" element={<MyOpportunities />} />
-                  <Route path="scouts" element={<Scouts />} />
-                  <Route path="clubs" element={<Clubs />} />
-                  <Route path="players" element={<Players />} />
-                  <Route path="favorites" element={<ClubFavorites />} />
-                  <Route path="contacts" element={<h1>Em construção... :)</h1>} />
-                  <Route path="friends" element={<Friends friends={clubData.friends} />} />
-                </Route>
+                  {/* Rota do dashboard para clubes + subrotas dele */}
+                  <Route path="/club-dashboard/" element={<ClubDashboard />}>
+                    <Route path="profile" element={<ClubProfile />} />
+                    <Route path="my-squad" element={<MySquad />} />
+                    <Route path="profile-edit" element={<EditProfile />} />
+                    <Route path="opportunities" element={<Opportunities />} />
+                    <Route path="my-opportunities" element={<MyOpportunities />} />
+                    <Route path="scouts" element={<Scouts />} />
+                    <Route path="clubs" element={<Clubs />} />
+                    <Route path="players" element={<Players />} />
+                    <Route path="favorites" element={<ClubFavorites />} />
+                    <Route path="contacts" element={<h1>Em construção... :)</h1>} />
+                    <Route path="friends" element={<Friends friends={clubData.friends} />} />
+                  </Route>
 
-                <Route path="/register" element={<Register />} />
+                  <Route path="/university-dashboard/" element={<UniversityDashboard />}>
+                    <Route path="profile" element={<ClubProfile />} />
+                    <Route path="my-squad" element={<MySquad />} />
+                    <Route path="profile-edit" element={<EditProfile />} />
+                    <Route path="opportunities" element={<Opportunities />} />
+                    <Route path="my-opportunities" element={<MyOpportunities />} />
+                    <Route path="scouts" element={<Scouts />} />
+                    <Route path="clubs" element={<Clubs />} />
+                    <Route path="players" element={<Players />} />
+                    <Route path="favorites" element={<ClubFavorites />} />
+                    <Route path="events" element={<Events />} />
+                    <Route path="contacts" element={<h1>Em construção... :)</h1>} />
+                    <Route path="friends" element={<Friends friends={clubData.friends} />} />
+                  </Route>
 
-                <Route path="/register/player" element={<PlayerRegister />}>
-                  <Route path="professional" element={<ProPlayer />} />
-                  <Route path="semi-professional" element={<SemiProPlayer />} />
-                  <Route path="amateur" element={<AmateurPlayer />} />
-                </Route>
+                  <Route path="/register" element={<Register />} />
 
-                <Route path="/register/scout" element={<p>scout</p>} />
+                  <Route path="/register/player" element={<PlayerRegister />}>
+                    <Route path="professional" element={<ProPlayer />} />
+                    <Route path="semi-professional" element={<SemiProPlayer />} />
+                    <Route path="amateur" element={<AmateurPlayer />} />
+                  </Route>
 
-                <Route path="/login" element={<Login />} />
-                <Route path="/password-reset" element={<Home />} />
+                  <Route path="/register/scout" element={<p>scout</p>} />
 
-              </Routes>
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/password-reset" element={<Home />} />
 
+                </Routes>
+
+              </UniversityProvider>
             </ClubProvider>
           </PlayerProvider>
         </S2tProvider>
