@@ -5,6 +5,7 @@ import { S2tContext } from '../../../../contexts/s2tContext/S2tContext';
 import { PlayerContext } from '../../../../contexts/userContext/PlayerProvider/PlayerContext';
 import { Title } from '../../../../components/elements/Title/Title';
 import { AuthDropdown } from '../../../../components/elements/AuthElements/AuthDropdown/AuthDropdown';
+import { AuthSearch } from '../../../../components/elements/AuthElements/AuthSearch/AuthSearch';
 
 export function Opportunities() {
   const s2tContext = useContext(S2tContext);
@@ -13,36 +14,15 @@ export function Opportunities() {
   const playerContext = useContext(PlayerContext);
   const { playerState, playerDispatch } = playerContext;
 
-  const opportunityTypeOptions = [
-    { value: 'scouts', name: 'Scouts' },
-    { value: 'agents', name: 'Agentes' },
-    { value: 'clubs', name: 'Clubes' },
+  const proposals = [
+    ...s2tState.proposals[playerState.type.gender][playerState.type.category].agents,
+    ...s2tState.proposals[playerState.type.gender][playerState.type.category].clubs,
   ];
-
-  const [opportunityType, setOpportunityType] = useState('scouts');
-
-  const handleDropdownChange = (option) => {
-    setOpportunityType(option.value);
-  };
 
   return (
     <Styled.OpportunitiesContainer>
 
-      <AuthDropdown
-        id="opportunityType"
-        options={opportunityTypeOptions}
-        selectedvalue={opportunityType}
-        onDropdownChange={handleDropdownChange} // Função de callback para atualizar o estado
-      />
-
-      {opportunityType === 'scouts' && (
-      <GridProposals title="" items={s2tState.proposals[playerState.type.gender].agents[playerState.type.category]} />
-
-      )}
-
-      {opportunityType === 'clubs' && (
-      <GridProposals title="" items={s2tState.proposals[playerState.type.gender].clubs[playerState.type.category]} />
-      )}
+      <GridProposals title="Oportunidades" items={proposals} />
 
     </Styled.OpportunitiesContainer>
   );

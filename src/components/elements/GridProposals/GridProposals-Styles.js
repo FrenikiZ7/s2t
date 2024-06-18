@@ -8,7 +8,9 @@ export const GridProposalsContainer = styled.div`
    width: 100%;
    height: 100%;
    animation: ${slideIn} 500ms ease-out;
-
+   display: flex;
+   flex-direction: column;
+   gap: ${theme.spacings.small};
   
    ${GridLayoutContainer} {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

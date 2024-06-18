@@ -9,15 +9,20 @@ export function AuthDropdown({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownText, setDropdownText] = useState();
-  const other = { value: 'other', name: 'Outro' };
+  const other = { value: 'other', text: 'Outro' };
 
-  const toggleDropdown = () => {
+  const toggleDropdown = (e) => {
+    e.preventDefault();
     setIsOpen(!isOpen);
   };
 
   const handleItemClick = (option) => {
     onDropdownChange(option);
-    setDropdownText(option.name);
+    setDropdownText(option.text);
+  };
+
+  const resetItem = () => {
+    setDropdownText('');
   };
 
   return (
@@ -42,7 +47,7 @@ export function AuthDropdown({
         {placeholder && (
           <Styled.DropdownItem
             value={null}
-            onClick={() => handleItemClick}
+            onClick={resetItem}
           >
             {placeholder}
           </Styled.DropdownItem>
@@ -54,7 +59,7 @@ export function AuthDropdown({
             value={option.value}
             key={option.value}
           >
-            {option.name}
+            {option.text}
           </Styled.DropdownItem>
         ))}
 
@@ -63,7 +68,7 @@ export function AuthDropdown({
             onClick={() => handleItemClick(other)}
             value={other.value}
           >
-            {other.name}
+            {other.text}
           </Styled.DropdownItem>
         )}
 
@@ -78,7 +83,7 @@ AuthDropdown.propTypes = {
   options: Prop.arrayOf(
     Prop.shape({
       value: Prop.string.isRequired,
-      name: Prop.string.isRequired,
+      text: Prop.string.isRequired,
     }),
   ).isRequired,
   placeholder: Prop.string,

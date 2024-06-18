@@ -14,8 +14,6 @@ export function AuthAchievement({
 
       <Styled.AuthAchievementTitle>
         {title}
-        {' '}
-        (Opcional)
       </Styled.AuthAchievementTitle>
 
       <AuthInfo text="Exemplo" />

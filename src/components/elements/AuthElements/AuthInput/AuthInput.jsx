@@ -10,6 +10,7 @@ export function AuthInput({
       {title}
       {' '}
       {required ? '(Obrigatório)' : ''}
+
       <Styled.AuthInputElement
         type={type}
         name={name}
@@ -20,6 +21,7 @@ export function AuthInput({
         autoComplete={autocomplete}
         required={required}
       />
+
     </Styled.AuthInputContainer>
 
   );

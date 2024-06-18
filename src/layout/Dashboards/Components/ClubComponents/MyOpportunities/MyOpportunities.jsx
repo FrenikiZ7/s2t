@@ -14,7 +14,7 @@ export function MyOpportunities() {
   return (
     <Styled.MyOpportunitiesContainer>
 
-      <GridEditableProposals title="Minhas oportunidades" items={s2tState.proposals[playerState.type.gender].agents[playerState.type.category]} />
+      <GridEditableProposals title="Minhas oportunidades" items={s2tState.proposals[playerState.type.gender][playerState.type.category].clubs} />
 
     </Styled.MyOpportunitiesContainer>
   );

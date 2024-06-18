@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { slideIn } from '../../../styles/animations';
 import { RowContainer } from '../../RowContainer/Row-Styles.js';
+import { AuthLayoutContainer } from '../AuthElements/AuthLayout/AuthLayout-Styles.js';
 
 export const EditProposalContainer = styled.section`
   ${({ theme }) => css`
@@ -38,6 +39,24 @@ export const EditProposalContainer = styled.section`
       justify-content: space-between;
       @media ${theme.medias.smallpc} {
         flex-direction: row;
+      }
+    }
+
+    ${AuthLayoutContainer} {
+      grid-gap: ${theme.spacings.medium};
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+
+
+      @media ${theme.medias.smallpc} {
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      }
+
+      @media ${theme.medias.tablet} {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+      }
+
+      @media ${theme.medias.mobile} {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
       }
     }
   `}

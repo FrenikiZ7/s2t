@@ -58,11 +58,10 @@ export const DropdownTitle = styled.p`
     color: ${theme.colors.lightgray};
     font-size: ${theme.sizes.medium};
     user-select: none;
-    @media ${theme.medias.mobile} {
-    font-size: ${theme.sizes.small};
-    }
-
     
+    @media ${theme.medias.mobile} {
+      font-size: ${theme.sizes.small};
+    }
   `}
 `;
 
@@ -77,6 +76,7 @@ export const DropdownButton = styled.button`
   padding: 10px;
   cursor: pointer;
   font-family: ${theme.fonts.primary};
+  
 
   display: flex;
   justify-content: space-between;

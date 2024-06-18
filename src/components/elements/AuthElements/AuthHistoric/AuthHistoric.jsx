@@ -8,15 +8,13 @@ import { AuthCheckbox } from '../AuthCheckbox/AuthCheckbox';
 import { AuthInfo } from '../AuthInfo/AuthInfo';
 
 export function AuthHistoric({
-  title = '', id, inputtitle, placeholder,
+  title = '', id, inputtitle, placeholder, isactual,
 }) {
   return (
     <Styled.AuthHistoricContainer>
 
       <Styled.AuthHistoricTitle>
         {title}
-        {' '}
-        (Opcional)
       </Styled.AuthHistoricTitle>
 
       <AuthInfo text="Exemplo" />
@@ -37,6 +35,7 @@ export function AuthHistoric({
         title="Entrada"
       />
 
+      {!isactual && (
       <AuthInput
         type="date"
         name={`${id}LatestYear_input`}
@@ -44,8 +43,9 @@ export function AuthHistoric({
         placeholder="Ano de saída"
         title="Saída"
       />
+      )}
 
-      <AuthCheckbox id={`isActual${id}`} value="ActualClub" text={`Atual ${inputtitle}`} />
+      <AuthCheckbox id={`isActual${id}`} value="ActualClub" text={`Atual ${inputtitle}`} checked={isactual} />
 
       <Button
         text="Adicionar"
@@ -66,4 +66,5 @@ AuthHistoric.propTypes = {
   inputtitle: Prop.string,
   placeholder: Prop.string,
   id: Prop.string.isRequired,
+  isactual: Prop.bool,
 };

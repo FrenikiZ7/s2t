@@ -24,7 +24,7 @@ export const IconContainer = styled.div`
 
         &:hover {
           color: ${theme.colors.secondary};
-          transform: scale(1.2);
+          transform: scale(1.1);
         }
   
       }

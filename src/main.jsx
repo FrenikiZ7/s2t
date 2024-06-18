@@ -23,10 +23,7 @@ import { S2tProvider } from './contexts/s2tContext/S2tProvider';
 import { Scouts } from './layout/Dashboards/Components/Scouts/Scouts';
 import { Clubs } from './layout/Dashboards/Components/Clubs/Clubs';
 import { Opportunities } from './layout/Dashboards/Components/Opportunities/Opportunities';
-import { ProPlayer } from './layout/Register/Forms/ProPlayer/ProPlayer';
 import { PlayerRegister } from './layout/Register/components/PlayerRegister/PlayerRegister';
-import { SemiProPlayer } from './layout/Register/Forms/SemiProPlayer/SemiProPlayer';
-import { AmateurPlayer } from './layout/Register/Forms/AmateurPlayer/AmateurPlayer';
 import { EditProfile } from './layout/Dashboards/Components/EditProfile/EditProfile';
 import { Favorites } from './layout/Dashboards/Components/Favorites/Favorites';
 import { ClubDashboard } from './layout/Dashboards/ClubDashboard/ClubDashboard';
@@ -43,6 +40,8 @@ import { UniversityDashboard } from './layout/Dashboards/UniversityDashboard/Uni
 import { UniversityProvider } from './contexts/userContext/UniversityProvider/UniversityProvider';
 import { SoloSlide } from './components/elements/SoloSlide/SoloSlide';
 import { Events } from './layout/Dashboards/Components/Events/Events';
+import { S2TPlus } from './layout/Dashboards/Components/S2TPlus/S2TPlus';
+import { UserInfo } from './layout/UserInfo/UserInfo';
 
 register();
 
@@ -66,26 +65,29 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   {/* Rota do dashboard para jogadores + subrotas dele */}
                   <Route path="/player-dashboard/" element={<PlayerDashboard />}>
                     <Route path="profile" element={<PlayerProfile />} />
-                    <Route path="profile-edit" element={<EditProfile />} />
+                    <Route path="profile-edit" element={<EditProfile type="player" />} />
                     <Route path="opportunities" element={<Opportunities />} />
                     <Route path="scouts" element={<Scouts />} />
                     <Route path="clubs" element={<Clubs />} />
                     <Route path="favorites" element={<Favorites />} />
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
+                    <Route path="events" element={<Events />} />
                     <Route path="friends" element={<Friends friends={playerData.friends} />} />
+                    <Route path="s2tplus" element={<S2TPlus />} />
                   </Route>
 
                   {/* Rota do dashboard para clubes + subrotas dele */}
                   <Route path="/club-dashboard/" element={<ClubDashboard />}>
                     <Route path="profile" element={<ClubProfile />} />
                     <Route path="my-squad" element={<MySquad />} />
-                    <Route path="profile-edit" element={<EditProfile />} />
+                    <Route path="profile-edit" element={<EditProfile type="club" />} />
                     <Route path="opportunities" element={<Opportunities />} />
                     <Route path="my-opportunities" element={<MyOpportunities />} />
                     <Route path="scouts" element={<Scouts />} />
                     <Route path="clubs" element={<Clubs />} />
                     <Route path="players" element={<Players />} />
                     <Route path="favorites" element={<ClubFavorites />} />
+                    <Route path="events" element={<Events />} />
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="friends" element={<Friends friends={clubData.friends} />} />
                   </Route>
@@ -93,7 +95,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   <Route path="/university-dashboard/" element={<UniversityDashboard />}>
                     <Route path="profile" element={<ClubProfile />} />
                     <Route path="my-squad" element={<MySquad />} />
-                    <Route path="profile-edit" element={<EditProfile />} />
+                    <Route path="profile-edit" element={<EditProfile type="university" />} />
                     <Route path="opportunities" element={<Opportunities />} />
                     <Route path="my-opportunities" element={<MyOpportunities />} />
                     <Route path="scouts" element={<Scouts />} />
@@ -106,12 +108,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   </Route>
 
                   <Route path="/register" element={<Register />} />
-
-                  <Route path="/register/player" element={<PlayerRegister />}>
-                    <Route path="professional" element={<ProPlayer />} />
-                    <Route path="semi-professional" element={<SemiProPlayer />} />
-                    <Route path="amateur" element={<AmateurPlayer />} />
-                  </Route>
+                  <Route path="/user-info" element={<UserInfo />} />
 
                   <Route path="/register/scout" element={<p>scout</p>} />
 

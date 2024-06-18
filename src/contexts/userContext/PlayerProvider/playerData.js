@@ -23,6 +23,7 @@ export const playerData = {
         { title: 'Idade', info: 32 },
         { title: 'Local de nascimento', info: 'Mogi das cruzes' },
         { title: 'Nacionalidade', info: 'Brasil' },
+        { title: 'Passaporte', info: 'N/A' },
         { title: 'Gênero', info: 'Masculino' },
         { title: 'Altura', info: '1,72M' },
         { title: 'Peso', info: '75 KG' },

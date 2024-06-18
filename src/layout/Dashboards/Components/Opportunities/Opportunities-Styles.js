@@ -13,7 +13,7 @@ export const OpportunitiesContainer = styled.div`
    height: 100%;
    min-height: 400px;
    
-   ${AuthDropdownContainer} {
+   > ${AuthDropdownContainer} {
     width: 200px;
 
     @media ${theme.medias.smallmobile} {

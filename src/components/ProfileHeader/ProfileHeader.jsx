@@ -11,7 +11,7 @@ export function ProfileHeader({ type }) {
 
       {type === 'player' && (
         <Nav>
-          <StyledLink path="/" text="Home" color={theme.colors.white} hovercolor={theme.colors.black} />
+          <StyledLink path={`/${type}-dashboard/`} text="Home" color={theme.colors.white} hovercolor={theme.colors.black} />
           <StyledLink path={`/${type}-dashboard/profile`} text="Perfil" color={theme.colors.white} hovercolor={theme.colors.black} />
           <StyledLink path={`/${type}-dashboard/opportunities`} text="Oportunidades" color={theme.colors.white} hovercolor={theme.colors.black} />
           <StyledLink path={`/${type}-dashboard/scouts`} text="Scouts" color={theme.colors.white} hovercolor={theme.colors.black} />
@@ -20,6 +20,7 @@ export function ProfileHeader({ type }) {
           <StyledLink path={`/${type}-dashboard/events`} text="Eventos" color={theme.colors.white} hovercolor={theme.colors.black} />
           <StyledLink path={`/${type}-dashboard/contacts`} text="Contatos" color={theme.colors.white} hovercolor={theme.colors.black} />
           <StyledLink path={`/${type}-dashboard/friends`} text="Amigos" color={theme.colors.white} hovercolor={theme.colors.black} />
+          <StyledLink path={`/${type}-dashboard/s2tplus`} text="S2T+" color={theme.colors.white} hovercolor={theme.colors.black} />
         </Nav>
       )}
 
@@ -37,6 +38,7 @@ export function ProfileHeader({ type }) {
         <StyledLink path={`/${type}-dashboard/favorites`} text="Favoritos" color={theme.colors.white} hovercolor={theme.colors.black} />
         <StyledLink path={`/${type}-dashboard/contacts`} text="Contatos" color={theme.colors.white} hovercolor={theme.colors.black} />
         <StyledLink path={`/${type}-dashboard/friends`} text="Amigos" color={theme.colors.white} hovercolor={theme.colors.black} />
+        <StyledLink path={`/${type}-dashboard/s2tplus`} text="S2T+" color={theme.colors.white} hovercolor={theme.colors.black} />
       </Nav>
       )}
 

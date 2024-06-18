@@ -28,7 +28,6 @@ export function PlayerRegister() {
           borderhover={theme.colors.black}
           onclick={() => setProfileType('proPlayer')}
           active
-
         />
 
         <Button

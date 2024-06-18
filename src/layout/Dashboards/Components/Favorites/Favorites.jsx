@@ -16,11 +16,11 @@ export function Favorites() {
 
   return (
     <Styled.FavoritesContainer>
-      <ProfileSlide items={s2tState.videos.trending} title="Vídeos em alta" />
+      <ProfileSlide items={s2tState.videos.trending} title="Vídeos em alta" report />
 
-      <ProfileSlide items={s2tState.videos.trending} title="Meus vídeos favoritos" />
+      <ProfileSlide items={s2tState.videos.trending} title="Meus vídeos favoritos" report />
 
-      <GridProposals title="Oportunidades favoritas" items={s2tState.proposals[playerState.type.gender].agents[playerState.type.category]} />
+      <GridProposals title="Oportunidades favoritas" items={s2tState.proposals[playerState.type.gender][playerState.type.category].agents} />
     </Styled.FavoritesContainer>
   );
 }

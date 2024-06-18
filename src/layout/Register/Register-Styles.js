@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { ColumnContainer } from '../../components/ColumnContainer/Column-Styles';
 import { AuthHistoricContainer } from '../../components/elements/AuthElements/AuthHistoric/AuthHistoric-Styles';
 import { RowContainer } from '../../components/RowContainer/Row-Styles.js';
+import { AuthContainer } from '../../components/elements/AuthElements/AuthWrapper/AuthWrapper-Styles.js';
 
 export const RegisterPage = styled.section`
   ${({ theme }) => css`
@@ -21,8 +22,6 @@ export const RegisterPage = styled.section`
      align-items: center; 
      gap: ${theme.spacings.medium};
 
-     width: 100vw;
-     height: 100vh;
 
      ${RowContainer} {
       justify-content: center;
@@ -30,6 +29,11 @@ export const RegisterPage = styled.section`
       @media ${theme.medias.smallpc} {
         flex-direction: row;
       }
+     }
+
+     ${AuthContainer} {
+      max-width: 600px;
+      height: auto;
      }
 
     }

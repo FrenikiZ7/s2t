@@ -391,8 +391,8 @@ export const s2tData = {
     },
 
     male: {
-      agents: {
-        semiProfessional: [
+      semiProfessional: {
+        agents: [
           {
             from: 'Agente',
             date: '29/05/2024',
@@ -405,7 +405,82 @@ export const s2tData = {
           },
         ],
 
-        professional: [
+        clubs: [
+          {
+            from: 'Clube',
+            date: '29/05/2024',
+            category: 'Semi profissional',
+            opportunity: 'Centroavante',
+            country: 'Brasil',
+            org: 'Brasileirão',
+            orglogo: '/assets/images/pngs/brasileirao.png',
+            orgpath: '/brasileirao',
+          },
+        ],
+
+      },
+
+      professional: {
+        clubs: [
+          {
+            opportunityId: 0,
+            details: {
+              from: 'Clube 0',
+              date: '01-06-2024',
+              category: 'Profissional',
+              opportunity: 'Zagueiro',
+              country: 'Alemanha',
+              org: 'Bundesliga',
+              orglogo: '/assets/images/pngs/brasileirao.png',
+              orgpath: '/bundesliga',
+              payment: {
+                minPayment: 10000,
+                maxPayment: 18000,
+              },
+            },
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
+            requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
+          },
+          {
+            opportunityId: 1,
+            details: {
+              from: 'Clube 1',
+              date: '01-06-2024',
+              category: 'Profissional',
+              opportunity: 'Zagueiro',
+              country: 'Alemanha',
+              org: 'Bundesliga',
+              orglogo: '/assets/images/pngs/brasileirao.png',
+              orgpath: '/bundesliga',
+              payment: {
+                minPayment: 10000,
+                maxPayment: 18000,
+              },
+            },
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
+            requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
+          },
+          {
+            opportunityId: 2,
+            details: {
+              from: 'Clube 2',
+              date: '01-06-2024',
+              category: 'Profissional',
+              opportunity: 'Zagueiro',
+              country: 'Alemanha',
+              org: 'Bundesliga',
+              orglogo: '/assets/images/pngs/brasileirao.png',
+              orgpath: '/bundesliga',
+              payment: {
+                minPayment: 10000,
+                maxPayment: 18000,
+              },
+            },
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
+            requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
+          },
+        ],
+        agents: [
           {
             opportunityId: 0,
             details: {
@@ -725,86 +800,9 @@ export const s2tData = {
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
             requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
           },
-
-        ],
-
-      },
-
-      clubs: {
-
-        semiProfessional: [
-          {
-            from: 'Clube',
-            date: '29/05/2024',
-            category: 'Semi profissional',
-            opportunity: 'Centroavante',
-            country: 'Brasil',
-            org: 'Brasileirão',
-            orglogo: '/assets/images/pngs/brasileirao.png',
-            orgpath: '/brasileirao',
-          },
-        ],
-
-        professional: [
-          {
-            opportunityId: 0,
-            details: {
-              from: 'Clube 0',
-              date: '01-06-2024',
-              category: 'Profissional',
-              opportunity: 'Zagueiro',
-              country: 'Alemanha',
-              org: 'Bundesliga',
-              orglogo: '/assets/images/pngs/brasileirao.png',
-              orgpath: '/bundesliga',
-              payment: {
-                minPayment: 10000,
-                maxPayment: 18000,
-              },
-            },
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
-            requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
-          },
-          {
-            opportunityId: 1,
-            details: {
-              from: 'Clube 1',
-              date: '01-06-2024',
-              category: 'Profissional',
-              opportunity: 'Zagueiro',
-              country: 'Alemanha',
-              org: 'Bundesliga',
-              orglogo: '/assets/images/pngs/brasileirao.png',
-              orgpath: '/bundesliga',
-              payment: {
-                minPayment: 10000,
-                maxPayment: 18000,
-              },
-            },
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
-            requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
-          },
-          {
-            opportunityId: 2,
-            details: {
-              from: 'Clube 2',
-              date: '01-06-2024',
-              category: 'Profissional',
-              opportunity: 'Zagueiro',
-              country: 'Alemanha',
-              org: 'Bundesliga',
-              orglogo: '/assets/images/pngs/brasileirao.png',
-              orgpath: '/bundesliga',
-              payment: {
-                minPayment: 10000,
-                maxPayment: 18000,
-              },
-            },
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
-            requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
-          },
         ],
       },
+
     },
 
   },

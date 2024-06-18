@@ -5,6 +5,8 @@ import { Title } from '../Title/Title';
 import { GridLayoutContainer } from '../../GridLayout/GridLayout-Styles';
 import { ProposalCard } from '../ProposalCard/ProposalCard';
 import { ProposalModal } from '../ProposalModal/ProposalModal';
+import { AuthSearch } from '../AuthElements/AuthSearch/AuthSearch';
+import { FilterProposals } from '../FilterProposals/FilterProposals';
 
 export function GridProposals({ items, title }) {
   // Pagination stuff
@@ -46,6 +48,8 @@ export function GridProposals({ items, title }) {
     <Styled.GridProposalsContainer>
 
       {title && <Title text={title} uppercase />}
+      <FilterProposals />
+
       <Styled.ModalContainer>
 
         <GridLayoutContainer>

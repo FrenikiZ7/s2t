@@ -17,6 +17,7 @@ import { IconDiv } from '../../components/elements/IconDiv/IconDiv';
 import { SocialLink } from '../../components/elements/SocialLink/SocialLink';
 import { Footer } from '../../components/Footer/Footer';
 import { MobileNav } from '../../components/MobileNav/MobileNav';
+import { GridLayout } from '../../components/GridLayout/GridLayout';
 
 export function Home() {
   const s2tContext = useContext(S2tContext);
@@ -74,7 +75,7 @@ export function Home() {
             borderhover={theme.colors.primary}
           />
 
-          {/* <Button
+          <Button
             text="Dashboard - Jogador"
             path="/player-dashboard"
             bgcolor={theme.colors.lightprimary}
@@ -94,7 +95,18 @@ export function Home() {
             texthover={theme.colors.black}
             border={theme.colors.lightprimary}
             borderhover={theme.colors.primary}
-          /> */}
+          />
+
+          <Button
+            text="Dashboard - Universidade"
+            path="/university-dashboard"
+            bgcolor={theme.colors.lightprimary}
+            bghover={theme.colors.primary}
+            textcolor={theme.colors.black}
+            texthover={theme.colors.black}
+            border={theme.colors.lightprimary}
+            borderhover={theme.colors.primary}
+          />
         </Nav>
       </Header>
 
@@ -138,7 +150,7 @@ export function Home() {
 
       <BannerSlide />
 
-      <Row>
+      <GridLayout>
         <Button
           text="Profissional"
           bgcolor={theme.colors.black}
@@ -183,7 +195,8 @@ export function Home() {
           borderhover={theme.colors.black}
           gradient
         />
-      </Row>
+
+      </GridLayout>
 
       <Slide items={s2tState.photos.usersType} />
 

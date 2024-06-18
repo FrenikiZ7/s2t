@@ -13,6 +13,7 @@ import { AuthButton } from '../AuthElements/AuthButton/AuthButton';
 import { IconDiv } from '../IconDiv/IconDiv';
 import { Title } from '../Title/Title';
 import { Row } from '../../RowContainer/Row';
+import { AuthLayout } from '../AuthElements/AuthLayout/AuthLayout';
 
 export function NewProposal({ onclick }) {
   return (
@@ -29,74 +30,76 @@ export function NewProposal({ onclick }) {
       <AuthWrapper>
         <AuthForm>
           <Subtitle text="Detalhes" uppercase />
-          <AuthInput
-            type="text"
-            name="league_input"
-            id="league_input"
-            placeholder="Para qual liga é a oportunidade?"
-            title="Liga"
-            required
-          />
+          <AuthLayout>
+            <AuthInput
+              type="text"
+              name="league_input"
+              id="league_input"
+              placeholder="Para qual liga é a oportunidade?"
+              title="Liga"
+              required
+            />
 
-          <AuthInput
-            type="text"
-            name="country_input"
-            id="country_input"
-            placeholder="Para qual país é a oportunidade?"
-            title="País"
-            required
-          />
+            <AuthInput
+              type="text"
+              name="country_input"
+              id="country_input"
+              placeholder="Para qual país é a oportunidade?"
+              title="País"
+              required
+            />
 
-          <AuthInput
-            type="text"
-            name="category_input"
-            id="category_input"
-            placeholder="Para qual categoria é a oportunidade?"
-            title="Categoria"
-            required
-          />
+            <AuthInput
+              type="text"
+              name="category_input"
+              id="category_input"
+              placeholder="Para qual categoria é a oportunidade?"
+              title="Categoria"
+              required
+            />
 
-          <AuthInput
-            type="number"
-            name="minimumAge_input"
-            id="minimumAge_input"
-            placeholder="Qual a idade mínima para se candidatar? (Em anos)"
-            title="Idade Mínima"
-          />
+            <AuthInput
+              type="number"
+              name="minimumHeight_input"
+              id="minimumHeight_input"
+              placeholder="Qual altura mínima para se candidatar?"
+              title="Altura mínima"
+            />
 
-          <AuthInput
-            type="number"
-            name="maximumAge_input"
-            id="maximumAge_input"
-            placeholder="Qual a idade máxima para se candidatar? (Em anos)"
-            title="Idade Máxima"
-          />
+            <AuthInput
+              type="number"
+              name="minimumAge_input"
+              id="minimumAge_input"
+              placeholder="Qual a idade mínima para se candidatar? (Em anos)"
+              title="Idade Mínima"
+            />
 
-          <AuthInput
-            type="number"
-            name="minimumHeight_input"
-            id="minimumHeight_input"
-            placeholder="Qual altura mínima para se candidatar?"
-            title="Altura mínima"
-          />
+            <AuthInput
+              type="number"
+              name="maximumAge_input"
+              id="maximumAge_input"
+              placeholder="Qual a idade máxima para se candidatar? (Em anos)"
+              title="Idade Máxima"
+            />
 
-          <AuthInput
-            type="number"
-            name="mininumPayment_input"
-            id="mininumPayment_input"
-            placeholder="Qual o menor valor que o jogador pode receber mensalmente?"
-            title="Valor mínimo"
-            required
-          />
+            <AuthInput
+              type="number"
+              name="mininumPayment_input"
+              id="mininumPayment_input"
+              placeholder="Qual o menor valor que o jogador pode receber mensalmente?"
+              title="Valor mínimo"
+              required
+            />
 
-          <AuthInput
-            type="number"
-            name="maximumPayment_input"
-            id="maximumPayment_input"
-            placeholder="Qual o maior valor que o jogador pode receber mensalmente?"
-            title="Valor máximo"
-            required
-          />
+            <AuthInput
+              type="number"
+              name="maximumPayment_input"
+              id="maximumPayment_input"
+              placeholder="Qual o maior valor que o jogador pode receber mensalmente?"
+              title="Valor máximo"
+              required
+            />
+          </AuthLayout>
 
           <ColumnContainer>
             <Subtitle text="Descrição" uppercase />

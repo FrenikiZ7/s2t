@@ -3,7 +3,7 @@ import React from 'react';
 import * as Styled from './AuthButton-Styles';
 
 export function AuthButton({
-  name, id, value, onClick,
+  name, id, value, onclick,
 }) {
   return (
     <Styled.AuthButtonElement
@@ -12,7 +12,7 @@ export function AuthButton({
       name={name}
       id={id}
       value={value}
-      onClick={onClick}
+      onClick={onclick}
     />
   );
 }
@@ -21,5 +21,5 @@ AuthButton.propTypes = {
   name: Prop.string.isRequired,
   id: Prop.string.isRequired,
   value: Prop.string.isRequired,
-  onClick: Prop.func,
+  onclick: Prop.func,
 };

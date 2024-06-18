@@ -4,6 +4,7 @@ import * as Styled from './GridPlayers-Styles';
 import { Title } from '../Title/Title';
 import { GridLayoutContainer } from '../../GridLayout/GridLayout-Styles';
 import { UserCard } from '../UserCard/UserCard';
+import { FilterPlayers } from '../FilterPlayers/FilterPlayers';
 
 export function GridPlayers({ title, items }) {
   // Pagination stuff
@@ -37,6 +38,8 @@ export function GridPlayers({ title, items }) {
   return (
     <Styled.GridPlayersContainer>
       <Title text={title} uppercase />
+
+      <FilterPlayers />
 
       <GridLayoutContainer>
         {displayItems.map((item) => (

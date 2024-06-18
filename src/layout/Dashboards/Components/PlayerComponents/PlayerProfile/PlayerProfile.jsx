@@ -17,7 +17,7 @@ export function PlayerProfile() {
 
       <ProfileInfo items={playerState.profile.info} />
 
-      <ProfileSlide items={playerState.profile.photos} title="Fotos / Vídeos" />
+      <ProfileSlide items={playerState.profile.photos} title="Fotos / Vídeos" report addmore />
 
       <Row>
         <Historic items={playerState.profile.clubs} title="Histórico de clubes" />
