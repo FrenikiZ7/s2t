@@ -6,9 +6,10 @@ import { InfoInRow } from '../InfoInRow/InfoInRow';
 import { CenterColumn } from '../../CenterColumn/CenterColumn';
 import { Subtitle } from '../Subtitle/Subtitle';
 import { Text } from '../Text/Text';
+import { FavoriteIcon } from '../FavoriteIcon/FavoriteIcon';
 
 export function ProposalCard({
-  from = '', date = '', opportunity = '', country = '', org = '', orglogo = '', orgpath = '', category = '', onclick,
+  from = '', date = '', opportunity = '', country = '', org = '', orglogo = '', orgpath = '', category = '', onclick, publicview,
 }) {
   return (
     <Styled.ProposalCardElement onClick={onclick}>
@@ -30,6 +31,8 @@ export function ProposalCard({
         {org && <StyledLink path={orgpath} text={org} />}
       </CenterColumn>
 
+      {publicview && <FavoriteIcon />}
+
     </Styled.ProposalCardElement>
   );
 }
@@ -44,4 +47,5 @@ ProposalCard.propTypes = {
   orgpath: Prop.string,
   category: Prop.string,
   onclick: Prop.func,
+  publicview: Prop.bool,
 };

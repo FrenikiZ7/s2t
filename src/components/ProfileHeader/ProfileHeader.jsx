@@ -42,6 +42,16 @@ export function ProfileHeader({ type }) {
       </Nav>
       )}
 
+      {type === 'user' && (
+      <Nav>
+        <StyledLink path="/" text="Home" color={theme.colors.white} hovercolor={theme.colors.black} />
+        <StyledLink path={`/${type}/profile`} text="Perfil" color={theme.colors.white} hovercolor={theme.colors.black} />
+        <StyledLink path={`/${type}/squad`} text="Plantel" color={theme.colors.white} hovercolor={theme.colors.black} />
+        <StyledLink path={`/${type}/opportunities`} text="Oportunidades" color={theme.colors.white} hovercolor={theme.colors.black} />
+        <StyledLink path={`/${type}/friends`} text="Amigos" color={theme.colors.white} hovercolor={theme.colors.black} />
+      </Nav>
+      )}
+
     </Styled.ProfileHeaderContainer>
   );
 }

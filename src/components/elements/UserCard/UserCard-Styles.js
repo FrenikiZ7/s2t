@@ -4,6 +4,7 @@ import { fadeIn, slideIn } from '../../../styles/animations';
 import { InfoTitle } from '../InfoInRow/InfoInRow-Styles';
 import { SubtitleElement } from '../Subtitle/Subtitle-Styles';
 import { TextElement } from '../Text/Text-Styles';
+import { FavoriteIconElement } from '../FavoriteIcon/FavoriteIcon-Styles';
 
 export const UserCardElement = styled.div`
   ${({ theme }) => css`
@@ -19,6 +20,22 @@ export const UserCardElement = styled.div`
 
     transition: all 500ms ease-in-out;
 
+    ${FavoriteIconElement} {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 50%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media ${theme.medias.mobile} {
+      width: 20px;
+      height: 20px;
+    }
+
+    }
 
 
     ${LinkContainer} {

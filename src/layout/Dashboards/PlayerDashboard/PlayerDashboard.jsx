@@ -15,6 +15,8 @@ import { S2tProvider } from '../../../contexts/s2tContext/S2tProvider';
 import { PlayerProvider } from '../../../contexts/userContext/PlayerProvider/PlayerProvider';
 import { MobileMenu } from '../../../components/MobileMenu/MobileMenu';
 import { FloatingIcon } from '../../../components/elements/FloatingIcon/FloatingIcon';
+import { ProfileBannerContainer } from '../../../components/elements/ProfileBanner/ProfileBanner-Styles';
+import { ProfileBanner } from '../../../components/elements/ProfileBanner/ProfileBanner';
 
 export function PlayerDashboard() {
   const playerContext = useContext(PlayerContext);
@@ -24,7 +26,7 @@ export function PlayerDashboard() {
   return (
     <Styled.PlayerDashboardContainer>
 
-      <Styled.BannerContainer backgroundimagesrc={playerState.profile.banner.backgroundImageSrc}>
+      <ProfileBanner backgroundimagesrc={playerState.profile.banner.backgroundImageSrc}>
         <ProfilePicture
           imagesrc={playerState.profile.banner.profileImageSrc}
           badge={playerState.profile.banner.badge}
@@ -40,7 +42,7 @@ export function PlayerDashboard() {
           border={theme.colors.black}
           borderhover={theme.colors.primary}
         />
-      </Styled.BannerContainer>
+      </ProfileBanner>
 
       {/* Aparece apenas em telas maiores que 768px */}
       <ProfileHeader type="player" />

@@ -15,7 +15,6 @@ export const RowContainer = styled.div`
 
       > ${TitleElement} {
         margin-bottom: 0px;
-
       }
   `}
 `;

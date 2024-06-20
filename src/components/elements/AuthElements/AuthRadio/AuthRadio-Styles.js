@@ -7,7 +7,6 @@ export const AuthRadioContainer = styled.div`
      gap: ${theme.spacings.small};
      font-family: ${theme.fonts.primary};
      margin-bottom: ${theme.spacings.xsmall};
-
   `}
 `;
 

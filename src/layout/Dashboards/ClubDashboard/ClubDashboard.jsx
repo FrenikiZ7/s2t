@@ -16,6 +16,7 @@ import { PlayerProvider } from '../../../contexts/userContext/PlayerProvider/Pla
 import { MobileMenu } from '../../../components/MobileMenu/MobileMenu';
 import { FloatingIcon } from '../../../components/elements/FloatingIcon/FloatingIcon';
 import { ClubContext } from '../../../contexts/userContext/ClubProvider/ClubContext';
+import { ProfileBanner } from '../../../components/elements/ProfileBanner/ProfileBanner';
 
 export function ClubDashboard() {
   const clubContext = useContext(ClubContext);
@@ -25,7 +26,7 @@ export function ClubDashboard() {
   return (
     <Styled.ClubDashboardContainer>
 
-      <Styled.BannerContainer backgroundimagesrc={clubState.profile.banner.backgroundImageSrc}>
+      <ProfileBanner backgroundimagesrc={clubState.profile.banner.backgroundImageSrc}>
         <ProfilePicture
           imagesrc={clubState.profile.banner.profileImageSrc}
           badge={clubState.profile.banner.badge}
@@ -41,7 +42,7 @@ export function ClubDashboard() {
           border={theme.colors.black}
           borderhover={theme.colors.primary}
         />
-      </Styled.BannerContainer>
+      </ProfileBanner>
 
       {/* Aparece apenas em telas maiores que 768px */}
       <ProfileHeader type="club" />

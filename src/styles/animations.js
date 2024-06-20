@@ -77,3 +77,21 @@ export const fadeOut = keyframes`
     opacity: 0;
   }
 `;
+
+export const spin360Right = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const spin360Left = keyframes`
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+`;

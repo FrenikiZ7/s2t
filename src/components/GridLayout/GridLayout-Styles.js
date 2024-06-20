@@ -42,7 +42,6 @@ export const ItemContainer = styled.div`
     @media ${theme.medias.mobile} {
       width: 90px;
       height: 90px;
-
     }
   `}
 `;

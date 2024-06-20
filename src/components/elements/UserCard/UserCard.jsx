@@ -5,6 +5,7 @@ import { CenterColumn } from '../../CenterColumn/CenterColumn';
 import { InfoInRow } from '../InfoInRow/InfoInRow';
 import { Subtitle } from '../Subtitle/Subtitle';
 import { StyledLink } from '../StyledLink/StyledLink';
+import { FavoriteIcon } from '../FavoriteIcon/FavoriteIcon';
 
 export function UserCard({
   path, profileimage, position, age, bestleg, name, weight, height, category,
@@ -12,17 +13,17 @@ export function UserCard({
   return (
     <Styled.UserCardElement>
 
+      <FavoriteIcon />
+
       <StyledLink path={path}>
 
         <Styled.ProfileImage src={profileimage} alt="Imagem de perfil do usuário" />
 
         <Styled.ProfileInfo>
           <CenterColumn>
-
             <InfoInRow infotitle="Posição" info={position} />
             <InfoInRow infotitle="Idade" info={`${age} Anos`} />
             <InfoInRow infotitle="Melhor perna" info={bestleg} />
-
           </CenterColumn>
 
           <Subtitle text={name} uppercase />

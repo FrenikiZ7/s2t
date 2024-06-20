@@ -13,7 +13,7 @@ export const GridPlayersContainer = styled.div`
    gap: ${theme.spacings.small};
 
    > ${GridLayoutContainer} {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     animation: ${fadeIn} 500ms;
 
     @media ${theme.medias.smallpc} {
@@ -21,11 +21,11 @@ export const GridPlayersContainer = styled.div`
     }
 
     @media ${theme.medias.tablet} {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     @media ${theme.medias.mobile} {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
     }
   `}

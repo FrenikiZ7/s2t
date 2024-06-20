@@ -13,6 +13,7 @@ import { ColumnContainer } from '../../ColumnContainer/Column-Styles';
 import { TextArea } from '../TextArea/TextArea';
 import { Row } from '../../RowContainer/Row';
 import { IconDiv } from '../IconDiv/IconDiv';
+import { FavoriteIcon } from '../FavoriteIcon/FavoriteIcon';
 
 export function ProposalModal({
   from, date, opportunity, country, org, category, description, requirements, minpayment, maxpayment, onclick,

@@ -107,6 +107,17 @@ export function Home() {
             border={theme.colors.lightprimary}
             borderhover={theme.colors.primary}
           />
+
+          <Button
+            text="Dashboard - Público"
+            path="/user/profile"
+            bgcolor={theme.colors.lightprimary}
+            bghover={theme.colors.primary}
+            textcolor={theme.colors.black}
+            texthover={theme.colors.black}
+            border={theme.colors.lightprimary}
+            borderhover={theme.colors.primary}
+          />
         </Nav>
       </Header>
 

@@ -66,6 +66,7 @@ export function GridProposals({ items, title }) {
               onclick={() => handleCardClick(item)}
               id={item.opportunityId}
               key={item.opportunityId}
+              publicview
             />
           ))}
         </GridLayoutContainer>

@@ -22,6 +22,9 @@ export const theme = {
 
     mediumred: '#FF4040',
     lightred: '#FF5B5B',
+    red: '#C20032',
+
+    gold: '#ffbf00',
   },
 
   borders: {

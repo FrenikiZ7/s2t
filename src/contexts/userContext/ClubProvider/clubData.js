@@ -41,6 +41,7 @@ export const clubData = {
         id: '2',
         src: '/assets/images/profile/photo-2.png',
         type: 'photo',
+        isfavorite: true,
       },
 
       {
@@ -53,6 +54,7 @@ export const clubData = {
         id: '4',
         src: '/assets/images/profile/photo-4.png',
         type: 'photo',
+        isfavorite: true,
       },
 
       {

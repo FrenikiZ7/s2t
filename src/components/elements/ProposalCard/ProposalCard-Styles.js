@@ -4,6 +4,7 @@ import { fadeIn, slideIn } from '../../../styles/animations';
 import { InfoTitle } from '../InfoInRow/InfoInRow-Styles';
 import { SubtitleElement } from '../Subtitle/Subtitle-Styles';
 import { TextElement } from '../Text/Text-Styles';
+import { FavoriteIconElement } from '../FavoriteIcon/FavoriteIcon-Styles';
 
 export const ProposalCardElement = styled.div`
   ${({ theme }) => css`
@@ -71,7 +72,7 @@ export const ProposalCardElement = styled.div`
 
 export const ProposalImage = styled.img`
   ${({ theme }) => css`
-    width: 80px;
+    width: 70px;
     transition: all 300ms ease-in-out;
 
     @media ${theme.medias.mobile} {

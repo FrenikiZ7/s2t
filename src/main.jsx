@@ -42,6 +42,8 @@ import { SoloSlide } from './components/elements/SoloSlide/SoloSlide';
 import { Events } from './layout/Dashboards/Components/Events/Events';
 import { S2TPlus } from './layout/Dashboards/Components/S2TPlus/S2TPlus';
 import { UserInfo } from './layout/UserInfo/UserInfo';
+import { PublicDashboard } from './layout/Dashboards/PublicDashboard/PublicDashboard';
+import { PublicProfile } from './layout/Dashboards/Components/PublicComponents/PublicProfile/PublicProfile';
 
 register();
 
@@ -90,6 +92,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <Route path="events" element={<Events />} />
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="friends" element={<Friends friends={clubData.friends} />} />
+                    <Route path="s2tplus" element={<S2TPlus />} />
                   </Route>
 
                   <Route path="/university-dashboard/" element={<UniversityDashboard />}>
@@ -104,6 +107,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <Route path="favorites" element={<ClubFavorites />} />
                     <Route path="events" element={<Events />} />
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
+                    <Route path="friends" element={<Friends friends={clubData.friends} />} />
+                    <Route path="s2tplus" element={<S2TPlus />} />
+                  </Route>
+
+                  <Route path="/user/" element={<PublicDashboard />}>
+                    <Route path="profile" element={<PublicProfile />} />
+                    <Route path="squad" element={<MySquad />} />
+                    <Route path="opportunities" element={<Opportunities />} />
                     <Route path="friends" element={<Friends friends={clubData.friends} />} />
                   </Route>
 

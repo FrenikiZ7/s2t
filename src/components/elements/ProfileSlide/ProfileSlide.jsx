@@ -1,5 +1,5 @@
 import Prop, { bool } from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
 import { Report as ReportIcon } from '@styled-icons/material-outlined/Report';
@@ -8,77 +8,116 @@ import * as Styled from './ProfileSlide-Styles';
 import { Title } from '../Title/Title';
 import { IconDiv } from '../IconDiv/IconDiv';
 import { AuthIconFile } from '../AuthElements/AuthIconFile/AuthIconFile';
+import { theme } from '../../../styles/theme';
+import { FavoriteIcon } from '../FavoriteIcon/FavoriteIcon';
+import { RateIcons } from '../RateIcons/RateIcons';
+import { ImageModal } from '../ImageModal/ImageModal';
 
 export function ProfileSlide({
-  items, title, report = false, addmore = false,
+  items, title, publicview = false, ownerview,
 }) {
+  const [fullscreenMode, setFullscreenMode] = useState(false);
+
   return (
-    <Styled.ProfileSlideElement>
-      <Title text={title} uppercase />
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={15}
-        navigation
-        grabCursor
-        breakpoints={{
-          // Breakpoint for PCs smalls screen
-          1200: {
-            slidesPerView: 3,
-          },
-          // Breakpoint for tablet screens
-          768: {
-            slidesPerView: 2,
-          },
-          // Breakpoint for mobile screens
-          0: {
-            slidesPerView: 1,
-          },
-        }}
-      >
+    <Styled.ProfileSlideWrapper>
+      <Styled.ProfileSlideElement>
+        <Title text={title} uppercase />
+        <Swiper
+          slidesPerView={2}
+          spaceBetween={15}
+          navigation
+          zoom
+          breakpoints={{
+            // Breakpoint for tablet screens
+            768: {
+              slidesPerView: 2,
+            },
+            // Breakpoint for mobile screens
+            0: {
+              slidesPerView: 1,
+            },
+          }}
+        >
 
-        {items.length > 0 && items.map((item) => (
-          <SwiperSlide
-            key={item.id}
-            zoom
-          >
+          {items.length > 0 && items.map((item) => (
+            <SwiperSlide
+              key={item.id}
+            >
 
-            {item.type === 'photo' && (
+              {item.type === 'photo' && (
               <Styled.MediaWrapper>
-                {report && <ReportIcon />}
-                <img src={item.src} alt={item.alt} />
+
+                {publicview && (
+                  <>
+                    <Styled.TopIconsWrapper>
+                      <IconDiv name="Denunciar" hovercolor={theme.colors.mediumred}>
+                        <ReportIcon />
+                      </IconDiv>
+
+                      <FavoriteIcon isfavorite={item.isfavorite} />
+                    </Styled.TopIconsWrapper>
+
+                    <Styled.BottomIconsWrapper>
+                      <RateIcons />
+                    </Styled.BottomIconsWrapper>
+                  </>
+                )}
+                <div className="swiper-zoom-container">
+                  <img src={item.src} alt={item.alt} />
+                </div>
+
               </Styled.MediaWrapper>
-            )}
+              )}
 
-            {item.type === 'video' && (
+              {item.type === 'video' && (
+              <Styled.MediaWrapper>
+
+                {publicview && (
+                <>
+                  <Styled.TopIconsWrapper>
+                    <IconDiv name="Denunciar" hovercolor={theme.colors.mediumred}>
+                      <ReportIcon />
+                    </IconDiv>
+
+                    <FavoriteIcon isfavorite={item.isfavorite} />
+                  </Styled.TopIconsWrapper>
+
+                  <Styled.BottomIconsWrapper>
+                    <RateIcons />
+                  </Styled.BottomIconsWrapper>
+                </>
+                )}
+
+                <video autoPlay muted>
+                  <source src={item.src} type="video/mp4" />
+                  <track kind="captions" src="" srcLang="en" />
+                </video>
+              </Styled.MediaWrapper>
+              )}
+
+            </SwiperSlide>
+          ))}
+
+          {ownerview && (
+          <SwiperSlide>
             <Styled.MediaWrapper>
-              {report && <ReportIcon />}
-              <video autoPlay muted>
-                <source src={item.src} type="video/mp4" />
-                <track kind="captions" src="" srcLang="en" />
-              </video>
-            </Styled.MediaWrapper>
-            )}
 
-          </SwiperSlide>
-        ))}
-
-        {addmore && (
-        <SwiperSlide>
-          <Styled.MediaWrapper>
-
-            {/* <IconDiv name="Adicionar mais">
+              {/* <IconDiv name="Adicionar mais">
               <AddIcon />
             </IconDiv> */}
 
-            <AuthIconFile id="addMoreMedia" accept="image/*,video/*" />
+              <AuthIconFile id="addMoreMedia" accept="image/*,video/*" />
 
-            <img src="/assets/images/backgrounds/ball.png" alt="" />
-          </Styled.MediaWrapper>
-        </SwiperSlide>
-        )}
+              <img src="/assets/images/backgrounds/ball.png" alt="" />
+            </Styled.MediaWrapper>
+          </SwiperSlide>
+          )}
 
-      </Swiper>
-    </Styled.ProfileSlideElement>
+        </Swiper>
+
+      </Styled.ProfileSlideElement>
+
+    </Styled.ProfileSlideWrapper>
   );
 }
 
@@ -86,7 +125,7 @@ ProfileSlide.propTypes = {
   // n faço ideia oq é isso, só está assim pq foi o unico q n deu erro no console
   items: Prop.arrayOf(Prop.object).isRequired,
   title: Prop.string,
-  report: Prop.bool,
-  addmore: Prop.bool,
+  publicview: Prop.bool,
+  ownerview: Prop.bool,
 
 };

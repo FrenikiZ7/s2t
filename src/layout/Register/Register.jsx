@@ -17,6 +17,7 @@ import { AuthButton } from '../../components/elements/AuthElements/AuthButton/Au
 import { AuthRadio } from '../../components/elements/AuthElements/AuthRadio/AuthRadio';
 import { Popup } from '../../components/elements/Popup/Popup';
 import { AuthDropdown } from '../../components/elements/AuthElements/AuthDropdown/AuthDropdown';
+import { PricingCard } from '../../components/elements/PricingCard/PricingCard';
 
 export function Register() {
   const [profileType, setProfileType] = useState('');
@@ -170,6 +171,8 @@ export function Register() {
         onclick={() => setIsOpen(!isOpen)}
       />
       )} */}
+
+      {/* <PricingCard /> */}
 
     </Styled.RegisterPage>
 

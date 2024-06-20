@@ -16,9 +16,9 @@ export function Favorites() {
 
   return (
     <Styled.FavoritesContainer>
-      <ProfileSlide items={s2tState.videos.trending} title="Vídeos em alta" report />
+      <ProfileSlide items={s2tState.videos.trending} title="Vídeos em alta" publicview />
 
-      <ProfileSlide items={s2tState.videos.trending} title="Meus vídeos favoritos" report />
+      <ProfileSlide items={s2tState.videos.trending} title="Meus vídeos favoritos" publicview />
 
       <GridProposals title="Oportunidades favoritas" items={s2tState.proposals[playerState.type.gender][playerState.type.category].agents} />
     </Styled.FavoritesContainer>

@@ -13,9 +13,8 @@ import { GridLayoutContainer } from '../../components/GridLayout/GridLayout-Styl
 export const HomePage = styled.main`
   ${({ theme }) => css`
 
-
   ${GridLayoutContainer} {
-    animation: ${slideInRight} 500ms;
+    animation: ${slideInRight} 500ms; 
     grid-gap: 5px;
 
 

@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
-import * as Styled from './UniversityDashboard-Styles';
+import * as Styled from './PublicDashboard-Styles';
+import { PlayerContext } from '../../../contexts/userContext/PlayerProvider/PlayerContext';
 import { theme } from '../../../styles/theme';
 
 import { ProfilePicture } from '../../../components/elements/ProfilePicture/ProfilePicture';
@@ -14,42 +15,46 @@ import { S2tProvider } from '../../../contexts/s2tContext/S2tProvider';
 import { PlayerProvider } from '../../../contexts/userContext/PlayerProvider/PlayerProvider';
 import { MobileMenu } from '../../../components/MobileMenu/MobileMenu';
 import { FloatingIcon } from '../../../components/elements/FloatingIcon/FloatingIcon';
-import { UniversityContext } from '../../../contexts/userContext/UniversityProvider/UniversityContext';
+import { ClubContext } from '../../../contexts/userContext/ClubProvider/ClubContext';
 import { ProfileBanner } from '../../../components/elements/ProfileBanner/ProfileBanner';
+import { FavoriteIcon } from '../../../components/elements/FavoriteIcon/FavoriteIcon';
 
-export function UniversityDashboard() {
-  const universityContext = useContext(UniversityContext);
-  const { universityState, universityDispatch } = universityContext;
-
+export function PublicDashboard() {
+  const clubContext = useContext(ClubContext);
+  const { clubState, clubDispatch } = clubContext;
   const [menuVisibility, setMenuVisibility] = useState(false);
+  const [follow, setFollow] = useState(false);
 
   return (
-    <Styled.UniversityDashboardContainer>
+    <Styled.PublicDashboardContainer>
 
-      <ProfileBanner backgroundimagesrc={universityState.profile.banner.backgroundImageSrc}>
+      <ProfileBanner backgroundimagesrc={clubState.profile.banner.backgroundImageSrc}>
         <ProfilePicture
-          imagesrc={universityState.profile.banner.profileImageSrc}
-          badge={universityState.profile.banner.badge}
+          imagesrc={clubState.profile.banner.profileImageSrc}
+          badge={clubState.profile.banner.badge}
         />
-        <ProfileName name={universityState.profile.banner.name} />
+        <ProfileName name={clubState.profile.banner.name} />
         <Button
-          path="/university-dashboard/profile-edit"
-          text="Editar Perfil"
+          text={follow ? 'Deixar de seguir' : 'Seguir'}
           bgcolor={theme.colors.primary}
           bghover={theme.colors.black}
           textcolor={theme.colors.black}
           texthover={theme.colors.primary}
           border={theme.colors.black}
           borderhover={theme.colors.primary}
+          onclick={() => setFollow(!follow)}
         />
+
+        <FavoriteIcon />
+
       </ProfileBanner>
 
       {/* Aparece apenas em telas maiores que 768px */}
-      <ProfileHeader type="university" />
+      <ProfileHeader type="user" />
 
       {/* Aparece apenas em telas menores que 768px */}
       {menuVisibility ? (
-        <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)} type="university" />
+        <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)} type="club" />
       ) : (
         <FloatingIcon
           icon={(
@@ -69,8 +74,9 @@ export function UniversityDashboard() {
           </ColumnContainer>
         </PlayerProvider>
       </S2tProvider>
-      <Slide items={universityState.benefits} title="Meus benefícios" />
 
-    </Styled.UniversityDashboardContainer>
+      <Slide items={clubState.benefits} title="Benefícios do usuário" />
+
+    </Styled.PublicDashboardContainer>
   );
 }

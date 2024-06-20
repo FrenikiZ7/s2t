@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { ColumnContainer } from '../../../components/ColumnContainer/Column-Styles';
 
-export const UniversityDashboardContainer = styled.section`
+export const PublicDashboardContainer = styled.section`
   ${({ theme }) => css`
       
     >${ColumnContainer} {
@@ -16,6 +16,8 @@ export const UniversityDashboardContainer = styled.section`
         width: 100%;
       }
     }
+
+    
 
   `}
 `;
