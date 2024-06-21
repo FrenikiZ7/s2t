@@ -24,8 +24,7 @@ export const ProposalModalElement = styled.div`
      padding: ${theme.spacings.xxlarge};
 
 
-     transition: all 700ms ease-in-out;
-     
+     transition: all 700ms ease-in-out;     
 
      @media ${theme.medias.smallpc} {
       width: 100%;

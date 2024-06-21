@@ -1,6 +1,87 @@
 // armazena todos os dados da Showcase2Transfer
 export const s2tData = {
 
+  news: [
+    {
+      newsId: 1,
+      title: 'News',
+      thumbnail: 'assets/images/background.png',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      path: '/',
+    },
+    {
+      newsId: 2,
+      title: 'News',
+      thumbnail: 'assets/images/background.png',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      path: '/',
+    },
+    {
+      newsId: 3,
+      title: 'News',
+      thumbnail: 'assets/images/background.png',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      path: '/',
+    },
+    {
+      newsId: 4,
+      title: 'News',
+      thumbnail: 'assets/images/background.png',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      path: '/',
+    },
+  ],
+
+  events: [
+    {
+      eventId: 1,
+      title: '26/06/2024',
+      subtitle: '16:30',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      path: '/',
+    },
+
+    {
+      eventId: 2,
+      title: '30/06/2024',
+      subtitle: '18:20',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      path: '/',
+    },
+
+    {
+      eventId: 3,
+      title: '05/07/2024',
+      subtitle: '20:00',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      path: '/',
+    },
+
+    {
+      eventId: 4,
+      title: '10/07/2024',
+      subtitle: '22:30',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elitvo',
+      path: '/',
+    },
+
+    {
+      eventId: 5,
+      title: '12/07/2024',
+      subtitle: '10:00',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elitisa',
+      path: '/',
+    },
+
+    {
+      eventId: 6,
+      title: '18/07/2024',
+      subtitle: '09:30',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      path: '/',
+    },
+  ],
+
   photos: {
 
     events: [

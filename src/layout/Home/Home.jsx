@@ -18,6 +18,7 @@ import { SocialLink } from '../../components/elements/SocialLink/SocialLink';
 import { Footer } from '../../components/Footer/Footer';
 import { MobileNav } from '../../components/MobileNav/MobileNav';
 import { GridLayout } from '../../components/GridLayout/GridLayout';
+import { Banner } from '../../components/elements/Banner/Banner';
 
 export function Home() {
   const s2tContext = useContext(S2tContext);
@@ -75,7 +76,7 @@ export function Home() {
             borderhover={theme.colors.primary}
           />
 
-          <Button
+          {/* <Button
             text="Dashboard - Jogador"
             path="/player-dashboard"
             bgcolor={theme.colors.lightprimary}
@@ -117,7 +118,7 @@ export function Home() {
             texthover={theme.colors.black}
             border={theme.colors.lightprimary}
             borderhover={theme.colors.primary}
-          />
+          /> */}
         </Nav>
       </Header>
 
@@ -211,7 +212,7 @@ export function Home() {
 
       <Slide items={s2tState.photos.usersType} />
 
-      <BannerSlide />
+      <Banner />
 
       <Slide items={s2tState.photos.benefits} title="Benefícios" />
 
