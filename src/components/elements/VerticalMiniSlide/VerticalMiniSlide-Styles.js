@@ -17,20 +17,24 @@ export const VerticalMiniSlideContainer = styled.div`
     width: 100%;
     height: 100%;
     max-width: 500px;
+
+    @media ${theme.medias.tablet} {
+      max-width: 480px;
+    }
+  
+    @media ${theme.medias.mobile} {
+      max-width: 350px;
+    }
   
     .swiper-wrapper{
-      height: 300px;
+      height: 400px;
 
-
-
-
-      @media ${theme.medias.smallpc} {
-        height: 150px;
-
+      @media ${theme.medias.tablet} {
+        height: 230px;
       }
 
       @media ${theme.medias.mobile} {
-        height: 170px;
+        height: 230px;
       }
     }
 

@@ -92,6 +92,7 @@ export function ProfileSlide({
                   <source src={item.src} type="video/mp4" />
                   <track kind="captions" src="" srcLang="en" />
                 </video>
+
               </Styled.MediaWrapper>
               )}
 

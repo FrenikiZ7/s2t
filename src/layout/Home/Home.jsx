@@ -19,6 +19,9 @@ import { Footer } from '../../components/Footer/Footer';
 import { MobileNav } from '../../components/MobileNav/MobileNav';
 import { GridLayout } from '../../components/GridLayout/GridLayout';
 import { Banner } from '../../components/elements/Banner/Banner';
+import { VerticalMiniSlide } from '../../components/elements/VerticalMiniSlide/VerticalMiniSlide';
+import { VerticalSoloSlide } from '../../components/elements/VerticalSoloSlide/VerticalSoloSlide';
+import { VerticalVideoSlide } from '../../components/elements/VerticalVideoSlide/VerticalVideoSlide';
 
 export function Home() {
   const s2tContext = useContext(S2tContext);
@@ -160,7 +163,13 @@ export function Home() {
       </MobileNav>
       )}
 
-      <BannerSlide />
+      <BannerSlide>
+        <VerticalMiniSlide title="Eventos" type="events" items={s2tState.events} />
+
+        <VerticalSoloSlide size="400px" items={s2tState.news} />
+
+        <VerticalMiniSlide title="Notícias" type="news" items={s2tState.news} />
+      </BannerSlide>
 
       <GridLayout>
         <Button
@@ -212,7 +221,15 @@ export function Home() {
 
       <Slide items={s2tState.photos.usersType} />
 
-      <Banner />
+      <BannerSlide title="Vídeos em alta" lazy="false">
+
+        <VerticalVideoSlide size="300px" items={s2tState.news} title="Profissional" type="video" />
+        <VerticalVideoSlide size="300px" items={s2tState.news} title="Semi- profissional" type="video" />
+        <VerticalVideoSlide size="300px" items={s2tState.news} title="Universitário" type="video" />
+        <VerticalVideoSlide size="300px" items={s2tState.news} title="Amador" type="video" />
+        <VerticalVideoSlide size="300px" items={s2tState.news} title="Recreacional" type="video" />
+
+      </BannerSlide>
 
       <Slide items={s2tState.photos.benefits} title="Benefícios" />
 

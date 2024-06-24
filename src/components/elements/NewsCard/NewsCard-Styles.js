@@ -10,8 +10,11 @@ export const NewsCardContainer = styled.div`
     width: 100%;
 
     @media ${theme.medias.tablet} {
-      height: 80px;
+      height: 100px;
+    }
 
+    @media ${theme.medias.mobile} {
+      height: 75px;
     }
 
     &:hover {
@@ -23,7 +26,6 @@ export const NewsCardContainer = styled.div`
 
       ${NewsThumbnail} {
         box-shadow: 0px 0px 5px 1px white;
-
       }
       
     }
@@ -37,6 +39,7 @@ export const NewsCardContainer = styled.div`
       align-items: center;
       gap: ${theme.spacings.small};
       height: 100%;
+      width: 100%;
       transition: all 700ms ease-in-out;
 
       @media ${theme.medias.mobile} {
@@ -93,8 +96,19 @@ export const NewsInfo = styled.div`
 export const NewsThumbnail = styled.img`
   ${({ theme }) => css`
     height: 100%;
+    width: 125px;
     border-radius: 12px;
     transition: all 700ms ease-in-out;
     box-shadow: 0px 0px 5px 1px transparent;
+
+    @media ${theme.medias.tablet} {
+      height: 100%;
+      width: 125px
+    }
+
+    @media ${theme.medias.mobile} {
+      height: 100%;
+      width: 110px
+    }
   `}
 `;

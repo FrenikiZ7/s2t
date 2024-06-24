@@ -38,7 +38,6 @@ import { Players } from './layout/Dashboards/Components/Players/Players';
 import { MySquad } from './layout/Dashboards/Components/ClubComponents/MySquad/MySquad';
 import { UniversityDashboard } from './layout/Dashboards/UniversityDashboard/UniversityDashboard';
 import { UniversityProvider } from './contexts/userContext/UniversityProvider/UniversityProvider';
-import { SoloSlide } from './components/elements/SoloSlide/SoloSlide';
 import { Events } from './layout/Dashboards/Components/Events/Events';
 import { S2TPlus } from './layout/Dashboards/Components/S2TPlus/S2TPlus';
 import { UserInfo } from './layout/UserInfo/UserInfo';

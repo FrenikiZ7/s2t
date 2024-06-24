@@ -135,7 +135,7 @@ export function Register() {
               otheroption
             />
 
-            <AuthRadio title="Qual o seu gênero?" options={genreOptions} groupname="typeOptions" />
+            <AuthRadio title="Você quer atuar em um time de qual categoria?" options={genreOptions} groupname="typeOptions" />
 
             <AuthButton
               name="register_submit"

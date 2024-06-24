@@ -82,6 +82,9 @@ const GlobalStyles = createGlobalStyle`
   background: ${({ theme }) => theme.colors.white};
 }
 
+.swiper-lazy-preloader {
+}
+
 
 
 `;

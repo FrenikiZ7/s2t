@@ -3,30 +3,42 @@ export const s2tData = {
 
   news: [
     {
-      newsId: 1,
+      id: 1,
       title: 'News',
-      thumbnail: 'assets/images/background.png',
+      thumbnail: 'https://t4.ftcdn.net/jpg/06/17/43/07/360_F_617430740_HDyX9CwQ5NuA693cH7Qa3BjrBy0UloCz.jpg',
+      src: 'https://fly.metroimg.com/upload/q_85,w_700/https://uploads.metroimg.com/wp-content/uploads/2022/08/07131728/2-443.jpg',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       path: '/',
     },
     {
-      newsId: 2,
+      id: 2,
       title: 'News',
-      thumbnail: 'assets/images/background.png',
+      thumbnail: 'https://c.ndtvimg.com/2024-06/dahrsnh_lionel-messi-afp_625x300_21_June_24.jpg?im=FeatureCrop,algorithm=dnn,width=806,height=605',
+      src: 'https://scontent.fcgh53-1.fna.fbcdn.net/v/t39.30808-6/448788324_1031578938331324_4016062573516547704_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=2TSOdfSS69UQ7kNvgEEWN0H&_nc_ht=scontent.fcgh53-1.fna&oh=00_AYDrEqPPE-ZoAT-yV4kfpzB0lUERy5UomBM7C0L4mZRYMg&oe=667B330A',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       path: '/',
     },
     {
-      newsId: 3,
+      id: 3,
       title: 'News',
-      thumbnail: 'assets/images/background.png',
+      thumbnail: 'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/05/cristiano-ronaldo-portugal-e1716322462773.jpg?w=1200&h=1200&crop=1',
+      src: 'https://jornalnorthnews.com/images/noticias/5895/21052551_portugal-c.jpg',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       path: '/',
     },
     {
-      newsId: 4,
+      id: 4,
       title: 'News',
-      thumbnail: 'assets/images/background.png',
+      thumbnail: 'https://12af6675-3.b-cdn.net/wp-content/uploads/2022/09/a-pedro.jpg',
+      src: 'https://s2-ge.glbimg.com/75_ZDbnWXbb-o8_vhzdWeIouOcg=/0x0:1204x803/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2024/K/2/M1WRvYTSGjWrz7qUKEOg/flamengo-x-bahia-campeonato-brasileiro-maracana-20-06-2024-095.jpg',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      path: '/',
+    },
+    {
+      id: 5,
+      title: 'News',
+      thumbnail: 'https://agazetadoamapa.com.br/wp-content/uploads/2024/02/WhatsApp-Image-2024-02-29-at-17.21.56.jpeg',
+      src: 'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/06/SPFC-contra-o-Corinthians.png?w=877&h=468&crop=1https://s2-ge.glbimg.com/75_ZDbnWXbb-o8_vhzdWeIouOcg=/0x0:1204x803/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2024/K/2/M1WRvYTSGjWrz7qUKEOg/flamengo-x-bahia-campeonato-brasileiro-maracana-20-06-2024-095.jpg',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       path: '/',
     },
@@ -34,7 +46,7 @@ export const s2tData = {
 
   events: [
     {
-      eventId: 1,
+      id: 1,
       title: '26/06/2024',
       subtitle: '16:30',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
@@ -42,7 +54,7 @@ export const s2tData = {
     },
 
     {
-      eventId: 2,
+      id: 2,
       title: '30/06/2024',
       subtitle: '18:20',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
@@ -50,7 +62,7 @@ export const s2tData = {
     },
 
     {
-      eventId: 3,
+      id: 3,
       title: '05/07/2024',
       subtitle: '20:00',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
@@ -58,7 +70,7 @@ export const s2tData = {
     },
 
     {
-      eventId: 4,
+      id: 4,
       title: '10/07/2024',
       subtitle: '22:30',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elitvo',
@@ -66,7 +78,7 @@ export const s2tData = {
     },
 
     {
-      eventId: 5,
+      id: 5,
       title: '12/07/2024',
       subtitle: '10:00',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elitisa',
@@ -74,7 +86,7 @@ export const s2tData = {
     },
 
     {
-      eventId: 6,
+      id: 6,
       title: '18/07/2024',
       subtitle: '09:30',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',

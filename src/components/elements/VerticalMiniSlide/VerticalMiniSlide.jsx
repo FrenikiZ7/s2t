@@ -18,14 +18,20 @@ export function VerticalMiniSlide({ items, title, type }) {
           direction="vertical"
           slidesPerView={type === 'news' ? 2 : 3}
           mousewheel
+          loop
           pagination={{ clickable: true }}
           breakpoints={{
-            932: {
-              slidesPerView: type === 'news' ? 2 : 3,
+
+            769: {
+              slidesPerView: 3,
+            },
+
+            481: {
+              slidesPerView: 2,
             },
 
             0: {
-              slidesPerView: 1,
+              slidesPerView: type === 'news' ? 1 : 2,
             },
           }}
         >
@@ -33,7 +39,7 @@ export function VerticalMiniSlide({ items, title, type }) {
           {type === 'events' && (
             <>
               {items.map((item) => (
-                <SwiperSlide>
+                <SwiperSlide key={item.id}>
                   <EventCard
                     title={item.title}
                     subtitle={item.subtitle}
@@ -48,7 +54,7 @@ export function VerticalMiniSlide({ items, title, type }) {
           {type === 'news' && (
           <>
             {items.map((item) => (
-              <SwiperSlide>
+              <SwiperSlide key={item.id}>
                 <NewsCard
                   title={item.title}
                   thumbnail={item.thumbnail}

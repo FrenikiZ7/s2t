@@ -78,9 +78,10 @@ export function FilterProposals() {
     { value: 'scouts', text: 'Scouts' },
     { value: 'agents', text: 'Agentes' },
     { value: 'clubs', text: 'Clubes' },
+    { value: 'universitys', text: 'Universidades' },
   ];
 
-  const [opportunityType, setOpportunityType] = useState('scouts');
+  const [opportunityType, setOpportunityType] = useState('all');
 
   return (
     <Styled.FilterProposalsContainer>
@@ -92,7 +93,7 @@ export function FilterProposals() {
             <AuthDropdown
               id="opportunityType"
               options={opportunityTypeOptions}
-              selectedvalue={opportunityType}
+              placeholder="Todas"
               onDropdownChange={(option) => setOpportunityType(option.value)}
             />
             <Styled.SearchWrapper>

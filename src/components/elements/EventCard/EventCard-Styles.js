@@ -6,8 +6,16 @@ import { LinkContainer } from '../StyledLink/StyledLink-Styles';
 export const EventCardContainer = styled.div`
   ${({ theme }) => css`
 
-    height: 80px;
+  height: 120px;
     width: 100%;
+
+    @media ${theme.medias.tablet} {
+      height: 100px;
+    }
+
+    @media ${theme.medias.mobile} {
+      height: 75px;
+    }
 
     &:hover {
       ${Line} {
@@ -52,6 +60,10 @@ export const EventCardContainer = styled.div`
       margin-bottom: 0px;
       user-select: none;
       cursor: pointer;
+
+      @media ${theme.medias.tablet} {
+        font-size: ${theme.sizes.small};
+      }
      }
     }
   `}

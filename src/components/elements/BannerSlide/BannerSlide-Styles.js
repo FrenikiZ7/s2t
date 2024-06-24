@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { fadeIn, slideIn } from '../../../styles/animations';
+import { VerticalSoloSlideElement } from '../VerticalSoloSlide/VerticalSoloSlide-Styles';
 
 export const BannerSlideWrapper = styled.div`
   ${({ theme }) => css`
@@ -14,22 +15,23 @@ export const BannerSlideWrapper = styled.div`
     url('/assets/images/backgrounds/slider-bg-1.png');
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 10px;
 
 
+
     @media ${theme.medias.smallpc} {
-      height: 350px;
+      max-height: 500px;
     }
 
     @media ${theme.medias.tablet} {
-      height: 300px;
+      max-height: 400px;
     }
 
     @media ${theme.medias.mobile} {
-      height: 250px;
+      max-height: 300px;
     }
 
 
@@ -38,6 +40,7 @@ export const BannerSlideWrapper = styled.div`
       flex-direction: row;
       align-items: center;
       justify-content: center;
+      height: 100%;
     }
   `}
 `;
@@ -52,28 +55,31 @@ export const BannerSlideContainer = styled.div`
     align-items: center;
     justify-content: center;
 
-    /* @media (max-width: 1425px) {
-      max-width: 20000px;
-    } */
-
-    @media ${theme.medias.smallpc} {
-      height: 350px;
-    }
-
-    @media ${theme.medias.tablet} {
-      height: 300px;
-    }
-
-    @media ${theme.medias.mobile} {
-      height: 250px;
-    }
-
 
     .swiper-slide {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
+    }
+
+    & ${VerticalSoloSlideElement} {
+
+      @media ${theme.medias.smallpc} {
+      width: 80%;
+      }
+
+      @media ${theme.medias.tablet} {
+        width: 80%;
+      }
+
+      @media ${theme.medias.mobile} {
+        width: 80%;
+      }
+
+      @media ${theme.medias.smallmobile} {
+        width: 100%;
+      }    
     }
   `}
 `;

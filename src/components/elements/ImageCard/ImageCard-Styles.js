@@ -7,6 +7,7 @@ export const ImageCardElement = styled.div`
   border-radius: 15px;
   background: ${islocked ? 'black' : 'none'};
   width: 100%;
+  max-width: 400px;
   height: 100%;
   display: flex;
 
