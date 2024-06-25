@@ -9,7 +9,7 @@ export function Players() {
 
   return (
     <Styled.PlayersContainer>
-      <GridPlayers title="Jogadores" items={s2tState.users.players} />
+      <GridPlayers title="Jogadores" items={s2tState.users.players} publicview />
     </Styled.PlayersContainer>
   );
 }

@@ -8,12 +8,12 @@ import { StyledLink } from '../StyledLink/StyledLink';
 import { FavoriteIcon } from '../FavoriteIcon/FavoriteIcon';
 
 export function UserCard({
-  path, profileimage, position, age, bestleg, name, weight, height, category,
+  path, profileimage, position, age, bestleg, name, weight, height, category, favorite,
 }) {
   return (
     <Styled.UserCardElement>
 
-      <FavoriteIcon />
+      {favorite && <FavoriteIcon />}
 
       <StyledLink path={path}>
 
@@ -57,4 +57,5 @@ UserCard.propTypes = {
   weight: Prop.number,
   height: Prop.number,
   category: Prop.string,
+  favorite: Prop.bool,
 };

@@ -23,11 +23,16 @@ export const ProfileBannerContainer = styled.div`
     animation: ${slideOut} 300ms ease-out;
 
 
-    @media${theme.medias.mobile} {
+    @media${theme.medias.tablet} {
       flex-direction: column;
       justify-content: center;
-      height: 250px;
+      gap: ${theme.spacings.xsmall};
     }
+
+    @media${theme.medias.mobile} {
+      height: 300px;
+    }
+    
 
     & ${ColumnContainer} {
       display: flex;

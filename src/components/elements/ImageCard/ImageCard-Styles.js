@@ -24,7 +24,7 @@ export const ImageCardElement = styled.div`
 
   &:hover {
 
-    & h2 {
+    & ${Title} {
       color: ${theme.colors.tertiary};
       background-color: ${theme.colors.mediumblack};
     }
@@ -74,7 +74,7 @@ export const Title = styled.h2`
     color: ${theme.colors.white};
     background-color: ${theme.colors.lightblack};
     border-radius: 0px 0px 15px 15px;
-    font-size: ${theme.sizes.medium};
+    font-size: ${theme.sizes.small};
     font-family: ${theme.fonts.primary};
     text-transform: uppercase;
     text-align: center;

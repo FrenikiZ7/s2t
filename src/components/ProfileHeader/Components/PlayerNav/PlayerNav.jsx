@@ -18,6 +18,7 @@ export function PlayerNav() {
       <StyledLink path="contacts" text="Contatos" color={theme.colors.white} hovercolor={theme.colors.black} />
       <StyledLink path="friends" text="Amigos" color={theme.colors.white} hovercolor={theme.colors.black} />
       <StyledLink path="store" text="Loja" color={theme.colors.white} hovercolor={theme.colors.black} />
+      <StyledLink path="my-affiliates" text="Meus afiliados" color={theme.colors.white} hovercolor={theme.colors.black} />
       <StyledLink path="s2t+" text="S2T+" color={theme.colors.white} hovercolor={theme.colors.black} />
     </Styled.PlayerNav>
   );

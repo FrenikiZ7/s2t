@@ -8,7 +8,7 @@ export const MobileNavContainer = styled.nav`
      position: absolute;
      top: 72px;
      width: 100%;
-     z-index: 200;
+     z-index: 20;
      padding: ${theme.spacings.large};
 
      display: none;

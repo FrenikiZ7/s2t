@@ -20,6 +20,7 @@ import { ProfileBanner } from '../../../components/elements/ProfileBanner/Profil
 import { FavoriteIcon } from '../../../components/elements/FavoriteIcon/FavoriteIcon';
 import { PublicNav } from '../../../components/ProfileHeader/Components/PublicNav/PublicNav';
 import { PublicMenu } from '../../../components/MobileMenu/Components/PublicMenu/PublicMenu';
+import { Row } from '../../../components/RowContainer/Row';
 
 export function PublicDashboard() {
   const clubContext = useContext(ClubContext);
@@ -37,19 +38,21 @@ export function PublicDashboard() {
           type="Clube"
         />
         <ProfileName name={clubState.profile.banner.name} />
-        <Button
-          text={follow ? 'Deixar de seguir' : 'Seguir'}
-          bgcolor={theme.colors.primary}
-          bghover={theme.colors.black}
-          textcolor={theme.colors.black}
-          texthover={theme.colors.primary}
-          border={theme.colors.black}
-          borderhover={theme.colors.primary}
-          onclick={() => setFollow(!follow)}
-        />
 
-        <FavoriteIcon />
+        <Row>
+          <Button
+            text={follow ? 'Deixar de seguir' : 'Seguir'}
+            bgcolor={theme.colors.primary}
+            bghover={theme.colors.black}
+            textcolor={theme.colors.black}
+            texthover={theme.colors.primary}
+            border={theme.colors.black}
+            borderhover={theme.colors.primary}
+            onclick={() => setFollow(!follow)}
+          />
 
+          <FavoriteIcon />
+        </Row>
       </ProfileBanner>
 
       {/* Aparece apenas em telas maiores que 768px */}

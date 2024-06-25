@@ -10,7 +10,6 @@ export const MobileMenuElement = styled.nav`
     border: ${theme.borders.white};
     box-shadow: 0px 0px 10px 2px ${theme.colors.white};
     border-radius: 15px;
-
     position: fixed;
     bottom: 20px;
     right: 20px;

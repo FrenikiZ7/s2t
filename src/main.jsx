@@ -45,6 +45,8 @@ import { PublicDashboard } from './layout/Dashboards/PublicDashboard/PublicDashb
 import { PublicProfile } from './layout/Dashboards/Components/PublicComponents/PublicProfile/PublicProfile';
 import { ForgotPassword } from './layout/ForgotPassword/ForgotPassword';
 import { ResetPassword } from './layout/ResetPassword/ResetPassword';
+import { MyAffiliates } from './layout/Dashboards/Components/MyAffiliates/MyAffiliates';
+import { PlayerHome } from './layout/Dashboards/Components/PlayerComponents/PlayerHome/PlayerHome';
 
 register();
 
@@ -67,7 +69,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
                   {/* Rota do dashboard para jogadores + subrotas dele */}
                   <Route path="/player-dashboard/" element={<PlayerDashboard />}>
-                    <Route path="" element={<PlayerProfile />} />
+                    <Route path="" element={<PlayerHome />} />
                     <Route path="profile" element={<PlayerProfile />} />
                     <Route path="profile-edit" element={<EditProfile type="player" />} />
                     <Route path="opportunities" element={<Opportunities />} />
@@ -77,6 +79,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="events" element={<Events />} />
                     <Route path="friends" element={<Friends friends={playerData.friends} />} />
+                    <Route path="my-affiliates" element={<MyAffiliates friends={playerData.friends} />} />
                     <Route path="s2t+" element={<S2TPlus />} />
                   </Route>
 
@@ -115,7 +118,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
                   <Route path="/user/" element={<PublicDashboard />}>
                     <Route path="profile" element={<PublicProfile />} />
-                    <Route path="squad" element={<MySquad />} />
+                    <Route path="squad" element={<Players />} />
                     <Route path="opportunities" element={<Opportunities />} />
                     <Route path="friends" element={<Friends friends={clubData.friends} />} />
                   </Route>

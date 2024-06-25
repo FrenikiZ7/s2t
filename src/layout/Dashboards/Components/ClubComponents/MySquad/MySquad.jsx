@@ -10,8 +10,7 @@ export function MySquad() {
 
   return (
     <Styled.MySquadContainer>
-      <GridPlayers title="Jogadores" items={s2tState.users.players} />
-
+      <GridPlayers title="Meus jogadores" items={s2tState.users.players} />
     </Styled.MySquadContainer>
   );
 }

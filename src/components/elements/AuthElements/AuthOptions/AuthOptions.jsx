@@ -3,14 +3,15 @@ import Prop from 'prop-types';
 import * as Styled from './AuthOptions-Styles';
 import { theme } from '../../../../styles/theme';
 import { StyledLink } from '../../StyledLink/StyledLink';
+import { AuthCheckbox } from '../AuthCheckbox/AuthCheckbox';
 
-export function AuthOptions({ checkboxtext, path, pathtext }) {
+export function AuthOptions({
+  checkboxtext, path, pathtext, checkboxid,
+}) {
   return (
     <Styled.AuthOptionsContainer>
-      <label htmlFor="checkbox">
-        <input type="checkbox" name="checkbox" id="checkbox" />
-        <p>{checkboxtext}</p>
-      </label>
+
+      <AuthCheckbox id={checkboxid} value={checkboxid} text={checkboxtext} />
 
       <StyledLink
         path={path}
@@ -24,6 +25,7 @@ export function AuthOptions({ checkboxtext, path, pathtext }) {
 
 AuthOptions.propTypes = {
   checkboxtext: Prop.string.isRequired,
+  checkboxid: Prop.string.isRequired,
   path: Prop.string.isRequired,
   pathtext: Prop.string.isRequired,
 };

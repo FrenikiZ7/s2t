@@ -12,11 +12,12 @@ import { theme } from '../../../styles/theme';
 import { FavoriteIcon } from '../FavoriteIcon/FavoriteIcon';
 import { RateIcons } from '../RateIcons/RateIcons';
 import { ImageModal } from '../ImageModal/ImageModal';
+import { ReportModal } from '../ReportModal/ReportModal';
 
 export function ProfileSlide({
   items, title, publicview = false, ownerview,
 }) {
-  const [fullscreenMode, setFullscreenMode] = useState(false);
+  const [isReporing, setIsReporing] = useState(false);
 
   return (
     <Styled.ProfileSlideWrapper>
@@ -50,7 +51,7 @@ export function ProfileSlide({
                 {publicview && (
                   <>
                     <Styled.TopIconsWrapper>
-                      <IconDiv name="Denunciar" hovercolor={theme.colors.mediumred}>
+                      <IconDiv name="Denunciar" hovercolor={theme.colors.mediumred} onclick={() => setIsReporing(!isReporing)}>
                         <ReportIcon />
                       </IconDiv>
 
@@ -117,6 +118,8 @@ export function ProfileSlide({
         </Swiper>
 
       </Styled.ProfileSlideElement>
+
+      {isReporing && <ReportModal onclick={() => setIsReporing(!isReporing)} />}
 
     </Styled.ProfileSlideWrapper>
   );

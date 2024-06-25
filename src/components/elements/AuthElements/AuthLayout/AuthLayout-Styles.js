@@ -5,7 +5,6 @@ export const AuthLayoutContainer = styled.div`
   ${({ theme, isopen }) => css`
     animation: ${slideIn} 500ms;
     width: 100%;
-    width: 100%;
     height: 100%;
     display: ${isopen};
     grid-gap: ${theme.spacings.small};

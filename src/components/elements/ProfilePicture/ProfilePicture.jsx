@@ -6,21 +6,26 @@ import { theme } from '../../../styles/theme';
 
 export function ProfilePicture({ imagesrc, badge = '', type = '' }) {
   return (
-    <Styled.ProfilePictureElement>
-      <Styled.Picture src={imagesrc} alt="Athlete profile" />
-      {badge && <Styled.Badge><img src={badge} alt="Plan" /></Styled.Badge> }
+    <Styled.ProfilePictureContainer>
+      <Styled.ProfilePictureElement>
+        <Styled.Picture src={imagesrc} alt="Foto de perfil do usuário" />
+
+        {badge && <Styled.Badge><img src={badge} alt="Plano que o usuário possui" /></Styled.Badge> }
+      </Styled.ProfilePictureElement>
       {type && (
         <Button
           text={type}
-          bgcolor={theme.colors.white}
-          bghover={theme.colors.white}
+          bgcolor={theme.colors.secondary}
+          bghover={theme.colors.secondary}
           textcolor={theme.colors.black}
           texthover={theme.colors.black}
           border={theme.colors.black}
           borderhover={theme.colors.black}
         />
       )}
-    </Styled.ProfilePictureElement>
+
+    </Styled.ProfilePictureContainer>
+
   );
 }
 

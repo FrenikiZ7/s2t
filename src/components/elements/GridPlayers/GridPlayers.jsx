@@ -6,7 +6,9 @@ import { GridLayoutContainer } from '../../GridLayout/GridLayout-Styles';
 import { UserCard } from '../UserCard/UserCard';
 import { FilterPlayers } from '../FilterPlayers/FilterPlayers';
 
-export function GridPlayers({ title, items }) {
+export function GridPlayers({
+  title, items, publicview, ownerview,
+}) {
   // Pagination stuff
   const [pageNumber, setPageNumber] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(8);
@@ -39,7 +41,7 @@ export function GridPlayers({ title, items }) {
     <Styled.GridPlayersContainer>
       <Title text={title} uppercase />
 
-      <FilterPlayers />
+      {publicview && <FilterPlayers />}
 
       <GridLayoutContainer>
         {displayItems.map((item) => (
@@ -55,6 +57,7 @@ export function GridPlayers({ title, items }) {
             category={item.category}
             id={item.playerId}
             key={item.playerId}
+            favorite={publicview}
           />
         ))}
       </GridLayoutContainer>
@@ -80,4 +83,6 @@ export function GridPlayers({ title, items }) {
 GridPlayers.propTypes = {
   title: Prop.string,
   items: Prop.arrayOf(Prop.object).isRequired,
+  publicview: Prop.bool,
+  ownerview: Prop.bool,
 };

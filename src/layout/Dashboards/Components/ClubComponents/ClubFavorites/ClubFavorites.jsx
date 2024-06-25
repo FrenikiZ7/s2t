@@ -6,21 +6,20 @@ import { ProfileSlide } from '../../../../../components/elements/ProfileSlide/Pr
 import { PlayerContext } from '../../../../../contexts/userContext/PlayerProvider/PlayerContext';
 import { GridCards } from '../../../../../components/elements/GridCards/GridCards';
 import { Players } from '../../Players/Players';
+import { GridPlayers } from '../../../../../components/elements/GridPlayers/GridPlayers';
 
 export function ClubFavorites({ children }) {
   const s2tContext = useContext(S2tContext);
   const { s2tState, s2tDispatch } = s2tContext;
 
-  const playerContext = useContext(PlayerContext);
-  const { playerState, playerDispatch } = playerContext;
-
   return (
     <Styled.ClubFavoritesContainer>
-      <ProfileSlide items={s2tState.videos.trending} title="Vídeos em alta" />
+      <GridPlayers title="Jogadores favoritos" items={s2tState.users.players} publicview />
 
-      <ProfileSlide items={s2tState.videos.trending} title="Meus vídeos favoritos" />
+      <ProfileSlide items={s2tState.videos.trending} title="Vídeos em alta" publicview />
 
-      <Players />
+      <ProfileSlide items={s2tState.videos.trending} title="Meus vídeos favoritos" publicview />
+
     </Styled.ClubFavoritesContainer>
   );
 }

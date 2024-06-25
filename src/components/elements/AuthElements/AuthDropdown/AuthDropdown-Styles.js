@@ -18,7 +18,7 @@ export const DropdownContent = styled.div`
     border: ${theme.borders.white};
     border-radius: 10px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 1);
-    z-index: 20;
+    z-index: 2000;
     width: 100%;
     font-family: ${theme.fonts.primary};
   `}

@@ -64,11 +64,12 @@ export function Login() {
               name="login_submit"
               id="login_submit"
               value="Login"
-              onClick={handleSubmit}
+              onclick={handleSubmit}
             />
 
             <AuthOptions
               checkboxtext="Lembrar login"
+              checkboxid="rememberMe"
               path="/forgot-password"
               pathtext="Esqueceu a senha?"
             />

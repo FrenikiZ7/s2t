@@ -28,7 +28,7 @@ export function EditProposal({ onclick }) {
       <AuthWrapper>
         <AuthForm>
           <Subtitle text="Detalhes" uppercase />
-          <AuthLayout>
+          <AuthLayout isopen>
 
             <AuthInput
               type="text"

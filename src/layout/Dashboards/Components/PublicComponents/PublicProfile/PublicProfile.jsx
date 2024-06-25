@@ -25,6 +25,7 @@ export function PublicProfile() {
       </Row>
 
       <TextSlide items={clubState.profile.championships} title="Títulos:" />
+
     </Styled.PublicProfileContainer>
   );
 }

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { GridLayoutContainer } from '../../../../components/GridLayout/GridLayout-Styles';
 import { AuthDropdownContainer } from '../../../../components/elements/AuthElements/AuthDropdown/AuthDropdown-Styles';
 
-export const OpportunitiesContainer = styled.div`
+export const OpportunitiesContainer = styled.article`
   ${({ theme }) => css`
    position: relative;
    display: flex;

@@ -5,13 +5,12 @@ import { IconContainer } from '../IconDiv/IconDiv-Styles';
 
 export const ProfileSlideWrapper = styled.div`
   ${({ theme }) => css`
-    
+      
   `}
 `;
 
 export const ProfileSlideElement = styled.div`
   ${({ theme }) => css`
-
 
 
     .swiper-slide {

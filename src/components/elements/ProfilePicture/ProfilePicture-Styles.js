@@ -1,5 +1,10 @@
 import styled, { css } from 'styled-components';
 
+export const ProfilePictureContainer = styled.div`
+  ${({ theme }) => css`
+  `}
+`;
+
 export const ProfilePictureElement = styled.div`
   ${({ theme }) => css`
       width: 230px;
