@@ -5,7 +5,7 @@ export const NavContainer = styled.nav`
      display: flex;
      justify-content: center;
      align-items: center;
-     gap: 20px;
+     gap: ${theme.spacings.large};
      height: 100%;
      padding: ${theme.spacings.medium};
   `}

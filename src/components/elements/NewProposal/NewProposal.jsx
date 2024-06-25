@@ -30,7 +30,7 @@ export function NewProposal({ onclick }) {
       <AuthWrapper>
         <AuthForm>
           <Subtitle text="Detalhes" uppercase />
-          <AuthLayout>
+          <AuthLayout isopen>
             <AuthInput
               type="text"
               name="league_input"

@@ -15,15 +15,12 @@ import { theme } from '../../styles/theme';
 import { AuthContainer } from '../../components/elements/AuthElements/AuthWrapper/AuthWrapper-Styles';
 
 export function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // enviar os dados para o backend
-    navigate('/'); // Direciona o usuário para alguma página quando ele clica no submit
+    navigate('/player-dashboard'); // Direciona o usuário para alguma página quando ele clica no submit
   };
 
   return (
@@ -41,26 +38,26 @@ export function Login() {
               name="email_input"
               id="email_input"
               placeholder="Seu email"
-              onchange={(e) => setEmail(e.target.value)}
-              value={email}
+              title="E-mail"
+              required
             />
 
             <AuthInput
               type="password"
               name="password_input"
               id="password_input"
-              placeholder="Sua senha"
-              onchange={(e) => setPassword(e.target.value)}
-              value={password}
+              placeholder="Insira sua senha"
+              title="Senha"
+              required
             />
 
             <AuthInput
               type="password"
               name="confirm_password_input"
               id="confirm_password_input"
-              placeholder="Confirme sua senha"
-              onchange={(e) => setConfirmPassword(e.target.value)}
-              value={confirmPassword}
+              placeholder="Insira novamente sua senha"
+              title="Confirme a senha"
+              required
             />
 
             <AuthButton
@@ -72,7 +69,7 @@ export function Login() {
 
             <AuthOptions
               checkboxtext="Lembrar login"
-              path="/"
+              path="/forgot-password"
               pathtext="Esqueceu a senha?"
             />
             {/* no momento a checkbox do 'Lembrar login' é apenas estético */}

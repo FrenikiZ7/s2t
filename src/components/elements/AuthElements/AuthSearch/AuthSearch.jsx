@@ -1,32 +1,36 @@
 import Prop from 'prop-types';
-import React from 'react';
+import React, { Children } from 'react';
 import { Search as SearchIcon } from '@styled-icons/material-outlined/Search';
 import * as Styled from './AuthSearch-Styles';
 
 export function AuthSearch({
-  name, id, onchange, value, title = '', autocomplete = '', required = false,
+  name, id, onchange, value, title = '', autocomplete = '', required = false, children,
 }) {
   return (
-    <Styled.AuthSearchContainer>
-      {title}
-      {' '}
-      {required ? '(Obrigatório)' : ''}
+    <Styled.SearchWrapper>
+      {children}
+      <Styled.AuthSearchContainer>
+        {title}
+        {' '}
+        {required ? '(Obrigatório)' : ''}
 
-      <Styled.AuthSearchElement
-        type="search"
-        name={name}
-        id={id}
-        onChange={onchange}
-        value={value}
-        autoComplete={autocomplete}
-        required={required}
-      />
+        <Styled.AuthSearchElement
+          type="search"
+          name={name}
+          id={id}
+          onChange={onchange}
+          value={value}
+          autoComplete={autocomplete}
+          required={required}
+        />
 
-      <Styled.SearchIconContainer>
-        <SearchIcon />
-      </Styled.SearchIconContainer>
+        <Styled.SearchIconContainer>
+          <SearchIcon />
+        </Styled.SearchIconContainer>
 
-    </Styled.AuthSearchContainer>
+      </Styled.AuthSearchContainer>
+    </Styled.SearchWrapper>
+
   );
 }
 

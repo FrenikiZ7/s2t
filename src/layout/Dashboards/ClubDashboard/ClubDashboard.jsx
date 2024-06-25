@@ -17,6 +17,8 @@ import { MobileMenu } from '../../../components/MobileMenu/MobileMenu';
 import { FloatingIcon } from '../../../components/elements/FloatingIcon/FloatingIcon';
 import { ClubContext } from '../../../contexts/userContext/ClubProvider/ClubContext';
 import { ProfileBanner } from '../../../components/elements/ProfileBanner/ProfileBanner';
+import { ClubNav } from '../../../components/ProfileHeader/Components/ClubNav/ClubNav';
+import { ClubMenu } from '../../../components/MobileMenu/Components/ClubMenu/ClubMenu';
 
 export function ClubDashboard() {
   const clubContext = useContext(ClubContext);
@@ -45,11 +47,15 @@ export function ClubDashboard() {
       </ProfileBanner>
 
       {/* Aparece apenas em telas maiores que 768px */}
-      <ProfileHeader type="club" />
+      <ProfileHeader>
+        <ClubNav />
+      </ProfileHeader>
 
       {/* Aparece apenas em telas menores que 768px */}
       {menuVisibility ? (
-        <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)} type="club" />
+        <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)}>
+          <ClubMenu />
+        </MobileMenu>
       ) : (
         <FloatingIcon
           icon={(

@@ -11,9 +11,10 @@ import { AuthSearch } from '../AuthElements/AuthSearch/AuthSearch';
 import { Row } from '../../RowContainer/Row';
 import { IconDiv } from '../IconDiv/IconDiv';
 import { AuthLayout } from '../AuthElements/AuthLayout/AuthLayout';
+import { SearchWrapper } from '../AuthElements/AuthSearch/AuthSearch-Styles';
 
 export function FilterProposals() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const legOptions = [
     { value: 'right', text: 'Direita' },
@@ -79,14 +80,14 @@ export function FilterProposals() {
     { value: 'agents', text: 'Agentes' },
     { value: 'clubs', text: 'Clubes' },
     { value: 'universitys', text: 'Universidades' },
+    { value: 'exchangeAgencies', text: 'Agências de intercâmbio' },
   ];
 
   const [opportunityType, setOpportunityType] = useState('all');
 
   return (
-    <Styled.FilterProposalsContainer>
+    <Styled.FilterProposalsContainer isopen={isOpen}>
       <AuthWrapper>
-
         <AuthForm>
 
           <Row>
@@ -96,90 +97,90 @@ export function FilterProposals() {
               placeholder="Todas"
               onDropdownChange={(option) => setOpportunityType(option.value)}
             />
-            <Styled.SearchWrapper>
+
+            <SearchWrapper>
               <IconDiv onclick={() => setIsOpen(!isOpen)} name="Filtrar oportunidades">
                 <OptionsIcons />
               </IconDiv>
               <AuthSearch />
-            </Styled.SearchWrapper>
+            </SearchWrapper>
+
           </Row>
 
-          <Styled.FiltersWrapper isopen={isOpen ? 'block' : 'none'}>
-            <AuthLayout>
+          <AuthLayout isopen={isOpen}>
 
-              <AuthDropdown
-                id="competitiveLevel"
-                placeholder="Nível competitivo"
-                options={levelsOptions}
-                otheroption
-              />
+            <AuthDropdown
+              id="competitiveLevel"
+              placeholder="Nível competitivo"
+              options={levelsOptions}
+              otheroption
+            />
 
-              <AuthDropdown
-                id="category"
-                placeholder="Categoria"
-                options={categoryOptions}
-                onDropdownChange={(option) => setCategory(option.value)}
-                otheroption
-                selectedvalue={category}
-              />
+            <AuthDropdown
+              id="category"
+              placeholder="Categoria"
+              options={categoryOptions}
+              onDropdownChange={(option) => setCategory(option.value)}
+              otheroption
+              selectedvalue={category}
+            />
 
-              <AuthDropdown
-                placeholder="Posição"
-                id="mainPosition"
-                options={positionsOptions}
-              />
+            <AuthDropdown
+              placeholder="Posição"
+              id="mainPosition"
+              options={positionsOptions}
+            />
 
-              <AuthDropdown
-                id="league"
-                placeholder="Liga"
-                options={leagueOptions}
-                otheroption
-              />
+            <AuthDropdown
+              id="league"
+              placeholder="Liga"
+              options={leagueOptions}
+              otheroption
+            />
 
-              <AuthInput
-                type="number"
-                name="minimumAge_input"
-                id="minimumAge_input"
-                placeholder="Idade mínima"
-              />
+            <AuthInput
+              type="number"
+              name="minimumAge_input"
+              id="minimumAge_input"
+              placeholder="Idade mínima"
+            />
 
-              <AuthInput
-                type="number"
-                name="maximumAge_input"
-                id="maximumAge_input"
-                placeholder="Idade máxima"
-              />
+            <AuthInput
+              type="number"
+              name="maximumAge_input"
+              id="maximumAge_input"
+              placeholder="Idade máxima"
+            />
 
-              <AuthInput
-                type="number"
-                name="minimumHeight_input"
-                id="minimumHeight_input"
-                placeholder="Altura mínima"
-              />
+            <AuthInput
+              type="number"
+              name="minimumHeight_input"
+              id="minimumHeight_input"
+              placeholder="Altura mínima"
+            />
 
-              <AuthInput
-                type="number"
-                name="minimumPayment_input"
-                id="minimumPayment_input"
-                placeholder="Salário mínimo"
-              />
+            <AuthInput
+              type="number"
+              name="minimumPayment_input"
+              id="minimumPayment_input"
+              placeholder="Salário mínimo"
+            />
 
-              <AuthInput
-                type="number"
-                name="maximumPayment_input"
-                id="maximumPayment_input"
-                placeholder="Salário máximo"
-              />
+            <AuthInput
+              type="number"
+              name="maximumPayment_input"
+              id="maximumPayment_input"
+              placeholder="Salário máximo"
+            />
 
-              <AuthInput
-                type="text"
-                name="country_input"
-                id="country_input"
-                placeholder="País"
-              />
+            <AuthInput
+              type="text"
+              name="country_input"
+              id="country_input"
+              placeholder="País"
+            />
 
-            </AuthLayout>
-          </Styled.FiltersWrapper>
+          </AuthLayout>
 
         </AuthForm>
 

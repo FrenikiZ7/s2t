@@ -7,7 +7,7 @@ import { Button } from '../Button/Button';
 import { Text } from '../Text/Text';
 
 export function Popup({
-  isopen, onclick, firstoption, firstpath, secondoption, secondpath, title,
+  isopen, onclick, firstoption, firstpath, secondoption, secondpath, title, subtitle,
 }) {
   return (
     <>
@@ -17,30 +17,36 @@ export function Popup({
 
         <Text text={title} uppercase />
 
-        <Row>
-          <Button
-            text={firstoption}
-            path={firstpath}
-            bgcolor={theme.colors.white}
-            bghover={theme.colors.lightprimary}
-            textcolor={theme.colors.black}
-            texthover={theme.colors.black}
-            border={theme.colors.black}
-            borderhover={theme.colors.black}
-            onclick={onclick}
-          />
+        {subtitle && <Text text={subtitle} uppercase />}
 
-          <Button
-            text={secondoption}
-            path={secondpath}
-            bgcolor={theme.colors.white}
-            bghover={theme.colors.lightprimary}
-            textcolor={theme.colors.black}
-            texthover={theme.colors.black}
-            border={theme.colors.black}
-            borderhover={theme.colors.black}
-            onclick={onclick}
-          />
+        <Row>
+          {firstoption && (
+            <Button
+              text={firstoption}
+              path={firstpath}
+              bgcolor={theme.colors.white}
+              bghover={theme.colors.lightprimary}
+              textcolor={theme.colors.black}
+              texthover={theme.colors.black}
+              border={theme.colors.black}
+              borderhover={theme.colors.black}
+              onclick={onclick}
+            />
+          )}
+
+          {secondoption && (
+            <Button
+              text={secondoption}
+              path={secondpath}
+              bgcolor={theme.colors.white}
+              bghover={theme.colors.lightprimary}
+              textcolor={theme.colors.black}
+              texthover={theme.colors.black}
+              border={theme.colors.black}
+              borderhover={theme.colors.black}
+              onclick={onclick}
+            />
+          )}
         </Row>
       </Styled.PopupElement>
     </>
@@ -49,6 +55,7 @@ export function Popup({
 
 Popup.propTypes = {
   title: Prop.string,
+  subtitle: Prop.string,
   isopen: Prop.bool,
   onclick: Prop.func,
   firstoption: Prop.string,

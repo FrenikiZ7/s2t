@@ -4,7 +4,7 @@ export const ProfileNameElement = styled.div`
   ${({ theme }) => css`
   background-image: linear-gradient(to right, ${theme.colors.secondary}, ${theme.colors.primary});
   border-radius: 10px;
-  
+
   padding: ${theme.spacings.small};
 
    @media ${theme.medias.tablet} {

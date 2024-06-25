@@ -25,6 +25,7 @@ export function PlayerProfile() {
       </Row>
 
       <TextSlide items={playerState.profile.championships} title="Títulos e prêmios:" />
+
     </Styled.PlayerProfileContainer>
   );
 }

@@ -79,7 +79,18 @@ export function Home() {
             borderhover={theme.colors.primary}
           />
 
-          {/* <Button
+          <Button
+            path="/reset-password"
+            text="Resetar senha"
+            bgcolor={theme.colors.lightprimary}
+            bghover={theme.colors.primary}
+            textcolor={theme.colors.black}
+            texthover={theme.colors.black}
+            border={theme.colors.lightprimary}
+            borderhover={theme.colors.primary}
+          />
+
+          <Button
             text="Dashboard - Jogador"
             path="/player-dashboard"
             bgcolor={theme.colors.lightprimary}
@@ -121,7 +132,7 @@ export function Home() {
             texthover={theme.colors.black}
             border={theme.colors.lightprimary}
             borderhover={theme.colors.primary}
-          /> */}
+          />
         </Nav>
       </Header>
 
@@ -166,6 +177,7 @@ export function Home() {
       <BannerSlide>
         <VerticalMiniSlide title="Eventos" type="events" items={s2tState.events} />
 
+        {/* disparando 2 warning de thid party cookies no console */}
         <VerticalSoloSlide size="400px" items={s2tState.news} />
 
         <VerticalMiniSlide title="Notícias" type="news" items={s2tState.news} />
@@ -235,13 +247,11 @@ export function Home() {
 
       <Footer>
         <Row>
-
           <SocialLink type="facebook" />
           <SocialLink type="instagram" />
           <SocialLink type="twitter" />
           <SocialLink type="youtube" />
           <SocialLink type="tiktok" />
-
         </Row>
 
         <Nav>

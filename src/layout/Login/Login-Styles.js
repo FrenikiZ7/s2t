@@ -22,7 +22,7 @@ export const LoginPage = styled.section`
      height: 100vh;
 
      ${AuthContainer} {
-      width: 350px;
+      max-width: 350px;
       height: auto;
 
       @media ${theme.medias.tablet} {

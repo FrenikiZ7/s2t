@@ -11,8 +11,8 @@ export const SubtitleElement = styled.h2`
      font-weight: 600;
      text-transform: ${uppercase};
 
-     @media ${theme.medias.smallpc} {
-      font-size: ${theme.sizes.xlarge};
+     @media ${theme.medias.tablet} {
+      font-size: ${theme.sizes.large};
      }
 
      @media ${theme.medias.mobile} {

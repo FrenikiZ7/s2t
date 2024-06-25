@@ -3,9 +3,10 @@ import { GridLayoutContainer } from '../../GridLayout/GridLayout-Styles';
 import { slideIn } from '../../../styles/animations';
 import { RowContainer } from '../../RowContainer/Row-Styles.js';
 import { AuthDropdownContainer, DropdownButton, DropdownItem } from '../AuthElements/AuthDropdown/AuthDropdown-Styles.js';
+import { IconContainer } from '../IconDiv/IconDiv-Styles.js';
 
 export const FilterProposalsContainer = styled.div`
-  ${({ theme }) => css`
+  ${({ theme, isopen }) => css`
     animation: ${slideIn} 500ms;
     width: 100%;
     border-radius: 12px;
@@ -33,31 +34,15 @@ export const FilterProposalsContainer = styled.div`
          min-width: 210px;
        }
     }
-  `}
-`;
 
-export const SearchWrapper = styled.div`
-  ${({ theme }) => css`
-     width: 100%;
-     max-width: 300px;
-     display: flex;
-     flex-direction: row;
-     justify-content: flex-end;
-     align-items: center;
-     gap: ${theme.spacings.xxsmall};
-     position: relative;
+    & ${IconContainer} {
+      > svg {
+        color: ${isopen ? theme.colors.primary : 'none'};
 
-     @media ${theme.medias.tablet} {
-      max-width: none;
-     }
-  `}
-`;
-
-export const FiltersWrapper = styled.div`
-  ${({ theme, isopen }) => css`
-     background: ${theme.colors.black};
-     display: ${isopen};
-     animation: ${slideIn} 500ms;
-     width: 100%;
+        &:hover {
+          color: ${theme.colors.secondary};
+        }
+      }
+    }
   `}
 `;

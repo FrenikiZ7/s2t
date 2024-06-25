@@ -24,15 +24,15 @@ export function VerticalVideoSlide({
       >
 
         <SwiperSlide>
-          {/* <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5-sXTlF6Sd4?si=7sH0mQqMCE8yd17v" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen /> */}
+          {/* <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5-sXTlF6Sd4?si=7sH0mQqMCE8yd17v" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /> */}
         </SwiperSlide>
 
         <SwiperSlide>
-          {/* <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5-sXTlF6Sd4?si=7sH0mQqMCE8yd17v" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen /> */}
+          {/* <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5-sXTlF6Sd4?si=7sH0mQqMCE8yd17v" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /> */}
         </SwiperSlide>
 
         <SwiperSlide>
-          {/* <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5-sXTlF6Sd4?si=7sH0mQqMCE8yd17v" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen /> */}
+          {/* <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5-sXTlF6Sd4?si=7sH0mQqMCE8yd17v" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /> */}
         </SwiperSlide>
 
       </Swiper>

@@ -1,10 +1,13 @@
 import styled, { css } from 'styled-components';
+import { slideIn } from '../../../../styles/animations';
 
 export const AuthLayoutContainer = styled.div`
-  ${({ theme }) => css`
+  ${({ theme, isopen }) => css`
+    animation: ${slideIn} 500ms;
+    width: 100%;
     width: 100%;
     height: 100%;
-    display: grid;
+    display: ${isopen};
     grid-gap: ${theme.spacings.small};
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

@@ -82,3 +82,19 @@ export const SearchIconContainer = styled.div`
       }
   `}
 `;
+
+export const SearchWrapper = styled.div`
+  ${({ theme }) => css`
+     width: 100%;
+     max-width: 300px;
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-end;
+     align-items: center;
+     gap: ${theme.spacings.xxsmall};
+
+     @media ${theme.medias.tablet} {
+      max-width: none;
+     }
+  `}
+`;

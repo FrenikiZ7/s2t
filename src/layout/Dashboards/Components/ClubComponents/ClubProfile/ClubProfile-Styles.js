@@ -7,6 +7,8 @@ export const ClubProfileContainer = styled.article`
     animation-fill-mode: forwards; /* Manter o estado final após a animação */
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
     gap: ${theme.spacings.large};
   `}
 `;

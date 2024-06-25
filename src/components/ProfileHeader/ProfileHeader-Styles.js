@@ -1,24 +1,29 @@
 import styled, { css } from 'styled-components';
 import { slideInRight } from '../../styles/animations';
 import { LinkContainer } from '../elements/StyledLink/StyledLink-Styles';
+import { NavContainer } from '../Nav/Nav-Styles';
 
 export const ProfileHeaderContainer = styled.header`
-  ${({ theme }) => css`
+  ${({ theme, type }) => css`
      animation: ${slideInRight} 500ms ease-out;
      animation-fill-mode: forwards; /* Manter o estado final após a animação */
-     width: 100%;
-     max-width: 1230px;
-     border-radius: 10px;
-     margin: 0 auto;
-     align-content: center;
      background-image: linear-gradient(to right, ${theme.colors.secondary}, ${theme.colors.primary});
-     transition: background-image 500ms ease-in-out, background-color 500ms ease-in-out;
+
+     width: 100%;
+     margin: 0 auto;
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     align-content: center;
+     flex-direction: column;
+     max-width: 1240px;
+     border-radius: 12px;
+  
   
      border: ${theme.borders.white};
      box-shadow: 0px 0px 5px 1px ${theme.colors.white};
-     @media (max-width: 1244px) {
-      border-radius: 0px;
-     }
+  
 
      @media ${theme.medias.tablet} {
       display: none;

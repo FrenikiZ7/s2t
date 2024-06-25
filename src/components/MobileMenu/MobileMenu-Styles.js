@@ -19,8 +19,8 @@ export const MobileMenuElement = styled.nav`
     
 
     display: none;
-    width: 180px;
-    height: 260px;
+    min-width: 300px;
+
 
     transition: all 500ms ease-in-out;
 
@@ -29,13 +29,15 @@ export const MobileMenuElement = styled.nav`
     }
 
     @media ${theme.medias.smallmobile} {
-      width: 160px;
+      min-width: 90%;
     }
 
 
     ${GridLayoutContainer}{
-     gap: 2px;
-     grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+     padding:${theme.spacings.small};
+     grid-gap: 10px 5px;
+     border-radius: 15px;
+     grid-template-columns: repeat(auto-fit, minmax(70px, 3fr));
     }
 
     ${LinkContainer}{

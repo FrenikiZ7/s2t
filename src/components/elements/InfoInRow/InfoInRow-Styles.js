@@ -22,6 +22,10 @@ export const InfoTitle = styled.h3`
        content: ':'
     }
 
+    @media ${theme.medias.tablet} {
+     font-size: ${theme.sizes.small};
+    }
+
     @media ${theme.medias.mobile} {
      font-size: ${theme.sizes.xsmall};
     }
@@ -32,9 +36,14 @@ export const InfoTitle = styled.h3`
 export const Info = styled.p`
   ${({ theme }) => css`
   font-size: ${theme.sizes.medium};
+
+  @media ${theme.medias.tablet} {
+     font-size: ${theme.sizes.small};
+  }
   
   @media ${theme.medias.mobile} {
      font-size: ${theme.sizes.xsmall};
   }
+  
   `}
 `;

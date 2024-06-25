@@ -17,6 +17,9 @@ import { MobileMenu } from '../../../components/MobileMenu/MobileMenu';
 import { FloatingIcon } from '../../../components/elements/FloatingIcon/FloatingIcon';
 import { ProfileBannerContainer } from '../../../components/elements/ProfileBanner/ProfileBanner-Styles';
 import { ProfileBanner } from '../../../components/elements/ProfileBanner/ProfileBanner';
+import { Column } from '../../../components/ColumnContainer/Column';
+import { PlayerNav } from '../../../components/ProfileHeader/Components/PlayerNav/PlayerNav';
+import { PlayerMenu } from '../../../components/MobileMenu/Components/PlayerMenu/PlayerMenu';
 
 export function PlayerDashboard() {
   const playerContext = useContext(PlayerContext);
@@ -31,7 +34,9 @@ export function PlayerDashboard() {
           imagesrc={playerState.profile.banner.profileImageSrc}
           badge={playerState.profile.banner.badge}
         />
+
         <ProfileName name={playerState.profile.banner.name} />
+
         <Button
           path="/player-dashboard/profile-edit"
           text="Editar Perfil"
@@ -45,11 +50,15 @@ export function PlayerDashboard() {
       </ProfileBanner>
 
       {/* Aparece apenas em telas maiores que 768px */}
-      <ProfileHeader type="player" />
+      <ProfileHeader>
+        <PlayerNav />
+      </ProfileHeader>
 
       {/* Aparece apenas em telas menores que 768px */}
       {menuVisibility ? (
-        <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)} type="player" />
+        <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)}>
+          <PlayerMenu />
+        </MobileMenu>
       ) : (
         <FloatingIcon
           icon={(
@@ -64,9 +73,9 @@ export function PlayerDashboard() {
 
       {/* <S2tProvider>
         <PlayerProvider> */}
-      <ColumnContainer color={theme.colors.black}>
+      <Column color={theme.colors.black}>
         <Outlet />
-      </ColumnContainer>
+      </Column>
       {/* </PlayerProvider>
       </S2tProvider> */}
 

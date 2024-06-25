@@ -18,6 +18,8 @@ import { FloatingIcon } from '../../../components/elements/FloatingIcon/Floating
 import { ClubContext } from '../../../contexts/userContext/ClubProvider/ClubContext';
 import { ProfileBanner } from '../../../components/elements/ProfileBanner/ProfileBanner';
 import { FavoriteIcon } from '../../../components/elements/FavoriteIcon/FavoriteIcon';
+import { PublicNav } from '../../../components/ProfileHeader/Components/PublicNav/PublicNav';
+import { PublicMenu } from '../../../components/MobileMenu/Components/PublicMenu/PublicMenu';
 
 export function PublicDashboard() {
   const clubContext = useContext(ClubContext);
@@ -32,6 +34,7 @@ export function PublicDashboard() {
         <ProfilePicture
           imagesrc={clubState.profile.banner.profileImageSrc}
           badge={clubState.profile.banner.badge}
+          type="Clube"
         />
         <ProfileName name={clubState.profile.banner.name} />
         <Button
@@ -50,11 +53,15 @@ export function PublicDashboard() {
       </ProfileBanner>
 
       {/* Aparece apenas em telas maiores que 768px */}
-      <ProfileHeader type="user" />
+      <ProfileHeader>
+        <PublicNav />
+      </ProfileHeader>
 
       {/* Aparece apenas em telas menores que 768px */}
       {menuVisibility ? (
-        <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)} type="club" />
+        <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)}>
+          <PublicMenu />
+        </MobileMenu>
       ) : (
         <FloatingIcon
           icon={(

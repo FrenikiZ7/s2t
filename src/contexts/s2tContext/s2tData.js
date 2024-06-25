@@ -113,49 +113,70 @@ export const s2tData = {
         id: 1,
         src: '/assets/images/users/athletes.png',
         title: 'atletas',
-        path: '/register/player/professional',
+        path: '/register',
       },
 
       {
         id: 2,
         src: '/assets/images/users/scouts.png',
         title: 'Scout',
-        path: '/register/scout',
+        path: '/register',
       },
 
       {
         id: 3,
         src: '/assets/images/users/business.png',
         title: 'Empresários',
-        path: '/register/player/professional',
+        path: '/register',
       },
 
       {
         id: 4,
         src: '/assets/images/users/clubs.png',
         title: 'Clubes',
-        path: '/register/player/professional',
+        path: '/register',
       },
 
       {
         id: 5,
         src: '/assets/images/users/facultys.png',
         title: 'Faculdades',
-        path: '/register/player/professional',
+        path: '/register',
       },
 
       {
         id: 6,
         src: '/assets/images/users/leagues.png',
         title: 'Ligas',
-        path: '/register/player/professional',
+        path: '/register',
       },
 
       {
         id: 7,
         src: '/assets/images/users/schools.jpg',
         title: 'Escolas',
-        path: '/register/player/professional',
+        path: '/register',
+      },
+
+      {
+        id: 8,
+        src: '/assets/images/users/staff.jpg',
+        title: 'Staff',
+        path: '/register',
+      },
+
+      {
+        id: 9,
+        src: '/assets/images/users/exchangeAgencies.jpg',
+        title: 'Agências de intercâmbio',
+        path: '/register',
+      },
+
+      {
+        id: 10,
+        src: '/assets/images/users/fans.jpg',
+        title: 'Fãs',
+        path: '/register',
       },
     ],
 

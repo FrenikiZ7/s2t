@@ -43,6 +43,8 @@ import { S2TPlus } from './layout/Dashboards/Components/S2TPlus/S2TPlus';
 import { UserInfo } from './layout/UserInfo/UserInfo';
 import { PublicDashboard } from './layout/Dashboards/PublicDashboard/PublicDashboard';
 import { PublicProfile } from './layout/Dashboards/Components/PublicComponents/PublicProfile/PublicProfile';
+import { ForgotPassword } from './layout/ForgotPassword/ForgotPassword';
+import { ResetPassword } from './layout/ResetPassword/ResetPassword';
 
 register();
 
@@ -65,6 +67,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
                   {/* Rota do dashboard para jogadores + subrotas dele */}
                   <Route path="/player-dashboard/" element={<PlayerDashboard />}>
+                    <Route path="" element={<PlayerProfile />} />
                     <Route path="profile" element={<PlayerProfile />} />
                     <Route path="profile-edit" element={<EditProfile type="player" />} />
                     <Route path="opportunities" element={<Opportunities />} />
@@ -74,7 +77,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="events" element={<Events />} />
                     <Route path="friends" element={<Friends friends={playerData.friends} />} />
-                    <Route path="s2tplus" element={<S2TPlus />} />
+                    <Route path="s2t+" element={<S2TPlus />} />
                   </Route>
 
                   {/* Rota do dashboard para clubes + subrotas dele */}
@@ -91,7 +94,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <Route path="events" element={<Events />} />
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="friends" element={<Friends friends={clubData.friends} />} />
-                    <Route path="s2tplus" element={<S2TPlus />} />
+                    <Route path="s2t+" element={<S2TPlus />} />
                   </Route>
 
                   <Route path="/university-dashboard/" element={<UniversityDashboard />}>
@@ -107,7 +110,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <Route path="events" element={<Events />} />
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="friends" element={<Friends friends={clubData.friends} />} />
-                    <Route path="s2tplus" element={<S2TPlus />} />
+                    <Route path="s2t+" element={<S2TPlus />} />
                   </Route>
 
                   <Route path="/user/" element={<PublicDashboard />}>
@@ -123,7 +126,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   <Route path="/register/scout" element={<p>scout</p>} />
 
                   <Route path="/login" element={<Login />} />
-                  <Route path="/password-reset" element={<Home />} />
+                  <Route path="/forgot-password" element={<ForgotPassword />} />
+                  <Route path="/reset-password" element={<ResetPassword />} />
 
                 </Routes>
 

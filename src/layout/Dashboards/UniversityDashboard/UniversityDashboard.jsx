@@ -16,6 +16,8 @@ import { MobileMenu } from '../../../components/MobileMenu/MobileMenu';
 import { FloatingIcon } from '../../../components/elements/FloatingIcon/FloatingIcon';
 import { UniversityContext } from '../../../contexts/userContext/UniversityProvider/UniversityContext';
 import { ProfileBanner } from '../../../components/elements/ProfileBanner/ProfileBanner';
+import { ClubNav } from '../../../components/ProfileHeader/Components/ClubNav/ClubNav';
+import { ClubMenu } from '../../../components/MobileMenu/Components/ClubMenu/ClubMenu';
 
 export function UniversityDashboard() {
   const universityContext = useContext(UniversityContext);
@@ -45,11 +47,15 @@ export function UniversityDashboard() {
       </ProfileBanner>
 
       {/* Aparece apenas em telas maiores que 768px */}
-      <ProfileHeader type="university" />
+      <ProfileHeader>
+        <ClubNav />
+      </ProfileHeader>
 
       {/* Aparece apenas em telas menores que 768px */}
       {menuVisibility ? (
-        <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)} type="university" />
+        <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)}>
+          <ClubMenu />
+        </MobileMenu>
       ) : (
         <FloatingIcon
           icon={(
