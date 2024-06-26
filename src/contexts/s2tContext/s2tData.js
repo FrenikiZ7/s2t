@@ -7,7 +7,7 @@ export const s2tData = {
       title: 'News',
       thumbnail: 'https://t4.ftcdn.net/jpg/06/17/43/07/360_F_617430740_HDyX9CwQ5NuA693cH7Qa3BjrBy0UloCz.jpg',
       src: 'https://fly.metroimg.com/upload/q_85,w_700/https://uploads.metroimg.com/wp-content/uploads/2022/08/07131728/2-443.jpg',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      text: 'Lorem ipsum dolor sit amet',
       path: '/',
     },
     {

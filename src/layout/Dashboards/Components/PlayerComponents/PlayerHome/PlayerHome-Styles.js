@@ -3,7 +3,7 @@ import { slideIn } from '../../../../../styles/animations';
 
 export const PlayerHomeContainer = styled.article`
   ${({ theme }) => css`
-    background: gray;
+    background: ${theme.colors.gray};
     width: 100%;
     height: 100%;
     animation: ${slideIn} 500ms ease-out;

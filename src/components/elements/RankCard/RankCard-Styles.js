@@ -6,25 +6,19 @@ import { LinkContainer } from '../StyledLink/StyledLink-Styles';
 export const RankCardContainer = styled.div`
   ${({ theme }) => css`
 
-    height: 120px;
+    height: 100%;
     width: 100%;
 
-    @media ${theme.medias.tablet} {
-      height: 100px;
-    }
 
-    @media ${theme.medias.mobile} {
-      height: 75px;
-    }
 
     &:hover {
 
-      ${RankInfo} {
+      ${RankName} {
         background: rgba(0,0,0,0.8);
         box-shadow: 0px 0px 5px 1px white;
       }
 
-      ${RankThumbnail} {
+      ${RankImage} {
         box-shadow: 0px 0px 5px 1px white;
       }
       
@@ -44,15 +38,20 @@ export const RankCardContainer = styled.div`
 
       @media ${theme.medias.mobile} {
         flex-direction: column;
+      
       }
 
 
       & ${TextElement} {
-      color: ${theme.colors.white};
       font-size: ${theme.sizes.small};
+      font-weight: 600;
+
+      @media ${theme.medias.mobile} {
+        font-size: ${theme.sizes.xsmall};
+      }
 
       @media ${theme.medias.smallmobile} {
-        font-size: ${theme.sizes.xsmall};
+        font-size: ${theme.sizes.xxsmall};
       }
       }
 
@@ -68,12 +67,26 @@ export const RankCardContainer = styled.div`
   `}
 `;
 
-export const RankInfo = styled.div`
+export const RankPosition = styled.div`
   ${({ theme }) => css`
     background: rgba(0,0,0,0.5);
-    width: auto;
-    max-width: 300px;
-    height: 50%;
+    border-radius: 7px;
+    min-width: 30px;
+    padding: ${theme.spacings.small};
+    transition: all 700ms ease-in-out;
+    box-shadow: 0px 0px 5px 1px transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `}
+`;
+
+export const RankName = styled.div`
+  ${({ theme }) => css`
+    background: rgba(0,0,0,0.5);
+    max-width: 280px;
+    min-width: 280px;
     border-radius: 12px;
     padding: ${theme.spacings.small};
     transition: all 700ms ease-in-out;
@@ -83,17 +96,13 @@ export const RankInfo = styled.div`
     justify-content: center;
     align-items: center;
 
-    @media ${theme.medias.mobile} {
-      width: auto;
-    }
-
-    & ${TextElement} {
-      font-weight: 600;
+    @media ${theme.medias.smallmobile} {
+      min-width: 100%;
     }
   `}
 `;
 
-export const RankThumbnail = styled.img`
+export const RankImage = styled.img`
   ${({ theme }) => css`
     height: 100%;
     width: 125px;
@@ -103,12 +112,12 @@ export const RankThumbnail = styled.img`
 
     @media ${theme.medias.tablet} {
       height: 100%;
-      width: 125px
+      width: 110px
     }
 
     @media ${theme.medias.mobile} {
-      height: 100%;
-      width: 110px
+      width: 130px
+
     }
   `}
 `;

@@ -6,21 +6,25 @@ import { Text } from '../Text/Text';
 import { StyledLink } from '../StyledLink/StyledLink';
 
 export function RankCard({
-  title, text, position, imagesrc, path,
+  name, position, imagesrc, path,
 }) {
+  const normalizedPosition = position.toString();
+
   return (
     <Styled.RankCardContainer>
+
       <StyledLink path={path}>
 
-        <Styled.RankInfo>
-          <Text text={position} uppercase />
-        </Styled.RankInfo>
+        <Styled.RankPosition>
+          <Text text={normalizedPosition} uppercase />
+        </Styled.RankPosition>
 
-        <Styled.RankThumbnail src={imagesrc} alt="Foto de perfil" />
+        <Styled.RankImage src={imagesrc} alt="Foto de perfil" />
 
-        <Styled.RankInfo>
-          <Text text={title} uppercase />
-        </Styled.RankInfo>
+        <Styled.RankName>
+          <Text text={name} uppercase />
+        </Styled.RankName>
+
       </StyledLink>
 
     </Styled.RankCardContainer>
@@ -28,12 +32,14 @@ export function RankCard({
 }
 
 RankCard.propTypes = {
-  title: Prop.oneOfType([
+  name: Prop.oneOfType([
     Prop.string,
     Prop.number,
   ]),
-  text: Prop.string,
-  position: Prop.number,
+  position: Prop.oneOfType([
+    Prop.string,
+    Prop.number,
+  ]),
   path: Prop.string,
   imagesrc: Prop.string,
 };

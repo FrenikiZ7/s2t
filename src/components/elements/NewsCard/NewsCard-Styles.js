@@ -6,16 +6,9 @@ import { LinkContainer } from '../StyledLink/StyledLink-Styles';
 export const NewsCardContainer = styled.div`
   ${({ theme }) => css`
 
-    height: 120px;
+    height: 100%;
     width: 100%;
 
-    @media ${theme.medias.tablet} {
-      height: 100px;
-    }
-
-    @media ${theme.medias.mobile} {
-      height: 75px;
-    }
 
     &:hover {
 
@@ -73,6 +66,7 @@ export const NewsInfo = styled.div`
     background: rgba(0,0,0,0.5);
     width: auto;
     max-width: 300px;
+    min-width: 300px;
     height: 100%;
     border-radius: 12px;
     padding: ${theme.spacings.small};
@@ -80,7 +74,11 @@ export const NewsInfo = styled.div`
     box-shadow: 0px 0px 5px 1px transparent;
 
     @media ${theme.medias.mobile} {
-      width: auto;
+      height: 40%;
+    }
+
+    @media ${theme.medias.smallmobile} {
+      min-width: 200px;
     }
 
     > ${SubtitleElement} {
@@ -107,7 +105,7 @@ export const NewsThumbnail = styled.img`
     }
 
     @media ${theme.medias.mobile} {
-      height: 100%;
+      height: 50%;
       width: 110px
     }
   `}

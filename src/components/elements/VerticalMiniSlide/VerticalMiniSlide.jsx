@@ -5,6 +5,7 @@ import * as Styled from './VerticalMiniSlide-Styles';
 import { Subtitle } from '../Subtitle/Subtitle';
 import { EventCard } from '../EventCard/EventCard';
 import { NewsCard } from '../NewsCard/NewsCard';
+import { RankCard } from '../RankCard/RankCard';
 
 export function VerticalMiniSlide({ items, title, type }) {
   return (
@@ -31,7 +32,7 @@ export function VerticalMiniSlide({ items, title, type }) {
             },
 
             0: {
-              slidesPerView: type === 'news' ? 1 : 2,
+              slidesPerView: type === 'events' ? 2 : 1,
             },
           }}
         >
@@ -63,6 +64,26 @@ export function VerticalMiniSlide({ items, title, type }) {
                 />
               </SwiperSlide>
             ))}
+          </>
+          )}
+
+          {type === 'rank' && (
+          <>
+            <SwiperSlide>
+              <RankCard name="Bruno da silva pedrosa" position={1} imagesrc="/assets/images/background.png" />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <RankCard name="Caio Henrique" position={2} imagesrc="/assets/images/background.png" />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <RankCard name="Eduardo Medeiros" position={3} imagesrc="/assets/images/background.png" />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <RankCard name="Bruno Andrade Ferraz" position={4} imagesrc="/assets/images/background.png" />
+            </SwiperSlide>
           </>
           )}
 

@@ -6,16 +6,8 @@ import { LinkContainer } from '../StyledLink/StyledLink-Styles';
 export const EventCardContainer = styled.div`
   ${({ theme }) => css`
 
-  height: 120px;
+    height: 100%;
     width: 100%;
-
-    @media ${theme.medias.tablet} {
-      height: 100px;
-    }
-
-    @media ${theme.medias.mobile} {
-      height: 75px;
-    }
 
     &:hover {
       ${Line} {
