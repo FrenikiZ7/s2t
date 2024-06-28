@@ -57,15 +57,9 @@ export function ClubDashboard() {
           <ClubMenu />
         </MobileMenu>
       ) : (
-        <FloatingIcon
-          icon={(
-            <MenuIcon
-              aria-label="Menu"
-              title="Menu"
-            />
-          )}
-          onclick={() => setMenuVisibility(!menuVisibility)}
-        />
+        <FloatingIcon name="Menu" onclick={() => setMenuVisibility(!menuVisibility)}>
+          <MenuIcon />
+        </FloatingIcon>
       )}
 
       <S2tProvider>

@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
-import { slideOut } from '../../../styles/animations';
+import { slideOut, spin360Left, spin360Right } from '../../../styles/animations';
 import { ColumnContainer } from '../../ColumnContainer/Column-Styles';
+import { RowContainer } from '../../RowContainer/Row-Styles.js';
+import { IconContainer } from '../IconDiv/IconDiv-Styles.js';
 
 export const ProfileBannerContainer = styled.div`
   ${({ theme, backgroundimagesrc }) => css`
@@ -41,5 +43,32 @@ export const ProfileBannerContainer = styled.div`
       justify-content: center;
       gap: ${theme.spacings.medium};
     }
-  `}
+
+     > ${RowContainer} {
+
+        align-items: center;
+        width: auto;
+        gap: ${theme.spacings.xsmall};
+
+        @media ${theme.medias.smallpc} {
+          flex-direction: row;
+        }
+
+        @media ${theme.medias.tablet} {
+          justify-content: center;
+        }
+
+        > ${IconContainer} {
+          width: 35px;
+
+          @media ${theme.medias.tablet} {
+            width: 30px;
+          }
+
+          @media ${theme.medias.smallmobile} {
+            width: 23px;
+          }
+         }      
+       }
+ `}
 `;

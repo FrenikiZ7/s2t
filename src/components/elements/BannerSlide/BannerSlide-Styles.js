@@ -3,16 +3,16 @@ import { fadeIn, slideIn } from '../../../styles/animations';
 import { VerticalSoloSlideElement } from '../VerticalSoloSlide/VerticalSoloSlide-Styles';
 
 export const BannerSlideWrapper = styled.div`
-  ${({ theme }) => css`
+  ${({ theme, backgroundimagesrc, gradientdirection }) => css`
     animation: ${fadeIn} 500ms;
     height: 500px;
     width: 100%;
     background: linear-gradient(
-    to bottom,
+    ${gradientdirection || 'to bottom'},
     rgba(0, 0, 0, 0),
     rgba(0, 0, 0, 1)
     ),
-    url('/assets/images/backgrounds/slider-bg-1.png');
+    url(${backgroundimagesrc});
 
     display: flex;
     flex-direction: column;

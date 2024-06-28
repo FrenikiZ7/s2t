@@ -27,9 +27,9 @@ export const PopupElement = styled.dialog`
      padding: ${theme.spacings.medium};
      border-radius: 15px;
      border: ${theme.borders.white};
-     position: absolute;
      margin: 0 auto;
      z-index: 1000; 
+     
 
 
      display: flex;

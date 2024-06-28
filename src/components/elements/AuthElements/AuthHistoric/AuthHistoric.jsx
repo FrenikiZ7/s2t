@@ -8,7 +8,7 @@ import { AuthCheckbox } from '../AuthCheckbox/AuthCheckbox';
 import { AuthInfo } from '../AuthInfo/AuthInfo';
 
 export function AuthHistoric({
-  title = '', id, inputtitle, placeholder, isactual,
+  title = '', id, inputtitle, placeholder, isactual, value = 'isso é um teste (remova em AuthHistoric)',
 }) {
   return (
     <Styled.AuthHistoricContainer>
@@ -17,7 +17,7 @@ export function AuthHistoric({
         {title}
       </Styled.AuthHistoricTitle>
 
-      <AuthInfo text="Exemplo" />
+      <AuthInfo text={value} />
 
       <AuthInput
         type="text"
@@ -45,7 +45,7 @@ export function AuthHistoric({
       />
       )}
 
-      <AuthCheckbox id={`isActual${id}`} value="ActualClub" text={`Atual ${inputtitle}`} checked={isactual} />
+      <AuthCheckbox id={`isActual${id}`} value={`isActual${id}`} text={`Atual ${inputtitle}`} checked={isactual} />
 
       <Button
         text="Adicionar"
@@ -67,4 +67,6 @@ AuthHistoric.propTypes = {
   placeholder: Prop.string,
   id: Prop.string.isRequired,
   isactual: Prop.bool,
+  value: Prop.string.isRequired,
+
 };

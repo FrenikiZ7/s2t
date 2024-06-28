@@ -14,7 +14,5 @@ export const TextElement = styled.p`
     @media ${theme.medias.mobile} {
       font-size: ${theme.sizes.xsmall};
     }
-
-
   `}
 `;

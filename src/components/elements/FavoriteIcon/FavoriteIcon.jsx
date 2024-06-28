@@ -11,7 +11,7 @@ import { theme } from '../../../styles/theme';
 
 export function FavoriteIcon({ isfavorite }) {
   const handleFavoriteClick = (event) => {
-    // adiciona a foto clicada a lista de
+    // Necessário lógica para adicionar a foto clicada a lista de favoritos
     event.stopPropagation();
   };
 

@@ -24,7 +24,7 @@ export const playerData = {
         { title: 'Local de nascimento', info: 'Mogi das cruzes' },
         { title: 'Nacionalidade', info: 'Brasil' },
         { title: 'Passaporte', info: 'N/A' },
-        { title: 'Gênero', info: 'Masculino' },
+        { title: 'Time', info: 'Masculino' },
         { title: 'Altura', info: '1,72M' },
         { title: 'Peso', info: '75 KG' },
         { title: 'Melhor perna', info: 'Direita' },
@@ -78,7 +78,6 @@ export const playerData = {
         src: '/assets/images/profile/photo-2.png',
         type: 'photo',
         isfavorite: false,
-
       },
 
       {
@@ -291,13 +290,13 @@ export const playerData = {
     {
       id: '1',
       name: 'Eduardo Silva',
-      path: 'eduardo',
+      path: '/user/SPFC',
       profileImageSrc: '/assets/images/background.png',
     },
     {
       id: '2',
       name: 'Victor Souza',
-      path: 'victor',
+      path: '/user/victor',
       profileImageSrc: '/assets/images/background.png',
     },
     {

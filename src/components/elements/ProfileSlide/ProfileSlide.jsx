@@ -11,7 +11,6 @@ import { AuthIconFile } from '../AuthElements/AuthIconFile/AuthIconFile';
 import { theme } from '../../../styles/theme';
 import { FavoriteIcon } from '../FavoriteIcon/FavoriteIcon';
 import { RateIcons } from '../RateIcons/RateIcons';
-import { ImageModal } from '../ImageModal/ImageModal';
 import { ReportModal } from '../ReportModal/ReportModal';
 
 export function ProfileSlide({
@@ -28,6 +27,7 @@ export function ProfileSlide({
           spaceBetween={15}
           navigation
           zoom
+          lazy
           breakpoints={{
             // Breakpoint for tablet screens
             768: {
@@ -43,6 +43,7 @@ export function ProfileSlide({
           {items.length > 0 && items.map((item) => (
             <SwiperSlide
               key={item.id}
+              lazy={item.type === 'video'}
             >
 
               {item.type === 'photo' && (
@@ -104,10 +105,6 @@ export function ProfileSlide({
           <SwiperSlide>
             <Styled.MediaWrapper>
 
-              {/* <IconDiv name="Adicionar mais">
-              <AddIcon />
-            </IconDiv> */}
-
               <AuthIconFile id="addMoreMedia" accept="image/*,video/*" />
 
               <img src="/assets/images/backgrounds/ball.png" alt="" />
@@ -131,5 +128,5 @@ ProfileSlide.propTypes = {
   title: Prop.string,
   publicview: Prop.bool,
   ownerview: Prop.bool,
-
+  lazy: Prop.bool,
 };

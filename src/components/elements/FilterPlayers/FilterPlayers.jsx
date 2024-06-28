@@ -16,6 +16,8 @@ import { theme } from '../../../styles/theme';
 
 export function FilterPlayers() {
   const [isOpen, setIsOpen] = useState(true);
+  const [competitiveCategory, setCompetitiveCategory] = useState('');
+  const [category, setCategory] = useState('  ');
 
   const legOptions = [
     { value: 'right', text: 'Direita' },
@@ -33,8 +35,6 @@ export function FilterPlayers() {
     { value: 'sub20', text: 'Sub-20 (18, 19 e 20 anos)' },
     { value: 'adult', text: 'Adulto (Já atua no time principal)' },
   ];
-
-  const [category, setCategory] = useState('  ');
 
   const positionsOptions = [
     { value: 'goleiro', text: 'Goleiro' },
@@ -89,8 +89,6 @@ export function FilterPlayers() {
     { value: 'agents', text: 'Agentes' },
     { value: 'clubs', text: 'Clubes' },
   ];
-
-  const [competitiveCategory, setCompetitiveCategory] = useState('pro');
 
   return (
     <Styled.FilterPlayersContainer isopen={isOpen}>

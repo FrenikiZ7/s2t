@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { RowContainer } from '../../../../components/RowContainer/Row-Styles.js';
 import { slideIn } from '../../../../styles/animations.js';
+import { LinkContainer } from '../../../../components/elements/StyledLink/StyledLink-Styles.js';
 
 export const EventsContainer = styled.article`
   ${({ theme }) => css`
@@ -13,6 +14,10 @@ export const EventsContainer = styled.article`
     ${RowContainer} {
       width: 100%;
       justify-content: space-between;
+    }
+    
+    ${LinkContainer} {
+      max-width: none;
     }
     
   `}

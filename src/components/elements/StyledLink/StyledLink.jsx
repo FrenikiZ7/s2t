@@ -3,10 +3,10 @@ import React from 'react';
 import * as Styled from './StyledLink-Styles';
 
 export function StyledLink({
-  newtab = false, color = 'white', hovercolor = 'lightgray', text = '', path, children = '',
+  newtab = false, color = 'white', hovercolor = 'lightgray', text = '', path, children = '', active, onclick,
 }) {
   return (
-    <Styled.LinkContainer to={path} color={color} hovercolor={hovercolor} target={newtab ? '_blank' : '_self'}>
+    <Styled.LinkContainer onClick={onclick} to={path} color={color} hovercolor={hovercolor} active={active ? 'active' : undefined} target={newtab ? '_blank' : '_self'}>
       {text}
       {children}
     </Styled.LinkContainer>
@@ -20,4 +20,6 @@ StyledLink.propTypes = {
   color: Prop.string,
   hovercolor: Prop.string,
   children: Prop.node,
+  active: Prop.bool,
+  onclick: Prop.func,
 };

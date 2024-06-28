@@ -7,23 +7,23 @@ import { theme } from '../../../styles/theme';
 export function Button({
   onclick, gradient, active = false, path, text, textcolor = 'white', texthover = '', bgcolor = 'black', bghover = '', border = 'black', borderhover = '',
 }) {
-  return (
-    <StyledLink path={path}>
-      <Styled.ButtonElement
-        textcolor={textcolor}
-        texthover={texthover}
-        bgcolor={bgcolor}
-        bghover={bghover}
-        border={border}
-        borderhover={borderhover}
-        onClick={onclick}
-        active={active ? `0px 0px 5px 1px ${bghover}` : 'none'}
-        gradient={gradient ? `linear-gradient(to right, ${theme.colors.lightsecondary}, ${theme.colors.lightprimary})` : `${bgcolor}`}
-      >
-        {text}
-      </Styled.ButtonElement>
-    </StyledLink>
+  const ButtonElement = (
+    <Styled.ButtonElement
+      textcolor={textcolor}
+      texthover={texthover}
+      bgcolor={bgcolor}
+      bghover={bghover}
+      border={border}
+      borderhover={borderhover}
+      onClick={onclick}
+      active={active ? `0px 0px 5px 1px ${bghover}` : 'none'}
+      gradient={gradient ? `linear-gradient(to right, ${theme.colors.lightsecondary}, ${theme.colors.lightprimary})` : `${bgcolor}`}
+    >
+      {text}
+    </Styled.ButtonElement>
   );
+
+  return path ? <StyledLink path={path}>{ButtonElement}</StyledLink> : ButtonElement;
 }
 
 Button.propTypes = {
@@ -37,4 +37,5 @@ Button.propTypes = {
   border: Prop.string,
   borderhover: Prop.string,
   active: Prop.bool,
+  gradient: Prop.bool,
 };

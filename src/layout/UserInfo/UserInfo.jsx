@@ -7,7 +7,7 @@ import { Button } from '../../components/elements/Button/Button';
 import { theme } from '../../styles/theme';
 import { Row } from '../../components/RowContainer/Row';
 
-export function UserInfo({ children }) {
+export function UserInfo() {
   return (
     <Styled.UserInfoContainer>
 
@@ -17,5 +17,5 @@ export function UserInfo({ children }) {
 }
 
 UserInfo.propTypes = {
-  children: Prop.node.isRequired,
+
 };

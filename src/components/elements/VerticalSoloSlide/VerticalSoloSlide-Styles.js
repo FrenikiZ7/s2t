@@ -1,6 +1,17 @@
 import styled, { css } from 'styled-components';
 import { LinkContainer } from '../StyledLink/StyledLink-Styles';
 
+export const VerticalSoloSlideContainer = styled.div`
+  ${({ theme }) => css`
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  `}
+`;
+
 export const VerticalSoloSlideElement = styled.div`
   ${({ theme, size }) => css`
     width: 100%;
@@ -11,12 +22,15 @@ export const VerticalSoloSlideElement = styled.div`
     height: 100%;
     width: 100%;
     border-radius: 12px;
+    max-width: 800px;
+
    }
 
     & img{
       object-fit: fill;
       width: 100%;
       height: 100%;
+      
       border-radius: 15px;
       box-sizing: border-box;
     }

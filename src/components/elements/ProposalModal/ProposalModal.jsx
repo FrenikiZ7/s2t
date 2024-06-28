@@ -16,7 +16,7 @@ import { IconDiv } from '../IconDiv/IconDiv';
 import { FavoriteIcon } from '../FavoriteIcon/FavoriteIcon';
 
 export function ProposalModal({
-  from, date, opportunity, country, org, category, description, requirements, minpayment, maxpayment, onclick,
+  from, date, disponibility, opportunity, country, org, minage, maxage, minheight, category, description, requirements, minpayment, maxpayment, onclick,
 }) {
   const [message, setMessage] = useState('');
 
@@ -44,28 +44,34 @@ export function ProposalModal({
 
       <GridTwoColumn>
 
-        <InfoInRow infotitle="Proposta de" info={from} uppercase />
-        <InfoInRow infotitle="Data" info={date} uppercase />
-        <InfoInRow infotitle="Liga" info={org} uppercase />
-        <InfoInRow infotitle="País" info={country} uppercase />
-        <InfoInRow infotitle="Categoria" info={category} uppercase />
-        <InfoInRow infotitle="Posição" info={opportunity} uppercase />
-        <InfoInRow infotitle="Idade mínima" info="18" uppercase />
-        <InfoInRow infotitle="Idade máxima" info="30" uppercase />
-        <InfoInRow infotitle="Altura mínima" info="1,75 M" uppercase />
-        <InfoInRow infotitle="Salário" info={`${minpayment} a ${maxpayment}`} uppercase />
+        {from && <InfoInRow infotitle="Proposta de" info={from} uppercase />}
+        {date && <InfoInRow infotitle="Data" info={date} uppercase />}
+        {disponibility && <InfoInRow infotitle="Disponibilidade" info={disponibility} uppercase />}
+        {org && <InfoInRow infotitle="Liga" info={org} uppercase />}
+        {country && <InfoInRow infotitle="País" info={country} uppercase />}
+        {category && <InfoInRow infotitle="Categoria" info={category} uppercase />}
+        {opportunity && <InfoInRow infotitle="Posição" info={opportunity} uppercase />}
+        {minage && <InfoInRow infotitle="Idade mínima" info={minage} uppercase />}
+        {maxage && <InfoInRow infotitle="Idade máxima" info={maxage} uppercase />}
+        {minheight && <InfoInRow infotitle="Altura mínima" info={`${minheight} M`} uppercase />}
+        {minpayment && <InfoInRow infotitle="Salário" info={`${minpayment} a ${maxpayment}`} uppercase />}
 
       </GridTwoColumn>
 
-      <ColumnContainer>
-        <Subtitle text="Descrição" uppercase />
-        <Text text={description} />
-      </ColumnContainer>
+      {description && (
+        <ColumnContainer>
+          <Subtitle text="Descrição" uppercase />
+          <Text text={description} />
+        </ColumnContainer>
+      )}
 
-      <ColumnContainer>
-        <Subtitle text="Requisitos" uppercase />
-        <Text text={requirements} />
-      </ColumnContainer>
+      {requirements && (
+        <ColumnContainer>
+
+          <Subtitle text="Requisitos" uppercase />
+          <Text text={requirements} />
+        </ColumnContainer>
+      )}
 
       <ColumnContainer>
         <Subtitle text="Mensagem" uppercase />
@@ -89,15 +95,18 @@ export function ProposalModal({
 }
 
 ProposalModal.propTypes = {
-  from: Prop.string.isRequired,
-  date: Prop.string.isRequired,
-  opportunity: Prop.string.isRequired,
-  country: Prop.string.isRequired,
-  org: Prop.string.isRequired,
-  category: Prop.string.isRequired,
-  description: Prop.string.isRequired,
-  requirements: Prop.string.isRequired,
-  minpayment: Prop.number.isRequired,
-  maxpayment: Prop.number.isRequired,
+  from: Prop.string,
+  date: Prop.string,
+  opportunity: Prop.string,
+  country: Prop.string,
+  org: Prop.string,
+  category: Prop.string,
+  description: Prop.string,
+  requirements: Prop.string,
+  minage: Prop.number,
+  maxage: Prop.number,
+  minheight: Prop.string,
+  minpayment: Prop.number,
+  maxpayment: Prop.number,
   onclick: Prop.func,
 };

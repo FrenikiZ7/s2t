@@ -2,15 +2,16 @@ import Prop from 'prop-types';
 import React from 'react';
 import * as Styled from './FloatingIcon-Styles';
 
-export function FloatingIcon({ icon, onclick }) {
+export function FloatingIcon({ children, onclick, name = 'Ícone' }) {
   return (
-    <Styled.FloatingIconElement onClick={onclick}>
-      {icon}
+    <Styled.FloatingIconElement onClick={onclick} aria-label={name} title={name}>
+      {children}
     </Styled.FloatingIconElement>
   );
 }
 
 FloatingIcon.propTypes = {
-  icon: Prop.node.isRequired,
+  children: Prop.node.isRequired,
+  name: Prop.string,
   onclick: Prop.func,
 };

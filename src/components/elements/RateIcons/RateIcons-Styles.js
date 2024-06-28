@@ -16,6 +16,7 @@ export const RateIconsElement = styled.div`
     
     animation: ${spin360Left} 1500ms;
     transition: all 500ms ease-in-out;
+    animation-fill-mode: forwards;
 
     &:hover {
       animation: ${spin360Right} 1500ms;

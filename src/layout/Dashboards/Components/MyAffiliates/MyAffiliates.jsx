@@ -17,5 +17,5 @@ export function MyAffiliates({ friends }) {
 }
 
 MyAffiliates.propTypes = {
-  children: Prop.node.isRequired,
+
 };

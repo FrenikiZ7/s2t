@@ -5,7 +5,7 @@ export const PublicNav = styled.nav`
      display: flex;
      justify-content: center;
      align-items: center;
-     gap: ${theme.spacings.large};
+     gap: ${theme.spacings.small};
      height: 100%;
      width: 100%;
      padding: ${theme.spacings.medium};

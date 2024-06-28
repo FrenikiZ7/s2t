@@ -7,22 +7,24 @@ import { StyledLink } from '../StyledLink/StyledLink';
 import { Subtitle } from '../Subtitle/Subtitle';
 
 export function VerticalSoloSlide({
-  items, size = '500px', title, type = 'photo',
+  items, size = '500px', title, type = 'image',
 }) {
   return (
-    <Styled.VerticalSoloSlideElement size={size}>
-
+    <Styled.VerticalSoloSlideContainer>
       {title && <Subtitle text={title} uppercase as="h4" />}
-      <Swiper
-        spaceBetween={0}
-        slidesPerView={1}
-        direction="vertical"
-        mousewheel
-        loop
-        pagination
-        lazy
-      >
-        {type === 'photo' && (
+
+      <Styled.VerticalSoloSlideElement size={size}>
+
+        <Swiper
+          spaceBetween={0}
+          slidesPerView={1}
+          direction="vertical"
+          mousewheel
+          loop
+          pagination
+          lazy
+        >
+          {type === 'image' && (
           <>
             {items.map((item) => (
               <SwiperSlide key={item.id}>
@@ -32,9 +34,9 @@ export function VerticalSoloSlide({
               </SwiperSlide>
             ))}
           </>
-        )}
+          )}
 
-        {type === 'video' && (
+          {type === 'video' && (
           <>
             {items.map((item) => (
               <SwiperSlide key={item.id}>
@@ -42,10 +44,12 @@ export function VerticalSoloSlide({
               </SwiperSlide>
             ))}
           </>
-        )}
+          )}
 
-      </Swiper>
-    </Styled.VerticalSoloSlideElement>
+        </Swiper>
+      </Styled.VerticalSoloSlideElement>
+    </Styled.VerticalSoloSlideContainer>
+
   );
 }
 

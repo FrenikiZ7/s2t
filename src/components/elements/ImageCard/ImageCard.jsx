@@ -9,13 +9,13 @@ export function ImageCard({
 }) {
   return (
 
-    <Styled.ImageCardElement islocked={islocked}>
+    <Styled.ImageCardElement islocked={islocked ? 'islocked' : undefined}>
       <StyledLink path={path}>
 
-        <Styled.Image src={src} alt={alt} islocked={islocked} />
+        <Styled.Image src={src} alt={alt} islocked={islocked ? 'islocked' : undefined} />
 
         {islocked && (
-          <Styled.LockDiv islocked={islocked}>
+          <Styled.LockDiv islocked={islocked ? 'islocked' : undefined}>
             <img
               src="/assets/images/pngs/padlock.png"
               alt="cadeado"

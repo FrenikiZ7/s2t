@@ -15,6 +15,8 @@ import { SearchWrapper } from '../AuthElements/AuthSearch/AuthSearch-Styles';
 
 export function FilterProposals() {
   const [isOpen, setIsOpen] = useState(true);
+  const [opportunityType, setOpportunityType] = useState('all');
+  const [category, setCategory] = useState('  ');
 
   const legOptions = [
     { value: 'right', text: 'Direita' },
@@ -32,8 +34,6 @@ export function FilterProposals() {
     { value: 'sub20', text: 'Sub-20 (18, 19 e 20 anos)' },
     { value: 'adult', text: 'Adulto (Já atua no time principal)' },
   ];
-
-  const [category, setCategory] = useState('  ');
 
   const positionsOptions = [
     { value: 'goleiro', text: 'Goleiro' },
@@ -83,8 +83,6 @@ export function FilterProposals() {
     { value: 'exchangeAgencies', text: 'Agências de intercâmbio' },
   ];
 
-  const [opportunityType, setOpportunityType] = useState('all');
-
   return (
     <Styled.FilterProposalsContainer isopen={isOpen}>
       <AuthWrapper>
@@ -102,7 +100,7 @@ export function FilterProposals() {
               <IconDiv onclick={() => setIsOpen(!isOpen)} name="Filtrar oportunidades">
                 <OptionsIcons />
               </IconDiv>
-              <AuthSearch />
+              <AuthSearch name="proposalSearch" id="proposalSearch" />
             </SearchWrapper>
 
           </Row>

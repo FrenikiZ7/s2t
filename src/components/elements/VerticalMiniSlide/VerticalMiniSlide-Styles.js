@@ -40,7 +40,6 @@ export const VerticalMiniSlideContainer = styled.div`
 
     .swiper-slide {
       padding: ${theme.spacings.xsmall};
-
     }
   `}
 `;

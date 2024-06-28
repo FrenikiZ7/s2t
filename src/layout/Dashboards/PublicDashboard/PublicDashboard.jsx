@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
+import Prop from 'prop-types';
 import * as Styled from './PublicDashboard-Styles';
 import { PlayerContext } from '../../../contexts/userContext/PlayerProvider/PlayerContext';
 import { theme } from '../../../styles/theme';
-
 import { ProfilePicture } from '../../../components/elements/ProfilePicture/ProfilePicture';
 import { ColumnContainer } from '../../../components/ColumnContainer/Column-Styles';
 import { Slide } from '../../../components/elements/Slide/Slide';
@@ -27,6 +27,8 @@ export function PublicDashboard() {
   const { clubState, clubDispatch } = clubContext;
   const [menuVisibility, setMenuVisibility] = useState(false);
   const [follow, setFollow] = useState(false);
+
+  const { username } = useParams();
 
   return (
     <Styled.PublicDashboardContainer>
@@ -56,9 +58,11 @@ export function PublicDashboard() {
       </ProfileBanner>
 
       {/* Aparece apenas em telas maiores que 768px */}
+      {username && (
       <ProfileHeader>
-        <PublicNav />
+        <PublicNav username={username} />
       </ProfileHeader>
+      )}
 
       {/* Aparece apenas em telas menores que 768px */}
       {menuVisibility ? (
@@ -66,15 +70,9 @@ export function PublicDashboard() {
           <PublicMenu />
         </MobileMenu>
       ) : (
-        <FloatingIcon
-          icon={(
-            <MenuIcon
-              aria-label="Menu"
-              title="Menu"
-            />
-          )}
-          onclick={() => setMenuVisibility(!menuVisibility)}
-        />
+        <FloatingIcon name="Menu" onclick={() => setMenuVisibility(!menuVisibility)}>
+          <MenuIcon />
+        </FloatingIcon>
       )}
 
       <S2tProvider>
@@ -90,3 +88,7 @@ export function PublicDashboard() {
     </Styled.PublicDashboardContainer>
   );
 }
+
+PublicDashboard.propTypes = {
+  username: Prop.string,
+};

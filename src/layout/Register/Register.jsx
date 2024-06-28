@@ -5,9 +5,6 @@ import * as Styled from './Register-Styles';
 import { Title } from '../../components/elements/Title/Title';
 
 import { theme } from '../../styles/theme';
-import { Button } from '../../components/elements/Button/Button';
-import { Row } from '../../components/RowContainer/Row';
-import { AuthWrapper } from '../../components/elements/AuthElements/AuthWrapper/AuthWrapper';
 import { AuthContainer } from '../../components/elements/AuthElements/AuthWrapper/AuthWrapper-Styles';
 import { AuthForm } from '../../components/elements/AuthElements/AuthForm/AuthForm';
 import { AuthInput } from '../../components/elements/AuthElements/AuthInput/AuthInput';
@@ -15,12 +12,9 @@ import { StyledLink } from '../../components/elements/StyledLink/StyledLink';
 import { AuthRedirect } from '../../components/elements/AuthElements/AuthRedirect/Redirect';
 import { AuthButton } from '../../components/elements/AuthElements/AuthButton/AuthButton';
 import { AuthRadio } from '../../components/elements/AuthElements/AuthRadio/AuthRadio';
-import { Popup } from '../../components/elements/Popup/Popup';
 import { AuthDropdown } from '../../components/elements/AuthElements/AuthDropdown/AuthDropdown';
-import { PricingCard } from '../../components/elements/PricingCard/PricingCard';
 import { Text } from '../../components/elements/Text/Text';
 import { Subtitle } from '../../components/elements/Subtitle/Subtitle';
-import { Column } from '../../components/ColumnContainer/Column';
 import { Bubble } from '../../components/bubble/Bubble';
 
 export function Register() {
@@ -249,8 +243,6 @@ export function Register() {
         onclick={() => setIsOpen(!isOpen)}
       />
       )} */}
-
-      {/* <PricingCard /> */}
 
     </Styled.RegisterPage>
 

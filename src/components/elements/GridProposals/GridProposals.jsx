@@ -61,8 +61,8 @@ export function GridProposals({ items, title }) {
               category={item.details.category}
               country={item.details.country}
               org={item.details.org}
-              orglogo={item.details.orglogo}
-              orgpath={item.details.orgpath}
+              orglogo={item.details.orgLogo}
+              orgpath={item.details.orgPath}
               onclick={() => handleCardClick(item)}
               id={item.opportunityId}
               key={item.opportunityId}
@@ -91,12 +91,16 @@ export function GridProposals({ items, title }) {
           <ProposalModal
             from={selectedProposal.details.from}
             date={selectedProposal.details.date}
+            disponibility={selectedProposal.details.disponibility}
             opportunity={selectedProposal.details.opportunity}
             category={selectedProposal.details.category}
             country={selectedProposal.details.country}
             org={selectedProposal.details.org}
-            orglogo={selectedProposal.details.orglogo}
-            orgpath={selectedProposal.details.orgpath}
+            orglogo={selectedProposal.details.orgLogo}
+            orgpath={selectedProposal.details.orgPath}
+            minage={selectedProposal.details.age.minAge}
+            maxage={selectedProposal.details.age.maxAge}
+            minheight={selectedProposal.details.minHeight}
             minpayment={selectedProposal.details.payment.minPayment}
             maxpayment={selectedProposal.details.payment.maxPayment}
             description={selectedProposal.description}

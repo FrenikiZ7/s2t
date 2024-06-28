@@ -42,4 +42,5 @@ AuthSearch.propTypes = {
   onchange: Prop.func,
   autocomplete: Prop.string,
   required: Prop.bool,
+  children: Prop.node,
 };

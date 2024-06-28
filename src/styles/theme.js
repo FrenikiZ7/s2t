@@ -31,6 +31,8 @@ export const theme = {
     primary: '1px solid #91DE0F',
     xprimary: '2px solid #91DE0F',
 
+    xlightprimary: '2px solid #49A859',
+
     secondary: '1px solid #008EFF',
     xsecondary: '2px solid #008EFF',
 

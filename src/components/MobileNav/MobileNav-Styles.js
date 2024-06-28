@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
-import { slideOut } from '../../styles/animations';
+import { fadeIn, slideOut } from '../../styles/animations';
 
 export const MobileNavContainer = styled.nav`
   ${({ theme }) => css`
-     animation: ${slideOut} 500ms;
+     animation: ${fadeIn} 500ms;
      background: rgba(0,0,0,0.6);
      position: absolute;
-     top: 72px;
+     top: 80px;
      width: 100%;
-     z-index: 20;
+     z-index: 10;
      padding: ${theme.spacings.large};
 
      display: none;

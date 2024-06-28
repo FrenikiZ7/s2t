@@ -18,7 +18,6 @@ import { SocialLink } from '../../components/elements/SocialLink/SocialLink';
 import { Footer } from '../../components/Footer/Footer';
 import { MobileNav } from '../../components/MobileNav/MobileNav';
 import { GridLayout } from '../../components/GridLayout/GridLayout';
-import { Banner } from '../../components/elements/Banner/Banner';
 import { VerticalMiniSlide } from '../../components/elements/VerticalMiniSlide/VerticalMiniSlide';
 import { VerticalSoloSlide } from '../../components/elements/VerticalSoloSlide/VerticalSoloSlide';
 import { VerticalVideoSlide } from '../../components/elements/VerticalVideoSlide/VerticalVideoSlide';
@@ -125,7 +124,7 @@ export function Home() {
 
           <Button
             text="Dashboard - Público"
-            path="/user/profile"
+            path="/user/"
             bgcolor={theme.colors.lightprimary}
             bghover={theme.colors.primary}
             textcolor={theme.colors.black}
@@ -174,11 +173,11 @@ export function Home() {
       </MobileNav>
       )}
 
-      <BannerSlide>
+      <BannerSlide backgroundimagesrc="/assets/images/backgrounds/slider-bg-1.png">
         <VerticalMiniSlide title="Eventos" type="events" items={s2tState.events} />
 
         {/* disparando 2 warning de thid party cookies no console */}
-        <VerticalSoloSlide size="400px" items={s2tState.news} />
+        <VerticalSoloSlide title="Social" size="400px" items={s2tState.news} />
 
         <VerticalMiniSlide title="Notícias" type="news" items={s2tState.news} />
       </BannerSlide>
@@ -233,7 +232,8 @@ export function Home() {
 
       <Slide items={s2tState.photos.usersType} />
 
-      <BannerSlide title="Vídeos em alta" lazy="false">
+      {/* Sendo testado (ainda com problemas) */}
+      <BannerSlide title="Vídeos em alta" lazy backgroundimagesrc="/assets/images/backgrounds/slider-bg-2.png">
 
         <VerticalVideoSlide size="300px" items={s2tState.news} title="Profissional" type="video" />
         <VerticalVideoSlide size="300px" items={s2tState.news} title="Semi- profissional" type="video" />

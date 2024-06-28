@@ -18,15 +18,6 @@ export const PublicDashboardContainer = styled.section`
       }
     }
 
-    ${RowContainer} {
-      width: auto;
-      align-items: center;
-      gap: ${theme.spacings.xxsmall};
-
-      @media ${theme.medias.smallpc} {
-        flex-direction: row;
-      }
-    }
 
     
 

@@ -67,23 +67,13 @@ export function VerticalMiniSlide({ items, title, type }) {
           </>
           )}
 
-          {type === 'rank' && (
+          {type === 'referralrank' && (
           <>
-            <SwiperSlide>
-              <RankCard name="Bruno da silva pedrosa" position={1} imagesrc="/assets/images/background.png" />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <RankCard name="Caio Henrique" position={2} imagesrc="/assets/images/background.png" />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <RankCard name="Eduardo Medeiros" position={3} imagesrc="/assets/images/background.png" />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <RankCard name="Bruno Andrade Ferraz" position={4} imagesrc="/assets/images/background.png" />
-            </SwiperSlide>
+            {items.map((item) => (
+              <SwiperSlide key={item.positon}>
+                <RankCard name={item.name} position={item.position} imagesrc={item.imagesrc} />
+              </SwiperSlide>
+            ))}
           </>
           )}
 

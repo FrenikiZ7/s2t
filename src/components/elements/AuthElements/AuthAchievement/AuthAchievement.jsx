@@ -7,7 +7,7 @@ import { Button } from '../../Button/Button';
 import { theme } from '../../../../styles/theme';
 
 export function AuthAchievement({
-  title, id, inputtitle, placeholder,
+  title, id, inputtitle, placeholder, value = 'isso é um teste (remova em AuthAchievement)',
 }) {
   return (
     <Styled.AuthAchievementContainer>
@@ -16,7 +16,7 @@ export function AuthAchievement({
         {title}
       </Styled.AuthAchievementTitle>
 
-      <AuthInfo text="Exemplo" />
+      <AuthInfo text={value} />
 
       <AuthInput
         type="text"
@@ -53,5 +53,5 @@ AuthAchievement.propTypes = {
   inputtitle: Prop.string,
   placeholder: Prop.string,
   id: Prop.string.isRequired,
-
+  value: Prop.string.isRequired,
 };

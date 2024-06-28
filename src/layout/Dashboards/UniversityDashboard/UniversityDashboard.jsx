@@ -18,6 +18,7 @@ import { UniversityContext } from '../../../contexts/userContext/UniversityProvi
 import { ProfileBanner } from '../../../components/elements/ProfileBanner/ProfileBanner';
 import { ClubNav } from '../../../components/ProfileHeader/Components/ClubNav/ClubNav';
 import { ClubMenu } from '../../../components/MobileMenu/Components/ClubMenu/ClubMenu';
+import { UniversityNav } from '../../../components/ProfileHeader/Components/UniversityNav/UniversityNav';
 
 export function UniversityDashboard() {
   const universityContext = useContext(UniversityContext);
@@ -48,7 +49,7 @@ export function UniversityDashboard() {
 
       {/* Aparece apenas em telas maiores que 768px */}
       <ProfileHeader>
-        <ClubNav />
+        <UniversityNav />
       </ProfileHeader>
 
       {/* Aparece apenas em telas menores que 768px */}
@@ -57,15 +58,9 @@ export function UniversityDashboard() {
           <ClubMenu />
         </MobileMenu>
       ) : (
-        <FloatingIcon
-          icon={(
-            <MenuIcon
-              aria-label="Menu"
-              title="Menu"
-            />
-          )}
-          onclick={() => setMenuVisibility(!menuVisibility)}
-        />
+        <FloatingIcon name="Menu" onclick={() => setMenuVisibility(!menuVisibility)}>
+          <MenuIcon />
+        </FloatingIcon>
       )}
 
       <S2tProvider>

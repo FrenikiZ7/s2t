@@ -1,17 +1,19 @@
 import styled, { css } from 'styled-components';
-import { zoomIn } from '../../../styles/animations';
+import { spin360Left, spin360Right, zoomIn } from '../../../styles/animations';
 
 export const IconContainer = styled.div`
-  ${({ theme, hovercolor }) => css`
+  ${({ theme, hovercolor, active }) => css`
       transition: all 500ms ease-in-out ;
       width: 40px;
       display: flex;
-      align-items: center;
+      align-items: center;     
+      animation: ${active ? spin360Right : spin360Left} 1000ms;
+
+    
 
       @media ${theme.medias.mobile} {
         width: 30px;
       }
-
     
       & svg {
 
@@ -19,7 +21,7 @@ export const IconContainer = styled.div`
         height: 100%;
 
         transition: all 500ms ease-in-out ;
-        color: ${theme.colors.white};
+        color: ${active ? theme.colors.primary : theme.colors.white};
 
         &:hover {
           color: ${hovercolor || theme.colors.secondary};

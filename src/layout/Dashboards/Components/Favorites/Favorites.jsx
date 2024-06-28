@@ -5,7 +5,7 @@ import { S2tContext } from '../../../../contexts/s2tContext/S2tContext';
 import { ProfileSlide } from '../../../../components/elements/ProfileSlide/ProfileSlide';
 import { PlayerContext } from '../../../../contexts/userContext/PlayerProvider/PlayerContext';
 import { GridProposals } from '../../../../components/elements/GridProposals/GridProposals';
-import { SlideProposals } from '../../../../components/elements/SlideProposals/SlideProposals';
+import { SlideProposals } from '../../../../components/elements/SlideProposals (no used)/SlideProposals';
 
 export function Favorites() {
   const s2tContext = useContext(S2tContext);
@@ -16,9 +16,9 @@ export function Favorites() {
 
   return (
     <Styled.FavoritesContainer>
-      <ProfileSlide items={s2tState.videos.trending} title="Vídeos em alta" publicview />
+      <ProfileSlide items={s2tState.videos.trending} title="Vídeos em alta" publicview lazy />
 
-      <ProfileSlide items={s2tState.videos.trending} title="Meus vídeos favoritos" publicview />
+      <ProfileSlide items={s2tState.videos.trending} title="Meus vídeos favoritos" publicview lazy />
 
       <GridProposals title="Oportunidades favoritas" items={s2tState.proposals[playerState.type.gender][playerState.type.category].agents} />
     </Styled.FavoritesContainer>

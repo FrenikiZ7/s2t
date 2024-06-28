@@ -6,7 +6,7 @@ export const AuthCheckboxContainer = styled.label`
     align-items: center;
     gap: ${theme.spacings.xsmall};
     color: ${theme.colors.white};
-
+    user-select: none;
     @media ${theme.medias.mobile} {
       font-size: ${theme.sizes.small};
     }

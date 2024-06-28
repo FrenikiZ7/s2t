@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { fadeIn } from '../../../styles/animations';
 import { LinkContainer } from '../StyledLink/StyledLink-Styles';
+import { TitleElement } from '../Title/Title-Styles';
 
 export const ImageCardElement = styled.div`
   ${({ theme, islocked }) => css`
@@ -24,7 +25,7 @@ export const ImageCardElement = styled.div`
 
   &:hover {
 
-    & ${Title} {
+    & ${TitleElement} {
       color: ${theme.colors.tertiary};
       background-color: ${theme.colors.mediumblack};
     }

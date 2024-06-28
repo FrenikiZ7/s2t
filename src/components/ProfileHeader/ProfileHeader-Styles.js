@@ -17,7 +17,7 @@ export const ProfileHeaderContainer = styled.header`
      justify-content: center;
      align-content: center;
      flex-direction: column;
-     max-width: 1240px;
+     max-width: 1230px;
      border-radius: 12px;
   
   
@@ -30,6 +30,11 @@ export const ProfileHeaderContainer = styled.header`
      }
 
      ${LinkContainer} {
+      position: relative;
+      transition: all 800ms ease-in-out;
+      border-radius: 12px;
+      padding: 1px ${theme.spacings.xsmall};
+      
       @media ${theme.medias.smallpc} {
         font-size: ${theme.sizes.small};
       }

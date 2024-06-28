@@ -1,9 +1,10 @@
-//  o React e ReactDOM para construir e renderizar os componentes React
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 import { register } from 'swiper/element/bundle';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter, Routes, Route, useParams,
+} from 'react-router-dom';
+import Prop from 'prop-types';
 import { theme } from './styles/theme';
 import GlobalStyles from './styles/global-styles';
 
@@ -47,12 +48,14 @@ import { ForgotPassword } from './layout/ForgotPassword/ForgotPassword';
 import { ResetPassword } from './layout/ResetPassword/ResetPassword';
 import { MyAffiliates } from './layout/Dashboards/Components/MyAffiliates/MyAffiliates';
 import { PlayerHome } from './layout/Dashboards/Components/PlayerComponents/PlayerHome/PlayerHome';
+import { Store } from './layout/Dashboards/Components/Store/Store';
 
-register();
+export function Main() {
+  const { username } = useParams();
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    {/* Fornecendo o tema para os componentes */}
+  register();
+
+  return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
 
@@ -79,6 +82,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="events" element={<Events />} />
                     <Route path="friends" element={<Friends friends={playerData.friends} />} />
+                    <Route path="store" element={<Store />} />
                     <Route path="my-affiliates" element={<MyAffiliates friends={playerData.friends} />} />
                     <Route path="s2t+" element={<S2TPlus />} />
                   </Route>
@@ -97,6 +101,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <Route path="events" element={<Events />} />
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="friends" element={<Friends friends={clubData.friends} />} />
+                    <Route path="store" element={<Store />} />
                     <Route path="s2t+" element={<S2TPlus />} />
                   </Route>
 
@@ -113,10 +118,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <Route path="events" element={<Events />} />
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="friends" element={<Friends friends={clubData.friends} />} />
+                    <Route path="store" element={<Store />} />
                     <Route path="s2t+" element={<S2TPlus />} />
                   </Route>
 
-                  <Route path="/user/" element={<PublicDashboard />}>
+                  <Route path="/user/:username" element={<PublicDashboard />}>
                     <Route path="profile" element={<PublicProfile />} />
                     <Route path="squad" element={<Players />} />
                     <Route path="opportunities" element={<Opportunities />} />
@@ -141,5 +147,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       </BrowserRouter>
     </ThemeProvider>
-  </React.StrictMode>,
-);
+  );
+}
