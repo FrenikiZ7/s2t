@@ -9,7 +9,7 @@ export const SubtitleElement = styled.h2`
      font-size: ${size};
      font-family: ${theme.fonts.primary};
      font-weight: 600;
-     text-transform: ${uppercase};
+     text-transform: undefined;
 
      @media ${theme.medias.tablet} {
       font-size: ${theme.sizes.large};

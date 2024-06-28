@@ -5,7 +5,7 @@ import { StyledLink } from '../StyledLink/StyledLink';
 import { theme } from '../../../styles/theme';
 
 export function Button({
-  onclick, gradient, active = false, path, text, textcolor = 'white', texthover = '', bgcolor = 'black', bghover = '', border = 'black', borderhover = '',
+  onclick, gradient, active, path, text, textcolor = 'white', texthover = '', bgcolor = 'black', bghover = '', border = 'black', borderhover = '',
 }) {
   const ButtonElement = (
     <Styled.ButtonElement
@@ -16,8 +16,8 @@ export function Button({
       border={border}
       borderhover={borderhover}
       onClick={onclick}
-      active={active ? `0px 0px 5px 1px ${bghover}` : 'none'}
-      gradient={gradient ? `linear-gradient(to right, ${theme.colors.lightsecondary}, ${theme.colors.lightprimary})` : `${bgcolor}`}
+      active={active ? 'active' : undefined}
+      gradient={gradient ? 'gradient' : undefined}
     >
       {text}
     </Styled.ButtonElement>

@@ -7,7 +7,7 @@ import * as Styled from './BannerSlide-Styles';
 import { Subtitle } from '../Subtitle/Subtitle';
 
 export function BannerSlide({
-  children, title = '', lazy = false, slidesperview = 3, backgroundimagesrc, gradientdirection,
+  children, lazy, title = '', slidesperview = 3, backgroundimagesrc, gradientdirection,
 }) {
   return (
     <Styled.BannerSlideWrapper
@@ -22,7 +22,7 @@ export function BannerSlide({
           grabCursor
           navigation
           loop
-          lazy
+          lazy={lazy ? 'true' : undefined}
           breakpoints={{
 
             1425: {
@@ -57,8 +57,8 @@ export function BannerSlide({
 BannerSlide.propTypes = {
   children: Prop.node.isRequired,
   title: Prop.string,
-  slidesperview: Prop.number,
   lazy: Prop.bool,
+  slidesperview: Prop.number,
   backgroundimagesrc: Prop.string,
   gradientdirection: Prop.string,
 };

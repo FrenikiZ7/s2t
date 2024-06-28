@@ -6,7 +6,7 @@ export const AuthFormContainer = styled.form`
 
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: ${theme.spacings.medium};
 
     margin: 0 auto;
     width: 100%;

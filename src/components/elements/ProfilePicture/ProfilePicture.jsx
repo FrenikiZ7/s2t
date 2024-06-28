@@ -11,6 +11,7 @@ export function ProfilePicture({ imagesrc, badge = '', type = '' }) {
         <Styled.Picture src={imagesrc} alt="Foto de perfil do usuário" />
 
         {badge && <Styled.Badge><img src={badge} alt="Plano que o usuário possui" /></Styled.Badge> }
+
       </Styled.ProfilePictureElement>
       {type && (
         <Button

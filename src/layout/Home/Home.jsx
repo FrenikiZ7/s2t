@@ -76,6 +76,7 @@ export function Home() {
             texthover={theme.colors.black}
             border={theme.colors.lightprimary}
             borderhover={theme.colors.primary}
+
           />
 
           <Button
@@ -226,6 +227,7 @@ export function Home() {
           border={theme.colors.black}
           borderhover={theme.colors.black}
           gradient
+          active
         />
 
       </GridLayout>

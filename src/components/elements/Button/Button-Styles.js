@@ -5,15 +5,17 @@ export const ButtonElement = styled.button`
     theme, textcolor, texthover, bgcolor, bghover, border, borderhover, active, gradient,
   }) => css`
     color: ${textcolor};
-    background: ${gradient};
-    padding: ${theme.spacings.xsmall};
+    background: ${gradient ? `linear-gradient(to right, ${theme.colors.lightsecondary}, ${theme.colors.lightprimary})` : `${bgcolor}`};
+    box-shadow: ${active ? `0px 0px 5px 1px ${bghover}` : 'none'};
+    border: 1px solid ${border};
+    border-radius: 10px;
+
     font-family: ${theme.fonts.primary};
     font-weight: 800;
     font-size: ${theme.sizes.small};
-    border: 1px solid ${border};
-    border-radius: 10px;
     text-transform:uppercase;
-    box-shadow: ${active};
+
+    padding: ${theme.spacings.xsmall};
 
     transition: all 800ms ease-in-out;
 

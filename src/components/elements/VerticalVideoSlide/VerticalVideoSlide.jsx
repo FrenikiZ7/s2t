@@ -7,7 +7,7 @@ import { StyledLink } from '../StyledLink/StyledLink';
 import { Subtitle } from '../Subtitle/Subtitle';
 
 export function VerticalVideoSlide({
-  items, size = '500px', title,
+  items, size = '500px', title, lazy,
 }) {
   return (
     <Styled.VerticalVideoSlideElement size={size}>
@@ -19,8 +19,8 @@ export function VerticalVideoSlide({
         direction="vertical"
         mousewheel
         loop
+        lazy={lazy ? 'true' : undefined}
         pagination
-        lazy
       >
 
         <SwiperSlide>

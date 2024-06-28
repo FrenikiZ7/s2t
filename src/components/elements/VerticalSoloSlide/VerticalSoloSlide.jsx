@@ -7,7 +7,7 @@ import { StyledLink } from '../StyledLink/StyledLink';
 import { Subtitle } from '../Subtitle/Subtitle';
 
 export function VerticalSoloSlide({
-  items, size = '500px', title, type = 'image',
+  items, size = '500px', title, type = 'image', lazy,
 }) {
   return (
     <Styled.VerticalSoloSlideContainer>
@@ -21,8 +21,8 @@ export function VerticalSoloSlide({
           direction="vertical"
           mousewheel
           loop
+          lazy={lazy ? 'true' : undefined}
           pagination
-          lazy
         >
           {type === 'image' && (
           <>
@@ -39,7 +39,7 @@ export function VerticalSoloSlide({
           {type === 'video' && (
           <>
             {items.map((item) => (
-              <SwiperSlide key={item.id}>
+              <SwiperSlide key={item.id} lazy={lazy}>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/5-sXTlF6Sd4?si=-FVFNX-zSAhGhulp" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen />
               </SwiperSlide>
             ))}
@@ -57,5 +57,6 @@ VerticalSoloSlide.propTypes = {
   size: Prop.string,
   title: Prop.string,
   type: Prop.string,
+  lazy: Prop.bool,
   items: Prop.arrayOf(Prop.object).isRequired,
 };
