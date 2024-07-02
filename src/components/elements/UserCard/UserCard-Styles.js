@@ -68,7 +68,7 @@ export const UserCardElement = styled.div`
 
 
     &:hover {
-      box-shadow: 0px 0px 5px 3px white inset;
+      box-shadow: 0px 0px 10px 1px ${theme.colors.white} inset;
 
       & img {
        background: red;

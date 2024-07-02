@@ -84,7 +84,7 @@ export function FilterProposals() {
   ];
 
   return (
-    <Styled.FilterProposalsContainer isopen={isOpen}>
+    <Styled.FilterProposalsContainer isopen={isOpen ? 'isopen' : undefined}>
       <AuthWrapper>
         <AuthForm>
 

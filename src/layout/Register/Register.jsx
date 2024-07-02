@@ -112,6 +112,15 @@ export function Register() {
           />
 
           <AuthInput
+            type="number"
+            name="phoneNumber_input"
+            id="phoneNumber_input"
+            placeholder="Seu número de telefone"
+            title="Telefone"
+            required
+          />
+
+          <AuthInput
             type="password"
             name="password_input"
             id="password_input"

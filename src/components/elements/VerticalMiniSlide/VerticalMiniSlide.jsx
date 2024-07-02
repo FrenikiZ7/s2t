@@ -70,7 +70,7 @@ export function VerticalMiniSlide({ items, title, type }) {
           {type === 'referralrank' && (
           <>
             {items.map((item) => (
-              <SwiperSlide key={item.positon}>
+              <SwiperSlide key={item.position}>
                 <RankCard name={item.name} position={item.position} imagesrc={item.imagesrc} />
               </SwiperSlide>
             ))}

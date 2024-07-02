@@ -39,6 +39,6 @@ export function ProductCard({
 ProductCard.propTypes = {
   name: Prop.string,
   imagesrc: Prop.string,
-  price: Prop.string,
+  price: Prop.number,
   path: Prop.string,
 };

@@ -35,6 +35,7 @@ export function ProposalModal({
         <IconDiv
           onclick={onclick}
           name="Fechar proposta"
+          hovercolor={theme.colors.red}
         >
           <CloseIcon />
         </IconDiv>
@@ -62,6 +63,7 @@ export function ProposalModal({
         <ColumnContainer>
           <Subtitle text="Descrição" uppercase />
           <Text text={description} />
+
         </ColumnContainer>
       )}
 

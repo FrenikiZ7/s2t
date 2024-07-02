@@ -4,52 +4,32 @@ import { SubtitleElement } from '../Subtitle/Subtitle-Styles';
 import { RowContainer } from '../../RowContainer/Row-Styles.js';
 import { TextElement } from '../Text/Text-Styles.js';
 import { ButtonElement } from '../Button/Button-Styles.js';
+import { IconContainer } from '../IconDiv/IconDiv-Styles.js';
 
 export const ReportModalElement = styled.div`
   ${({ theme }) => css`
-     animation: ${slideIn} 500ms;
-
-     border-radius: 15px;
-     border: ${theme.borders.xwhite};
-     background: rgba(0, 0, 0, 0.8);
-     backdrop-filter: blur(10px);
-    
-
      display: flex;
      flex-direction: column;
      gap: ${theme.spacings.xlarge};
 
-     position: absolute;
-     top: 17%;
-     left: 25%;
-     z-index: 100; 
+     padding: ${theme.spacings.large};
 
-     width: 50%;
-     padding: ${theme.spacings.xxlarge};
-
-
-     transition: all 700ms ease-in-out;     
 
      @media ${theme.medias.smallpc} {
       padding: ${theme.spacings.medium};
-      top: 22%;
      }
 
-     @media ${theme.medias.tablet} {
-       width: 100%;
-       left: 0;
+     ${ButtonElement} {
+      animation: ${slideIn} 1000ms;
+      padding: ${theme.spacings.medium};
      }
 
-     @media ${theme.medias.smallmobile} {
+     & ${IconContainer} {
+      animation: none;
      }
 
-     &:hover {
-      background: rgba(0, 0, 0, 0.9);
-      box-shadow: 0px 0px 10px 2px white;
-      backdrop-filter: blur(2px);
-     }
 
-     ${TextElement}, ${ButtonElement} {
+     ${TextElement}{
       animation: ${slideIn} 1000ms;
      }
 
@@ -64,5 +44,18 @@ export const ReportModalElement = styled.div`
       }
      }
      
+  `}
+`;
+
+export const ReportedMessageWrapper = styled.div`
+  ${({ theme }) => css`
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: 999; 
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   `}
 `;

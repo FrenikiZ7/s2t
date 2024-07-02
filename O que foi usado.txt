@@ -20,3 +20,6 @@ npm i react-router-dom@latest
 
 swiper:
 npm i swiper
+
+
+react-image-zoom

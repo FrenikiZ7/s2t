@@ -84,6 +84,12 @@ export const MediaWrapper = styled.div`
 
     > svg {
      border-radius: 50%;
+     background: rgba(0, 0, 0, 0.5);
+
+     &:hover {
+      background: rgba(0, 0, 0, 0.8);
+      transform: scale(1.1);
+     }
 
      @media ${theme.medias.mobile} {
       width: 25px;
@@ -91,6 +97,9 @@ export const MediaWrapper = styled.div`
      }
     }
   }
+
+
+
 
   `}
 `;
@@ -108,15 +117,6 @@ export const TopIconsWrapper = styled.div`
     top: 5px;
     border-radius: 15px;
     z-index: 100;
-
-    & svg {
-     background: rgba(0, 0, 0, 0.5);
-
-     &:hover {
-      transform: scale(1.1);
-      background: none;
-     }
-    }
   
  `}
 `;
@@ -135,15 +135,11 @@ export const BottomIconsWrapper = styled.div`
     border-radius: 15px;
     z-index: 100;
 
-
-    & svg {
-     background: rgba(0, 0, 0, 0.5);
-
-     &:hover {
-      transform: scale(1.1);
-      background: rgba(0, 0, 0, 0.8);
-     }
+    > ${IconContainer} {
+      @media ${theme.medias.tablet} {
+        display: none;
+      }
     }
-  
+
  `}
 `;

@@ -2,8 +2,8 @@ import Prop, { bool } from 'prop-types';
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
-import { Report as ReportIcon } from '@styled-icons/material-outlined/Report';
 import { Add as AddIcon } from '@styled-icons/material-outlined/Add';
+import { Fullscreen } from '@styled-icons/material-outlined';
 import * as Styled from './ProfileSlide-Styles';
 import { Title } from '../Title/Title';
 import { IconDiv } from '../IconDiv/IconDiv';
@@ -12,11 +12,24 @@ import { theme } from '../../../styles/theme';
 import { FavoriteIcon } from '../FavoriteIcon/FavoriteIcon';
 import { RateIcons } from '../RateIcons/RateIcons';
 import { ReportModal } from '../ReportModal/ReportModal';
+import { ImageModal } from '../ImageModal/ImageModal';
+import { ReportIcon } from '../ReportIcon/ReportIcon';
 
 export function ProfileSlide({
   items, title, publicview = false, ownerview,
 }) {
-  const [isReporing, setIsReporing] = useState(false);
+  const [reportingMedia, setReportingMedia] = useState('');
+  const [favoriteMedia, setFavoriteMedia] = useState('');
+  const [fullscreenImage, setFullscreenImage] = useState('');
+  const [ratingMedia, setRatingMedia] = useState(false);
+
+  const handleFullscreen = (item) => {
+    setFullscreenImage(item.src);
+  };
+
+  const handleReporting = (item) => {
+    setReportingMedia(reportingMedia ? '' : item.id);
+  };
 
   return (
     <Styled.ProfileSlideWrapper>
@@ -27,7 +40,7 @@ export function ProfileSlide({
           spaceBetween={15}
           navigation
           zoom
-          lazy
+          lazy="true"
           breakpoints={{
             // Breakpoint for tablet screens
             768: {
@@ -52,18 +65,38 @@ export function ProfileSlide({
                 {publicview && (
                   <>
                     <Styled.TopIconsWrapper>
-                      <IconDiv name="Denunciar" hovercolor={theme.colors.mediumred} onclick={() => setIsReporing(!isReporing)}>
-                        <ReportIcon />
-                      </IconDiv>
 
-                      <FavoriteIcon isfavorite={item.isfavorite} />
+                      <ReportIcon
+                        isreporting={reportingMedia === item.id}
+                        onclick={() => handleReporting(item)}
+                      />
+
+                      <FavoriteIcon
+                        isfavorite={item.isfavorite}
+                        mediaid={item.id}
+                      />
+
                     </Styled.TopIconsWrapper>
 
                     <Styled.BottomIconsWrapper>
-                      <RateIcons />
+
+                      <RateIcons
+                        ratevalue={item.rateValue}
+                        mediaid={item.id}
+                      />
+
+                      <IconDiv
+                        active={fullscreenImage === item.src}
+                        name="Tela cheia"
+                        onclick={() => handleFullscreen(item)}
+                      >
+                        <Fullscreen />
+                      </IconDiv>
+
                     </Styled.BottomIconsWrapper>
                   </>
                 )}
+
                 <div className="swiper-zoom-container">
                   <img src={item.src} alt={item.alt} />
                 </div>
@@ -71,13 +104,17 @@ export function ProfileSlide({
               </Styled.MediaWrapper>
               )}
 
-              {item.type === 'video' && (
+              {/* {item.type === 'video' && (
               <Styled.MediaWrapper>
 
                 {publicview && (
                 <>
                   <Styled.TopIconsWrapper>
-                    <IconDiv name="Denunciar" hovercolor={theme.colors.mediumred}>
+                    <IconDiv
+                      name="Denunciar"
+                      hovercolor={theme.colors.red}
+                      onclick={() => setIsReporing(!isReporing)}
+                    >
                       <ReportIcon />
                     </IconDiv>
 
@@ -85,7 +122,7 @@ export function ProfileSlide({
                   </Styled.TopIconsWrapper>
 
                   <Styled.BottomIconsWrapper>
-                    <RateIcons />
+                    <RateIcons onclick={() => setRateValue(5)} ratevalue={rateValue} />
                   </Styled.BottomIconsWrapper>
                 </>
                 )}
@@ -96,7 +133,7 @@ export function ProfileSlide({
                 </video>
 
               </Styled.MediaWrapper>
-              )}
+              )} */}
 
             </SwiperSlide>
           ))}
@@ -116,7 +153,9 @@ export function ProfileSlide({
 
       </Styled.ProfileSlideElement>
 
-      {isReporing && <ReportModal onclick={() => setIsReporing(!isReporing)} />}
+      {publicview && <ReportModal imageid={reportingMedia} onclick={() => setReportingMedia('')} />}
+
+      {publicview && <ImageModal imagesrc={fullscreenImage} onclick={() => setFullscreenImage('')} />}
 
     </Styled.ProfileSlideWrapper>
   );
@@ -128,5 +167,4 @@ ProfileSlide.propTypes = {
   title: Prop.string,
   publicview: Prop.bool,
   ownerview: Prop.bool,
-  lazy: Prop.bool,
 };

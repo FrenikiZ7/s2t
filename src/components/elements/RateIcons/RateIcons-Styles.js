@@ -14,16 +14,13 @@ export const RateIconsElement = styled.div`
 
   ${IconContainer} {
     
-    animation: ${spin360Left} 1500ms;
     transition: all 500ms ease-in-out;
     animation-fill-mode: forwards;
 
     &:hover {
-      animation: ${spin360Right} 1500ms;
       > svg {
         transform: scale(1);
         box-shadow: 0px 0px 10px 2px ${theme.colors.gold};
-
      }
   }
 

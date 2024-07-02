@@ -91,7 +91,7 @@ export function FilterPlayers() {
   ];
 
   return (
-    <Styled.FilterPlayersContainer isopen={isOpen}>
+    <Styled.FilterPlayersContainer isopen={isOpen ? 'isopen' : undefined}>
       <AuthWrapper>
 
         <AuthForm>
@@ -107,7 +107,7 @@ export function FilterPlayers() {
               <IconDiv onclick={() => setIsOpen(!isOpen)} name="Filtrar oportunidades">
                 <OptionsIcons />
               </IconDiv>
-              <AuthSearch />
+              <AuthSearch id="searchPlayers" name="earchPlayers" />
             </SearchWrapper>
           </Row>
 

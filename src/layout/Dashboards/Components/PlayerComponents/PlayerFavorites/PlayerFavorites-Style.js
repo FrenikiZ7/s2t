@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const FavoritesContainer = styled.article`
+export const PlayerFavoritesContainer = styled.article`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;

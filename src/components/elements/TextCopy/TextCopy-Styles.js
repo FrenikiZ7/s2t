@@ -29,6 +29,10 @@ export const TextCopyContainer = styled.div`
     ${TextElement} {
       animation: ${fadeIn} 300ms;
     }
+
+    ${IconContainer} {
+      animation: none;
+    }
   `}
 `;
 

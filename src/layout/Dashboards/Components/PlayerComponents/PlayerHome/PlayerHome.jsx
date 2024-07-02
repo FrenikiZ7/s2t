@@ -19,7 +19,8 @@ export function PlayerHome() {
         <VerticalMiniSlide title="Ranking" type="referralrank" items={s2tState.rankings.referral} />
       </BannerSlide>
 
-      <BannerSlide title="Vídeos em alta" lazy="false" slidesperview={2}>
+      {/* temporário, requer mudanças */}
+      <BannerSlide title="Vídeos em alta" slidesperview={2}>
 
         <VerticalVideoSlide size="300px" items={s2tState.news} title="Profissional" type="video" />
         <VerticalVideoSlide size="300px" items={s2tState.news} title="Semi- profissional" type="video" />
@@ -28,6 +29,7 @@ export function PlayerHome() {
         <VerticalVideoSlide size="300px" items={s2tState.news} title="Recreacional" type="video" />
 
       </BannerSlide>
+      {/* temporário, requer mudanças */}
 
       <BannerSlide slidesperview={2} backgroundimagesrc="/assets/images/backgrounds/slider-bg-1.png" gradientdirection="to top">
         <VerticalMiniSlide title="Eventos" type="events" items={s2tState.events} />

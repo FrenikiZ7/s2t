@@ -21,7 +21,7 @@ export const theme = {
     transparent: 'transparent',
 
     mediumred: '#FF4040',
-    lightred: '#FF5B5B',
+    lightred: '#FF3F5F',
     red: '#C20032',
 
     gold: '#ffbf00',

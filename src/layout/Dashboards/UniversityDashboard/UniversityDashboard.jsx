@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
+import { Settings as SettingsIcon } from '@styled-icons/fluentui-system-filled';
 import * as Styled from './UniversityDashboard-Styles';
 import { theme } from '../../../styles/theme';
 
@@ -19,12 +20,17 @@ import { ProfileBanner } from '../../../components/elements/ProfileBanner/Profil
 import { ClubNav } from '../../../components/ProfileHeader/Components/ClubNav/ClubNav';
 import { ClubMenu } from '../../../components/MobileMenu/Components/ClubMenu/ClubMenu';
 import { UniversityNav } from '../../../components/ProfileHeader/Components/UniversityNav/UniversityNav';
+import { Row } from '../../../components/RowContainer/Row';
+import { IconDiv } from '../../../components/elements/IconDiv/IconDiv';
+import { FloatingMenu } from '../../../components/FloatingMenu/FloatingMenu';
+import { SettingsMenu } from '../../../components/FloatingMenu/Components/SettingsMenu/SettingsMenu';
 
 export function UniversityDashboard() {
   const universityContext = useContext(UniversityContext);
   const { universityState, universityDispatch } = universityContext;
 
   const [menuVisibility, setMenuVisibility] = useState(false);
+  const [settingsMenuVisibility, setSettingsMenuVisibility] = useState(false);
 
   return (
     <Styled.UniversityDashboardContainer>
@@ -35,16 +41,28 @@ export function UniversityDashboard() {
           badge={universityState.profile.banner.badge}
         />
         <ProfileName name={universityState.profile.banner.name} />
-        <Button
-          path="/university-dashboard/profile-edit"
-          text="Editar Perfil"
-          bgcolor={theme.colors.primary}
-          bghover={theme.colors.black}
-          textcolor={theme.colors.black}
-          texthover={theme.colors.primary}
-          border={theme.colors.black}
-          borderhover={theme.colors.primary}
-        />
+        <Row>
+          <Button
+            path="/player-dashboard/profile-edit"
+            text="Editar Perfil"
+            bgcolor={theme.colors.primary}
+            bghover={theme.colors.black}
+            textcolor={theme.colors.black}
+            texthover={theme.colors.primary}
+            border={theme.colors.black}
+            borderhover={theme.colors.primary}
+          />
+          <IconDiv active={settingsMenuVisibility} hovercolor={theme.colors.primary} name="Configurações" onclick={() => setSettingsMenuVisibility(!settingsMenuVisibility)}>
+            <SettingsIcon />
+          </IconDiv>
+
+          {settingsMenuVisibility && (
+          <FloatingMenu onclick={() => setSettingsMenuVisibility(false)}>
+            <SettingsMenu />
+          </FloatingMenu>
+          )}
+
+        </Row>
       </ProfileBanner>
 
       {/* Aparece apenas em telas maiores que 768px */}

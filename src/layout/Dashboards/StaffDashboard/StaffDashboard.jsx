@@ -1,46 +1,44 @@
 import React, { useContext, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
-import { Settings as SettingsIcon } from '@styled-icons/fluentui-system-filled';
-import * as Styled from './ClubDashboard-Styles';
+import { Settings } from '@styled-icons/fluentui-system-filled';
+import * as Styled from './StaffDashboard-Styles';
 import { PlayerContext } from '../../../contexts/userContext/PlayerProvider/PlayerContext';
 import { theme } from '../../../styles/theme';
 
 import { ProfilePicture } from '../../../components/elements/ProfilePicture/ProfilePicture';
-import { ColumnContainer } from '../../../components/ColumnContainer/Column-Styles';
 import { Slide } from '../../../components/elements/Slide/Slide';
 import { ProfileName } from '../../../components/elements/ProfileName/ProfileName';
 import { ProfileHeader } from '../../../components/ProfileHeader/ProfileHeader';
 import { Button } from '../../../components/elements/Button/Button';
-import { S2tProvider } from '../../../contexts/s2tContext/S2tProvider';
-import { PlayerProvider } from '../../../contexts/userContext/PlayerProvider/PlayerProvider';
 import { MobileMenu } from '../../../components/MobileMenu/MobileMenu';
 import { FloatingIcon } from '../../../components/elements/FloatingIcon/FloatingIcon';
-import { ClubContext } from '../../../contexts/userContext/ClubProvider/ClubContext';
 import { ProfileBanner } from '../../../components/elements/ProfileBanner/ProfileBanner';
-import { ClubNav } from '../../../components/ProfileHeader/Components/ClubNav/ClubNav';
-import { ClubMenu } from '../../../components/MobileMenu/Components/ClubMenu/ClubMenu';
-import { Row } from '../../../components/RowContainer/Row';
+import { Column } from '../../../components/ColumnContainer/Column';
+import { PlayerNav } from '../../../components/ProfileHeader/Components/PlayerNav/PlayerNav';
+import { PlayerMenu } from '../../../components/MobileMenu/Components/PlayerMenu/PlayerMenu';
 import { IconDiv } from '../../../components/elements/IconDiv/IconDiv';
+import { Row } from '../../../components/RowContainer/Row';
 import { FloatingMenu } from '../../../components/FloatingMenu/FloatingMenu';
 import { SettingsMenu } from '../../../components/FloatingMenu/Components/SettingsMenu/SettingsMenu';
 
-export function ClubDashboard() {
-  const clubContext = useContext(ClubContext);
-  const { clubState, clubDispatch } = clubContext;
-
+export function StaffDashboard() {
+  const playerContext = useContext(PlayerContext);
+  const { playerState, playerDispatch } = playerContext;
   const [menuVisibility, setMenuVisibility] = useState(false);
   const [settingsMenuVisibility, setSettingsMenuVisibility] = useState(false);
 
   return (
-    <Styled.ClubDashboardContainer>
+    <Styled.StaffDashboardContainer>
 
-      <ProfileBanner backgroundimagesrc={clubState.profile.banner.backgroundImageSrc}>
+      <ProfileBanner backgroundimagesrc={playerState.profile.banner.backgroundImageSrc}>
         <ProfilePicture
-          imagesrc={clubState.profile.banner.profileImageSrc}
-          badge={clubState.profile.banner.badge}
+          imagesrc={playerState.profile.banner.profileImageSrc}
+          badge={playerState.profile.banner.badge}
         />
-        <ProfileName name={clubState.profile.banner.name} />
+
+        <ProfileName name={playerState.profile.banner.name} />
+
         <Row>
           <Button
             path="/player-dashboard/profile-edit"
@@ -53,7 +51,7 @@ export function ClubDashboard() {
             borderhover={theme.colors.primary}
           />
           <IconDiv active={settingsMenuVisibility} hovercolor={theme.colors.primary} name="Configurações" onclick={() => setSettingsMenuVisibility(!settingsMenuVisibility)}>
-            <SettingsIcon />
+            <Settings />
           </IconDiv>
 
           {settingsMenuVisibility && (
@@ -63,17 +61,16 @@ export function ClubDashboard() {
           )}
 
         </Row>
+
       </ProfileBanner>
 
-      {/* Aparece apenas em telas maiores que 768px */}
       <ProfileHeader>
-        <ClubNav />
+        <PlayerNav />
       </ProfileHeader>
 
-      {/* Aparece apenas em telas menores que 768px */}
       {menuVisibility ? (
         <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)}>
-          <ClubMenu />
+          <PlayerMenu />
         </MobileMenu>
       ) : (
         <FloatingIcon name="Menu" onclick={() => setMenuVisibility(!menuVisibility)}>
@@ -81,16 +78,12 @@ export function ClubDashboard() {
         </FloatingIcon>
       )}
 
-      <S2tProvider>
-        <PlayerProvider>
-          <ColumnContainer color={theme.colors.black}>
-            <Outlet />
-          </ColumnContainer>
-        </PlayerProvider>
-      </S2tProvider>
+      <Column color={theme.colors.black}>
+        <Outlet />
+      </Column>
 
-      <Slide items={clubState.benefits} title="Meus benefícios" />
+      <Slide items={playerState.benefits} title="Meus benefícios" />
 
-    </Styled.ClubDashboardContainer>
+    </Styled.StaffDashboardContainer>
   );
 }

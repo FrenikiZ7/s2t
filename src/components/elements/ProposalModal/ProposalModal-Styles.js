@@ -3,6 +3,7 @@ import { GridTwoColumnContainer } from '../../GridTwoColumn/GridTwoColumn-Styles
 import { SubtitleElement } from '../Subtitle/Subtitle-Styles';
 import { slideIn } from '../../../styles/animations';
 import { RowContainer } from '../../RowContainer/Row-Styles.js';
+import { ButtonElement } from '../Button/Button-Styles.js';
 
 export const ProposalModalElement = styled.div`
   ${({ theme }) => css`
@@ -56,6 +57,10 @@ export const ProposalModalElement = styled.div`
 
      ${SubtitleElement} {
        margin-bottom: 0px;
+     }
+
+     ${ButtonElement} {
+      padding: ${theme.spacings.medium};
      }
 
      ${RowContainer} {

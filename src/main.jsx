@@ -26,7 +26,6 @@ import { Clubs } from './layout/Dashboards/Components/Clubs/Clubs';
 import { Opportunities } from './layout/Dashboards/Components/Opportunities/Opportunities';
 import { PlayerRegister } from './layout/Register/components/PlayerRegister/PlayerRegister';
 import { EditProfile } from './layout/Dashboards/Components/EditProfile/EditProfile';
-import { Favorites } from './layout/Dashboards/Components/Favorites/Favorites';
 import { ClubDashboard } from './layout/Dashboards/ClubDashboard/ClubDashboard';
 import { playerData } from './contexts/userContext/PlayerProvider/playerData';
 import { ClubFavorites } from './layout/Dashboards/Components/ClubComponents/ClubFavorites/ClubFavorites';
@@ -49,6 +48,8 @@ import { ResetPassword } from './layout/ResetPassword/ResetPassword';
 import { MyAffiliates } from './layout/Dashboards/Components/MyAffiliates/MyAffiliates';
 import { PlayerHome } from './layout/Dashboards/Components/PlayerComponents/PlayerHome/PlayerHome';
 import { Store } from './layout/Dashboards/Components/Store/Store';
+import { PlayerFavorites } from './layout/Dashboards/Components/PlayerComponents/PlayerFavorites/PlayerFavorites';
+import { s2tData } from './contexts/s2tContext/s2tData';
 
 export function Main() {
   const { username } = useParams();
@@ -78,12 +79,28 @@ export function Main() {
                     <Route path="opportunities" element={<Opportunities />} />
                     <Route path="scouts" element={<Scouts />} />
                     <Route path="clubs" element={<Clubs />} />
-                    <Route path="favorites" element={<Favorites />} />
+                    <Route path="favorites" element={<PlayerFavorites />} />
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="events" element={<Events />} />
                     <Route path="friends" element={<Friends friends={playerData.friends} />} />
                     <Route path="store" element={<Store />} />
-                    <Route path="my-affiliates" element={<MyAffiliates friends={playerData.friends} />} />
+                    <Route path="my-affiliates" element={<MyAffiliates affiliates={s2tData.users.scouts} />} />
+                    <Route path="s2t+" element={<S2TPlus />} />
+                  </Route>
+
+                  <Route path="/staff-dashboard/" element={<PlayerDashboard />}>
+                    <Route path="" element={<PlayerHome />} />
+                    <Route path="profile" element={<PlayerProfile />} />
+                    <Route path="profile-edit" element={<EditProfile type="player" />} />
+                    <Route path="opportunities" element={<Opportunities />} />
+                    <Route path="scouts" element={<Scouts />} />
+                    <Route path="clubs" element={<Clubs />} />
+                    <Route path="favorites" element={<PlayerFavorites />} />
+                    <Route path="contacts" element={<h1>Em construção... :)</h1>} />
+                    <Route path="events" element={<Events />} />
+                    <Route path="friends" element={<Friends friends={playerData.friends} />} />
+                    <Route path="store" element={<Store />} />
+                    <Route path="my-affiliates" element={<MyAffiliates affiliates={s2tData.users.scouts} />} />
                     <Route path="s2t+" element={<S2TPlus />} />
                   </Route>
 

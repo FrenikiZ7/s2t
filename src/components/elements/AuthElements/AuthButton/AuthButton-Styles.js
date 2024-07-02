@@ -12,7 +12,6 @@ export const AuthButtonElement = styled.input`
     font-weight: 600;
 
     padding: ${theme.spacings.medium};
-
     transition: all 400ms ease-in-out;
 
     &:hover {

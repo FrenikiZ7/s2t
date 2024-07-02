@@ -3,12 +3,17 @@ import ReactPaginate from 'react-paginate';
 import { fadeIn, slideIn } from '../../../styles/animations';
 import { GridLayoutContainer } from '../../GridLayout/GridLayout-Styles';
 import { RowContainer } from '../../RowContainer/Row-Styles.js';
+import { IconContainer } from '../IconDiv/IconDiv-Styles.js';
 
 export const GridEditableProposalsContainer = styled.div`
   ${({ theme }) => css`
    width: 100%;
    height: 100%;
    animation: ${slideIn} 500ms ease-out;
+
+   & ${IconContainer} {
+    animation: none;
+   }
 
    ${GridLayoutContainer} {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

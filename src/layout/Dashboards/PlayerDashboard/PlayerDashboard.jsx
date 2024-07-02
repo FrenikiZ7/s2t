@@ -2,22 +2,18 @@ import React, { useContext, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
 import { SettingsOutline } from '@styled-icons/evaicons-outline';
-import { Settings } from '@styled-icons/fluentui-system-filled';
+import { Settings as SettingsIcon } from '@styled-icons/fluentui-system-filled';
 import * as Styled from './PlayerDashboard-Styles';
 import { PlayerContext } from '../../../contexts/userContext/PlayerProvider/PlayerContext';
 import { theme } from '../../../styles/theme';
 
 import { ProfilePicture } from '../../../components/elements/ProfilePicture/ProfilePicture';
-import { ColumnContainer } from '../../../components/ColumnContainer/Column-Styles';
 import { Slide } from '../../../components/elements/Slide/Slide';
 import { ProfileName } from '../../../components/elements/ProfileName/ProfileName';
 import { ProfileHeader } from '../../../components/ProfileHeader/ProfileHeader';
 import { Button } from '../../../components/elements/Button/Button';
-import { S2tProvider } from '../../../contexts/s2tContext/S2tProvider';
-import { PlayerProvider } from '../../../contexts/userContext/PlayerProvider/PlayerProvider';
 import { MobileMenu } from '../../../components/MobileMenu/MobileMenu';
 import { FloatingIcon } from '../../../components/elements/FloatingIcon/FloatingIcon';
-import { ProfileBannerContainer } from '../../../components/elements/ProfileBanner/ProfileBanner-Styles';
 import { ProfileBanner } from '../../../components/elements/ProfileBanner/ProfileBanner';
 import { Column } from '../../../components/ColumnContainer/Column';
 import { PlayerNav } from '../../../components/ProfileHeader/Components/PlayerNav/PlayerNav';
@@ -56,7 +52,7 @@ export function PlayerDashboard() {
             borderhover={theme.colors.primary}
           />
           <IconDiv active={settingsMenuVisibility} hovercolor={theme.colors.primary} name="Configurações" onclick={() => setSettingsMenuVisibility(!settingsMenuVisibility)}>
-            <Settings />
+            <SettingsIcon />
           </IconDiv>
 
           {settingsMenuVisibility && (

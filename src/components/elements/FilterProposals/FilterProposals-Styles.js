@@ -40,7 +40,7 @@ export const FilterProposalsContainer = styled.div`
         color: ${isopen ? theme.colors.primary : 'none'};
 
         &:hover {
-          color: ${theme.colors.secondary};
+          color: ${isopen ? 'none' : theme.colors.secondary};
         }
       }
     }

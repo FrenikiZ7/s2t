@@ -9,6 +9,7 @@ import { NavContainer } from '../../components/Nav/Nav-Styles.js';
 import { IconContainer } from '../../components/elements/IconDiv/IconDiv-Styles.js';
 import { HeaderContainer } from '../../components/Header/Header-Styles.js';
 import { GridLayoutContainer } from '../../components/GridLayout/GridLayout-Styles.js';
+import { AuthDropdownContainer } from '../../components/elements/AuthElements/AuthDropdown/AuthDropdown-Styles.js';
 
 export const HomePage = styled.main`
   ${({ theme }) => css`
@@ -99,7 +100,11 @@ export const HomePage = styled.main`
     @media ${theme.medias.mobile} {
       /* flex-direction: column; */
     }
+  }
 
+  ${AuthDropdownContainer} {
+    min-width: 200px;
+    padding: ${theme.spacings.xsmall};
   }
 
  

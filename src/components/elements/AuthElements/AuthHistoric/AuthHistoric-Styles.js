@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { ButtonElement } from '../../Button/Button-Styles';
 
 export const AuthHistoricContainer = styled.div`
   ${({ theme }) => css`
@@ -6,6 +7,10 @@ export const AuthHistoricContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: ${theme.spacings.small};
+
+    & ${ButtonElement} {
+      padding: ${theme.spacings.small};
+    }
   `}
 `;
 

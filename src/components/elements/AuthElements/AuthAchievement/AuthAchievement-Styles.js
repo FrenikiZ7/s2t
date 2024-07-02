@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { ButtonElement } from '../../Button/Button-Styles';
 
 export const AuthAchievementContainer = styled.div`
   ${({ theme }) => css`
@@ -9,6 +10,10 @@ export const AuthAchievementContainer = styled.div`
 
     @media ${theme.medias.smallpc} {
       width: 100%;
+    }
+
+    & ${ButtonElement} {
+      padding: ${theme.spacings.small};
     }
   `}
 `;

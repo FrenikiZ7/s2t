@@ -21,12 +21,19 @@ import { GridLayout } from '../../components/GridLayout/GridLayout';
 import { VerticalMiniSlide } from '../../components/elements/VerticalMiniSlide/VerticalMiniSlide';
 import { VerticalSoloSlide } from '../../components/elements/VerticalSoloSlide/VerticalSoloSlide';
 import { VerticalVideoSlide } from '../../components/elements/VerticalVideoSlide/VerticalVideoSlide';
+import { AuthDropdown } from '../../components/elements/AuthElements/AuthDropdown/AuthDropdown';
 
 export function Home() {
   const s2tContext = useContext(S2tContext);
   const { s2tState, s2tDispatch } = s2tContext;
 
   const [menuVisibility, setMenuVisibility] = useState(false);
+
+  const languageOptions = [
+    { value: 'portuguese-br', text: 'Português' },
+    { value: 'english', text: 'Inglês' },
+    { value: 'spanish', text: 'Espanhol' },
+  ];
 
   return (
     <Styled.HomePage>
@@ -45,7 +52,7 @@ export function Home() {
         ) }
 
         <Nav>
-          <Button
+          {/* <Button
             path="/register"
             text="Escolha o idioma"
             bgcolor={theme.colors.darkgray}
@@ -54,6 +61,12 @@ export function Home() {
             texthover={theme.colors.white}
             border={theme.colors.darkgray}
             borderhover={theme.colors.gray}
+          /> */}
+
+          <AuthDropdown
+            id="languageOptions"
+            placeholder="Escolha o idioma"
+            options={languageOptions}
           />
 
           <Button
@@ -125,7 +138,7 @@ export function Home() {
 
           <Button
             text="Dashboard - Público"
-            path="/user/"
+            path="/user/SPFC"
             bgcolor={theme.colors.lightprimary}
             bghover={theme.colors.primary}
             textcolor={theme.colors.black}

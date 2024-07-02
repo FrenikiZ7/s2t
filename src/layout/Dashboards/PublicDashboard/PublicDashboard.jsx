@@ -21,6 +21,7 @@ import { FavoriteIcon } from '../../../components/elements/FavoriteIcon/Favorite
 import { PublicNav } from '../../../components/ProfileHeader/Components/PublicNav/PublicNav';
 import { PublicMenu } from '../../../components/MobileMenu/Components/PublicMenu/PublicMenu';
 import { Row } from '../../../components/RowContainer/Row';
+import { ImageModal } from '../../../components/elements/ImageModal/ImageModal';
 
 export function PublicDashboard() {
   const clubContext = useContext(ClubContext);
@@ -82,6 +83,8 @@ export function PublicDashboard() {
           </ColumnContainer>
         </PlayerProvider>
       </S2tProvider>
+
+      {/* <ImageModal isopen="true" /> */}
 
       <Slide items={clubState.benefits} title="Benefícios do usuário" />
 
