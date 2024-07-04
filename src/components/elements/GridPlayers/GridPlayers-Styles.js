@@ -11,7 +11,7 @@ export const GridPlayersContainer = styled.div`
    animation: ${slideIn} 500ms ease-out;
    display: flex;
    flex-direction: column;
-   gap: ${theme.spacings.small};
+   gap: ${theme.spacings.medium};
 
    & ${IconContainer} {
     animation: none;

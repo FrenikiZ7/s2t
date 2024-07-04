@@ -5,16 +5,18 @@ import * as Styled from './PublicNav-Styles';
 import { StyledLink } from '../../../elements/StyledLink/StyledLink';
 import { theme } from '../../../../styles/theme';
 
-export function PublicNav({ username }) {
+export function PublicNav({ username, type }) {
   const [activeLink, setActiveLink] = useState('');
   const location = useLocation();
+
+  const normalizedType = type.toLowerCase();
 
   useEffect(() => {
     const updateActiveLink = () => {
       setActiveLink(location.pathname);
     };
 
-    // Chame updateActiveLink na renderização inicial e sempre que username muda
+    // Chame updateActiveLink na renderização inicial e sempre que o username muda
     updateActiveLink();
 
     return () => updateActiveLink(); // Função de limpeza para evitar memory leaks
@@ -22,13 +24,7 @@ export function PublicNav({ username }) {
 
   return (
     <Styled.PublicNav>
-      <StyledLink
-        active={activeLink === `/user/${username}`}
-        path=""
-        text="Home"
-        color={theme.colors.white}
-        hovercolor={theme.colors.black}
-      />
+
       <StyledLink
         active={activeLink === `/user/${username}/profile`}
         path="profile"
@@ -43,13 +39,17 @@ export function PublicNav({ username }) {
         color={theme.colors.white}
         hovercolor={theme.colors.black}
       />
-      <StyledLink
-        active={activeLink === `/user/${username}/opportunities`}
-        path="opportunities"
-        text="Oportunidades"
-        color={theme.colors.white}
-        hovercolor={theme.colors.black}
-      />
+
+      {type === 'club' && (
+        <StyledLink
+          active={activeLink === `/user/${username}/opportunities`}
+          path="opportunities"
+          text="Oportunidades"
+          color={theme.colors.white}
+          hovercolor={theme.colors.black}
+        />
+      )}
+
       <StyledLink
         active={activeLink === `/user/${username}/friends`}
         path="friends"
@@ -63,4 +63,5 @@ export function PublicNav({ username }) {
 
 PublicNav.propTypes = {
   username: Prop.string,
+  type: Prop.string.isRequired,
 };

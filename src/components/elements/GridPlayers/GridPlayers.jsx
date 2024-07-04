@@ -5,6 +5,7 @@ import { Title } from '../Title/Title';
 import { GridLayoutContainer } from '../../GridLayout/GridLayout-Styles';
 import { UserCard } from '../UserCard/UserCard';
 import { FilterPlayers } from '../FilterPlayers/FilterPlayers';
+import { Text } from '../Text/Text';
 
 export function GridPlayers({
   title, items, publicview, ownerview,
@@ -14,7 +15,7 @@ export function GridPlayers({
   const [itemsPerPage, setItemsPerPage] = useState(8);
 
   const pagesVisited = pageNumber * itemsPerPage;
-  const displayItems = items.slice(pagesVisited, pagesVisited + itemsPerPage);
+  const displayItems = items ? items.slice(pagesVisited, pagesVisited + itemsPerPage) : [];
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
@@ -43,25 +44,30 @@ export function GridPlayers({
 
       {publicview && <FilterPlayers />}
 
-      <GridLayoutContainer>
-        {displayItems.map((item) => (
-          <UserCard
-            path={item.path}
-            profileimage={item.profileImageSrc}
-            position={item.position}
-            age={item.age}
-            bestleg={item.bestLeg}
-            name={item.name}
-            weight={item.weight}
-            height={item.height}
-            category={item.category}
-            id={item.playerId}
-            key={item.playerId}
-            favorite={publicview}
-          />
-        ))}
-      </GridLayoutContainer>
+      {displayItems.length > 0 ? (
+        <GridLayoutContainer>
+          {displayItems.map((item) => (
+            <UserCard
+              path={item.path}
+              profileimage={item.profileImageSrc}
+              position={item.position}
+              age={item.age}
+              bestleg={item.bestLeg}
+              name={item.name}
+              weight={item.weight}
+              height={item.height}
+              category={item.category}
+              id={item.playerId}
+              key={item.playerId}
+              favorite={publicview}
+            />
+          ))}
+        </GridLayoutContainer>
+      ) : (
+        <Text text="Nenhum jogador foi encontrado" />
+      )}
 
+      {displayItems.length > 0 && (
       <Styled.Paginate
         previousLabel="Anterior"
         nextLabel="Próximo"
@@ -76,13 +82,14 @@ export function GridPlayers({
         activeClassName="active"
         onClick={handlePaginationClick}
       />
+      )}
     </Styled.GridPlayersContainer>
   );
 }
 
 GridPlayers.propTypes = {
   title: Prop.string,
-  items: Prop.arrayOf(Prop.object).isRequired,
+  items: Prop.arrayOf(Prop.object),
   publicview: Prop.bool,
   ownerview: Prop.bool,
 };

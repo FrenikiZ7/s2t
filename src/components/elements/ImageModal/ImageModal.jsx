@@ -2,11 +2,11 @@ import Prop from 'prop-types';
 import React, { useState } from 'react';
 import ImageZoom from 'react-image-zooom';
 import { Close } from '@styled-icons/material-outlined';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import Zoom from 'react-medium-image-zoom';
 import * as Styled from './ImageModal-Styles';
 import { IconDiv } from '../IconDiv/IconDiv';
 import { theme } from '../../../styles/theme';
-import 'swiper/css/bundle';
+import 'react-medium-image-zoom/dist/styles.css';
 
 export function ImageModal({ onclick, imagesrc }) {
   // const imageZoomElement = document.querySelector('.fullView'); // Seletor CSS para o seu ImageZoom
@@ -27,17 +27,18 @@ export function ImageModal({ onclick, imagesrc }) {
 
         <Styled.ImageModalContainer>
 
-          <Styled.ImageContainer>
-            <ImageZoom
-              src={imagesrc}
-              alt="Imagem em tela cheia"
-              zoom={200}
-            />
-          </Styled.ImageContainer>
-
           <IconDiv name="Fechar imagem" hovercolor={theme.colors.red} onclick={onclick}>
             <Close />
           </IconDiv>
+
+          <Styled.ImageContainer>
+            <Zoom>
+              <img
+                alt="That Wanaka Tree, New Zealand by Laura Smetsers"
+                src={imagesrc}
+              />
+            </Zoom>
+          </Styled.ImageContainer>
 
         </Styled.ImageModalContainer>
 

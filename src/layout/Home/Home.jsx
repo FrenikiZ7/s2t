@@ -250,11 +250,11 @@ export function Home() {
       {/* Sendo testado (ainda com problemas) */}
       <BannerSlide title="Vídeos em alta" lazy backgroundimagesrc="/assets/images/backgrounds/slider-bg-2.png">
 
-        <VerticalVideoSlide size="300px" items={s2tState.news} title="Profissional" type="video" />
-        <VerticalVideoSlide size="300px" items={s2tState.news} title="Semi- profissional" type="video" />
-        <VerticalVideoSlide size="300px" items={s2tState.news} title="Universitário" type="video" />
-        <VerticalVideoSlide size="300px" items={s2tState.news} title="Amador" type="video" />
-        <VerticalVideoSlide size="300px" items={s2tState.news} title="Recreacional" type="video" />
+        <VerticalVideoSlide size="300px" items={s2tState.news} title="Profissional" />
+        <VerticalVideoSlide size="300px" items={s2tState.news} title="Semi-profissional" />
+        <VerticalVideoSlide size="300px" items={s2tState.news} title="Universitário" />
+        <VerticalVideoSlide size="300px" items={s2tState.news} title="Amador" />
+        <VerticalVideoSlide size="300px" items={s2tState.news} title="Recreacional" />
 
       </BannerSlide>
 

@@ -1,30 +1,26 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import * as Styled from './ProPlayer-Styles';
+import * as Styled from './Player-Styles';
 
-import { AuthForm } from '../../../../components/elements/AuthElements/AuthForm/AuthForm';
-import { AuthButton } from '../../../../components/elements/AuthElements/AuthButton/AuthButton';
-import { AuthInput } from '../../../../components/elements/AuthElements/AuthInput/AuthInput';
-import { AuthRedirect } from '../../../../components/elements/AuthElements/AuthRedirect/Redirect';
-import { AuthWrapper } from '../../../../components/elements/AuthElements/AuthWrapper/AuthWrapper';
+import { AuthForm } from '../../../../../../components/elements/AuthElements/AuthForm/AuthForm';
+import { AuthButton } from '../../../../../../components/elements/AuthElements/AuthButton/AuthButton';
+import { AuthInput } from '../../../../../../components/elements/AuthElements/AuthInput/AuthInput';
+import { AuthWrapper } from '../../../../../../components/elements/AuthElements/AuthWrapper/AuthWrapper';
 
-import { StyledLink } from '../../../../components/elements/StyledLink/StyledLink';
-import { Subtitle } from '../../../../components/elements/Subtitle/Subtitle';
+import { Subtitle } from '../../../../../../components/elements/Subtitle/Subtitle';
 
-import { theme } from '../../../../styles/theme';
-import { AuthContainer } from '../../../../components/elements/AuthElements/AuthWrapper/AuthWrapper-Styles';
+import { theme } from '../../../../../../styles/theme';
+import { AuthContainer } from '../../../../../../components/elements/AuthElements/AuthWrapper/AuthWrapper-Styles';
 
-import { AuthRadio } from '../../../../components/elements/AuthElements/AuthRadio/AuthRadio';
-import { AuthHistoric } from '../../../../components/elements/AuthElements/AuthHistoric/AuthHistoric';
-import { Row } from '../../../../components/RowContainer/Row';
-import { AuthFile } from '../../../../components/elements/AuthElements/AuthFile/AuthFile';
-import { AuthAchievement } from '../../../../components/elements/AuthElements/AuthAchievement/AuthAchievement';
-import { AuthQualCheck } from '../../../../components/elements/AuthElements/AuthQualificationCheck/AuthQualCheck';
-import { AuthDropdown } from '../../../../components/elements/AuthElements/AuthDropdown/AuthDropdown';
+import { AuthRadio } from '../../../../../../components/elements/AuthElements/AuthRadio/AuthRadio';
+import { AuthHistoric } from '../../../../../../components/elements/AuthElements/AuthHistoric/AuthHistoric';
+import { Row } from '../../../../../../components/RowContainer/Row';
+import { AuthFile } from '../../../../../../components/elements/AuthElements/AuthFile/AuthFile';
+import { AuthAchievement } from '../../../../../../components/elements/AuthElements/AuthAchievement/AuthAchievement';
+import { AuthQualCheck } from '../../../../../../components/elements/AuthElements/AuthQualificationCheck/AuthQualCheck';
+import { AuthDropdown } from '../../../../../../components/elements/AuthElements/AuthDropdown/AuthDropdown';
 
-export function ProPlayer() {
-  const [name, setName] = useState('');
-
+export function Player() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -38,45 +34,39 @@ export function ProPlayer() {
     { value: 'left', label: 'Esquerda' },
   ];
 
-  const genreOptions = [
-    { value: 'male', label: 'Masculino' },
-    { value: 'female', label: 'Feminino' },
-  ];
-
   const categoryOptions = [
-    { value: 'sub7', label: 'Sub-7 (6 e 7 anos)' },
-    { value: 'goleiro', label: 'Goleiro' },
-    { value: 'sub8', label: 'Sub-8 (8 anos)' },
-    { value: 'sub9', label: 'Sub-9 (8 e 9 anos)label' },
-    { value: 'sub11', label: 'Sub-11 (10 e 11 anos)' },
-    { value: 'sub13', label: 'Sub-13 (12 e 13 anos)' },
-    { value: 'sub15', label: 'Sub-15 (14 e 15 anos)' },
-    { value: 'sub17', label: 'Sub-17 (16 e 17 anos)' },
-    { value: 'sub20', label: 'Sub-20 (18, 19 e 20 anos)' },
-    { value: 'adult', label: 'Adulto (Já atua no time principal)' },
+    { value: 'sub7', text: 'Sub-7 (6 e 7 anos)' },
+    { value: 'sub8', text: 'Sub-8 (8 anos)' },
+    { value: 'sub9', text: 'Sub-9 (8 e 9 anos)' },
+    { value: 'sub11', text: 'Sub-11 (10 e 11 anos)' },
+    { value: 'sub13', text: 'Sub-13 (12 e 13 anos)' },
+    { value: 'sub15', text: 'Sub-15 (14 e 15 anos)' },
+    { value: 'sub17', text: 'Sub-17 (16 e 17 anos)' },
+    { value: 'sub20', text: 'Sub-20 (18, 19 e 20 anos)' },
+    { value: 'adult', text: 'Adulto (Já atua no time principal)' },
   ];
 
-  const [category, setCategory] = useState('sub17');
+  const [category, setCategory] = useState('  ');
 
   const positionsOptions = [
-    { value: 'goleiro', label: 'Goleiro' },
-    { value: 'lateral esquerdo', label: 'Lateral Esquerdo' },
-    { value: 'lateral direito', label: 'Lateral Direito' },
-    { value: 'zagueiro', label: 'Zagueiro' },
-    { value: 'ala', label: 'Ala' },
-    { value: 'primeiro volante', label: 'Primeiro Volante' },
-    { value: 'segundo volante', label: 'Segundo Volante' },
-    { value: 'meio-campista', label: 'Meio-Campista' },
-    { value: 'meia-ofensivo', label: 'Meia Ofensivo' },
-    { value: 'meia-lateral', label: 'Meia Lateral' },
-    { value: 'segundo atacante', label: 'Segundo atacante' },
-    { value: 'ponta esquerda', label: 'Ponta Esquerda' },
-    { value: 'ponta direita', label: 'Ponta Direito' },
-    { value: 'centroavante', label: 'Centroavante' },
+    { value: 'goleiro', text: 'Goleiro' },
+    { value: 'lateral esquerdo', text: 'Lateral Esquerdo' },
+    { value: 'lateral direito', text: 'Lateral Direito' },
+    { value: 'zagueiro', text: 'Zagueiro' },
+    { value: 'ala', text: 'Ala' },
+    { value: 'primeiro volante', text: 'Primeiro Volante' },
+    { value: 'segundo volante', text: 'Segundo Volante' },
+    { value: 'meio-campista', text: 'Meio-Campista' },
+    { value: 'meia-ofensivo', text: 'Meia Ofensivo' },
+    { value: 'meia-lateral', text: 'Meia Lateral' },
+    { value: 'segundo atacante', text: 'Segundo atacante' },
+    { value: 'ponta esquerda', text: 'Ponta Esquerda' },
+    { value: 'ponta direita', text: 'Ponta Direito' },
+    { value: 'centroavante', text: 'Centroavante' },
   ];
 
   const leagueOptions = [
-    { value: 'lifa', label: 'LIFA' },
+    { value: 'lifa', text: 'LIFA' },
   ];
 
   const managerOptions = [
@@ -87,7 +77,7 @@ export function ProPlayer() {
   const [league, setLeague] = useState(null);
 
   return (
-    <Styled.ProPlayerContainer>
+    <Styled.PlayerContainer>
 
       <AuthWrapper>
 
@@ -271,7 +261,7 @@ export function ProPlayer() {
         </AuthContainer>
 
       </AuthWrapper>
-    </Styled.ProPlayerContainer>
+    </Styled.PlayerContainer>
 
   );
 }

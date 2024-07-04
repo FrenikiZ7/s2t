@@ -61,14 +61,14 @@ export function PublicDashboard() {
       {/* Aparece apenas em telas maiores que 768px */}
       {username && (
       <ProfileHeader>
-        <PublicNav username={username} />
+        <PublicNav username={username} type="club" />
       </ProfileHeader>
       )}
 
       {/* Aparece apenas em telas menores que 768px */}
       {menuVisibility ? (
         <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)}>
-          <PublicMenu />
+          <PublicMenu type="club" />
         </MobileMenu>
       ) : (
         <FloatingIcon name="Menu" onclick={() => setMenuVisibility(!menuVisibility)}>

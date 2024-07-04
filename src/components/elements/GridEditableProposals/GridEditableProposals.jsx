@@ -10,6 +10,7 @@ import { NewProposal } from '../NewProposal/NewProposal';
 import { IconDiv } from '../IconDiv/IconDiv';
 import { Row } from '../../RowContainer/Row';
 import { EditProposal } from '../EditProposal/EditProposal';
+import { Text } from '../Text/Text';
 
 export function GridEditableProposals({ items, title }) {
   // Pagination stuff
@@ -17,7 +18,8 @@ export function GridEditableProposals({ items, title }) {
   const [itemsPerPage, setItemsPerPage] = useState(8);
 
   const pagesVisited = pageNumber * itemsPerPage;
-  const displayItems = items.slice(pagesVisited, pagesVisited + itemsPerPage);
+  const displayItems = items ? items.slice(pagesVisited, pagesVisited + itemsPerPage) : [];
+
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
@@ -64,58 +66,50 @@ export function GridEditableProposals({ items, title }) {
                 </IconDiv>
               </Row>
 
-              <GridLayoutContainer>
-                {displayItems.map((item) => (
-                  <ProposalCard
-                    date={item.details.date}
-                    opportunity={item.details.opportunity}
-                    category={item.details.category}
-                    country={item.details.country}
-                    org={item.details.org}
-                    orglogo={item.details.orglogo}
-                    orgpath={item.details.orgpath}
-                    onclick={() => handleCardClick(item)}
-                    id={item.opportunityId}
-                    key={item.opportunityId}
-                  />
-                ))}
-              </GridLayoutContainer>
+                {displayItems.length > 0 ? (
+                  <GridLayoutContainer>
+                    {displayItems.map((item) => (
+                      <ProposalCard
+                        date={item.details.date}
+                        opportunity={item.details.opportunity}
+                        category={item.details.category}
+                        country={item.details.country}
+                        org={item.details.org}
+                        orglogo={item.details.orgLogo}
+                        orgpath={item.details.orgPath}
+                        onclick={() => handleCardClick(item)}
+                        id={item.opportunityId}
+                        key={item.opportunityId}
+                      />
+                    ))}
+                  </GridLayoutContainer>
+                )
+                  : (
+                    <Text text="Você ainda não publicou nenhuma proposta. Que tal começar agora? Clique no ícone de ‘+’ acima para criar a sua primeira proposta!" />
+                  )}
 
-              <Styled.StyledPaginate
-                previousLabel="Anterior"
-                nextLabel="Próximo"
-                breakLabel="..."
-                pageCount={Math.ceil(items.length / itemsPerPage)}
-                pageRangeDisplayed={3}
-                marginPagesDisplayed={1}
-                onPageChange={changePage}
-                containerClassName="pagination"
-                pageClassName="page-item"
-                pageLinkClassName="page-link"
-                activeClassName="active"
-                onClick={handlePaginationClick}
-              />
+              {displayItems.length > 0 && (
+                <Styled.StyledPaginate
+                  previousLabel="Anterior"
+                  nextLabel="Próximo"
+                  breakLabel="..."
+                  pageCount={items.length > 0 ? Math.ceil(items.length / itemsPerPage) : 0}
+                  pageRangeDisplayed={3}
+                  marginPagesDisplayed={1}
+                  onPageChange={changePage}
+                  containerClassName="pagination"
+                  pageClassName="page-item"
+                  pageLinkClassName="page-link"
+                  activeClassName="active"
+                  onClick={handlePaginationClick}
+                />
+              )}
             </>
           )}
         </>
       )}
 
       {selectedProposal && (
-      // <ProposalModal
-      //   from={selectedProposal.details.from}
-      //   date={selectedProposal.details.date}
-      //   opportunity={selectedProposal.details.opportunity}
-      //   category={selectedProposal.details.category}
-      //   country={selectedProposal.details.country}
-      //   org={selectedProposal.details.org}
-      //   orglogo={selectedProposal.details.orglogo}
-      //   orgpath={selectedProposal.details.orgpath}
-      //   minpayment={selectedProposal.details.payment.minPayment}
-      //   maxpayment={selectedProposal.details.payment.maxPayment}
-      //   description={selectedProposal.description}
-      //   requirements={selectedProposal.requirements}
-      //   onclick={() => setSelectedProposal(null)}
-      // />
 
       <EditProposal onclick={() => setSelectedProposal(null)} />
       )}
@@ -126,7 +120,7 @@ export function GridEditableProposals({ items, title }) {
 
 GridEditableProposals.propTypes = {
   title: Prop.string,
-  items: Prop.arrayOf(Prop.object).isRequired,
+  items: Prop.arrayOf(Prop.object),
 
   // n faço ideia oq é isso, só está assim pq foi o unico q n deu erro no console
 };

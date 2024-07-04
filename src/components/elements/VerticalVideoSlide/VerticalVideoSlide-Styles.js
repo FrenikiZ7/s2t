@@ -27,10 +27,10 @@ export const VerticalVideoSlideElement = styled.div`
     }
 
     .swiper-slide {
-    aspect-ratio: 16 / 9; // always use 16/9 video
-    container-type: size;
-    max-width: 450px;
-    background: rgba(0,0,0,0.5);
+      aspect-ratio: 16 / 9; // always use 16/9 video
+      container-type: size;
+      max-width: 450px;
+      background: rgba(0,0,0,0.5);
 
     @media ${theme.medias.smallpc} {
       max-width: 700px;

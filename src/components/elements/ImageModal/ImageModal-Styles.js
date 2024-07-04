@@ -5,10 +5,7 @@ import { fadeIn, slideIn } from '../../../styles/animations';
 export const ModalWrapper = styled.div`
   ${({ theme }) => css`
    background: rgba(0,0,0,0.7);
-   /* animation: ${fadeIn} 500ms; */
-
-   width: 100%;
-   height: 100%;
+   animation: ${fadeIn} 700ms;
 
    position: fixed;
    top: 50%;
@@ -22,18 +19,12 @@ export const ModalWrapper = styled.div`
 
    width: 100%;
    height: 100%;
-
-   @media ${theme.medias.tablet} {
-    display: none;
-   }
   `}
 `;
 
 export const ImageModalContainer = styled.div`
   ${({ theme }) => css`
     border-radius: 15px;
-    
-    width: 100%;
     position: relative;
     transition: all 500ms ease-in-out; 
 
@@ -49,13 +40,11 @@ export const ImageModalContainer = styled.div`
 
 export const ImageContainer = styled.div`
   ${({ theme }) => css`
-
-    & figure.loaded {
-      border: ${theme.borders.xwhite};
-      box-shadow: 0px 0px 10px 1px ${theme.colors.white};
-      border-radius: 15px; 
+    & img {
+      max-width: 100%;
+      max-height: 700px;
       user-select: none;
+      border-radius: 12px;
     }
-
   `}
 `;

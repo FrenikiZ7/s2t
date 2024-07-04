@@ -9,14 +9,14 @@ import * as Styled from './FavoriteIcon-Styles';
 import { IconDiv } from '../IconDiv/IconDiv';
 import { theme } from '../../../styles/theme';
 
-export function FavoriteIcon({ isfavorite, mediaid }) {
+export function FavoriteIcon({ isfavorite, id }) {
   const [favorite, setFavorite] = useState(isfavorite);
 
   const handleFavoriteClick = (event) => {
     event.stopPropagation();
 
     setFavorite(!favorite);
-    // console.log(`A foto com o ID ${mediaid} é favorita? ${favorite}`);
+    // console.log(`A foto com o ID ${id} é favorita? ${favorite}`);
 
     // Necessário lógica para adicionar ou remover a foto clicada a lista de favoritos do backend
   };
@@ -27,8 +27,6 @@ export function FavoriteIcon({ isfavorite, mediaid }) {
         name={favorite ? 'Desfavoritar' : 'Favoritar'}
         hovercolor={favorite ? theme.colors.red : theme.colors.white}
         onclick={handleFavoriteClick}
-        active={favorite}
-        activecolor={theme.colors.red}
       >
         <Favorite />
       </IconDiv>
@@ -37,7 +35,7 @@ export function FavoriteIcon({ isfavorite, mediaid }) {
 }
 
 FavoriteIcon.propTypes = {
-  mediaid: Prop.oneOfType([
+  id: Prop.oneOfType([
     Prop.string,
     Prop.number,
   ]),

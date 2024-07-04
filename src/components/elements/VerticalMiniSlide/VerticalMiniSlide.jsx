@@ -6,8 +6,10 @@ import { Subtitle } from '../Subtitle/Subtitle';
 import { EventCard } from '../EventCard/EventCard';
 import { NewsCard } from '../NewsCard/NewsCard';
 import { RankCard } from '../RankCard/RankCard';
+import { ContactCard } from '../ContactCard/ContactCard';
 
 export function VerticalMiniSlide({ items, title, type }) {
+  const normalizedType = type.toLowerCase();
   return (
     <Styled.VerticalMiniSlideWrapper>
       <Subtitle text={title} uppercase as="h3" />
@@ -37,7 +39,7 @@ export function VerticalMiniSlide({ items, title, type }) {
           }}
         >
 
-          {type === 'events' && (
+          {normalizedType === 'events' && (
             <>
               {items.map((item) => (
                 <SwiperSlide key={item.id}>
@@ -52,7 +54,7 @@ export function VerticalMiniSlide({ items, title, type }) {
             </>
           )}
 
-          {type === 'news' && (
+          {normalizedType === 'news' && (
           <>
             {items.map((item) => (
               <SwiperSlide key={item.id}>
@@ -67,13 +69,34 @@ export function VerticalMiniSlide({ items, title, type }) {
           </>
           )}
 
-          {type === 'referralrank' && (
+          {normalizedType === 'referralrank' && (
           <>
             {items.map((item) => (
               <SwiperSlide key={item.position}>
                 <RankCard name={item.name} position={item.position} imagesrc={item.imagesrc} />
               </SwiperSlide>
             ))}
+          </>
+          )}
+
+          {normalizedType === 'contact' && (
+          <>
+            <SwiperSlide>
+              <ContactCard title="Agente" subtitle="Centroavante" imagesrc="/assets/images/pngs/brasileirao.png" />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <ContactCard title="Agente" subtitle="Centroavante" imagesrc="/assets/images/pngs/brasileirao.png" newmessage />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <ContactCard title="Agente" subtitle="Centroavante" imagesrc="/assets/images/pngs/brasileirao.png" />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <ContactCard title="Agente" subtitle="Centroavante" imagesrc="/assets/images/pngs/brasileirao.png" newmessage />
+            </SwiperSlide>
+
           </>
           )}
 

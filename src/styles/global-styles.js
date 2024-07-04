@@ -29,6 +29,18 @@ const GlobalStyles = createGlobalStyle`
       box-sizing: border-box;
     }
 
+    [data-rmiz-modal-overlay='hidden'] {
+     background-color: rgba(255, 255, 255, 0);
+     
+    }
+
+    [data-rmiz-modal-overlay='visible'] {
+      background-color: ${({ theme }) => theme.colors.black};
+
+      /* @media ${({ theme }) => theme.medias.tablet} {
+       display: none;
+      } */
+    }
 
 //CSS Global para os Slides usados via Swiper
 

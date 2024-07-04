@@ -1,9 +1,9 @@
 import Prop from 'prop-types';
 import React from 'react';
 import * as Styled from './EditProfile-Styles';
-import { Player } from '../../../Register/Forms/Player/Player';
-import { Club } from '../../../Register/Forms/Club/Club';
-import { University } from '../../../Register/Forms/University/University';
+import { Club } from './Components/Club/Club';
+import { Player } from './Components/Player/Player';
+import { University } from './Components/University/University';
 
 export function EditProfile({ type }) {
   return (

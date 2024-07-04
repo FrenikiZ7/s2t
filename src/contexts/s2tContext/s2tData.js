@@ -81,7 +81,7 @@ export const s2tData = {
 
   rankings: {
     referral: [
-      { name: 'Bruno da Silva Pedrosa', position: 1, imagesrc: 'assets/images/background.png' },
+      { name: 'Bruno da Silva Pedrosa', position: 1, imagesrc: '/assets/images/background.png' },
       { name: 'Caio Henrique', position: 2, imagesrc: '/assets/images/background.png' },
       { name: 'Eduardo Medeiros', position: 3, imagesrc: '/assets/images/background.png' },
       { name: 'Bruno Andrade Ferraz', position: 4, imagesrc: '/assets/images/background.png' },
@@ -701,6 +701,7 @@ export const s2tData = {
             requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
           },
         ],
+
         agents: [
           {
             opportunityId: 3,

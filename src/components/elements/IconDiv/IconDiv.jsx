@@ -1,12 +1,10 @@
 import Prop from 'prop-types';
 import React from 'react';
-import { css } from 'styled-components';
 import * as Styled from './IconDiv-Styles';
 import { theme } from '../../../styles/theme';
-import { spin360Left, spin360Right } from '../../../styles/animations';
 
 export function IconDiv({
-  children, active, activecolor = theme.colors.primary, onclick, name = 'Ícone', hovercolor = '',
+  children, active, activecolor = theme.colors.primary, onclick, name = 'Ícone', hovercolor = '', color = theme.colors.white,
 }) {
   return (
     <Styled.IconContainer
@@ -16,6 +14,7 @@ export function IconDiv({
       hovercolor={hovercolor}
       active={active ? 'active' : undefined}
       activecolor={activecolor}
+      color={color}
     >
       {children}
     </Styled.IconContainer>
@@ -29,4 +28,5 @@ IconDiv.propTypes = {
   name: Prop.string,
   hovercolor: Prop.string,
   activecolor: Prop.string,
+  color: Prop.string,
 };

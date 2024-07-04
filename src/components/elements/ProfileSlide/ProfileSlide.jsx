@@ -73,7 +73,7 @@ export function ProfileSlide({
 
                       <FavoriteIcon
                         isfavorite={item.isfavorite}
-                        mediaid={item.id}
+                        id={item.id}
                       />
 
                     </Styled.TopIconsWrapper>
@@ -104,25 +104,32 @@ export function ProfileSlide({
               </Styled.MediaWrapper>
               )}
 
-              {/* {item.type === 'video' && (
+              {item.type === 'video' && (
               <Styled.MediaWrapper>
 
                 {publicview && (
                 <>
                   <Styled.TopIconsWrapper>
-                    <IconDiv
-                      name="Denunciar"
-                      hovercolor={theme.colors.red}
-                      onclick={() => setIsReporing(!isReporing)}
-                    >
-                      <ReportIcon />
-                    </IconDiv>
 
-                    <FavoriteIcon isfavorite={item.isfavorite} />
+                    <ReportIcon
+                      isreporting={reportingMedia === item.id}
+                      onclick={() => handleReporting(item)}
+                    />
+
+                    <FavoriteIcon
+                      isfavorite={item.isfavorite}
+                      mediaid={item.id}
+                    />
+
                   </Styled.TopIconsWrapper>
 
                   <Styled.BottomIconsWrapper>
-                    <RateIcons onclick={() => setRateValue(5)} ratevalue={rateValue} />
+
+                    <RateIcons
+                      ratevalue={item.rateValue}
+                      mediaid={item.id}
+                    />
+
                   </Styled.BottomIconsWrapper>
                 </>
                 )}
@@ -133,7 +140,7 @@ export function ProfileSlide({
                 </video>
 
               </Styled.MediaWrapper>
-              )} */}
+              )}
 
             </SwiperSlide>
           ))}

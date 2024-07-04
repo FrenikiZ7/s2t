@@ -10,6 +10,7 @@ export const GridEditableProposalsContainer = styled.div`
    width: 100%;
    height: 100%;
    animation: ${slideIn} 500ms ease-out;
+   
 
    & ${IconContainer} {
     animation: none;

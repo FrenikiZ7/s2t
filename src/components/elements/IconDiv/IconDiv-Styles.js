@@ -3,7 +3,7 @@ import { spin360Left, spin360Right, zoomIn } from '../../../styles/animations';
 
 export const IconContainer = styled.div`
   ${({
-    theme, hovercolor, active, activecolor,
+    theme, hovercolor, active, activecolor, color,
   }) => css`
       transition: all 500ms ease-in-out ;
       width: 40px;
@@ -23,7 +23,7 @@ export const IconContainer = styled.div`
         height: 100%;
 
         transition: all 500ms ease-in-out ;
-        color: ${active ? activecolor : theme.colors.white};
+        color: ${active ? activecolor : color};
 
         &:hover {
           color: ${hovercolor || theme.colors.secondary};

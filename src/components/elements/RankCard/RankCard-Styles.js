@@ -105,7 +105,7 @@ export const RankName = styled.div`
 export const RankImage = styled.img`
   ${({ theme }) => css`
     height: 100%;
-    width: 125px;
+    max-width: 125px;
     border-radius: 12px;
     transition: all 700ms ease-in-out;
     box-shadow: 0px 0px 5px 1px transparent;

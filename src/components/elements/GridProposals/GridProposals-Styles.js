@@ -3,6 +3,7 @@ import ReactPaginate from 'react-paginate';
 import { fadeIn, slideIn } from '../../../styles/animations';
 import { GridLayoutContainer } from '../../GridLayout/GridLayout-Styles';
 import { IconContainer } from '../IconDiv/IconDiv-Styles';
+import { TextElement } from '../Text/Text-Styles';
 
 export const GridProposalsContainer = styled.div`
   ${({ theme }) => css`
@@ -11,10 +12,13 @@ export const GridProposalsContainer = styled.div`
    animation: ${slideIn} 500ms ease-out;
    display: flex;
    flex-direction: column;
-   gap: ${theme.spacings.small};
+   gap: ${theme.spacings.large};
 
    & ${IconContainer} {
     animation: none;
+   }
+
+    ${TextElement} {
    }
   
    ${GridLayoutContainer} {

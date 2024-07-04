@@ -1,4 +1,4 @@
-import Prop from 'prop-types';
+import Prop, { nominalTypeHack } from 'prop-types';
 import React from 'react';
 
 import {
@@ -23,9 +23,53 @@ import { StyledLink } from '../../../elements/StyledLink/StyledLink';
 import { GridLayout } from '../../../GridLayout/GridLayout';
 import { theme } from '../../../../styles/theme';
 
-export function PublicMenu() {
+export function PublicMenu({ type }) {
+  const normalizedType = type.toLowerCase();
+
   return (
     <GridLayout>
+
+      <StyledLink
+        path="profile"
+        color={theme.colors.white}
+        hovercolor={theme.colors.primary}
+      >
+        <PersonIcon />
+        Perfil
+
+      </StyledLink>
+
+      <StyledLink
+        path="squad"
+        color={theme.colors.white}
+        hovercolor={theme.colors.primary}
+      >
+        <SquadIcon />
+        Plantel
+
+      </StyledLink>
+
+      {type === 'club' && (
+        <StyledLink
+          path="opportunities"
+          color={theme.colors.white}
+          hovercolor={theme.colors.primary}
+        >
+          <ViewCarouselIcon />
+          Oportunidades
+
+        </StyledLink>
+      )}
+
+      <StyledLink
+        path="friends"
+        color={theme.colors.white}
+        hovercolor={theme.colors.primary}
+      >
+        <GroupIcon />
+        Amigos
+
+      </StyledLink>
 
       <StyledLink
         color={theme.colors.white}
@@ -42,5 +86,5 @@ export function PublicMenu() {
 }
 
 PublicMenu.propTypes = {
-
+  type: Prop.string.isRequired,
 };

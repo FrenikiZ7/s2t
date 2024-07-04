@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { AuthHistoricContainer } from '../../../../components/elements/AuthElements/AuthHistoric/AuthHistoric-Styles';
-import { RowContainer } from '../../../../components/RowContainer/Row-Styles.js';
+import { AuthHistoricContainer } from '../../../../../../components/elements/AuthElements/AuthHistoric/AuthHistoric-Styles';
+import { RowContainer } from '../../../../../../components/RowContainer/Row-Styles.js';
 
 export const PlayerContainer = styled.section`
   ${({ theme }) => css`

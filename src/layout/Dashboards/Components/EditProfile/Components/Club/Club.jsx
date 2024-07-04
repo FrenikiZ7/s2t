@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Styled from './Club-Styles';
 
-import { AuthForm } from '../../../../components/elements/AuthElements/AuthForm/AuthForm';
-import { AuthButton } from '../../../../components/elements/AuthElements/AuthButton/AuthButton';
-import { AuthInput } from '../../../../components/elements/AuthElements/AuthInput/AuthInput';
-import { AuthWrapper } from '../../../../components/elements/AuthElements/AuthWrapper/AuthWrapper';
+import { AuthForm } from '../../../../../../components/elements/AuthElements/AuthForm/AuthForm';
+import { AuthButton } from '../../../../../../components/elements/AuthElements/AuthButton/AuthButton';
+import { AuthInput } from '../../../../../../components/elements/AuthElements/AuthInput/AuthInput';
+import { AuthWrapper } from '../../../../../../components/elements/AuthElements/AuthWrapper/AuthWrapper';
 
-import { Subtitle } from '../../../../components/elements/Subtitle/Subtitle';
+import { Subtitle } from '../../../../../../components/elements/Subtitle/Subtitle';
 
-import { theme } from '../../../../styles/theme';
-import { AuthContainer } from '../../../../components/elements/AuthElements/AuthWrapper/AuthWrapper-Styles';
+import { theme } from '../../../../../../styles/theme';
+import { AuthContainer } from '../../../../../../components/elements/AuthElements/AuthWrapper/AuthWrapper-Styles';
 
-import { AuthHistoric } from '../../../../components/elements/AuthElements/AuthHistoric/AuthHistoric';
-import { Row } from '../../../../components/RowContainer/Row';
-import { AuthFile } from '../../../../components/elements/AuthElements/AuthFile/AuthFile';
-import { AuthAchievement } from '../../../../components/elements/AuthElements/AuthAchievement/AuthAchievement';
+import { AuthHistoric } from '../../../../../../components/elements/AuthElements/AuthHistoric/AuthHistoric';
+import { Row } from '../../../../../../components/RowContainer/Row';
+import { AuthFile } from '../../../../../../components/elements/AuthElements/AuthFile/AuthFile';
+import { AuthAchievement } from '../../../../../../components/elements/AuthElements/AuthAchievement/AuthAchievement';
 
 export function Club() {
   const navigate = useNavigate();

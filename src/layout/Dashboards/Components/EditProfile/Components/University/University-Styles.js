@@ -1,8 +1,7 @@
 import styled, { css } from 'styled-components';
-import { AuthHistoricContainer } from '../../../../components/elements/AuthElements/AuthHistoric/AuthHistoric-Styles';
-import { RowContainer } from '../../../../components/RowContainer/Row-Styles.js';
-import { AuthAchievement } from '../../../../components/elements/AuthElements/AuthAchievement/AuthAchievement';
-import { AuthAchievementContainer } from '../../../../components/elements/AuthElements/AuthAchievement/AuthAchievement-Styles';
+import { AuthHistoricContainer } from '../../../../../../components/elements/AuthElements/AuthHistoric/AuthHistoric-Styles';
+import { RowContainer } from '../../../../../../components/RowContainer/Row-Styles.js';
+import { AuthAchievementContainer } from '../../../../../../components/elements/AuthElements/AuthAchievement/AuthAchievement-Styles';
 
 export const UniversityContainer = styled.section`
   ${({ theme }) => css`

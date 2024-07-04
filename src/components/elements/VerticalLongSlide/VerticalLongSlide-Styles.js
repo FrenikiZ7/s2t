@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const VerticalMiniSlideWrapper = styled.div`
+export const VerticalLongSlideWrapper = styled.div`
   ${({ theme }) => css`
       width: 100%;
       height: 100%;
@@ -8,11 +8,10 @@ export const VerticalMiniSlideWrapper = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
   `}
 `;
 
-export const VerticalMiniSlideContainer = styled.div`
+export const VerticalLongSlideContainer = styled.div`
   ${({ theme }) => css`
     width: 100%;
     height: 100%;
@@ -27,14 +26,14 @@ export const VerticalMiniSlideContainer = styled.div`
     }
   
     .swiper-wrapper{
-      height: 300px;
+      height: 1000px;
 
       @media ${theme.medias.tablet} {
-        height: 230px;
+        height: 600px;
       }
 
       @media ${theme.medias.mobile} {
-        height: 230px;
+        height: 480px;
       }
     }
 

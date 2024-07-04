@@ -1,18 +1,18 @@
 import Prop from 'prop-types';
 import React, { useContext } from 'react';
-import * as Styled from './PlayerHome-Styles';
+import * as Styled from './ClubHome-Styles';
 import { VerticalMiniSlide } from '../../../../../components/elements/VerticalMiniSlide/VerticalMiniSlide';
 import { S2tContext } from '../../../../../contexts/s2tContext/S2tContext';
 import { VerticalSoloSlide } from '../../../../../components/elements/VerticalSoloSlide/VerticalSoloSlide';
 import { BannerSlide } from '../../../../../components/elements/BannerSlide/BannerSlide';
 import { VerticalVideoSlide } from '../../../../../components/elements/VerticalVideoSlide/VerticalVideoSlide';
 
-export function PlayerHome() {
+export function ClubHome() {
   const s2tContext = useContext(S2tContext);
   const { s2tState, s2tDispatch } = s2tContext;
 
   return (
-    <Styled.PlayerHomeContainer>
+    <Styled.ClubHomeContainer>
 
       <BannerSlide slidesperview={2} backgroundimagesrc="/assets/images/backgrounds/slider-bg-1.png">
         <VerticalSoloSlide title="Social" size="400px" items={s2tState.news} />
@@ -36,9 +36,9 @@ export function PlayerHome() {
         <VerticalMiniSlide title="Notícias" type="news" items={s2tState.news} />
       </BannerSlide>
 
-    </Styled.PlayerHomeContainer>
+    </Styled.ClubHomeContainer>
   );
 }
 
-PlayerHome.propTypes = {
+ClubHome.propTypes = {
 };

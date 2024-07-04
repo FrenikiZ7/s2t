@@ -53,6 +53,12 @@ export const ProfileSlideElement = styled.div`
       height: 200px;
      }
     }
+
+    @media (max-width: 280px) { /* Target tablet screens */
+     .swiper-slide {
+      height: 160px;
+     }
+    }
     
   `}
 `;
@@ -78,7 +84,25 @@ export const MediaWrapper = styled.div`
     border: ${theme.borders.xtransparent};
   }
 
-  ${IconContainer} {
+
+  `}
+`;
+
+export const TopIconsWrapper = styled.div`
+  ${({ theme }) => css`
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: ${theme.spacings.xsmall};
+    height: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 15px;
+    z-index: 100;
+
+    ${IconContainer} {
     width: auto;
     height: 100%;
 
@@ -97,26 +121,6 @@ export const MediaWrapper = styled.div`
      }
     }
   }
-
-
-
-
-  `}
-`;
-
-export const TopIconsWrapper = styled.div`
-  ${({ theme }) => css`
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: ${theme.spacings.xsmall};
-    height: 30px;
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    border-radius: 15px;
-    z-index: 100;
   
  `}
 `;
@@ -135,11 +139,25 @@ export const BottomIconsWrapper = styled.div`
     border-radius: 15px;
     z-index: 100;
 
-    > ${IconContainer} {
-      @media ${theme.medias.tablet} {
-        display: none;
-      }
+    ${IconContainer} {
+    width: auto;
+    height: 100%;
+
+    > svg {
+     border-radius: 50%;
+     background: rgba(0, 0, 0, 0.5);
+
+     &:hover {
+      background: rgba(0, 0, 0, 0.8);
+      transform: scale(1.1);
+     }
+
+     @media ${theme.medias.mobile} {
+      width: 25px;
+      height: 25px;
+     }
     }
+  }
 
  `}
 `;
