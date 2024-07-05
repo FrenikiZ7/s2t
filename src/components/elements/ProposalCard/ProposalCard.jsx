@@ -7,9 +7,10 @@ import { CenterColumn } from '../../CenterColumn/CenterColumn';
 import { Subtitle } from '../Subtitle/Subtitle';
 import { Text } from '../Text/Text';
 import { FavoriteIcon } from '../FavoriteIcon/FavoriteIcon';
+import { RemoveIcon } from '../RemoveIcon/RemoveIcon';
 
 export function ProposalCard({
-  from = '', date = '', opportunity = '', country = '', org = '', orglogo = '', orgpath = '', category = '', onclick, publicview,
+  id, from = '', date = '', opportunity = '', country = '', org = '', orglogo = '', orgpath = '', category = '', onclick, publicview, ownerview,
 }) {
   return (
     <Styled.ProposalCardElement onClick={onclick}>
@@ -31,7 +32,8 @@ export function ProposalCard({
         {org && <StyledLink path={orgpath} text={org} />}
       </CenterColumn>
 
-      {publicview && <FavoriteIcon />}
+      {publicview && <FavoriteIcon is={id} />}
+      {ownerview && <RemoveIcon id={id} message="Tem certeza de que deseja excluir esta oportunidade?" />}
 
     </Styled.ProposalCardElement>
   );
@@ -39,6 +41,9 @@ export function ProposalCard({
 
 ProposalCard.propTypes = {
   from: Prop.string,
+  id: Prop.oneOfType([
+    Prop.string, Prop.number,
+  ]),
   date: Prop.string,
   opportunity: Prop.string,
   country: Prop.string,
@@ -48,4 +53,5 @@ ProposalCard.propTypes = {
   category: Prop.string,
   onclick: Prop.func,
   publicview: Prop.bool,
+  ownerview: Prop.bool,
 };

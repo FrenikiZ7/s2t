@@ -11,7 +11,12 @@ export const IconContainer = styled.div`
       align-items: center;     
       animation: ${active ? spin360Right : spin360Left} 1000ms;
 
-    
+      &:hover {
+        > svg {
+          color: ${hovercolor || theme.colors.secondary};
+          transform: scale(1.1);
+        }
+      }
 
       @media ${theme.medias.mobile} {
         width: 30px;
@@ -24,11 +29,6 @@ export const IconContainer = styled.div`
 
         transition: all 500ms ease-in-out ;
         color: ${active ? activecolor : color};
-
-        &:hover {
-          color: ${hovercolor || theme.colors.secondary};
-          transform: scale(1.1);
-        }
   
       }
   `}

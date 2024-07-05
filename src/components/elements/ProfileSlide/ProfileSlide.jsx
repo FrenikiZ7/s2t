@@ -149,7 +149,9 @@ export function ProfileSlide({
           <SwiperSlide>
             <Styled.MediaWrapper>
 
-              <AuthIconFile id="addMoreMedia" accept="image/*,video/*" />
+              <AuthIconFile id="addMoreMedia" accept="image/*,video/*" hovercolor={theme.colors.secondary} name="Botão para adicionar uma novo foto ou um novo vídeo ao seu perfil">
+                <AddIcon />
+              </AuthIconFile>
 
               <img src="/assets/images/backgrounds/ball.png" alt="" />
             </Styled.MediaWrapper>

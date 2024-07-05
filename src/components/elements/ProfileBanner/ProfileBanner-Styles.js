@@ -3,8 +3,10 @@ import { slideOut, spin360Left, spin360Right } from '../../../styles/animations'
 import { ColumnContainer } from '../../ColumnContainer/Column-Styles';
 import { RowContainer } from '../../RowContainer/Row-Styles.js';
 import { IconContainer } from '../IconDiv/IconDiv-Styles.js';
+import { AuthIconFileContainer } from '../AuthElements/AuthIconFile/AuthIconFile-Styles.js';
+import { AuthFormContainer } from '../AuthElements/AuthForm/AuthForm-Styles.js';
 
-export const ProfileBannerContainer = styled.div`
+export const ProfileBannerWrapper = styled.div`
   ${({ theme, backgroundimagesrc }) => css`
     background: linear-gradient(
     to bottom,
@@ -12,26 +14,61 @@ export const ProfileBannerContainer = styled.div`
     rgba(0, 0, 0, 1)
     ),
     url(${backgroundimagesrc || '/assets/images/backgrounds/slider-bg-1.png'});
-
     background-position: center;
     background-size: cover;
     backdrop-filter: blur(10px);
     width: 100%;
     height: 350px;
+
     display: flex;
-    color: white;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     gap: ${theme.spacings.small};
+
+    & > ${AuthFormContainer} {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+
+      ${AuthIconFileContainer} {
+        width: 40px;
+        height: 40px;
+
+        @media ${theme.medias.mobile} {
+          width: 30px;
+        height: 30px;
+        }
+      }
+    }
+
+  `}
+`;
+
+export const ProfileBannerContainer = styled.div`
+  ${({ theme }) => css`
+    
+    color: ${theme.colors.white};
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: ${theme.spacings.small};
+
+    width: 100%;
+    height: 100%;
+
+
     animation: ${slideOut} 300ms ease-out;
 
-
-    @media${theme.medias.tablet} {
+    @media ${theme.medias.tablet} {
       flex-direction: column;
       justify-content: center;
       gap: ${theme.spacings.xsmall};
     }
 
-    @media${theme.medias.mobile} {
+    @media ${theme.medias.mobile} {
       height: 300px;
     }
     
@@ -44,6 +81,7 @@ export const ProfileBannerContainer = styled.div`
       gap: ${theme.spacings.medium};
     }
 
+   
      > ${RowContainer} {
 
         align-items: center;
@@ -69,6 +107,6 @@ export const ProfileBannerContainer = styled.div`
             width: 23px;
           }
          }      
-       }
+     }
  `}
 `;

@@ -92,8 +92,6 @@ export function Club() {
               placeholder="Atual técnico ou treinador do clube"
             />
 
-            <AuthFile text="Escolha sua foto de perfil (Recomendado: Imagens 1:1)" id="profileImage" />
-
             <AuthFile text="Escolha seu banner (Recomendado: Imagens 16:9)" id="bannerImage" />
 
             <Row>

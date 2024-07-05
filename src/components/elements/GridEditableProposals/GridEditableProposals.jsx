@@ -80,6 +80,7 @@ export function GridEditableProposals({ items, title }) {
                         onclick={() => handleCardClick(item)}
                         id={item.opportunityId}
                         key={item.opportunityId}
+                        ownerview
                       />
                     ))}
                   </GridLayoutContainer>
@@ -104,6 +105,7 @@ export function GridEditableProposals({ items, title }) {
                   onClick={handlePaginationClick}
                 />
               )}
+
             </>
           )}
         </>

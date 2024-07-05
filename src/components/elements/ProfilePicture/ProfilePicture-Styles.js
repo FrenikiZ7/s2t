@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components';
+import { IconContainer } from '../IconDiv/IconDiv-Styles';
+import { AuthIconFileContainer } from '../AuthElements/AuthIconFile/AuthIconFile-Styles';
 
 export const ProfilePictureContainer = styled.div`
   ${({ theme }) => css`
@@ -37,7 +39,6 @@ export const ProfilePictureElement = styled.div`
 export const Picture = styled.img`
   ${({ theme }) => css`
       border-radius: 50%;
-
       width: 100%;
       height: 100%;
 
@@ -47,47 +48,73 @@ export const Picture = styled.img`
 
 export const Badge = styled.div`
   ${({ theme }) => css`
-      border-radius: 50%; 
-      box-sizing: border-box;
-
-      display: flex;
-      align-items: end;
-      justify-content: flex-end;
-
-      width: 100%;
-      height: 100%;
+      border-radius: 50%;    
+      width: 40px;
+      height: 40px;
 
       position: absolute;
-      top: 0px;
-      left: 0px;
-      bottom: 0px;
-      right: 0px;
+      bottom: 20px;
+      right: 30px;
+
+      @media ${theme.medias.smallpc} {
+        bottom: 13px;
+      }
+
+
+      @media ${theme.medias.mobile} {
+        width: 30px;
+        height: 30px;
+        bottom: 10px;
+        right: 20px;   
+      }
+
+      @media ${theme.medias.smallmobile} {
+        width: 25px;
+        height: 25px;
+        bottom: 7px;
+        right: 15px;  
+      }
+
+      ${AuthIconFileContainer} {
+        top: 0;
+        border-radius: 50%; 
+
+
+
+        & ${IconContainer} {
+          padding: ${theme.spacings.xsmall};
+          border-radius: 50%; 
+
+          background: rgba(0,0,0,0.7);
+
+          &:hover {
+            background: rgba(0,0,0,1);
+          }
+        }
+      }
+
+    
 
       > img {
         height: 30px;
         width: 30px;
-        margin-right: 37px;
-        margin-bottom: 20px;
+       
 
         @media ${theme.medias.smallpc} {
           height: 25px;
           width: 25px;
-          margin-right: 32px;
-          margin-bottom: 18px;
+
        }
 
         @media ${theme.medias.mobile} {
           height: 20px;
           width: 20px;
-          margin-right: 21px;
-          margin-bottom: 13px;
+         
        }
 
         @media ${theme.medias.smallmobile} {
           height: 15px;
           width: 15px;
-          margin-right: 22px;
-          margin-bottom: 12px;
         }
       }
 

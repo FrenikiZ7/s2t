@@ -2,11 +2,21 @@ import styled, { css } from 'styled-components';
 import { SwiperSlide } from 'swiper/react';
 import { slideInLeft } from '../../../styles/animations';
 import { IconContainer } from '../IconDiv/IconDiv-Styles';
+import { AuthIconFileContainer } from '../AuthElements/AuthIconFile/AuthIconFile-Styles';
+import { AuthFormContainer } from '../AuthElements/AuthForm/AuthForm-Styles';
 
 export const ProfileSlideWrapper = styled.div`
   ${({ theme }) => css`
+   & ${AuthFormContainer} {
+
+      & ${IconContainer}{
+        & svg {
+          width: 40%;
+        }
+      }
       
-  `}
+    }
+  `}  
 `;
 
 export const ProfileSlideElement = styled.div`
@@ -157,7 +167,6 @@ export const BottomIconsWrapper = styled.div`
       height: 25px;
      }
     }
-  }
 
  `}
 `;

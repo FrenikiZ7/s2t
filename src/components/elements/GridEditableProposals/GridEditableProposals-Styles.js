@@ -19,7 +19,6 @@ export const GridEditableProposalsContainer = styled.div`
    ${GridLayoutContainer} {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     animation: ${fadeIn} 500ms;
-
     @media ${theme.medias.smallpc} {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }

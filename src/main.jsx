@@ -51,6 +51,8 @@ import { PlayerContacts } from './layout/Dashboards/Components/PlayerComponents/
 import { ClubHome } from './layout/Dashboards/Components/ClubComponents/ClubHome/ClubHome';
 import { MyOpportunities } from './layout/Dashboards/Components/MyOpportunities/MyOpportunities';
 import { MySquad } from './layout/Dashboards/Components/MySquad/MySquad';
+import { UniversityProfile } from './layout/Dashboards/Components/UniversityComponents/UniversityProfile/UniversityProfile';
+import { UniversityHome } from './layout/Dashboards/Components/UniversityComponents/UniversityHome/UniversityHome';
 
 export function Main() {
   const { username } = useParams();
@@ -125,8 +127,8 @@ export function Main() {
                   </Route>
 
                   <Route path="/university-dashboard/" element={<UniversityDashboard />}>
-                    <Route path="" element={<ClubHome />} />
-                    <Route path="profile" element={<ClubProfile />} />
+                    <Route path="" element={<UniversityHome />} />
+                    <Route path="profile" element={<UniversityProfile />} />
                     <Route path="my-squad" element={<MySquad />} />
                     <Route path="profile-edit" element={<EditProfile type="university" />} />
                     <Route path="opportunities" element={<MySquad />} />

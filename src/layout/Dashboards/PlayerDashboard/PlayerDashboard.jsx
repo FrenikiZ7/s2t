@@ -32,10 +32,11 @@ export function PlayerDashboard() {
   return (
     <Styled.PlayerDashboardContainer>
 
-      <ProfileBanner backgroundimagesrc={playerState.profile.banner.backgroundImageSrc}>
+      <ProfileBanner backgroundimagesrc={playerState.profile.banner.backgroundImageSrc} ownerview>
         <ProfilePicture
           imagesrc={playerState.profile.banner.profileImageSrc}
           badge={playerState.profile.banner.badge}
+          ownerview
         />
 
         <ProfileName name={playerState.profile.banner.name} />

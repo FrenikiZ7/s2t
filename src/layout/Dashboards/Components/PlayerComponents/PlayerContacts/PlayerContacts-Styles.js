@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { VerticalMiniSlideContainer } from '../../../../../components/elements/VerticalMiniSlide/VerticalMiniSlide-Styles';
 import { VerticalLongSlideWrapper } from '../../../../../components/elements/VerticalLongSlide/VerticalLongSlide-Styles';
 
 export const PlayerContactsContainer = styled.article`
@@ -26,6 +25,7 @@ export const PlayerContactsContainer = styled.article`
     }
 
 
+     //Estilos do placeholder
     > section {
       width: 100%;
       height: 1000px;
@@ -34,7 +34,6 @@ export const PlayerContactsContainer = styled.article`
       @media ${theme.medias.tablet} {
         display: none;
       }
-
     }
   `}
 `;

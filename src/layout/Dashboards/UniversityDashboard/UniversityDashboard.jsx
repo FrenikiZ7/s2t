@@ -35,10 +35,11 @@ export function UniversityDashboard() {
   return (
     <Styled.UniversityDashboardContainer>
 
-      <ProfileBanner backgroundimagesrc={universityState.profile.banner.backgroundImageSrc}>
+      <ProfileBanner backgroundimagesrc={universityState.profile.banner.backgroundImageSrc} ownerview>
         <ProfilePicture
           imagesrc={universityState.profile.banner.profileImageSrc}
           badge={universityState.profile.banner.badge}
+          ownerview
         />
         <ProfileName name={universityState.profile.banner.name} />
         <Row>

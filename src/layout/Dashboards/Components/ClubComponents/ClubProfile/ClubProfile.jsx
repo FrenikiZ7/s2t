@@ -21,7 +21,6 @@ export function ClubProfile() {
 
       <Row>
         <Historic items={clubState.profile.leagues} title="Competições em disputa" />
-        {/* <Historic items={clubState.profile.studies} title="Histórico acadêmico" /> */}
       </Row>
 
       <TextSlide items={clubState.profile.championships} title="Títulos:" />

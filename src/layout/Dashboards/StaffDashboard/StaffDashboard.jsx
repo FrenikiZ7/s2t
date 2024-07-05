@@ -35,6 +35,7 @@ export function StaffDashboard() {
         <ProfilePicture
           imagesrc={playerState.profile.banner.profileImageSrc}
           badge={playerState.profile.banner.badge}
+          ownerview
         />
 
         <ProfileName name={playerState.profile.banner.name} />

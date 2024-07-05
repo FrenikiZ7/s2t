@@ -1,4 +1,3 @@
-import Prop from 'prop-types';
 import React, { useContext } from 'react';
 import * as Styled from './ClubHome-Styles';
 import { VerticalMiniSlide } from '../../../../../components/elements/VerticalMiniSlide/VerticalMiniSlide';
@@ -39,6 +38,3 @@ export function ClubHome() {
     </Styled.ClubHomeContainer>
   );
 }
-
-ClubHome.propTypes = {
-};

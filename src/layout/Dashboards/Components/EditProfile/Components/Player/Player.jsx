@@ -215,8 +215,6 @@ export function Player() {
 
             <AuthRadio title="Você possui algum empresário?" options={managerOptions} groupname="managerOptions" />
 
-            <AuthFile text="Escolha sua foto de perfil (Recomendado: Imagens 1:1)" id="profileImage" />
-
             <AuthFile text="Escolha seu banner (Recomendado: Imagens 16:9)" id="bannerImage" />
 
             <Subtitle text="Sua história esportiva" size={theme.sizes.xlarge} />

@@ -1,8 +1,5 @@
 import Prop from 'prop-types';
 import React, { useState } from 'react';
-import { StarOutline } from '@styled-icons/evaicons-outline/StarOutline';
-import { Star } from '@styled-icons/evaicons-solid';
-import { FavoriteBorder } from '@styled-icons/material-outlined/FavoriteBorder';
 import { Favorite } from '@styled-icons/material-outlined/Favorite';
 
 import * as Styled from './FavoriteIcon-Styles';

@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
 import { Settings as SettingsIcon } from '@styled-icons/fluentui-system-filled';
 import * as Styled from './ClubDashboard-Styles';
-import { PlayerContext } from '../../../contexts/userContext/PlayerProvider/PlayerContext';
 import { theme } from '../../../styles/theme';
 
 import { ProfilePicture } from '../../../components/elements/ProfilePicture/ProfilePicture';
@@ -35,10 +34,11 @@ export function ClubDashboard() {
   return (
     <Styled.ClubDashboardContainer>
 
-      <ProfileBanner backgroundimagesrc={clubState.profile.banner.backgroundImageSrc}>
+      <ProfileBanner backgroundimagesrc={clubState.profile.banner.backgroundImageSrc} ownerview>
         <ProfilePicture
           imagesrc={clubState.profile.banner.profileImageSrc}
           badge={clubState.profile.banner.badge}
+          ownerview
         />
         <ProfileName name={clubState.profile.banner.name} />
         <Row>
@@ -63,6 +63,7 @@ export function ClubDashboard() {
           )}
 
         </Row>
+
       </ProfileBanner>
 
       {/* Aparece apenas em telas maiores que 768px */}
