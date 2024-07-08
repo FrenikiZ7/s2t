@@ -23,6 +23,10 @@ export const ProfilePictureElement = styled.div`
         height: 200px;
       } 
 
+      @media ${theme.medias.tablet} {
+        width: 150px;
+        height: 150px;
+      } 
 
       @media ${theme.medias.mobile} {
         width: 130px;
@@ -58,6 +62,13 @@ export const Badge = styled.div`
 
       @media ${theme.medias.smallpc} {
         bottom: 13px;
+      }
+
+      @media ${theme.medias.tablet} {
+        width: 35px;
+        height: 35px;
+        bottom: 10px;
+        right: 20px;   
       }
 
 
