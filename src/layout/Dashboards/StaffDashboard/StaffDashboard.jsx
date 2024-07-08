@@ -15,12 +15,12 @@ import { MobileMenu } from '../../../components/MobileMenu/MobileMenu';
 import { FloatingIcon } from '../../../components/elements/FloatingIcon/FloatingIcon';
 import { ProfileBanner } from '../../../components/elements/ProfileBanner/ProfileBanner';
 import { Column } from '../../../components/ColumnContainer/Column';
-import { PlayerNav } from '../../../components/ProfileHeader/Components/PlayerNav/PlayerNav';
-import { PlayerMenu } from '../../../components/MobileMenu/Components/PlayerMenu/PlayerMenu';
 import { IconDiv } from '../../../components/elements/IconDiv/IconDiv';
 import { Row } from '../../../components/RowContainer/Row';
 import { FloatingMenu } from '../../../components/FloatingMenu/FloatingMenu';
 import { SettingsMenu } from '../../../components/FloatingMenu/Components/SettingsMenu/SettingsMenu';
+import { StaffNav } from '../../../components/ProfileHeader/Components/StaffNav/StaffNav';
+import { StaffMenu } from '../../../components/MobileMenu/Components/StaffMenu/PlayerMenu';
 
 export function StaffDashboard() {
   const playerContext = useContext(PlayerContext);
@@ -66,12 +66,12 @@ export function StaffDashboard() {
       </ProfileBanner>
 
       <ProfileHeader>
-        <PlayerNav />
+        <StaffNav />
       </ProfileHeader>
 
       {menuVisibility ? (
         <MobileMenu onclick={() => setMenuVisibility(!menuVisibility)}>
-          <PlayerMenu />
+          <StaffMenu />
         </MobileMenu>
       ) : (
         <FloatingIcon name="Menu" onclick={() => setMenuVisibility(!menuVisibility)}>

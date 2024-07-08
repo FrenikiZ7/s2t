@@ -7,7 +7,7 @@ import { Button } from '../Button/Button';
 import { Text } from '../Text/Text';
 
 export function Popup({
-  isopen, onclick, firstoption, firstpath, secondoption, secondpath, title, subtitle,
+  isopen, onfirstclick, firstoption, firstpath, secondoption, secondpath, onsecondclick, title, subtitle,
 }) {
   return (
     <>
@@ -30,7 +30,7 @@ export function Popup({
               texthover={theme.colors.black}
               border={theme.colors.black}
               borderhover={theme.colors.black}
-              onclick={onclick}
+              onclick={onfirstclick}
             />
           )}
 
@@ -44,7 +44,7 @@ export function Popup({
               texthover={theme.colors.black}
               border={theme.colors.black}
               borderhover={theme.colors.black}
-              onclick={onclick}
+              onclick={onsecondclick}
             />
           )}
         </Row>
@@ -57,7 +57,8 @@ Popup.propTypes = {
   title: Prop.string,
   subtitle: Prop.string,
   isopen: Prop.bool,
-  onclick: Prop.func,
+  onfirstclick: Prop.func,
+  onsecondclick: Prop.func,
   firstoption: Prop.string,
   firstpath: Prop.string,
   secondoption: Prop.string,

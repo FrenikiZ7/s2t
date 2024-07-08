@@ -6,7 +6,7 @@ export const ButtonElement = styled.button`
   }) => css`
     color: ${textcolor};
     background: ${gradient ? `linear-gradient(to right, ${theme.colors.lightsecondary}, ${theme.colors.lightprimary})` : `${bgcolor}`};
-    box-shadow: ${active ? `0px 0px 5px 1px ${bghover}` : 'none'};
+    box-shadow: ${active ? `0px 0px 5px 1px ${borderhover}` : 'none'};
     border: 1px solid ${border};
     border-radius: 10px;
 

@@ -14,7 +14,7 @@ export const StoreContainer = styled.article`
     rgba(0, 0, 0, 1)
     ),
     url('/assets/images/backgrounds/slider-bg-1.png');
-
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;

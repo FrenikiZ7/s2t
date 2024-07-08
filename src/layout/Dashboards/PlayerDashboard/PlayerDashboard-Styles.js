@@ -19,6 +19,7 @@ export const PlayerDashboardContainer = styled.section`
         width: 100%;
       }
     }
+    
 
     
   `}

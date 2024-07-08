@@ -31,6 +31,7 @@ export function VerticalLongSlide({ items, title, type }) {
           }}
         >
 
+          {/* Necessário mudanças. Está assim apenas para renderizar algo visual */}
           {normalizedType === 'contact' && (
           <>
             <SwiperSlide>

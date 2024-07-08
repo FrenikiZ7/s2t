@@ -1,9 +1,7 @@
 import styled, { css } from 'styled-components';
 import { RowContainer } from '../../RowContainer/Row-Styles.js';
 import { fadeIn, slideIn } from '../../../styles/animations.js';
-import { Button } from '../Button/Button.jsx';
 import { ButtonElement } from '../Button/Button-Styles.js';
-import { SubtitleElement } from '../Subtitle/Subtitle-Styles.js';
 import { TextElement } from '../Text/Text-Styles.js';
 
 export const PopupOverlay = styled.div`
@@ -12,8 +10,8 @@ export const PopupOverlay = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.8);
   z-index: 999; 
   `}
@@ -22,7 +20,7 @@ export const PopupOverlay = styled.div`
 export const PopupElement = styled.dialog`
   ${({ theme }) => css`
      animation: ${slideIn} 500ms ease-out;
-     background: transparent;
+     background: rgba(0,0,0,0.9);
      backdrop-filter: blur(10px);
      padding: ${theme.spacings.medium};
      border-radius: 15px;
@@ -52,7 +50,7 @@ export const PopupElement = styled.dialog`
       min-width: 180px;
 
       @media ${theme.medias.mobile} {
-        min-width: 0px;
+        min-width: 70px;
       }
      }
 

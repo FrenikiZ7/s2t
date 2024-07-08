@@ -53,6 +53,12 @@ import { MyOpportunities } from './layout/Dashboards/Components/MyOpportunities/
 import { MySquad } from './layout/Dashboards/Components/MySquad/MySquad';
 import { UniversityProfile } from './layout/Dashboards/Components/UniversityComponents/UniversityProfile/UniversityProfile';
 import { UniversityHome } from './layout/Dashboards/Components/UniversityComponents/UniversityHome/UniversityHome';
+import { StaffFavorites } from './layout/Dashboards/Components/StaffComponents/StaffFavorites/StaffFavorites';
+import { StaffProfile } from './layout/Dashboards/Components/StaffComponents/StaffProfile/StaffProfile';
+import { StaffHome } from './layout/Dashboards/Components/StaffComponents/StaffHome/StaffHome';
+import { Popup } from './components/elements/Popup/Popup';
+import { Logout } from './layout/Logout/Logout';
+import { StaffDashboard } from './layout/Dashboards/StaffDashboard/StaffDashboard';
 
 export function Main() {
   const { username } = useParams();
@@ -72,7 +78,12 @@ export function Main() {
                 <GlobalStyles />
 
                 <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path="/" element={<Home islogged />} />
+                  <Route path="/logout" element={<Logout />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/forgot-password" element={<ForgotPassword />} />
+                  <Route path="/reset-password" element={<ResetPassword />} />
 
                   {/* Rota do dashboard para jogadores + subrotas dele */}
                   <Route path="/player-dashboard/" element={<PlayerDashboard />}>
@@ -91,14 +102,14 @@ export function Main() {
                     <Route path="s2t+" element={<S2TPlus />} />
                   </Route>
 
-                  <Route path="/staff-dashboard/" element={<PlayerDashboard />}>
-                    <Route path="" element={<PlayerHome />} />
-                    <Route path="profile" element={<PlayerProfile />} />
+                  <Route path="/staff-dashboard/" element={<StaffDashboard />}>
+                    <Route path="" element={<StaffHome />} />
+                    <Route path="profile" element={<StaffProfile />} />
                     <Route path="profile-edit" element={<EditProfile type="player" />} />
                     <Route path="opportunities" element={<Opportunities />} />
                     <Route path="scouts" element={<Scouts />} />
                     <Route path="clubs" element={<Clubs />} />
-                    <Route path="favorites" element={<PlayerFavorites />} />
+                    <Route path="favorites" element={<StaffFavorites />} />
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="events" element={<Events />} />
                     <Route path="friends" element={<Friends friends={playerData.friends} />} />
@@ -150,14 +161,6 @@ export function Main() {
                     <Route path="opportunities" element={<Opportunities />} />
                     <Route path="friends" element={<Friends friends={clubData.friends} />} />
                   </Route>
-
-                  <Route path="/register" element={<Register />} />
-
-                  <Route path="/register/scout" element={<p>scout</p>} />
-
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/forgot-password" element={<ForgotPassword />} />
-                  <Route path="/reset-password" element={<ResetPassword />} />
 
                 </Routes>
 

@@ -9,7 +9,7 @@ import { NavContainer } from '../../components/Nav/Nav-Styles.js';
 import { IconContainer } from '../../components/elements/IconDiv/IconDiv-Styles.js';
 import { HeaderContainer } from '../../components/Header/Header-Styles.js';
 import { GridLayoutContainer } from '../../components/GridLayout/GridLayout-Styles.js';
-import { AuthDropdownContainer } from '../../components/elements/AuthElements/AuthDropdown/AuthDropdown-Styles.js';
+import { AuthDropdownContainer, DropdownButton, DropdownItem } from '../../components/elements/AuthElements/AuthDropdown/AuthDropdown-Styles.js';
 
 export const HomePage = styled.main`
   ${({ theme }) => css`
@@ -61,6 +61,7 @@ export const HomePage = styled.main`
 
   ${IconContainer} {
     display: none;
+    animation: none;
 
     @media ${theme.medias.tablet} {
       display: flex;
@@ -103,8 +104,17 @@ export const HomePage = styled.main`
   }
 
   ${AuthDropdownContainer} {
-    min-width: 200px;
+    min-width: 180px;
+    padding: ${theme.spacings.xxsmall};
+  }
+
+  ${DropdownButton} {
     padding: ${theme.spacings.xsmall};
+  }
+
+  ${DropdownItem} {
+    padding: ${theme.spacings.xsmall};
+
   }
 
  

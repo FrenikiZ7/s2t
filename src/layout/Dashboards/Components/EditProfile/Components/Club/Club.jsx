@@ -92,8 +92,6 @@ export function Club() {
               placeholder="Atual técnico ou treinador do clube"
             />
 
-            <AuthFile text="Escolha seu banner (Recomendado: Imagens 16:9)" id="bannerImage" />
-
             <Row>
               <AuthHistoric title="Competições em disputa" id="competitions" inputtitle="Competição" placeholder="Nome da competição" isactual />
               <AuthAchievement title="Histórico de títulos e prêmios" id="titles" inputtitle="Competição / Prêmio" placeholder="Nome da competição ou prêmio" />

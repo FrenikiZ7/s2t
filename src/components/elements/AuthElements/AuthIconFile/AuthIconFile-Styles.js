@@ -9,6 +9,7 @@ export const AuthIconFileContainer = styled.label`
     position: absolute; 
     
     ${IconContainer} {
+      animation: none;
       position: absolute;  
       width: 100%;
       height: 100%;

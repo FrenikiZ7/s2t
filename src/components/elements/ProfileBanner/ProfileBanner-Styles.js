@@ -5,6 +5,7 @@ import { RowContainer } from '../../RowContainer/Row-Styles.js';
 import { IconContainer } from '../IconDiv/IconDiv-Styles.js';
 import { AuthIconFileContainer } from '../AuthElements/AuthIconFile/AuthIconFile-Styles.js';
 import { AuthFormContainer } from '../AuthElements/AuthForm/AuthForm-Styles.js';
+import { NavContainer } from '../../Nav/Nav-Styles.js';
 
 export const ProfileBannerWrapper = styled.div`
   ${({ theme, backgroundimagesrc }) => css`
@@ -25,6 +26,12 @@ export const ProfileBannerWrapper = styled.div`
     justify-content: center;
     align-items: center;
     gap: ${theme.spacings.small};
+    
+    > ${NavContainer} {
+      height: auto;
+      position: absolute;
+      top: 0px;
+    }
 
     & > ${AuthFormContainer} {
       width: 40px;

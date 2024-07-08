@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Close as CloseIcon, Menu } from '@styled-icons/material-outlined';
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
+import Prop from 'prop-types';
 import * as Styled from './Home-Styles';
 import { StyledLink } from '../../components/elements/StyledLink/StyledLink';
 import { theme } from '../../styles/theme';
@@ -23,7 +24,7 @@ import { VerticalSoloSlide } from '../../components/elements/VerticalSoloSlide/V
 import { VerticalVideoSlide } from '../../components/elements/VerticalVideoSlide/VerticalVideoSlide';
 import { AuthDropdown } from '../../components/elements/AuthElements/AuthDropdown/AuthDropdown';
 
-export function Home() {
+export function Home({ islogged }) {
   const s2tContext = useContext(S2tContext);
   const { s2tState, s2tDispatch } = s2tContext;
 
@@ -52,16 +53,6 @@ export function Home() {
         ) }
 
         <Nav>
-          {/* <Button
-            path="/register"
-            text="Escolha o idioma"
-            bgcolor={theme.colors.darkgray}
-            bghover={theme.colors.gray}
-            textcolor={theme.colors.lightgray}
-            texthover={theme.colors.white}
-            border={theme.colors.darkgray}
-            borderhover={theme.colors.gray}
-          /> */}
 
           <AuthDropdown
             id="languageOptions"
@@ -69,120 +60,122 @@ export function Home() {
             options={languageOptions}
           />
 
-          <Button
-            path="/register"
-            text="Criar uma conta"
-            bgcolor={theme.colors.lightprimary}
-            bghover={theme.colors.primary}
-            textcolor={theme.colors.black}
-            texthover={theme.colors.black}
-            border={theme.colors.lightprimary}
-            borderhover={theme.colors.primary}
-          />
+          {islogged ? (
+            <>
 
-          <Button
-            path="/login"
-            text="Entrar"
-            bgcolor={theme.colors.lightprimary}
-            bghover={theme.colors.primary}
-            textcolor={theme.colors.black}
-            texthover={theme.colors.black}
-            border={theme.colors.lightprimary}
-            borderhover={theme.colors.primary}
+              <Button
+                path="/"
+                text="Página principal"
+                bgcolor={theme.colors.mediumblack}
+                bghover={theme.colors.black}
+                textcolor={theme.colors.primary}
+                texthover={theme.colors.primary}
+                border={theme.colors.primary}
+                borderhover={theme.colors.primary}
+                active
+              />
 
-          />
+              <Button
+                path="/player-dashboard"
+                text="Minha área"
+                bgcolor={theme.colors.mediumblack}
+                bghover={theme.colors.mediumblack}
+                textcolor={theme.colors.white}
+                texthover={theme.colors.primary}
+                border={theme.colors.white}
+                borderhover={theme.colors.primary}
+              />
+            </>
+          )
+            : (
+              <>
+                <Button
+                  path="/register"
+                  text="Criar uma conta"
+                  bgcolor={theme.colors.lightprimary}
+                  bghover={theme.colors.primary}
+                  textcolor={theme.colors.black}
+                  texthover={theme.colors.black}
+                  border={theme.colors.lightprimary}
+                  borderhover={theme.colors.primary}
+                />
 
-          <Button
-            path="/reset-password"
-            text="Resetar senha"
-            bgcolor={theme.colors.lightprimary}
-            bghover={theme.colors.primary}
-            textcolor={theme.colors.black}
-            texthover={theme.colors.black}
-            border={theme.colors.lightprimary}
-            borderhover={theme.colors.primary}
-          />
+                <Button
+                  path="/login"
+                  text="Entrar"
+                  bgcolor={theme.colors.lightprimary}
+                  bghover={theme.colors.primary}
+                  textcolor={theme.colors.black}
+                  texthover={theme.colors.black}
+                  border={theme.colors.lightprimary}
+                  borderhover={theme.colors.primary}
+                />
+              </>
+            )}
 
-          <Button
-            text="Dashboard - Jogador"
-            path="/player-dashboard"
-            bgcolor={theme.colors.lightprimary}
-            bghover={theme.colors.primary}
-            textcolor={theme.colors.black}
-            texthover={theme.colors.black}
-            border={theme.colors.lightprimary}
-            borderhover={theme.colors.primary}
-          />
-
-          <Button
-            text="Dashboard - Clube"
-            path="/club-dashboard"
-            bgcolor={theme.colors.lightprimary}
-            bghover={theme.colors.primary}
-            textcolor={theme.colors.black}
-            texthover={theme.colors.black}
-            border={theme.colors.lightprimary}
-            borderhover={theme.colors.primary}
-          />
-
-          <Button
-            text="Dashboard - Universidade"
-            path="/university-dashboard"
-            bgcolor={theme.colors.lightprimary}
-            bghover={theme.colors.primary}
-            textcolor={theme.colors.black}
-            texthover={theme.colors.black}
-            border={theme.colors.lightprimary}
-            borderhover={theme.colors.primary}
-          />
-
-          <Button
-            text="Dashboard - Público"
-            path="/user/SPFC"
-            bgcolor={theme.colors.lightprimary}
-            bghover={theme.colors.primary}
-            textcolor={theme.colors.black}
-            texthover={theme.colors.black}
-            border={theme.colors.lightprimary}
-            borderhover={theme.colors.primary}
-          />
         </Nav>
       </Header>
 
       {menuVisibility && (
       <MobileNav>
-        <Button
-          path="/register"
-          text="Escolha o idioma"
-          bgcolor={theme.colors.lightprimary}
-          bghover={theme.colors.primary}
-          textcolor={theme.colors.black}
-          texthover={theme.colors.black}
-          border={theme.colors.lightprimary}
-          borderhover={theme.colors.primary}
+        <AuthDropdown
+          id="languageOptions"
+          placeholder="Escolha o idioma"
+          options={languageOptions}
         />
 
-        <Button
-          path="/register"
-          text="Criar uma conta"
-          bgcolor={theme.colors.lightprimary}
-          bghover={theme.colors.primary}
-          textcolor={theme.colors.black}
-          texthover={theme.colors.black}
-          border={theme.colors.lightprimary}
-          borderhover={theme.colors.primary}
-        />
+          {islogged ? (
+            <>
 
-        <Button
-          path="/login"
-          text="Entrar"
-          bgcolor={theme.colors.lightprimary}
-          bghover={theme.colors.primary}
-          textcolor={theme.colors.black}
-          texthover={theme.colors.black}
-          border={theme.colors.lightprimary}
-          borderhover={theme.colors.primary}
-        />
+              <Button
+                path="/"
+                text="Página principal"
+                bgcolor={theme.colors.mediumblack}
+                bghover={theme.colors.black}
+                textcolor={theme.colors.primary}
+                texthover={theme.colors.primary}
+                border={theme.colors.primary}
+                borderhover={theme.colors.primary}
+                active
+              />
+
+              <Button
+                path="/player-dashboard"
+                text="Minha área"
+                bgcolor={theme.colors.mediumblack}
+                bghover={theme.colors.mediumblack}
+                textcolor={theme.colors.white}
+                texthover={theme.colors.primary}
+                border={theme.colors.white}
+                borderhover={theme.colors.primary}
+              />
+            </>
+          )
+            : (
+              <>
+                <Button
+                  path="/register"
+                  text="Criar uma conta"
+                  bgcolor={theme.colors.lightprimary}
+                  bghover={theme.colors.primary}
+                  textcolor={theme.colors.black}
+                  texthover={theme.colors.black}
+                  border={theme.colors.lightprimary}
+                  borderhover={theme.colors.primary}
+                />
+
+                <Button
+                  path="/login"
+                  text="Entrar"
+                  bgcolor={theme.colors.lightprimary}
+                  bghover={theme.colors.primary}
+                  textcolor={theme.colors.black}
+                  texthover={theme.colors.black}
+                  border={theme.colors.lightprimary}
+                  borderhover={theme.colors.primary}
+                />
+              </>
+            )}
 
       </MobileNav>
       )}
@@ -282,3 +275,7 @@ export function Home() {
     </Styled.HomePage>
   );
 }
+
+Home.propTypes = {
+  islogged: Prop.bool,
+};

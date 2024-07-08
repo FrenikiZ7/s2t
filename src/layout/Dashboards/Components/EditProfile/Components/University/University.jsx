@@ -83,8 +83,6 @@ export function University() {
               placeholder="Atual treinador da universidade"
             />
 
-            <AuthFile text="Escolha seu banner (Recomendado: Imagens 16:9)" id="bannerImage" />
-
             <Row>
               <AuthAchievement title="Histórico de títulos e prêmios" id="titles" inputtitle="Competição / Prêmio" placeholder="Nome da competição ou prêmio" />
             </Row>
