@@ -9,7 +9,7 @@ export const FavoriteIconElement = styled.div`
   ${({ theme, isfavorite }) => css`
   ${IconContainer} {
     width: 30px;
-     animation: ${isfavorite ? spin360Right : spin360Left} 300ms;
+    animation: ${isfavorite ? spin360Right : spin360Left} 300ms;
 
     @media ${theme.medias.mobile} {
       width: 25px;
@@ -18,7 +18,6 @@ export const FavoriteIconElement = styled.div`
     > svg {
      color: ${isfavorite ? theme.colors.red : theme.colors.white};
      padding: 2px;
-
     }
   }
   `}

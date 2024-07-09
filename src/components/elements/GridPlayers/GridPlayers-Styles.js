@@ -13,10 +13,6 @@ export const GridPlayersContainer = styled.div`
    flex-direction: column;
    gap: ${theme.spacings.medium};
 
-   & ${IconContainer} {
-    animation: none;
-   }
-
    > ${GridLayoutContainer} {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     animation: ${fadeIn} 500ms;

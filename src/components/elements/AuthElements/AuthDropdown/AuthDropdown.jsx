@@ -17,7 +17,7 @@ export function AuthDropdown({
   };
 
   const handleItemClick = (option) => {
-    onDropdownChange(option);
+    onDropdownChange(option.value);
     setDropdownText(option.text);
   };
 

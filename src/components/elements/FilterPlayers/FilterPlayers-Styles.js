@@ -11,6 +11,10 @@ export const FilterPlayersContainer = styled.div`
     width: 100%;
     border-radius: 12px;
 
+    & ${IconContainer} {
+      animation: none;
+    }
+
 
     & ${DropdownButton}, ${DropdownItem} {
       @media ${theme.medias.mobile} {

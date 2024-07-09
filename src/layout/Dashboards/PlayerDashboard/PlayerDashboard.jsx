@@ -61,7 +61,6 @@ export function PlayerDashboard() {
             <SettingsMenu />
           </FloatingMenu>
           )}
-
         </Row>
 
       </ProfileBanner>

@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { slideIn } from '../../../styles/animations';
 import { RowContainer } from '../../RowContainer/Row-Styles.js';
 import { AuthLayoutContainer } from '../AuthElements/AuthLayout/AuthLayout-Styles.js';
+import { DropdownButton } from '../AuthElements/AuthDropdown/AuthDropdown-Styles.js';
 
 export const NewProposalContainer = styled.section`
   ${({ theme }) => css`
@@ -59,5 +60,8 @@ export const NewProposalContainer = styled.section`
         grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
       }
     }
+
+    ${DropdownButton} {
+      padding: 8px;
   `}
 `;
