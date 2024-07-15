@@ -7,7 +7,7 @@ import { ListContainer, ListItem } from '../../../../components/elements/List/Li
 import { SlideElement } from '../../../../components/elements/Slide/Slide-Styles';
 import { slideIn, slideOut } from '../../../../styles/animations';
 
-export const BenefitsClubContainer = styled.section`
+export const BenefitsClubContainer = styled.article`
   ${({ theme }) => css`
  
      text-align: center;

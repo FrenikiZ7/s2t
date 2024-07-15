@@ -37,7 +37,7 @@ export const PublicDashboardContainer = styled.section`
       }
     }
 
-    ${FloatingMenuContainer} {
+    > ${FloatingMenuContainer} {
       display: none;
       flex-direction: column;
       gap: ${theme.spacings.small};

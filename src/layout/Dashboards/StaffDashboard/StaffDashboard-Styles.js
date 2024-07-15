@@ -36,7 +36,7 @@ export const StaffDashboardContainer = styled.section`
       }
     }
 
-    ${FloatingMenuContainer} {
+    > ${FloatingMenuContainer} {
       display: none;
       flex-direction: column;
       gap: ${theme.spacings.small};

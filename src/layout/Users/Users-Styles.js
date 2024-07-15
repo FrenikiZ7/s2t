@@ -4,7 +4,7 @@ import { NavContainer } from '../../components/Nav/Nav-Styles';
 import { IconContainer } from '../../components/elements/IconDiv/IconDiv-Styles';
 import { MobileNavContainer } from '../../components/MobileNav/MobileNav-Styles';
 
-export const BenefitsPage = styled.section`
+export const UsersPage = styled.section`
   ${({ theme }) => css`
 
 
@@ -26,8 +26,8 @@ export const BenefitsPage = styled.section`
   }
 
   ${MobileNavContainer} {
-  position: absolute;
-  top: 80px;
+    position: absolute;
+    top: 80px;
   }
 
   `}

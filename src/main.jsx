@@ -67,6 +67,8 @@ import { Benefits } from './layout/Benefits/Benefits';
 import { BenefitsClub } from './layout/Benefits/Components/BenefitsClub/BenefitsClub';
 import { Investments } from './layout/Benefits/Components/Investments/Investments';
 import { Events as EventsPage } from './layout/Benefits/Components/Events/Events';
+import { Users } from './layout/Users/Users';
+import { PlayerPage } from './layout/Users/Components/Player/PlayerPage';
 
 export function Main() {
   const { username } = useParams();
@@ -92,7 +94,7 @@ export function Main() {
                 <GlobalStyles />
 
                 <Routes>
-                  <Route path="/" element={<Home islogged />} />
+                  <Route path="/" element={<Home />} />
                   <Route path="/logout" element={<Logout />} />
                   <Route path="/register" element={<Register />} />
                   <Route path="/login" element={<Login />} />
@@ -103,6 +105,10 @@ export function Main() {
                     <Route path="club" element={<BenefitsClub />} />
                     <Route path="investments" element={<Investments />} />
                     <Route path="events" element={<EventsPage />} />
+                  </Route>
+
+                  <Route path="/users" element={<Users />}>
+                    <Route path="player" element={<PlayerPage />} />
                   </Route>
 
                   {/* Rota do dashboard para jogadores + subrotas dele */}

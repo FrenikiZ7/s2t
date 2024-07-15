@@ -6,7 +6,7 @@ import { LinkContainer } from '../../../../components/elements/StyledLink/Styled
 import { ListContainer, ListItem } from '../../../../components/elements/List/List-Styles';
 import { slideIn, slideOut } from '../../../../styles/animations';
 
-export const EventsContainer = styled.section`
+export const EventsContainer = styled.article`
   ${({ theme }) => css`
  
      text-align: center;

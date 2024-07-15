@@ -6,11 +6,10 @@ import { LinkContainer } from '../../../../components/elements/StyledLink/Styled
 import { ListContainer, ListItem } from '../../../../components/elements/List/List-Styles';
 import { slideIn, slideOut } from '../../../../styles/animations';
 
-export const InvestmentsContainer = styled.section`
+export const InvestmentsContainer = styled.article`
   ${({ theme }) => css`
  
      text-align: center;
-
      display: flex;
      flex-direction: column;
 
