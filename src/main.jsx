@@ -94,7 +94,7 @@ export function Main() {
                 <GlobalStyles />
 
                 <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path="/" element={<Home islogged />} />
                   <Route path="/logout" element={<Logout />} />
                   <Route path="/register" element={<Register />} />
                   <Route path="/login" element={<Login />} />

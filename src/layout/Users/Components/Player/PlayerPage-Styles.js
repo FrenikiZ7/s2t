@@ -5,6 +5,7 @@ import { GridLayoutContainer } from '../../../../components/GridLayout/GridLayou
 import { SubtitleElement } from '../../../../components/elements/Subtitle/Subtitle-Styles';
 import { BannerSlideWrapper } from '../../../../components/elements/BannerSlide/BannerSlide-Styles';
 import { LinkContainer } from '../../../../components/elements/StyledLink/StyledLink-Styles';
+import { ButtonElement } from '../../../../components/elements/Button/Button-Styles';
 
 export const PlayerPageContainer = styled.article`
   ${({ theme }) => css`
@@ -12,48 +13,38 @@ export const PlayerPageContainer = styled.article`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: ${theme.spacings.medium};
 
-    ${GridLayoutContainer} {
-      width: 50%;
-      padding: ${theme.spacings.medium};
+    width: 100%;
+    height: 100%;
+
+     ${GridLayoutContainer} {
+      width: 70%;
+      padding: ${theme.spacings.small};
       grid-gap: ${theme.spacings.large};
-    }
-
-    ${IconContainer} {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: ${theme.spacings.small};
-      justify-content: center;
-      background: ${theme.colors.darkgray};
-      border-radius: 12px;
-      padding: ${theme.spacings.xlarge};
-
-      > svg {
-        width: 70%;
-      }
-
-      &:hover {
-        box-shadow: 0px 0px 10px 4px ${theme.colors.gray};
-        transform: scale(1.05);
-
-        > svg {
-          transform: none;
-        }
-      }
-
-      ${SubtitleElement} {
-        text-align: center;
-      }
     }
 
 
     ${BannerSlideWrapper} {
-      width: 50%;
+      width: 100%;
+      height: auto;
         & img {
-        width: 100%;
+        width: 70%;
+        border-radius: 12px;
         } 
-      }
+    }
+
+
+    ${ButtonElement} {
+      font-size: ${theme.sizes.huge};
+      padding: ${theme.spacings.small};
+    }
+  `}
+`;
+
+export const Benefits = styled.div`
+  ${({ theme }) => css`
+    width: 100%;
+    height: 100%
   `}
 `;
