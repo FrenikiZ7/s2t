@@ -1,12 +1,11 @@
 import Prop from 'prop-types';
 import React, { useContext, useState } from 'react';
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import * as Styled from './NewProposal-Styles';
 import { Subtitle } from '../Subtitle/Subtitle';
 import { ColumnContainer } from '../../ColumnContainer/Column-Styles';
 import { AuthWrapper } from '../AuthElements/AuthWrapper/AuthWrapper';
-import { AuthContainer } from '../AuthElements/AuthWrapper/AuthWrapper-Styles';
 import { AuthForm } from '../AuthElements/AuthForm/AuthForm';
 import { TextArea } from '../TextArea/TextArea';
 import { AuthInput } from '../AuthElements/AuthInput/AuthInput';
@@ -23,49 +22,33 @@ export function NewProposal({ onclick }) {
   const s2tContext = useContext(S2tContext);
   const { s2tState, s2tDispatch } = s2tContext;
 
-  const [position, setPosition] = useState('');
-  const [league, setLeague] = useState('');
-  const [country, setCountry] = useState('');
-  const [competitiveCategory, setCompetitiveCategory] = useState('');
-  const [minHeight, setMinHeight] = useState();
-  const [minAge, setMinAge] = useState();
-  const [maxAge, setMaxAge] = useState();
-  const [minPayment, setMinPayment] = useState();
-  const [maxPayment, setMaxPayment] = useState();
-  const [disponibilityDate, SetDisponibilityDate] = useState();
-  const [description, setDescription] = useState('');
-  const [requirements, setRequirements] = useState('');
-
-  const proposal = {
-    opportunityId: 12928,
+  const [proposalData, setProposalData] = useState({
+    opportunityId: 0,
     details: {
       from: 'Reducer',
-      date: '01-06-2024',
-      disponibility: '29/05/2024',
-      category: 'Profissional',
-      opportunity: 'Zagueiro',
-      country: 'Alemanha',
-      org: 'Bundesliga',
+      date: '',
+      disponibility: '',
+      category: '',
+      opportunity: '',
+      country: '',
+      org: '',
       age: {
-        minAge: 18,
-        maxAge: 28,
+        minAge: '',
+        maxAge: '',
       },
       payment: {
-        minPayment: 10000,
-        maxPayment: 18000,
+        minPayment: '',
+        maxPayment: '',
+        currency: '',
       },
-      minHeight: '1,70',
+      minHeight: '',
     },
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
-    requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
-  };
-
-  const navigate = useNavigate();
+    description: '',
+    requirements: '',
+  });
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     addProposal(s2tDispatch, proposalData);
-    console.log(proposalData);
   };
 
   const competitiveCategoryOptions = [
@@ -77,20 +60,25 @@ export function NewProposal({ onclick }) {
   ];
 
   const positionsOptions = [
-    { value: 'goleiro', text: 'Goleiro' },
-    { value: 'lateral esquerdo', text: 'Lateral Esquerdo' },
-    { value: 'lateral direito', text: 'Lateral Direito' },
-    { value: 'zagueiro', text: 'Zagueiro' },
-    { value: 'ala', text: 'Ala' },
-    { value: 'primeiro volante', text: 'Primeiro Volante' },
-    { value: 'segundo volante', text: 'Segundo Volante' },
-    { value: 'meio-campista', text: 'Meio-Campista' },
-    { value: 'meia-ofensivo', text: 'Meia Ofensivo' },
-    { value: 'meia-lateral', text: 'Meia Lateral' },
-    { value: 'segundo atacante', text: 'Segundo atacante' },
-    { value: 'ponta esquerda', text: 'Ponta Esquerda' },
-    { value: 'ponta direita', text: 'Ponta Direito' },
-    { value: 'centroavante', text: 'Centroavante' },
+    { value: 'goalkeeper', text: 'Goleiro' },
+    { value: 'left-back', text: 'Lateral Esquerdo' },
+    { value: 'right-back', text: 'Lateral Direito' },
+    { value: 'center-back', text: 'Zagueiro' },
+    { value: 'wing-back', text: 'Ala' },
+    { value: 'defensive midfielder', text: 'Primeiro Volante' },
+    { value: 'central midfielder', text: 'Meio-Campista' },
+    { value: 'attacking midfielder', text: 'Meia Ofensivo' },
+    { value: 'wide midfielder', text: 'Meia Lateral' },
+    { value: 'second striker', text: 'Segundo atacante' },
+    { value: 'left winger', text: 'Ponta Esquerda' },
+    { value: 'right winger', text: 'Ponta Direito' },
+    { value: 'center forward', text: 'Centroavante' },
+  ];
+
+  const currencyOptions = [
+    { value: 'R$', text: 'Real' },
+    { value: '$', text: 'Dolar (Americano)' },
+    { value: '€', text: 'Euro' },
   ];
 
   return (
@@ -114,8 +102,8 @@ export function NewProposal({ onclick }) {
               id="league_input"
               placeholder="Para qual liga é a oportunidade?"
               title="Liga"
-              value={league}
-              onchange={(e) => setLeague(e.target.value)}
+              value={proposalData.details.org}
+              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, org: e.target.value } }))}
               required
             />
 
@@ -126,16 +114,17 @@ export function NewProposal({ onclick }) {
               placeholder="Para qual país é a oportunidade?"
               title="País"
               required
-              value={league}
-              onchange={(e) => setLeague(e.target.value)}
+              value={proposalData.details.country}
+              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, country: e.target.value } }))}
             />
 
             <AuthDropdown
               title="Para qual posição é a oportunidade"
               placeholder="Escolha a posição"
               id="position"
+              required
               options={positionsOptions}
-              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, position: option }))}
+              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, opportunity: option.text } }))}
             />
 
             <AuthDropdown
@@ -143,7 +132,7 @@ export function NewProposal({ onclick }) {
               id="competitiveCategory"
               placeholder="Escolha a categoria"
               options={competitiveCategoryOptions}
-              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, competitiveCategory: option }))}
+              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, category: option.text } }))}
               required
             />
 
@@ -152,8 +141,8 @@ export function NewProposal({ onclick }) {
               name="disponibility_input"
               id="disponibility_input"
               title="Qual a data de disponibilidade da oportunidade?"
-              value={league}
-              onchange={(e) => setLeague(e.target.value)}
+              value={proposalData.details.disponibility}
+              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, disponibility: e.target.value } }))}
             />
 
             <AuthInput
@@ -162,8 +151,8 @@ export function NewProposal({ onclick }) {
               id="minimumHeight_input"
               placeholder="Qual altura mínima para se candidatar?"
               title="Altura mínima"
-              value={league}
-              onchange={(e) => setLeague(e.target.value)}
+              value={proposalData.details.minHeight}
+              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, minHeight: e.target.value } }))}
             />
 
             <AuthInput
@@ -172,8 +161,8 @@ export function NewProposal({ onclick }) {
               id="minimumAge_input"
               placeholder="Qual a idade mínima para se candidatar? (Em anos)"
               title="Idade Mínima"
-              value={league}
-              onchange={(e) => setLeague(e.target.value)}
+              value={proposalData.details.age.minAge}
+              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, age: { ...prevData.details.age, minAge: e.target.value } } }))}
             />
 
             <AuthInput
@@ -182,31 +171,40 @@ export function NewProposal({ onclick }) {
               id="maximumAge_input"
               placeholder="Qual a idade máxima para se candidatar? (Em anos)"
               title="Idade Máxima"
-              value={league}
-              onchange={(e) => setLeague(e.target.value)}
+              value={proposalData.details.age.maxAge}
+              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, age: { ...prevData.details.age, maxAge: e.target.value } } }))}
             />
 
             <AuthInput
-              type="number"
+              type="text"
               name="mininumPayment_input"
               id="mininumPayment_input"
               placeholder="Qual o menor valor que o jogador pode receber mensalmente?"
-              title="Valor mínimo"
-              value={league}
-              onchange={(e) => setLeague(e.target.value)}
+              title="Salário mínimo"
               required
+              value={proposalData.details.payment.minPayment}
+              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, payment: { ...prevData.details.payment, minPayment: e.target.value } } }))} // Atualize aqui
             />
 
             <AuthInput
-              type="number"
+              type="text"
               name="maximumPayment_input"
               id="maximumPayment_input"
               placeholder="Qual o maior valor que o jogador pode receber mensalmente?"
-              title="Valor máximo"
-              value={league}
-              onchange={(e) => setLeague(e.target.value)}
-              required
+              title="Salário máximo"
+              value={proposalData.details.payment.maxPayment}
+              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, payment: { ...prevData.details.payment, maxPayment: e.target.value } } }))} // Atualize aqui
             />
+
+            <AuthDropdown
+              title="Qual moeda será usada para o pagamento?"
+              placeholder="Escolha a moeda"
+              id="paymentCurrency"
+              options={currencyOptions}
+              required
+              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, payment: { ...prevData.details.payment, currency: option.value } } }))}
+            />
+
           </AuthLayout>
 
           <ColumnContainer>
@@ -214,8 +212,8 @@ export function NewProposal({ onclick }) {
             <TextArea
               placeholder="Insira a descrição da sua proposta"
               name="description"
-              value={league}
-              onchange={(e) => setLeague(e.target.value)}
+              value={proposalData.description}
+              onchange={(e) => setProposalData((prevData) => ({ ...prevData, description: e.target.value }))}
             />
           </ColumnContainer>
 
@@ -224,10 +222,9 @@ export function NewProposal({ onclick }) {
             <TextArea
               placeholder="Insira outros requisitos para sua proposta"
               name="requirements"
-              value={league}
-              onchange={(e) => setLeague(e.target.value)}
+              value={proposalData.requirements}
+              onchange={(e) => setProposalData((prevData) => ({ ...prevData, requirements: e.target.value }))}
             />
-
           </ColumnContainer>
 
           <AuthButton

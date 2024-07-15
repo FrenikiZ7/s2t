@@ -39,6 +39,9 @@ export const theme = {
     tertiary: '1px solid #69BBFF',
     xtertiary: '2px solid #69BBFF',
 
+    quaternary: '1px solid #014a85',
+    xquaternary: '2px solid #014a85',
+
     white: '1px solid white',
     xwhite: '2px solid white',
 

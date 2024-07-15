@@ -13,6 +13,10 @@ export const TextCopyContainer = styled.div`
     width: 100%;
     height: 100%;
 
+    ${TextElement} {
+      transition: all 1000ms ease-in-out;
+    }
+
     ${RowContainer} {
       align-items: center;
 
@@ -30,18 +34,15 @@ export const TextCopyContainer = styled.div`
       animation: ${fadeIn} 300ms;
     }
 
-    ${IconContainer} {
-      animation: none;
-    }
   `}
 `;
 
 export const TextCopyElement = styled.div`
-  ${({ theme }) => css`
-    background: black;
+  ${({ theme, active }) => css`
+    background: ${theme.colors.black};
     border-radius: 12px;
-    color: black;
-    border: ${theme.borders.white};
+    color: ${theme.colors.black};
+    border: ${active ? theme.borders.primary : theme.borders.white};
     padding: ${theme.spacings.small};
 
     display: flex;
@@ -49,6 +50,8 @@ export const TextCopyElement = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: ${theme.spacings.xxlarge};
+
+    transition: all 1000ms ease-in-out;
 
     @media ${theme.medias.mobile} {
      width: 100%;

@@ -107,6 +107,15 @@ export function PlayerNav() {
           color={theme.colors.white}
           hovercolor={theme.colors.black}
         />
+
+        <StyledLink
+          active={activeLink === '/player-dashboard/s2t+'}
+          path="/logout"
+          text="Logout"
+          color={theme.colors.white}
+          hovercolor={theme.colors.black}
+        />
+
       </Styled.PlayerNav>
     </>
   );

@@ -5,6 +5,7 @@ import { InfoTitle } from '../InfoInRow/InfoInRow-Styles';
 import { SubtitleElement } from '../Subtitle/Subtitle-Styles';
 import { TextElement } from '../Text/Text-Styles';
 import { FavoriteIconElement } from '../FavoriteIcon/FavoriteIcon-Styles';
+import { IconContainer } from '../IconDiv/IconDiv-Styles';
 
 export const ProposalCardElement = styled.div`
   ${({ theme }) => css`
@@ -25,6 +26,14 @@ export const ProposalCardElement = styled.div`
     padding: ${theme.spacings.large};
 
     transition: all 500ms ease-in-out;
+
+    ${IconContainer} {
+      &:hover {
+        > svg {
+          transform: none;
+        }
+      }
+    }
 
     ${LinkContainer} {
       font-size: ${theme.sizes.large};

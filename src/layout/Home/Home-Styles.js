@@ -7,9 +7,10 @@ import { TextElement } from '../../components/elements/Text/Text-Styles.js';
 import { LinkContainer } from '../../components/elements/StyledLink/StyledLink-Styles.js';
 import { NavContainer } from '../../components/Nav/Nav-Styles.js';
 import { IconContainer } from '../../components/elements/IconDiv/IconDiv-Styles.js';
-import { HeaderContainer } from '../../components/Header/Header-Styles.js';
+import { StandardHeaderContainer } from '../../components/Headers/StandardHeader/StandardHeader-Styles.js';
 import { GridLayoutContainer } from '../../components/GridLayout/GridLayout-Styles.js';
 import { AuthDropdownContainer, DropdownButton, DropdownItem } from '../../components/elements/AuthElements/AuthDropdown/AuthDropdown-Styles.js';
+import { MobileNavContainer } from '../../components/MobileNav/MobileNav-Styles.js';
 
 export const HomePage = styled.main`
   ${({ theme }) => css`
@@ -31,6 +32,7 @@ export const HomePage = styled.main`
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
+
     ${ButtonElement} {
     font-size: ${theme.sizes.medium};
     width: 100%;
@@ -50,13 +52,18 @@ export const HomePage = styled.main`
     }
   }
 
-  ${HeaderContainer} {
+  ${StandardHeaderContainer} {
 
     ${NavContainer} {
       @media ${theme.medias.tablet} {
       display: none;
      }
     }
+  }
+
+  ${MobileNavContainer} {
+    position: absolute;
+    top: 80px;
   }
 
   ${IconContainer} {
@@ -114,11 +121,7 @@ export const HomePage = styled.main`
 
   ${DropdownItem} {
     padding: ${theme.spacings.xsmall};
-
   }
-
- 
-
  
   `}
 `;

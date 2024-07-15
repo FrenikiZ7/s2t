@@ -1,0 +1,29 @@
+  const competitiveCategoryOptions = [
+    { value: 'pro', text: 'Profissional' },
+    { value: 'semiPro', text: 'Semi-Profissional' },
+    { value: 'academic', text: 'Universitário' },
+    { value: 'amateur', text: 'Amador' },
+    { value: 'recreational', text: 'Recreacional' },
+  ];
+
+  const positionsOptions = [
+    { value: 'goalkeeper', text: 'Goleiro' },
+    { value: 'left-back', text: 'Lateral Esquerdo' },
+    { value: 'right-back', text: 'Lateral Direito' },
+    { value: 'center-back', text: 'Zagueiro' },
+    { value: 'wing-back', text: 'Ala' },
+    { value: 'defensive midfielder', text: 'Primeiro Volante' },
+    { value: 'central midfielder', text: 'Meio-Campista' },
+    { value: 'attacking midfielder', text: 'Meia Ofensivo' },
+    { value: 'wide midfielder', text: 'Meia Lateral' },
+    { value: 'second striker', text: 'Segundo atacante' },
+    { value: 'left winger', text: 'Ponta Esquerda' },
+    { value: 'right winger', text: 'Ponta Direito' },
+    { value: 'center forward', text: 'Centroavante' },
+  ];
+
+  const currencyOptions = [
+    { value: 'R$', text: 'Real' },
+    { value: '$', text: 'Dolar (Americano)' },
+    { value: '€', text: 'Euro' },
+  ];

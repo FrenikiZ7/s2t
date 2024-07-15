@@ -13,6 +13,10 @@ import { StyledLink } from '../../components/elements/StyledLink/StyledLink';
 import { Title } from '../../components/elements/Title/Title';
 import { theme } from '../../styles/theme';
 import { AuthContainer } from '../../components/elements/AuthElements/AuthWrapper/AuthWrapper-Styles';
+import { StandardHeader } from '../../components/Headers/StandardHeader/StandardHeader';
+import { Logo } from '../../components/elements/Logo/Logo';
+import { Nav } from '../../components/Nav/Nav';
+import { Button } from '../../components/elements/Button/Button';
 
 export function Login() {
   const navigate = useNavigate();
@@ -24,75 +28,129 @@ export function Login() {
   };
 
   return (
-    <Styled.LoginPage>
-      <AuthWrapper>
+    <>
+      <StandardHeader>
 
-        <AuthContainer>
+        <Logo size="250px" logo="/assets/images/pngs/logo.png" />
 
-          <Title text="Login" size={theme.sizes.xxlarge} />
+        <Nav>
 
-          <AuthForm>
+          <Button
+            path="/"
+            text="Página principal"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
 
-            <AuthInput
-              type="email"
-              name="email_input"
-              id="email_input"
-              placeholder="Seu email"
-              title="E-mail"
-              required
-            />
+          <Button
+            path="/login"
+            text="Login"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.black}
+            textcolor={theme.colors.primary}
+            texthover={theme.colors.primary}
+            border={theme.colors.primary}
+            borderhover={theme.colors.primary}
+            active
+          />
 
-            <AuthInput
-              type="password"
-              name="password_input"
-              id="password_input"
-              placeholder="Insira sua senha"
-              title="Senha"
-              required
-            />
+          <Button
+            path="/register"
+            text="Registre-se"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
 
-            <AuthInput
-              type="password"
-              name="confirm_password_input"
-              id="confirm_password_input"
-              placeholder="Insira novamente sua senha"
-              title="Confirme a senha"
-              required
-            />
+          <Button
+            path="/benefits"
+            text="Benefícios"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
+        </Nav>
+      </StandardHeader>
+      <Styled.LoginPage>
+        <AuthWrapper>
 
-            <AuthButton
-              name="login_submit"
-              id="login_submit"
-              value="Login"
-              onclick={handleSubmit}
-            />
+          <AuthContainer>
 
-            <AuthOptions
-              checkboxtext="Lembrar login"
-              checkboxid="rememberMe"
-              path="/forgot-password"
-              pathtext="Esqueceu a senha?"
-            />
-            {/* no momento a checkbox do 'Lembrar login' é apenas estético */}
+            <Title text="Login" size={theme.sizes.xxlarge} />
 
-            <AuthRedirect
-              text="Não possui uma conta?"
-              path="/register"
-              pathtext="Registre-se"
-            />
+            <AuthForm>
 
-            <StyledLink
-              text="Voltar ao menu"
-              path="/"
-              color={theme.colors.secondary}
-              hovercolor={theme.colors.tertiary}
-            />
+              <AuthInput
+                type="email"
+                name="email_input"
+                id="email_input"
+                placeholder="Seu email"
+                title="E-mail"
+                required
+              />
 
-          </AuthForm>
-        </AuthContainer>
+              <AuthInput
+                type="password"
+                name="password_input"
+                id="password_input"
+                placeholder="Insira sua senha"
+                title="Senha"
+                required
+              />
 
-      </AuthWrapper>
+              <AuthInput
+                type="password"
+                name="confirm_password_input"
+                id="confirm_password_input"
+                placeholder="Insira novamente sua senha"
+                title="Confirme a senha"
+                required
+              />
 
-    </Styled.LoginPage>
+              <AuthButton
+                name="login_submit"
+                id="login_submit"
+                value="Login"
+                onclick={handleSubmit}
+              />
+
+              <AuthOptions
+                checkboxtext="Lembrar login"
+                checkboxid="rememberMe"
+                path="/forgot-password"
+                pathtext="Esqueceu a senha?"
+              />
+              {/* no momento a checkbox do 'Lembrar login' é apenas estético */}
+
+              <AuthRedirect
+                text="Não possui uma conta?"
+                path="/register"
+                pathtext="Registre-se"
+              />
+
+              <StyledLink
+                text="Voltar ao menu"
+                path="/"
+                color={theme.colors.secondary}
+                hovercolor={theme.colors.tertiary}
+              />
+
+            </AuthForm>
+          </AuthContainer>
+
+        </AuthWrapper>
+
+      </Styled.LoginPage>
+    </>
   );
 }

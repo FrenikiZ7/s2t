@@ -1,6 +1,6 @@
 import Prop from 'prop-types';
 import React from 'react';
-import { AddAPhoto as AddPhotoIcon } from '@styled-icons/material-outlined/AddAPhoto';
+import { ImageAdd as AddImageIcon } from '@styled-icons/fluentui-system-filled';
 import * as Styled from './ProfileBanner-Styles';
 import { AuthIconFile } from '../AuthElements/AuthIconFile/AuthIconFile';
 import { theme } from '../../../styles/theme';
@@ -11,7 +11,7 @@ export function ProfileBanner({ backgroundimagesrc, children, ownerview }) {
   return (
     <Styled.ProfileBannerWrapper backgroundimagesrc={backgroundimagesrc}>
 
-      <Nav>
+      {/* <Nav>
         <Button
           path="/"
           text="Página principal"
@@ -34,7 +34,7 @@ export function ProfileBanner({ backgroundimagesrc, children, ownerview }) {
           borderhover={theme.colors.primary}
           active
         />
-      </Nav>
+      </Nav> */}
 
       <Styled.ProfileBannerContainer backgroundimagesrc={backgroundimagesrc}>
         {children}
@@ -42,7 +42,7 @@ export function ProfileBanner({ backgroundimagesrc, children, ownerview }) {
 
       {ownerview && (
         <AuthIconFile id="changeBannerPicture" hovercolor={theme.colors.primary} name="Botão para alterar o banner do seu perfil">
-          <AddPhotoIcon />
+          <AddImageIcon />
         </AuthIconFile>
       )}
 

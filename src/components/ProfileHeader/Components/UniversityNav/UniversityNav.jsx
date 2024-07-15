@@ -124,6 +124,14 @@ export function UniversityNav() {
         />
 
         <StyledLink
+          active={activeLink === '/university-dashboard/my-affiliates'}
+          path="my-affiliates"
+          text="Meus afiliados"
+          color={theme.colors.white}
+          hovercolor={theme.colors.black}
+        />
+
+        <StyledLink
           active={activeLink === '/university-dashboard/s2t+'}
           path="s2t+"
           text="S2T+"

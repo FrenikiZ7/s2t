@@ -97,30 +97,3 @@ export const PlansLayout = styled.div`
     } 
   `}
 `;
-
-export const PlanDetails = styled.ul`
-  ${({ theme }) => css`
-
-   font-family: ${theme.fonts.primary};
-   padding: ${theme.spacings.small};
-   gap: ${theme.spacings.xsmall};
-   color: ${theme.colors.white};
-   width: 100%;
-   
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-  `}
-`;
-
-export const PlanInfo = styled.li`
-  ${({ theme }) => css`
-
-   font-size: ${theme.sizes.medium};
-
-   @media ${theme.medias.mobile} {
-    font-size: ${theme.sizes.small};
-   }
-  `}
-`;

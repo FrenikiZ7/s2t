@@ -1,6 +1,6 @@
 import Prop from 'prop-types';
 import React from 'react';
-import { AddAPhoto as AddPhotoIcon } from '@styled-icons/material-outlined/AddAPhoto';
+import { ImageAdd as AddImageIcon } from '@styled-icons/fluentui-system-filled';
 import * as Styled from './ProfilePicture-Styles';
 import { Button } from '../Button/Button';
 import { theme } from '../../../styles/theme';
@@ -18,7 +18,7 @@ export function ProfilePicture({
         {ownerview && (
         <Styled.Badge>
           <AuthIconFile id="changeProfilePicture" hovercolor={theme.colors.primary} name="Botão para alterar a foto do seu perfil">
-            <AddPhotoIcon />
+            <AddImageIcon />
           </AuthIconFile>
         </Styled.Badge>
         )}

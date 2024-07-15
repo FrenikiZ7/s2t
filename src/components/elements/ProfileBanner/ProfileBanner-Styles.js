@@ -19,8 +19,8 @@ export const ProfileBannerWrapper = styled.div`
     background-size: cover;
     backdrop-filter: blur(10px);
     width: 100%;
-    height: 350px;
-
+    height: 400px;
+    
     display: flex;
     flex-direction: row;
     justify-content: center;

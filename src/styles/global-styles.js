@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
     
 
     body, html {
-      background: black;
+      background: ${({ theme }) => theme.colors.black};
       box-sizing: border-box;
     }
 

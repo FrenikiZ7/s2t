@@ -17,7 +17,7 @@ export function AuthDropdown({
   };
 
   const handleItemClick = (option) => {
-    onDropdownChange(option.value);
+    onDropdownChange(option);
     setDropdownText(option.text);
   };
 
@@ -36,7 +36,7 @@ export function AuthDropdown({
       </Styled.DropdownTitle>
       )}
 
-      <Styled.DropdownButton onClick={toggleDropdown}>
+      <Styled.DropdownButton onClick={toggleDropdown} active={isOpen ? 'active' : undefined}>
         {dropdownText || placeholder || selectedvalue.charAt(0).toUpperCase() + selectedvalue.slice(1)}
         {isOpen ? (<ArrowUpIcon />) : (<ArrowDownIcon />)}
       </Styled.DropdownButton>

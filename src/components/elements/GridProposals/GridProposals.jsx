@@ -69,6 +69,7 @@ export function GridProposals({ items, title }) {
                 id={item.opportunityId}
                 key={item.opportunityId}
                 publicview
+
               />
             ))}
           </GridLayoutContainer>
@@ -97,22 +98,7 @@ export function GridProposals({ items, title }) {
         {/* Renderiza um modal com os dados do card clicado pelo usuário */}
         {selectedProposal && (
           <ProposalModal
-            from={selectedProposal.details.from}
-            date={selectedProposal.details.date}
-            disponibility={selectedProposal.details.disponibility}
-            opportunity={selectedProposal.details.opportunity}
-            category={selectedProposal.details.category}
-            country={selectedProposal.details.country}
-            org={selectedProposal.details.org}
-            orglogo={selectedProposal.details.orgLogo}
-            orgpath={selectedProposal.details.orgPath}
-            minage={selectedProposal.details.age.minAge}
-            maxage={selectedProposal.details.age.maxAge}
-            minheight={selectedProposal.details.minHeight}
-            minpayment={selectedProposal.details.payment.minPayment}
-            maxpayment={selectedProposal.details.payment.maxPayment}
-            description={selectedProposal.description}
-            requirements={selectedProposal.requirements}
+            proposal={selectedProposal}
             onclick={() => setSelectedProposal(null)}
           />
         )}

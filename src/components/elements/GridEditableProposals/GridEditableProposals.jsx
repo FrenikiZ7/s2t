@@ -112,8 +112,7 @@ export function GridEditableProposals({ items, title }) {
       )}
 
       {selectedProposal && (
-
-      <EditProposal onclick={() => setSelectedProposal(null)} />
+      <EditProposal proposal={selectedProposal} onclick={() => setSelectedProposal(null)} />
       )}
 
     </Styled.GridEditableProposalsContainer>

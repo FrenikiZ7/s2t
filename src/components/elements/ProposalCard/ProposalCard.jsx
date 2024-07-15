@@ -1,5 +1,6 @@
 import Prop from 'prop-types';
 import React from 'react';
+import { FormNew, SportSoccer } from '@styled-icons/fluentui-system-filled';
 import * as Styled from './ProposalCard-Styles';
 import { StyledLink } from '../StyledLink/StyledLink';
 import { InfoInRow } from '../InfoInRow/InfoInRow';
@@ -8,14 +9,20 @@ import { Subtitle } from '../Subtitle/Subtitle';
 import { Text } from '../Text/Text';
 import { FavoriteIcon } from '../FavoriteIcon/FavoriteIcon';
 import { RemoveIcon } from '../RemoveIcon/RemoveIcon';
+import { IconDiv } from '../IconDiv/IconDiv';
+import { theme } from '../../../styles/theme';
 
 export function ProposalCard({
-  id, from = '', date = '', opportunity = '', country = '', org = '', orglogo = '', orgpath = '', category = '', onclick, publicview, ownerview,
+  id, from = '', date = '', opportunity = '', country = '', org = '', orglogo = '', orgpath = '', category = '', onclick, publicview, ownerview, isapplied,
 }) {
   return (
     <Styled.ProposalCardElement onClick={onclick}>
 
-      <Styled.ProposalImage src={orglogo} alt="Logo da organização" />
+      {/* {orglogo && <Styled.ProposalImage src={orglogo} alt="Logo da organização" />} */}
+
+      <IconDiv color={isapplied ? theme.colors.primary : theme.colors.white} hovercolor="none">
+        <FormNew />
+      </IconDiv>
 
       <CenterColumn>
 
@@ -54,4 +61,5 @@ ProposalCard.propTypes = {
   onclick: Prop.func,
   publicview: Prop.bool,
   ownerview: Prop.bool,
+  isapplied: Prop.bool,
 };

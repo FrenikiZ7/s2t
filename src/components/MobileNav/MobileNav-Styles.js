@@ -5,8 +5,7 @@ export const MobileNavContainer = styled.nav`
   ${({ theme }) => css`
      animation: ${fadeIn} 500ms;
      background: rgba(0,0,0,0.8);
-     position: absolute;
-     top: 80px;
+
      width: 100%;
      z-index: 10;
      padding: ${theme.spacings.large};

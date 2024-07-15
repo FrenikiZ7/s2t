@@ -14,8 +14,8 @@ export const TextAreaElement = styled.textarea`
       background: transparent;
       font-family: ${theme.fonts.primary};
       font-size: ${theme.sizes.medium};
-      transition: box-shadow 500ms ease-in-out;
-      box-shadow: 0px 0px 5px 2px ${theme.colors.quaternary};
+      transition: all 500ms ease-in-out;
+      box-shadow: 0px 0px 5px 1px ${theme.colors.transparent};
 
       @media ${theme.medias.mobile} {
         font-size: ${theme.sizes.xsmall};
@@ -23,7 +23,7 @@ export const TextAreaElement = styled.textarea`
 
       &:hover{
         outline: none;
-        box-shadow: 0px 0px 5px 2px ${theme.colors.secondary};
+        border: ${theme.borders.tertiary};
       }
 
       &::-webkit-input-placeholder {
@@ -38,6 +38,8 @@ export const TextAreaElement = styled.textarea`
 
       &:focus {
         outline: none;
+        box-shadow: 0px 0px 5px 1px ${theme.colors.secondary};
+        border: ${theme.borders.secondary};
       }
   `}
 `;

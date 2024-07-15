@@ -272,56 +272,56 @@ export const s2tData = {
         id: '1',
         src: '/assets/images/benefits/podcast.png',
         title: 'podcast',
-        path: '/podcast',
+        path: '/benefits/podcast',
       },
 
       {
         id: '2',
         src: '/assets/images/benefits/tv.png',
         title: 'Sport TV',
-        path: '/sporttv',
+        path: '/benefits/sporttv',
       },
 
       {
         id: '3',
         src: '/assets/images/benefits/investments.png',
         title: 'Sports Invest',
-        path: '/sportsinvest',
+        path: '/benefits/investments',
       },
 
       {
         id: '4',
         src: '/assets/images/benefits/benefits.png',
-        title: 'Benefícios',
-        path: '/benefits',
+        title: 'Clube de benefícios',
+        path: '/benefits/club',
       },
 
       {
         id: '5',
         src: '/assets/images/benefits/exchange.png',
         title: 'Intercâmbio',
-        path: '/interchange',
+        path: '/benefits/interchange',
       },
 
       {
         id: '6',
         src: '/assets/images/benefits/visibility.png',
         title: 'Visibilidade',
-        path: '/visibility',
+        path: '/benefits/visibility',
       },
 
       {
         id: '7',
         src: '/assets/images/benefits/events.png',
         title: 'Eventos',
-        path: '/events',
+        path: '/benefits/events',
       },
 
       {
         id: '8',
         src: '/assets/images/benefits/english.jpg',
         title: 'Inglês',
-        path: '/english',
+        path: '/benefits/english',
       },
     ],
   },
@@ -630,7 +630,7 @@ export const s2tData = {
             details: {
               from: 'Clube 0',
               date: '01-06-2024',
-              disponibility: '29/05/2024',
+              disponibility: '2024-07-10',
               category: 'Profissional',
               opportunity: 'Zagueiro',
               country: 'Alemanha',
@@ -644,8 +644,9 @@ export const s2tData = {
               payment: {
                 minPayment: 10000,
                 maxPayment: 18000,
+                currency: 'Real',
               },
-              minHeight: '1,70',
+              minHeight: 1.70,
             },
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
             requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
@@ -655,7 +656,7 @@ export const s2tData = {
             details: {
               from: 'Clube 1',
               date: '01-06-2024',
-              disponibility: '29/05/2024',
+              disponibility: '2024-07-10',
               category: 'Profissional',
               opportunity: 'Zagueiro',
               country: 'Alemanha',
@@ -669,8 +670,9 @@ export const s2tData = {
               payment: {
                 minPayment: 10000,
                 maxPayment: 18000,
+                currency: 'Real',
               },
-              minHeight: '1,70',
+              minHeight: 1.70,
             },
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
             requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
@@ -680,7 +682,7 @@ export const s2tData = {
             details: {
               from: 'Clube 2',
               date: '01-06-2024',
-              disponibility: '29/05/2024',
+              disponibility: '2024-07-10',
               category: 'Profissional',
               opportunity: 'Zagueiro',
               country: 'Alemanha',
@@ -694,8 +696,9 @@ export const s2tData = {
               payment: {
                 minPayment: 10000,
                 maxPayment: 18000,
+                currency: 'Real',
               },
-              minHeight: '1,70',
+              minHeight: 1.70,
             },
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
             requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
@@ -708,7 +711,7 @@ export const s2tData = {
             details: {
               from: 'Agente',
               date: '29-05-2024',
-              disponibility: '29/05/2024',
+              disponibility: '2024-07-10',
               category: 'Profissional',
               opportunity: 'Centroavante',
               country: 'Brasil',
@@ -722,8 +725,9 @@ export const s2tData = {
               payment: {
                 minPayment: 5000,
                 maxPayment: 8000,
+                currency: 'Real',
               },
-              minHeight: '1,70',
+              minHeight: 1.70,
             },
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
             requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
@@ -734,7 +738,7 @@ export const s2tData = {
             details: {
               from: 'Agente 2',
               date: '01-06-2024',
-              disponibility: '29/05/2024',
+              disponibility: '2024-07-10',
               category: 'Profissional',
               opportunity: 'Zagueiro',
               country: 'Alemanha',
@@ -748,8 +752,9 @@ export const s2tData = {
               payment: {
                 minPayment: 10000,
                 maxPayment: 18000,
+                currency: 'Real',
               },
-              minHeight: '1,70',
+              minHeight: 1.70,
             },
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
             requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
@@ -760,7 +765,7 @@ export const s2tData = {
             details: {
               from: 'Agente 3',
               date: '01-06-2024',
-              disponibility: '29/05/2024',
+              disponibility: '2024-07-10',
               category: 'Profissional',
               opportunity: 'Zagueiro',
               country: 'Alemanha',
@@ -774,8 +779,9 @@ export const s2tData = {
               payment: {
                 minPayment: 10000,
                 maxPayment: 18000,
+                currency: 'Real',
               },
-              minHeight: '1,70',
+              minHeight: 1.70,
             },
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
             requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
@@ -786,7 +792,7 @@ export const s2tData = {
             details: {
               from: 'Agente 4',
               date: '01-06-2024',
-              disponibility: '29/05/2024',
+              disponibility: '2024-07-10',
               category: 'Profissional',
               opportunity: 'Zagueiro',
               country: 'Alemanha',
@@ -800,8 +806,9 @@ export const s2tData = {
               payment: {
                 minPayment: 10000,
                 maxPayment: 18000,
+                currency: 'Real',
               },
-              minHeight: '1,70',
+              minHeight: 1.70,
             },
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
             requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
@@ -812,7 +819,7 @@ export const s2tData = {
             details: {
               from: 'Agente 5',
               date: '01-06-2024',
-              disponibility: '29/05/2024',
+              disponibility: '2024-07-10',
               category: 'Profissional',
               opportunity: 'Zagueiro',
               country: 'Alemanha',
@@ -826,8 +833,9 @@ export const s2tData = {
               payment: {
                 minPayment: 10000,
                 maxPayment: 18000,
+                currency: 'Real',
               },
-              minHeight: '1,70',
+              minHeight: 1.75,
             },
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',
             requirements: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nisl et leo porta egestas. Duis risus dolor, dignissim non gravida at, gravida non augue. Ut vulputate, nulla sed eleifend euismod, tellus libero rhoncus sem, vitae lobortis ipsum tellus ut diam. Integer fermentum nisi velit, sed posuere felis vestibulum vel',

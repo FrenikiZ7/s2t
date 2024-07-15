@@ -19,7 +19,7 @@ export const ProposalModalElement = styled.div`
      gap: ${theme.spacings.xlarge};
 
      position: absolute;
-     z-index: 100; 
+     z-index: 5000; 
 
      width: 70%;
      padding: ${theme.spacings.xxlarge};

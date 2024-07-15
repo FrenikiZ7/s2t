@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
+import { Close as CloseIcon } from '@styled-icons/material-outlined';
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
 import Prop from 'prop-types';
 import * as Styled from './PublicDashboard-Styles';
@@ -22,17 +23,87 @@ import { PublicNav } from '../../../components/ProfileHeader/Components/PublicNa
 import { PublicMenu } from '../../../components/MobileMenu/Components/PublicMenu/PublicMenu';
 import { Row } from '../../../components/RowContainer/Row';
 import { ImageModal } from '../../../components/elements/ImageModal/ImageModal';
+import { FloatingHeader } from '../../../components/Headers/FloatingHeader/FloatingHeader';
+import { Nav } from '../../../components/Nav/Nav';
+import { IconDiv } from '../../../components/elements/IconDiv/IconDiv';
+import { FloatingMenu } from '../../../components/FloatingMenu/FloatingMenu';
 
 export function PublicDashboard() {
   const clubContext = useContext(ClubContext);
   const { clubState, clubDispatch } = clubContext;
   const [menuVisibility, setMenuVisibility] = useState(false);
   const [follow, setFollow] = useState(false);
+  const [mobileHeader, setMobileHeader] = useState(false);
 
   const { username } = useParams();
 
   return (
     <Styled.PublicDashboardContainer>
+
+      <FloatingHeader>
+
+        <Nav>
+          <Button
+            path="/"
+            text="Página principal"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
+
+          <Button
+            path="/public-dashboard"
+            text={clubState.profile.banner.name}
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.black}
+            textcolor={theme.colors.primary}
+            texthover={theme.colors.primary}
+            border={theme.colors.primary}
+            borderhover={theme.colors.primary}
+            active
+          />
+        </Nav>
+
+        {mobileHeader ? (
+          <IconDiv name="Menu" onclick={() => setMobileHeader(!mobileHeader)}>
+            <CloseIcon />
+          </IconDiv>
+        ) : (
+          <IconDiv name="Fechar menu" onclick={() => setMobileHeader(!mobileHeader)}>
+            <MenuIcon />
+          </IconDiv>
+        ) }
+      </FloatingHeader>
+
+      {mobileHeader && (
+      <FloatingMenu>
+        <Button
+          path="/"
+          text="Página principal"
+          bgcolor={theme.colors.mediumblack}
+          bghover={theme.colors.mediumblack}
+          textcolor={theme.colors.white}
+          texthover={theme.colors.primary}
+          border={theme.colors.white}
+          borderhover={theme.colors.primary}
+        />
+
+        <Button
+          path="/public-dashboard"
+          text={clubState.profile.banner.name}
+          bgcolor={theme.colors.mediumblack}
+          bghover={theme.colors.black}
+          textcolor={theme.colors.primary}
+          texthover={theme.colors.primary}
+          border={theme.colors.primary}
+          borderhover={theme.colors.primary}
+          active
+        />
+      </FloatingMenu>
+      )}
 
       <ProfileBanner backgroundimagesrc={clubState.profile.banner.backgroundImageSrc}>
         <ProfilePicture

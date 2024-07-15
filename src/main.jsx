@@ -24,7 +24,6 @@ import { S2tProvider } from './contexts/s2tContext/S2tProvider';
 import { Scouts } from './layout/Dashboards/Components/Scouts/Scouts';
 import { Clubs } from './layout/Dashboards/Components/Clubs/Clubs';
 import { Opportunities } from './layout/Dashboards/Components/Opportunities/Opportunities';
-import { PlayerRegister } from './layout/Register/components/PlayerRegister/PlayerRegister';
 import { EditProfile } from './layout/Dashboards/Components/EditProfile/EditProfile';
 import { ClubDashboard } from './layout/Dashboards/ClubDashboard/ClubDashboard';
 import { playerData } from './contexts/userContext/PlayerProvider/playerData';
@@ -56,12 +55,27 @@ import { UniversityHome } from './layout/Dashboards/Components/UniversityCompone
 import { StaffFavorites } from './layout/Dashboards/Components/StaffComponents/StaffFavorites/StaffFavorites';
 import { StaffProfile } from './layout/Dashboards/Components/StaffComponents/StaffProfile/StaffProfile';
 import { StaffHome } from './layout/Dashboards/Components/StaffComponents/StaffHome/StaffHome';
-import { Popup } from './components/elements/Popup/Popup';
 import { Logout } from './layout/Logout/Logout';
 import { StaffDashboard } from './layout/Dashboards/StaffDashboard/StaffDashboard';
+import { Footer } from './components/Footer/Footer';
+import { Row } from './components/RowContainer/Row';
+import { SocialLink } from './components/elements/SocialLink/SocialLink';
+import { Nav } from './components/Nav/Nav';
+import { StyledLink } from './components/elements/StyledLink/StyledLink';
+import { Text } from './components/elements/Text/Text';
+import { Benefits } from './layout/Benefits/Benefits';
+import { BenefitsClub } from './layout/Benefits/Components/BenefitsClub/BenefitsClub';
+import { Investments } from './layout/Benefits/Components/Investments/Investments';
+import { Events as EventsPage } from './layout/Benefits/Components/Events/Events';
 
 export function Main() {
   const { username } = useParams();
+
+  const languageOptions = [
+    { value: 'portuguese-br', text: 'Português' },
+    { value: 'english', text: 'Inglês' },
+    { value: 'spanish', text: 'Espanhol' },
+  ];
 
   register();
 
@@ -84,6 +98,12 @@ export function Main() {
                   <Route path="/login" element={<Login />} />
                   <Route path="/forgot-password" element={<ForgotPassword />} />
                   <Route path="/reset-password" element={<ResetPassword />} />
+
+                  <Route path="/benefits" element={<Benefits />}>
+                    <Route path="club" element={<BenefitsClub />} />
+                    <Route path="investments" element={<Investments />} />
+                    <Route path="events" element={<EventsPage />} />
+                  </Route>
 
                   {/* Rota do dashboard para jogadores + subrotas dele */}
                   <Route path="/player-dashboard/" element={<PlayerDashboard />}>
@@ -134,6 +154,7 @@ export function Main() {
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="friends" element={<Friends friends={clubData.friends} />} />
                     <Route path="store" element={<Store />} />
+                    <Route path="my-affiliates" element={<MyAffiliates affiliates={s2tData.users.scouts} />} />
                     <Route path="s2t+" element={<S2TPlus />} />
                   </Route>
 
@@ -142,7 +163,7 @@ export function Main() {
                     <Route path="profile" element={<UniversityProfile />} />
                     <Route path="my-squad" element={<MySquad />} />
                     <Route path="profile-edit" element={<EditProfile type="university" />} />
-                    <Route path="opportunities" element={<MySquad />} />
+                    <Route path="opportunities" element={<Opportunities />} />
                     <Route path="my-opportunities" element={<MyOpportunities />} />
                     <Route path="scouts" element={<Scouts />} />
                     <Route path="clubs" element={<Clubs />} />
@@ -152,6 +173,7 @@ export function Main() {
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="friends" element={<Friends friends={clubData.friends} />} />
                     <Route path="store" element={<Store />} />
+                    <Route path="my-affiliates" element={<MyAffiliates affiliates={s2tData.users.scouts} />} />
                     <Route path="s2t+" element={<S2TPlus />} />
                   </Route>
 
@@ -163,6 +185,25 @@ export function Main() {
                   </Route>
 
                 </Routes>
+
+                <Footer>
+                  <Row>
+                    <SocialLink type="facebook" />
+                    <SocialLink type="instagram" />
+                    <SocialLink type="twitter" />
+                    <SocialLink type="youtube" />
+                    <SocialLink type="tiktok" />
+                  </Row>
+
+                  <Nav>
+                    <StyledLink text="Privacidade" color={theme.colors.lightgray} hovercolor={theme.colors.white} />
+                    <StyledLink text="Termos de uso" color={theme.colors.lightgray} hovercolor={theme.colors.white} />
+                    <StyledLink text="Sobre nós" color={theme.colors.lightgray} hovercolor={theme.colors.white} />
+                    <StyledLink text="Precisa de ajuda?" color={theme.colors.lightgray} hovercolor={theme.colors.white} />
+                  </Nav>
+
+                  <Text text="© 2024 Showcase 2 Transfer" />
+                </Footer>
 
               </UniversityProvider>
             </ClubProvider>

@@ -3,7 +3,9 @@ import { fadeIn, slideIn } from '../../../styles/animations';
 import { VerticalSoloSlideElement } from '../VerticalSoloSlide/VerticalSoloSlide-Styles';
 
 export const BannerSlideWrapper = styled.div`
-  ${({ theme, backgroundimagesrc, gradientdirection }) => css`
+  ${({
+    theme, backgroundimagesrc, gradientdirection, backgroundfixed,
+  }) => css`
     animation: ${fadeIn} 500ms;
     height: 500px;
     width: 100%;
@@ -13,12 +15,14 @@ export const BannerSlideWrapper = styled.div`
     rgba(0, 0, 0, 1)
     ),
     url(${backgroundimagesrc});
-
+    background-size: cover;
+    background-position: center;
+    background-attachment: ${backgroundfixed ? 'fixed' : 'scroll'};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: ${theme.spacings.small};
 
 
 
@@ -34,14 +38,6 @@ export const BannerSlideWrapper = styled.div`
       max-height: 300px;
     }
 
-
-    .swiper-slide {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-    }
   `}
 `;
 
@@ -61,6 +57,7 @@ export const BannerSlideContainer = styled.div`
       flex-direction: row;
       align-items: center;
       justify-content: center;
+      height: 100%;
     }
 
     & ${VerticalSoloSlideElement} {

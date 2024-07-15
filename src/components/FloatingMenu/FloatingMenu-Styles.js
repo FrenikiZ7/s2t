@@ -19,7 +19,7 @@ export const FloatingMenuContainer = styled.nav`
     transform: translate(-50%, -50%);
 
     padding: ${theme.spacings.xxsmall};
-    z-index: 1000;
+    z-index: 10000;
     
 
     display: block;

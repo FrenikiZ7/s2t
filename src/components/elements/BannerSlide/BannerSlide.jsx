@@ -7,12 +7,13 @@ import * as Styled from './BannerSlide-Styles';
 import { Subtitle } from '../Subtitle/Subtitle';
 
 export function BannerSlide({
-  children, lazy, title = '', slidesperview = 3, backgroundimagesrc, gradientdirection,
+  children, lazy, title = '', slidesperview = 3, backgroundimagesrc, gradientdirection, backgroundfixed, autoplay,
 }) {
   return (
     <Styled.BannerSlideWrapper
       backgroundimagesrc={backgroundimagesrc}
       gradientdirection={gradientdirection}
+      backgroundfixed={backgroundfixed ? 'backgroundfixed' : undefined}
     >
       {title && <Subtitle text="Vídeos em alta" uppercase size="25px" />}
 
@@ -22,6 +23,7 @@ export function BannerSlide({
           grabCursor
           navigation
           loop
+          autoplay={autoplay ? { delay: 2000, disableOnInteraction: true } : false}
           lazy={lazy ? 'true' : undefined}
           breakpoints={{
 
@@ -53,12 +55,3 @@ export function BannerSlide({
     </Styled.BannerSlideWrapper>
   );
 }
-
-BannerSlide.propTypes = {
-  children: Prop.node.isRequired,
-  title: Prop.string,
-  lazy: Prop.bool,
-  slidesperview: Prop.number,
-  backgroundimagesrc: Prop.string,
-  gradientdirection: Prop.string,
-};

@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
-import { SettingsOutline } from '@styled-icons/evaicons-outline';
 import { Settings as SettingsIcon } from '@styled-icons/fluentui-system-filled';
+import { Close as CloseIcon } from '@styled-icons/material-outlined';
+import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
 import * as Styled from './PlayerDashboard-Styles';
 import { PlayerContext } from '../../../contexts/userContext/PlayerProvider/PlayerContext';
 import { theme } from '../../../styles/theme';
@@ -22,15 +22,109 @@ import { IconDiv } from '../../../components/elements/IconDiv/IconDiv';
 import { Row } from '../../../components/RowContainer/Row';
 import { FloatingMenu } from '../../../components/FloatingMenu/FloatingMenu';
 import { SettingsMenu } from '../../../components/FloatingMenu/Components/SettingsMenu/SettingsMenu';
+import { FloatingHeader } from '../../../components/Headers/FloatingHeader/FloatingHeader';
+import { Nav } from '../../../components/Nav/Nav';
+import { MobileNav } from '../../../components/MobileNav/MobileNav';
 
 export function PlayerDashboard() {
   const playerContext = useContext(PlayerContext);
   const { playerState, playerDispatch } = playerContext;
   const [menuVisibility, setMenuVisibility] = useState(false);
+  const [mobileHeader, setMobileHeader] = useState(false);
   const [settingsMenuVisibility, setSettingsMenuVisibility] = useState(false);
 
   return (
     <Styled.PlayerDashboardContainer>
+
+      <FloatingHeader>
+
+        <Nav>
+          <Button
+            path="/"
+            text="Página principal"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
+
+          <Button
+            path="/player-dashboard"
+            text="Minha área"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.black}
+            textcolor={theme.colors.primary}
+            texthover={theme.colors.primary}
+            border={theme.colors.primary}
+            borderhover={theme.colors.primary}
+            active
+          />
+
+          <Button
+            path="/benefits"
+            text="Benefícios"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
+        </Nav>
+
+        {mobileHeader ? (
+          <IconDiv name="Menu" onclick={() => setMobileHeader(!mobileHeader)}>
+            <CloseIcon />
+          </IconDiv>
+        ) : (
+          <IconDiv name="Fechar menu" onclick={() => setMobileHeader(!mobileHeader)}>
+            <MenuIcon />
+          </IconDiv>
+        ) }
+
+      </FloatingHeader>
+
+      {mobileHeader && (
+      <FloatingMenu>
+        <Button
+          path="/"
+          text="Página principal"
+          bgcolor={theme.colors.mediumblack}
+          bghover={theme.colors.mediumblack}
+          textcolor={theme.colors.white}
+          texthover={theme.colors.primary}
+          border={theme.colors.white}
+          borderhover={theme.colors.primary}
+        />
+
+        <Button
+          path="/player-dashboard"
+          text="Minha área"
+          bgcolor={theme.colors.mediumblack}
+          bghover={theme.colors.black}
+          textcolor={theme.colors.primary}
+          texthover={theme.colors.primary}
+          border={theme.colors.primary}
+          borderhover={theme.colors.primary}
+          active
+        />
+
+        <Button
+          path="/benefits"
+          text="Benefícios"
+          bgcolor={theme.colors.mediumblack}
+          bghover={theme.colors.mediumblack}
+          textcolor={theme.colors.white}
+          texthover={theme.colors.primary}
+          border={theme.colors.white}
+          borderhover={theme.colors.primary}
+        />
+
+      </FloatingMenu>
+
+      )}
 
       <ProfileBanner backgroundimagesrc={playerState.profile.banner.backgroundImageSrc} ownerview>
         <ProfilePicture
@@ -43,7 +137,7 @@ export function PlayerDashboard() {
 
         <Row>
           <Button
-            path="/player-dashboard/profile-edit"
+            path="profile-edit"
             text="Editar Perfil"
             bgcolor={theme.colors.primary}
             bghover={theme.colors.black}
@@ -52,7 +146,12 @@ export function PlayerDashboard() {
             border={theme.colors.black}
             borderhover={theme.colors.primary}
           />
-          <IconDiv active={settingsMenuVisibility} hovercolor={theme.colors.primary} name="Configurações" onclick={() => setSettingsMenuVisibility(!settingsMenuVisibility)}>
+          <IconDiv
+            active={settingsMenuVisibility}
+            hovercolor={theme.colors.primary}
+            name="Configurações"
+            onclick={() => setSettingsMenuVisibility(!settingsMenuVisibility)}
+          >
             <SettingsIcon />
           </IconDiv>
 

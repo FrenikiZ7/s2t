@@ -15,10 +15,9 @@ import { Row } from '../../RowContainer/Row';
 import { IconDiv } from '../IconDiv/IconDiv';
 import { FavoriteIcon } from '../FavoriteIcon/FavoriteIcon';
 
-export function ProposalModal({
-  from, date, disponibility, opportunity, country, org, minage, maxage, minheight, category, description, requirements, minpayment, maxpayment, onclick,
-}) {
+export function ProposalModal({ proposal, onclick, isapplied }) {
   const [message, setMessage] = useState('');
+  console.log(proposal);
 
   const handleSubmitMessage = (e) => {
     e.preventDefault();
@@ -29,67 +28,82 @@ export function ProposalModal({
 
     <Styled.ProposalModalElement>
 
-      <Row>
-        <Title text="Oportunidade" uppercase />
+      {proposal && (
+      <>
+        <Row>
+          <Title text="Oportunidade" uppercase />
 
-        <IconDiv
-          onclick={onclick}
-          name="Fechar proposta"
-          hovercolor={theme.colors.red}
-        >
-          <CloseIcon />
-        </IconDiv>
-      </Row>
+          <IconDiv
+            onclick={onclick}
+            name="Fechar proposta"
+            hovercolor={theme.colors.red}
+          >
+            <CloseIcon />
+          </IconDiv>
+        </Row>
 
-      <Subtitle text="Detalhes" uppercase />
+        <Subtitle text="Detalhes" uppercase />
 
-      <GridTwoColumn>
+        <GridTwoColumn>
 
-        {from && <InfoInRow infotitle="Proposta de" info={from} uppercase />}
-        {date && <InfoInRow infotitle="Data" info={date} uppercase />}
-        {disponibility && <InfoInRow infotitle="Disponibilidade" info={disponibility} uppercase />}
-        {org && <InfoInRow infotitle="Liga" info={org} uppercase />}
-        {country && <InfoInRow infotitle="País" info={country} uppercase />}
-        {category && <InfoInRow infotitle="Categoria" info={category} uppercase />}
-        {opportunity && <InfoInRow infotitle="Posição" info={opportunity} uppercase />}
-        {minage && <InfoInRow infotitle="Idade mínima" info={minage} uppercase />}
-        {maxage && <InfoInRow infotitle="Idade máxima" info={maxage} uppercase />}
-        {minheight && <InfoInRow infotitle="Altura mínima" info={`${minheight} M`} uppercase />}
-        {minpayment && <InfoInRow infotitle="Salário" info={`${minpayment} a ${maxpayment}`} uppercase />}
+          {proposal.details.from && <InfoInRow infotitle="Proposta de" info={proposal.details.from} uppercase />}
+          {proposal.details.date && <InfoInRow infotitle="Data" info={proposal.details.date} uppercase />}
+          {proposal.details.disponibility ? <InfoInRow infotitle="Disponibilidade" info={proposal.details.disponibility} uppercase /> : <InfoInRow infotitle="Disponibilidade" info="Imediato" uppercase />}
+          {proposal.details.org && <InfoInRow infotitle="Liga" info={proposal.details.org} uppercase />}
+          {proposal.details.country && <InfoInRow infotitle="País" info={proposal.details.country} uppercase />}
+          {proposal.details.category && <InfoInRow infotitle="Categoria" info={proposal.details.category} uppercase />}
+          {proposal.details.opportunity && <InfoInRow infotitle="Posição" info={proposal.details.opportunity} uppercase />}
+          {proposal.details.minHeight && <InfoInRow infotitle="Altura mínima" info={`${proposal.details.minHeight} M`} uppercase />}
+          {proposal.details.age.minAge && <InfoInRow infotitle="Idade mínima" info={`${proposal.details.age.minAge} Anos`} uppercase />}
+          {proposal.details.age.maxAge && <InfoInRow infotitle="Idade máxima" info={`${proposal.details.age.maxAge} Anos`} uppercase />}
+          {proposal.details.payment.minPayment && <InfoInRow infotitle="Salário" info={`${proposal.details.payment.minPayment} | ${proposal.details.payment.maxPayment} ${proposal.details.payment.currency}`} uppercase />}
 
-      </GridTwoColumn>
+        </GridTwoColumn>
 
-      {description && (
+        {proposal.description && (
         <ColumnContainer>
           <Subtitle text="Descrição" uppercase />
-          <Text text={description} />
-
+          <Text text={proposal.description} />
         </ColumnContainer>
-      )}
+        )}
 
-      {requirements && (
+        {proposal.requirements && (
         <ColumnContainer>
-
           <Subtitle text="Requisitos" uppercase />
-          <Text text={requirements} />
+          <Text text={proposal.requirements} />
         </ColumnContainer>
+        )}
+
+        <ColumnContainer>
+          <Subtitle text="Mensagem" uppercase />
+          <TextArea placeholder="Opcional" info="message" onChange={(e) => setMessage(e.target.value)} value={message} />
+
+          {isapplied ? (
+            <Button
+              text="Você já enviou uma proposta"
+              bgcolor={theme.colors.darkgray}
+              bghover={theme.colors.darkgray}
+              textcolor={theme.colors.white}
+              texthover={theme.colors.white}
+              border={theme.colors.lightgray}
+              borderhover={theme.colors.lightgray}
+            />
+          ) : (
+            <Button
+              text="Enviar proposta"
+              bgcolor={theme.colors.quaternary}
+              bghover={theme.colors.secondary}
+              textcolor={theme.colors.white}
+              texthover={theme.colors.white}
+              border={theme.colors.tertiary}
+              borderhover={theme.colors.white}
+              onclick={handleSubmitMessage}
+            />
+          )}
+
+        </ColumnContainer>
+      </>
       )}
-
-      <ColumnContainer>
-        <Subtitle text="Mensagem" uppercase />
-        <TextArea placeholder="Opcional" info="message" onChange={(e) => setMessage(e.target.value)} value={message} />
-        <Button
-          text="Enviar proposta"
-          bgcolor={theme.colors.quaternary}
-          bghover={theme.colors.secondary}
-          textcolor={theme.colors.white}
-          texthover={theme.colors.white}
-          border={theme.colors.tertiary}
-          borderhover={theme.colors.white}
-          onclick={handleSubmitMessage}
-        />
-
-      </ColumnContainer>
 
     </Styled.ProposalModalElement>
 
@@ -97,18 +111,7 @@ export function ProposalModal({
 }
 
 ProposalModal.propTypes = {
-  from: Prop.string,
-  date: Prop.string,
-  opportunity: Prop.string,
-  country: Prop.string,
-  org: Prop.string,
-  category: Prop.string,
-  description: Prop.string,
-  requirements: Prop.string,
-  minage: Prop.number,
-  maxage: Prop.number,
-  minheight: Prop.string,
-  minpayment: Prop.number,
-  maxpayment: Prop.number,
+  proposal: Prop.func,
   onclick: Prop.func,
+  isapplied: Prop.bool,
 };

@@ -117,11 +117,19 @@ export function Player() {
             />
 
             <AuthInput
-              type="text"
+              type="number"
               name="weigth_input"
               id="weigth_input"
               title="Peso"
               placeholder="Seu peso atual (em KG)"
+            />
+
+            <AuthInput
+              type="number"
+              name="height_input"
+              id="height_input"
+              placeholder="Sua altura altura (Ex: 1,70)"
+              title="Altura"
             />
 
             <AuthInput

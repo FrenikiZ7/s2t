@@ -16,6 +16,11 @@ import { AuthDropdown } from '../../components/elements/AuthElements/AuthDropdow
 import { Text } from '../../components/elements/Text/Text';
 import { Subtitle } from '../../components/elements/Subtitle/Subtitle';
 import { Bubble } from '../../components/bubble/Bubble';
+import { ListContainer, ListItem } from '../../components/elements/List/List-Styles';
+import { Nav } from '../../components/Nav/Nav';
+import { Button } from '../../components/elements/Button/Button';
+import { Logo } from '../../components/elements/Logo/Logo';
+import { StandardHeader } from '../../components/Headers/StandardHeader/StandardHeader';
 
 export function Register() {
   const [profileType, setProfileType] = useState('');
@@ -82,88 +87,142 @@ export function Register() {
   ];
 
   return (
-    <Styled.RegisterPage>
+    <>
+      <StandardHeader>
 
-      <Bubble>
-        <Subtitle text="Passo a passo" uppercase as="h4" size={theme.sizes.xlarge} />
-        <Text text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur" />
-      </Bubble>
+        <Logo size="250px" logo="/assets/images/pngs/logo.png" />
 
-      <AuthContainer>
-        <Subtitle text="Registre-se" uppercase as="h4" size={theme.sizes.xlarge} />
+        <Nav>
 
-        <AuthForm>
-          <AuthInput
-            type="name"
-            name="name_input"
-            id="name_input"
-            placeholder="Seu nome completo"
-            title="Nome"
-            required
+          <Button
+            path="/"
+            text="Página principal"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
           />
 
-          <AuthInput
-            type="email"
-            name="email_input"
-            id="email_input"
-            placeholder="Seu e-mail"
-            title="E-mail"
-            required
+          <Button
+            path="/login"
+            text="Login"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
           />
 
-          <AuthInput
-            type="number"
-            name="phoneNumber_input"
-            id="phoneNumber_input"
-            placeholder="Seu número de telefone"
-            title="Telefone"
-            required
+          <Button
+            path="/register"
+            text="Registre-se"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.black}
+            textcolor={theme.colors.primary}
+            texthover={theme.colors.primary}
+            border={theme.colors.primary}
+            borderhover={theme.colors.primary}
+            active
           />
 
-          <AuthInput
-            type="password"
-            name="password_input"
-            id="password_input"
-            placeholder="Sua senha"
-            title="Senha"
-            required
+          <Button
+            path="/benefits"
+            text="Benefícios"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
           />
+        </Nav>
+      </StandardHeader>
 
-          <AuthInput
-            type="password"
-            name="confirm_password_input"
-            id="confirm_password_input"
-            placeholder="Confirme sua senha"
-            title="Confirmação de senha"
-            required
-          />
+      <Styled.RegisterPage>
 
-          <AuthDropdown
-            title="Qual o seu tipo de perfil?"
-            id="userTypeOptions"
-            placeholder="Escolha seu tipo de perfil"
-            options={profileTypeOptions}
-            required
-          />
+        <Bubble>
+          <Subtitle text="Passo a passo" uppercase as="h4" size={theme.sizes.xlarge} />
+          <Text text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur" />
+        </Bubble>
 
-          <AuthDropdown
-            title="Qual categoria você se enquadra?"
-            id="competitiveCategory"
-            placeholder="Escolha sua categoria"
-            options={competitiveCategoryOptions}
-            required
-          />
+        <AuthContainer>
+          <Subtitle text="Registre-se" uppercase as="h4" size={theme.sizes.xlarge} />
 
-          {/* Para universidades são outras opções. Exemplo no código comentado abaixo */}
-          <AuthDropdown
-            title="Qual o seu nível competitivo"
-            id="competitiveLevel"
-            placeholder="Escolha seu nível"
-            options={levelsOptions}
-            otheroption
-          />
+          <AuthForm>
+            <AuthInput
+              type="name"
+              name="name_input"
+              id="name_input"
+              placeholder="Seu nome completo"
+              title="Nome"
+              required
+            />
 
-          {/* <AuthDropdown
+            <AuthInput
+              type="email"
+              name="email_input"
+              id="email_input"
+              placeholder="Seu e-mail"
+              title="E-mail"
+              required
+            />
+
+            <AuthInput
+              type="number"
+              name="phoneNumber_input"
+              id="phoneNumber_input"
+              placeholder="Seu número de telefone"
+              title="Telefone"
+              required
+            />
+
+            <AuthInput
+              type="password"
+              name="password_input"
+              id="password_input"
+              placeholder="Sua senha"
+              title="Senha"
+              required
+            />
+
+            <AuthInput
+              type="password"
+              name="confirm_password_input"
+              id="confirm_password_input"
+              placeholder="Confirme sua senha"
+              title="Confirmação de senha"
+              required
+            />
+
+            <AuthDropdown
+              title="Qual o seu tipo de perfil?"
+              id="userTypeOptions"
+              placeholder="Escolha seu tipo de perfil"
+              options={profileTypeOptions}
+              required
+            />
+
+            <AuthDropdown
+              title="Qual categoria você se enquadra?"
+              id="competitiveCategory"
+              placeholder="Escolha sua categoria"
+              options={competitiveCategoryOptions}
+              required
+            />
+
+            {/* Para universidades são outras opções. Exemplo no código comentado abaixo */}
+            <AuthDropdown
+              title="Qual o seu nível competitivo"
+              id="competitiveLevel"
+              placeholder="Escolha seu nível"
+              options={levelsOptions}
+              otheroption
+            />
+
+            {/* <AuthDropdown
               title="Qual o nível competitivo"
               id="universityCompetitiveLevel"
               placeholder="Escolha seu nível"
@@ -171,77 +230,77 @@ export function Register() {
               otheroption
             /> */}
 
-          <AuthRadio title="Você deseja atuar em um time de qual categoria?" options={teamCategoryOptions} groupname="typeOptions" />
+            <AuthRadio title="Modalidade" options={teamCategoryOptions} groupname="typeOptions" />
 
-          {/* As opções de plano só aparecem após o usuário selecionar o tipo de perfil, pois os planos
+            {/* As opções de plano só aparecem após o usuário selecionar o tipo de perfil, pois os planos
              são baseados no tipo de usuário */}
-          <AuthRadio title="Escolha um plano" options={plansOptions} groupname="plansOptions" />
+            <AuthRadio title="Escolha um plano" options={plansOptions} groupname="plansOptions" />
 
-          <AuthButton
-            name="register_submit"
-            id="register_submit"
-            value="Registrar"
-            onclick={handleSubmit}
-          />
+            <AuthButton
+              name="register_submit"
+              id="register_submit"
+              value="Registrar"
+              onclick={handleSubmit}
+            />
 
-          <AuthRedirect
-            text="Já possui uma conta?"
-            path="/login"
-            pathtext="Login"
-          />
+            <AuthRedirect
+              text="Já possui uma conta?"
+              path="/login"
+              pathtext="Login"
+            />
 
-          <StyledLink
-            text="Voltar ao menu"
-            path="/"
-            color={theme.colors.secondary}
-            hovercolor={theme.colors.tertiary}
-          />
-        </AuthForm>
-      </AuthContainer>
+            <StyledLink
+              text="Voltar ao menu"
+              path="/"
+              color={theme.colors.secondary}
+              hovercolor={theme.colors.tertiary}
+            />
+          </AuthForm>
+        </AuthContainer>
 
-      <Styled.PlansLayout>
-        <Bubble>
-          <Subtitle text="Plano grátis" uppercase as="h4" size={theme.sizes.xlarge} />
-          <Styled.PlanDetails>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-          </Styled.PlanDetails>
-        </Bubble>
+        <Styled.PlansLayout>
+          <Bubble>
+            <Subtitle text="Plano grátis" uppercase as="h4" size={theme.sizes.xlarge} />
+            <ListContainer>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+            </ListContainer>
+          </Bubble>
 
-        <Bubble>
-          <Subtitle text="Plano 1" uppercase as="h4" size={theme.sizes.xlarge} />
-          <Styled.PlanDetails>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-          </Styled.PlanDetails>
-        </Bubble>
+          <Bubble>
+            <Subtitle text="Plano 1" uppercase as="h4" size={theme.sizes.xlarge} />
+            <ListContainer>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+            </ListContainer>
+          </Bubble>
 
-        <Bubble>
-          <Subtitle text="Plano 2" uppercase as="h4" size={theme.sizes.xlarge} />
-          <Styled.PlanDetails>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-          </Styled.PlanDetails>
-        </Bubble>
+          <Bubble>
+            <Subtitle text="Plano 2" uppercase as="h4" size={theme.sizes.xlarge} />
+            <ListContainer>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+            </ListContainer>
+          </Bubble>
 
-        <Bubble>
-          <Subtitle text="Plano 3" uppercase as="h4" size={theme.sizes.xlarge} />
-          <Styled.PlanDetails>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-            <Styled.PlanInfo>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</Styled.PlanInfo>
-          </Styled.PlanDetails>
-        </Bubble>
-      </Styled.PlansLayout>
+          <Bubble>
+            <Subtitle text="Plano 3" uppercase as="h4" size={theme.sizes.xlarge} />
+            <ListContainer>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+            </ListContainer>
+          </Bubble>
+        </Styled.PlansLayout>
 
-      {/* {isOpen && (
+        {/* {isOpen && (
       <Popup
         title="Deseja preencher agora as informações do seu perfil?"
         firstoption="Sim"
@@ -253,7 +312,7 @@ export function Register() {
       />
       )} */}
 
-    </Styled.RegisterPage>
-
+      </Styled.RegisterPage>
+    </>
   );
 }

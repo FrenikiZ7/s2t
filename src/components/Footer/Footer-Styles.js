@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
-import { slideOut } from '../../styles/animations';
+import { fadeIn, slideOut } from '../../styles/animations';
+import { RowContainer } from '../RowContainer/Row-Styles.js';
+import { NavContainer } from '../Nav/Nav-Styles.js';
 
 export const FooterContainer = styled.footer`
   ${({ theme }) => css`
@@ -10,5 +12,27 @@ export const FooterContainer = styled.footer`
     justify-content: center;
     padding: ${theme.spacings.small};
     animation: ${slideOut} 300ms ease-out;
+
+    ${RowContainer} {
+    animation: ${fadeIn} 2000ms;
+    justify-content: center;
+    align-items: center;
+    margin-top: ${theme.spacings.medium};
+
+    @media ${theme.medias.smallpc} {
+      flex-direction: row;
+    }
+
+    
+    }
+    ${NavContainer} {
+       @media ${theme.medias.mobile} {
+        flex-direction: column;
+        gap: ${theme.spacings.small};
+       }
+    }
+
+
+    
   `}
 `;

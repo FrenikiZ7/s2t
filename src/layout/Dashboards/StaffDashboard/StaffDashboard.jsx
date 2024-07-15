@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import { Close as CloseIcon } from '@styled-icons/material-outlined';
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
 import { Settings } from '@styled-icons/fluentui-system-filled';
 import * as Styled from './StaffDashboard-Styles';
@@ -21,15 +22,108 @@ import { FloatingMenu } from '../../../components/FloatingMenu/FloatingMenu';
 import { SettingsMenu } from '../../../components/FloatingMenu/Components/SettingsMenu/SettingsMenu';
 import { StaffNav } from '../../../components/ProfileHeader/Components/StaffNav/StaffNav';
 import { StaffMenu } from '../../../components/MobileMenu/Components/StaffMenu/PlayerMenu';
+import { FloatingHeader } from '../../../components/Headers/FloatingHeader/FloatingHeader';
+import { Nav } from '../../../components/Nav/Nav';
 
 export function StaffDashboard() {
   const playerContext = useContext(PlayerContext);
   const { playerState, playerDispatch } = playerContext;
   const [menuVisibility, setMenuVisibility] = useState(false);
   const [settingsMenuVisibility, setSettingsMenuVisibility] = useState(false);
+  const [mobileHeader, setMobileHeader] = useState(false);
 
   return (
     <Styled.StaffDashboardContainer>
+
+      <FloatingHeader>
+
+        <Nav>
+          <Button
+            path="/"
+            text="Página principal"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
+
+          <Button
+            path="/player-dashboard"
+            text="Minha área"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.black}
+            textcolor={theme.colors.primary}
+            texthover={theme.colors.primary}
+            border={theme.colors.primary}
+            borderhover={theme.colors.primary}
+            active
+          />
+
+          <Button
+            path="/benefits"
+            text="Benefícios"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
+        </Nav>
+
+        {mobileHeader ? (
+          <IconDiv name="Menu" onclick={() => setMobileHeader(!mobileHeader)}>
+            <CloseIcon />
+          </IconDiv>
+        ) : (
+          <IconDiv name="Fechar menu" onclick={() => setMobileHeader(!mobileHeader)}>
+            <MenuIcon />
+          </IconDiv>
+        ) }
+
+      </FloatingHeader>
+
+      {mobileHeader && (
+      <FloatingMenu>
+        <Button
+          path="/"
+          text="Página principal"
+          bgcolor={theme.colors.mediumblack}
+          bghover={theme.colors.mediumblack}
+          textcolor={theme.colors.white}
+          texthover={theme.colors.primary}
+          border={theme.colors.white}
+          borderhover={theme.colors.primary}
+        />
+
+        <Button
+          path="/player-dashboard"
+          text="Minha área"
+          bgcolor={theme.colors.mediumblack}
+          bghover={theme.colors.black}
+          textcolor={theme.colors.primary}
+          texthover={theme.colors.primary}
+          border={theme.colors.primary}
+          borderhover={theme.colors.primary}
+          active
+        />
+
+        <Button
+          path="/benefits"
+          text="Benefícios"
+          bgcolor={theme.colors.mediumblack}
+          bghover={theme.colors.mediumblack}
+          textcolor={theme.colors.white}
+          texthover={theme.colors.primary}
+          border={theme.colors.white}
+          borderhover={theme.colors.primary}
+        />
+
+      </FloatingMenu>
+
+      )}
 
       <ProfileBanner backgroundimagesrc={playerState.profile.banner.backgroundImageSrc}>
         <ProfilePicture
@@ -42,7 +136,7 @@ export function StaffDashboard() {
 
         <Row>
           <Button
-            path="/player-dashboard/profile-edit"
+            path="profile-edit"
             text="Editar Perfil"
             bgcolor={theme.colors.primary}
             bghover={theme.colors.black}

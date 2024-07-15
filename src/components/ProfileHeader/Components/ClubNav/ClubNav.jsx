@@ -124,6 +124,14 @@ export function ClubNav() {
         />
 
         <StyledLink
+          active={activeLink === '/club-dashboard/my-affiliates'}
+          path="my-affiliates"
+          text="Meus afiliados"
+          color={theme.colors.white}
+          hovercolor={theme.colors.black}
+        />
+
+        <StyledLink
           active={activeLink === '/club-dashboard/s2t+'}
           path="s2t+"
           text="S2T+"

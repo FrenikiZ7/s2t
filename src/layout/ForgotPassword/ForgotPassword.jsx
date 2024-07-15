@@ -10,6 +10,10 @@ import { AuthButton } from '../../components/elements/AuthElements/AuthButton/Au
 import { AuthInput } from '../../components/elements/AuthElements/AuthInput/AuthInput';
 import { theme } from '../../styles/theme';
 import { Popup } from '../../components/elements/Popup/Popup';
+import { Button } from '../../components/elements/Button/Button';
+import { StandardHeader } from '../../components/Headers/StandardHeader/StandardHeader';
+import { Logo } from '../../components/elements/Logo/Logo';
+import { Nav } from '../../components/Nav/Nav';
 
 export function ForgotPassword() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,47 +27,113 @@ export function ForgotPassword() {
   };
 
   return (
-    <Styled.ForgotPasswordPage>
-      <AuthWrapper>
+    <>
+      <StandardHeader>
 
-        <AuthContainer>
+        <Logo size="250px" logo="/assets/images/pngs/logo.png" />
 
-          <Title text="Alterar senha" size={theme.sizes.xxlarge} />
+        <Nav>
 
-          <AuthForm>
+          <Button
+            path="/"
+            text="Página principal"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
 
-            <AuthInput
-              type="email"
-              name="email_input"
-              id="email_input"
-              placeholder="Seu email"
-              title="Insira o seu e-mail cadastrado"
-              required
-            />
+          <Button
+            path="/login"
+            text="Login"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
 
-            <AuthButton
-              name="login_submit"
-              id="login_submit"
-              value="Próximo"
-              onclick={handleSubmit}
-            />
+          <Button
+            path="/forgot-password"
+            text="Esqueci a senha"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.black}
+            textcolor={theme.colors.primary}
+            texthover={theme.colors.primary}
+            border={theme.colors.primary}
+            borderhover={theme.colors.primary}
+            active
+          />
 
-          </AuthForm>
-        </AuthContainer>
+          <Button
+            path="/register"
+            text="Registre-se"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
 
-        {isOpen && (
-        <Popup
-          title="Um email de verificação foi enviado para este endereço de email"
-          firstoption="Fechar"
-          firstpath="/"
-          subtitle="Por favor, verifique!"
-          isopen={isOpen}
-          onclick={() => setIsOpen(!isOpen)}
-        />
-        )}
+          <Button
+            path="/benefits"
+            text="Benefícios"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
+        </Nav>
+      </StandardHeader>
 
-      </AuthWrapper>
-    </Styled.ForgotPasswordPage>
+      <Styled.ForgotPasswordPage>
+        <AuthWrapper>
+
+          <AuthContainer>
+
+            <Title text="Alterar senha" size={theme.sizes.xxlarge} />
+
+            <AuthForm>
+
+              <AuthInput
+                type="email"
+                name="email_input"
+                id="email_input"
+                placeholder="Seu email"
+                title="Insira o seu e-mail cadastrado"
+                required
+              />
+
+              <AuthButton
+                name="login_submit"
+                id="login_submit"
+                value="Próximo"
+                onclick={handleSubmit}
+              />
+
+            </AuthForm>
+          </AuthContainer>
+
+          {isOpen && (
+          <Popup
+            title="Um email de verificação foi enviado para este endereço de email"
+            firstoption="Fechar"
+            firstpath="/"
+            subtitle="Por favor, verifique!"
+            isopen={isOpen}
+            onclick={() => setIsOpen(!isOpen)}
+          />
+          )}
+
+        </AuthWrapper>
+      </Styled.ForgotPasswordPage>
+    </>
   );
 }
 
