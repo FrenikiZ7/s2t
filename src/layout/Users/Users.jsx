@@ -6,6 +6,7 @@ import { Outlet } from 'react-router-dom';
 import * as Styled from './Users-Styles';
 import { S2tProvider } from '../../contexts/s2tContext/S2tProvider';
 import { StandardHeader } from '../../components/Headers/StandardHeader/StandardHeader';
+import { FloatingHeader } from '../../components/Headers/FloatingHeader/FloatingHeader';
 import { Nav } from '../../components/Nav/Nav';
 import { Button } from '../../components/elements/Button/Button';
 import { theme } from '../../styles/theme';
@@ -19,7 +20,7 @@ export function Users({ children }) {
 
   return (
     <Styled.UsersPage>
-      <StandardHeader>
+      <FloatingHeader>
 
         <Logo size="250px" logo="/assets/images/pngs/logo.png" />
 
@@ -69,7 +70,7 @@ export function Users({ children }) {
             <MenuIcon />
           </IconDiv>
         ) }
-      </StandardHeader>
+      </FloatingHeader>
 
       {mobileHeader && (
       <MobileNav>
@@ -118,5 +119,4 @@ export function Users({ children }) {
 }
 
 Users.propTypes = {
-  children: Prop.node.isRequired,
 };

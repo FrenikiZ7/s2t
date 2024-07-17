@@ -21,6 +21,7 @@ export const BannerContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: ${theme.spacings.small};
     padding: ${theme.spacings.small};
 
 

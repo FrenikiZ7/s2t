@@ -4,7 +4,11 @@ import { slideOut } from '../../../styles/animations';
 export const FloatingHeaderContainer = styled.header`
   ${({ theme }) => css`
     animation: ${slideOut} 500ms ease-out;
-    background-image: linear-gradient( ${theme.colors.black}, ${theme.colors.transparent});
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0)
+      );  
     display: flex;
     justify-content: space-between;
     padding: ${theme.spacings.large};
@@ -13,5 +17,6 @@ export const FloatingHeaderContainer = styled.header`
     display: flex;
     position: absolute;
     z-index: 10000;
+    
   `}
 `;

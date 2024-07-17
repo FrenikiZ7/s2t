@@ -7,7 +7,7 @@ import * as Styled from './BannerSlide-Styles';
 import { Subtitle } from '../Subtitle/Subtitle';
 
 export function BannerSlide({
-  children, lazy, title = '', slidesperview = 3, backgroundimagesrc, gradientdirection, backgroundfixed, autoplay,
+  children, lazy, title = '', slidesperview, backgroundimagesrc, gradientdirection, backgroundfixed, autoplay,
 }) {
   return (
     <Styled.BannerSlideWrapper
@@ -28,11 +28,11 @@ export function BannerSlide({
           breakpoints={{
 
             1425: {
-              slidesPerView: slidesperview,
+              slidesPerView: slidesperview || 3,
             },
 
             1050: {
-              slidesPerView: 2,
+              slidesPerView: slidesperview || 2,
             },
 
             0: {

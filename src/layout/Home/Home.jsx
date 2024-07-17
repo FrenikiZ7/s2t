@@ -363,25 +363,6 @@ export function Home({ islogged }) {
 
       <Slide items={s2tState.photos.benefits} title="Benefícios" />
 
-      {/* <Footer>
-        <Row>
-          <SocialLink type="facebook" />
-          <SocialLink type="instagram" />
-          <SocialLink type="twitter" />
-          <SocialLink type="youtube" />
-          <SocialLink type="tiktok" />
-        </Row>
-
-        <Nav>
-          <StyledLink text="Privacidade" color={theme.colors.lightgray} hovercolor={theme.colors.white} />
-          <StyledLink text="Termos de uso" color={theme.colors.lightgray} hovercolor={theme.colors.white} />
-          <StyledLink text="Sobre nós" color={theme.colors.lightgray} hovercolor={theme.colors.white} />
-          <StyledLink text="Precisa de ajuda?" color={theme.colors.lightgray} hovercolor={theme.colors.white} />
-        </Nav>
-
-        <Text text="© 2024 Showcase 2 Transfer" />
-      </Footer> */}
-
     </Styled.HomePage>
   );
 }

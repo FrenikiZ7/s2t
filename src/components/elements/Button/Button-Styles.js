@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const ButtonElement = styled.button`
   ${({
-    theme, textcolor, texthover, bgcolor, bghover, border, borderhover, active, gradient,
+    theme, size, textcolor, texthover, bgcolor, bghover, border, borderhover, active, gradient,
   }) => css`
     color: ${textcolor};
     background: ${gradient ? `linear-gradient(to right, ${theme.colors.lightsecondary}, ${theme.colors.lightprimary})` : `${bgcolor}`};
@@ -12,7 +12,7 @@ export const ButtonElement = styled.button`
 
     font-family: ${theme.fonts.primary};
     font-weight: 800;
-    font-size: ${theme.sizes.small};
+    font-size: ${size};
     text-transform:uppercase;
 
     padding: ${theme.spacings.xsmall};

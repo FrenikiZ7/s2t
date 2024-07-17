@@ -17,6 +17,7 @@ import { StandardHeader } from '../../components/Headers/StandardHeader/Standard
 import { Logo } from '../../components/elements/Logo/Logo';
 import { Nav } from '../../components/Nav/Nav';
 import { Button } from '../../components/elements/Button/Button';
+import { FloatingHeader } from '../../components/Headers/FloatingHeader/FloatingHeader';
 
 export function Login() {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ export function Login() {
 
   return (
     <>
-      <StandardHeader>
+      <FloatingHeader>
 
         <Logo size="250px" logo="/assets/images/pngs/logo.png" />
 
@@ -80,7 +81,7 @@ export function Login() {
             borderhover={theme.colors.primary}
           />
         </Nav>
-      </StandardHeader>
+      </FloatingHeader>
       <Styled.LoginPage>
         <AuthWrapper>
 

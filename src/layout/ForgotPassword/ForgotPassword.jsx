@@ -14,6 +14,7 @@ import { Button } from '../../components/elements/Button/Button';
 import { StandardHeader } from '../../components/Headers/StandardHeader/StandardHeader';
 import { Logo } from '../../components/elements/Logo/Logo';
 import { Nav } from '../../components/Nav/Nav';
+import { FloatingHeader } from '../../components/Headers/FloatingHeader/FloatingHeader';
 
 export function ForgotPassword() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ export function ForgotPassword() {
 
   return (
     <>
-      <StandardHeader>
+      <FloatingHeader>
 
         <Logo size="250px" logo="/assets/images/pngs/logo.png" />
 
@@ -90,7 +91,7 @@ export function ForgotPassword() {
             borderhover={theme.colors.primary}
           />
         </Nav>
-      </StandardHeader>
+      </FloatingHeader>
 
       <Styled.ForgotPasswordPage>
         <AuthWrapper>

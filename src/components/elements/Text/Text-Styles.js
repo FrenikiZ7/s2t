@@ -1,9 +1,11 @@
 import styled, { css } from 'styled-components';
 
 export const TextElement = styled.p`
-  ${({ theme, uppercase, color }) => css`
+  ${({
+    theme, uppercase, color, size,
+  }) => css`
     font-family: ${theme.fonts.primary};
-    font-size: ${theme.sizes.medium};
+    font-size: ${size};
     color: ${color};
     text-transform: ${uppercase};
 

@@ -21,6 +21,7 @@ import { Nav } from '../../components/Nav/Nav';
 import { Button } from '../../components/elements/Button/Button';
 import { Logo } from '../../components/elements/Logo/Logo';
 import { StandardHeader } from '../../components/Headers/StandardHeader/StandardHeader';
+import { FloatingHeader } from '../../components/Headers/FloatingHeader/FloatingHeader';
 
 export function Register() {
   const [profileType, setProfileType] = useState('');
@@ -88,7 +89,7 @@ export function Register() {
 
   return (
     <>
-      <StandardHeader>
+      <FloatingHeader>
 
         <Logo size="250px" logo="/assets/images/pngs/logo.png" />
 
@@ -139,7 +140,7 @@ export function Register() {
             borderhover={theme.colors.primary}
           />
         </Nav>
-      </StandardHeader>
+      </FloatingHeader>
 
       <Styled.RegisterPage>
 
@@ -260,57 +261,62 @@ export function Register() {
 
         <Styled.PlansLayout>
           <Bubble>
-            <Subtitle text="Plano grátis" uppercase as="h4" size={theme.sizes.xlarge} />
+            <Subtitle text="Plano 1 - R$ 0,00" uppercase as="h4" size={theme.sizes.xlarge} />
             <ListContainer>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Foto de perfil</ListItem>
+              <ListItem>1 Foto na galeria</ListItem>
+              <ListItem>1 Vídeo na galeria</ListItem>
+              <ListItem>Lions TV</ListItem>
+              <ListItem>Investimentos</ListItem>
+              <ListItem>Detalhes no perfil</ListItem>
+              <ListItem>Histórico de clubes</ListItem>
+              <ListItem>Histórico acadêmico</ListItem>
+              <ListItem>Histórico de conquistas</ListItem>
             </ListContainer>
           </Bubble>
 
           <Bubble>
-            <Subtitle text="Plano 1" uppercase as="h4" size={theme.sizes.xlarge} />
+            <Subtitle text="Plano 2 - R$ 10,00" uppercase as="h4" size={theme.sizes.xlarge} />
             <ListContainer>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Até 5 Fotos na galeria</ListItem>
+              <ListItem>Até 2 Vídeos na galeria</ListItem>
+              <ListItem>Plataforma Lions</ListItem>
+              <ListItem>Social Media</ListItem>
+              <ListItem>Favoritar oportunidades</ListItem>
+              <ListItem>50% de desconto em apresentações</ListItem>
+              <ListItem>3 apresentações</ListItem>
             </ListContainer>
           </Bubble>
 
           <Bubble>
-            <Subtitle text="Plano 2" uppercase as="h4" size={theme.sizes.xlarge} />
+            <Subtitle text="Plano 3 - R$ 15,00" uppercase as="h4" size={theme.sizes.xlarge} />
             <ListContainer>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Até 10 Fotos na galeria</ListItem>
+              <ListItem>Até 10 Vídeos na galeria</ListItem>
+              <ListItem>Cursos</ListItem>
+              <ListItem>Acesso a podcasts</ListItem>
+              <ListItem>Seu próprio podcast na T2S</ListItem>
+              <ListItem>Clube de benefícios Lions</ListItem>
+              <ListItem>Marketing</ListItem>
+              <ListItem>5 apresentações </ListItem>
             </ListContainer>
           </Bubble>
 
           <Bubble>
-            <Subtitle text="Plano 3" uppercase as="h4" size={theme.sizes.xlarge} />
+            <Subtitle text="Plano 4- R$ 50,00" uppercase as="h4" size={theme.sizes.xlarge} />
             <ListContainer>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
-              <ListItem>Sed ut perspiciatis unde omnis sed ut perspiciatis unde omnis</ListItem>
+              <ListItem>Até 20 Fotos na galeria</ListItem>
+              <ListItem>Até 20 Vídeos na galeria</ListItem>
+              <ListItem>Interação direta</ListItem>
+              <ListItem>Crowdfunding</ListItem>
+              <ListItem>Fundraiser com sua própria plataforma</ListItem>
+              <ListItem>Engajamento com patrocinadores</ListItem>
+              <ListItem>Engajamento com patrocinadores</ListItem>
+              <ListItem>Filmagem e transmição de partidas em seu próprio canal de TV</ListItem>
+              <ListItem>12 apresentações</ListItem>
             </ListContainer>
           </Bubble>
         </Styled.PlansLayout>
-
-        {/* {isOpen && (
-      <Popup
-        title="Deseja preencher agora as informações do seu perfil?"
-        firstoption="Sim"
-        firstpath="/user-info"
-        secondoption="Deixar para depois"
-        secondpath="/player-dashboard"
-        isopen={isOpen}
-        onclick={() => setIsOpen(!isOpen)}
-      />
-      )} */}
 
       </Styled.RegisterPage>
     </>

@@ -6,8 +6,8 @@ export const ForgotPasswordPage = styled.section`
   ${({ theme }) => css`
       background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.8)
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 1)
       ),
       url('/assets/images/background.png');
 

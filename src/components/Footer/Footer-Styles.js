@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { fadeIn, slideOut } from '../../styles/animations';
 import { RowContainer } from '../RowContainer/Row-Styles.js';
 import { NavContainer } from '../Nav/Nav-Styles.js';
+import { LinkContainer } from '../elements/StyledLink/StyledLink-Styles.js';
 
 export const FooterContainer = styled.footer`
   ${({ theme }) => css`
@@ -29,6 +30,12 @@ export const FooterContainer = styled.footer`
        @media ${theme.medias.mobile} {
         flex-direction: column;
         gap: ${theme.spacings.small};
+       }
+
+       ${LinkContainer} {
+        @media ${theme.medias.tablet} {
+          font-size: ${theme.sizes.small};
+        }
        }
     }
 
